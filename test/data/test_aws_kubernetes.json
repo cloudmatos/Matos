@@ -1,0 +1,90 @@
+{
+    "self": {
+      "ds_name": [
+        "calico-node",
+        "aws-node",
+        "kube-proxy"
+      ],
+      "deployments": [
+        {
+          "deployment": {
+            "deployname": "calico-kube-controllers",
+            "replicas": 1,
+            "resource_requests": null,
+            "resource_limits": null,
+            "run_as_non_root": null,
+            "image_pull_policy": "IfNotPresent"
+          }
+        },
+        {
+          "deployment": {
+            "deployname": "calico-typha",
+            "replicas": 3,
+            "resource_requests": null,
+            "resource_limits": null,
+            "run_as_non_root": null,
+            "image_pull_policy": "Always"
+          }
+        },
+        {
+          "deployment": {
+            "deployname": "conwp-memcached",
+            "replicas": 1,
+            "resource_requests": {
+              "cpu": "250m",
+              "memory": "256Mi"
+            },
+            "resource_limits": null,
+            "run_as_non_root": null,
+            "image_pull_policy": "IfNotPresent"
+          }
+        },
+        {
+          "deployment": {
+            "deployname": "conwp-wordpress",
+            "replicas": 1,
+            "resource_requests": {
+              "cpu": "300m",
+              "memory": "512Mi"
+            },
+            "resource_limits": null,
+            "run_as_non_root": null,
+            "image_pull_policy": "IfNotPresent"
+          }
+        },
+        {
+          "deployment": {
+            "deployname": "coredns",
+            "replicas": 2,
+            "resource_requests": {
+              "cpu": "100m",
+              "memory": "70Mi"
+            },
+            "resource_limits": {
+              "memory": "170Mi"
+            },
+            "run_as_non_root": null,
+            "image_pull_policy": "IfNotPresent"
+          }
+        },
+        {
+          "deployment": {
+            "deployname": "tigera-operator",
+            "replicas": 1,
+            "resource_requests": null,
+            "resource_limits": null,
+            "run_as_non_root": null,
+            "image_pull_policy": "IfNotPresent"
+          }
+        }
+      ],
+      "psp_name": [
+        "calico-kube-controllers",
+        "calico-node",
+        "calico-typha",
+        "eks.privileged",
+        "tigera-operator"
+      ]
+    }
+  }
+  
