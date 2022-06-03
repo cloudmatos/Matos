@@ -19,6 +19,11 @@ class AWSDiscovery(AWS):
             self.cloudtrail = self.client('cloudtrail')
             self.kms = self.client('kms')
             self.dynamodb = self.client('dynamodb')
+            self.apphosting = self.client('elasticbeanstalk')
+            self.filesystem = self.client('efs')
+            self.elbv2 = self.client('elbv2')
+            self.elb = self.client('elb')
+            self.analyzer = self.client('accessanalyzer')
         except Exception as ex:
             raise Exception(ex)
 
@@ -239,6 +244,50 @@ class AWSDiscovery(AWS):
         # print(eip, "==== volumes")
         return eip
 
+    def get_apphosting(self):
+        resources = self.apphosting.describe_environments()
+        environments = resources["Environments"]
+
+        environment_resources = []
+
+        for environment in environments:
+            environment_resources.append({
+                'type': 'apphosting',
+                **environment,
+            })
+
+        return environment_resources
+
+    def get_efs(self):
+        resources = self.filesystem.describe_file_systems()
+        files = resources["FileSystems"]
+
+        filesystem_resources = []
+        for file in files:
+            filesystem_resources.append({
+                'type': 'filesystem',
+                **file,
+            })
+
+        return filesystem_resources
+
+    def get_elb(self):
+        resources = self.elb.describe_load_balancers()
+        elb = [{"type": "lb", **lb, "Type": "classic"} for lb in resources.get("LoadBalancerDescriptions", [])]
+
+        resources = self.elbv2.describe_load_balancers()
+        elbv2 = [{"type": "lb", **lb} for lb in resources.get("LoadBalancers", [])]
+
+        return elb + elbv2
+
+    def get_analyzer(self):
+        resources = self.analyzer.list_analyzers().get('analyzers')
+        resources = [{**resource, "type": 'analyzer'} for resource in resources]
+        resources = resources if resources else [{"type": 'analyzer', 'empty': True}]
+        print(resources, "==== analyzer")
+
+        return resources
+
     def find_resources(self, **kwargs):
         """
         """
@@ -259,5 +308,10 @@ class AWSDiscovery(AWS):
         resources.extend(self.get_dynamo_db())
         resources.extend(self.get_disk())
         resources.extend(self.get_eip())
+        resources.extend(self.get_apphosting())
+        resources.extend(self.get_efs())
+        resources.extend(self.get_elb())
+        resources.extend(self.get_analyzer())
+        resources.append({"type": 'iam'})
 
         return resources

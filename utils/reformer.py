@@ -171,6 +171,45 @@ def aws_dynamodb(resource, provider):
     })
 
 
+def aws_elasticbeanstalk(resource, provider):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+
+def aws_elb(resource, provider):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+
+def aws_analyzer(resource, provider):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+
+def aws_iam(resource, provider):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+
+def aws_filesystem(resource, provider):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
 def azure_cluster(resource, provider):
     """
     """
@@ -581,6 +620,11 @@ cloud_resource_mappers = {
         'disk': aws_disk,
         'snapshot': aws_snapshot,
         'eip': aws_snapshot,
+        'apphosting': aws_elasticbeanstalk,
+        'lb': aws_elb,
+        'iam': aws_elb,
+        'analyzer': aws_analyzer,
+        'filesystem': aws_filesystem,
     },
     'azure': {
         'cluster': azure_cluster,

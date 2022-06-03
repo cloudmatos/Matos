@@ -1,0 +1,152 @@
+{
+  "lb": [
+    {
+      "self": {
+        "source_data": {
+          "Attributes": {
+            "access_logs.s3.bucket": "",
+            "access_logs.s3.enabled": "false",
+            "access_logs.s3.prefix": "",
+            "deletion_protection.enabled": "true",
+            "idle_timeout.timeout_seconds": "60",
+            "routing.http.desync_mitigation_mode": "defensive",
+            "routing.http.drop_invalid_header_fields.enabled": "true",
+            "routing.http.x_amzn_tls_version_and_cipher_suite.enabled": "false",
+            "routing.http.xff_client_port.enabled": "false",
+            "routing.http2.enabled": "true",
+            "waf.fail_open.enabled": "false"
+          },
+          "AvailabilityZones": [
+            {
+              "LoadBalancerAddresses": [],
+              "SubnetId": "subnet-09464f442866b17e1",
+              "ZoneName": "us-east-2b"
+            },
+            {
+              "LoadBalancerAddresses": [],
+              "SubnetId": "subnet-0fcac3e01a7a49e8c",
+              "ZoneName": "us-east-2a"
+            }
+          ],
+          "CanonicalHostedZoneId": "Z3AADJGX6KTTL2",
+          "CreatedTime": "Mon, 23 May 2022 19:20:37 GMT",
+          "DNSName": "awseb-AWSEB-BO57MY2816KV-1999122883.us-east-2.elb.amazonaws.com",
+          "IpAddressType": "ipv4",
+          "Listeners": [
+            {
+              "DefaultActions": [
+                {
+                  "ForwardConfig": {
+                    "TargetGroupStickinessConfig": {
+                      "Enabled": false
+                    },
+                    "TargetGroups": [
+                      {
+                        "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                        "Weight": 1
+                      }
+                    ]
+                  },
+                  "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                  "Type": "forward"
+                }
+              ],
+              "ListenerArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:listener/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d/44228d101b9e84d9",
+              "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d",
+              "Port": 80,
+              "Protocol": "HTTP",
+              "Rules": [
+                {
+                  "Actions": [
+                    {
+                      "ForwardConfig": {
+                        "TargetGroupStickinessConfig": {
+                          "Enabled": false
+                        },
+                        "TargetGroups": [
+                          {
+                            "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                            "Weight": 1
+                          }
+                        ]
+                      },
+                      "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                      "Type": "forward"
+                    }
+                  ],
+                  "Conditions": [],
+                  "IsDefault": true,
+                  "Priority": "default",
+                  "RuleArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:listener-rule/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d/44228d101b9e84d9/0dbe7e1e4d7d7ac7"
+                }
+              ],
+              "SslPolicy": {
+                "Name": null
+              }
+            }
+          ],
+          "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d",
+          "LoadBalancerName": "awseb-AWSEB-BO57MY2816KV",
+          "Scheme": "internet-facing",
+          "SecurityGroups": [
+            "sg-0ed0a56dc4e47b4da"
+          ],
+          "State": {
+            "Code": "active"
+          },
+          "TargetGroups": [
+            {
+              "Attributes": {
+                "deregistration_delay.timeout_seconds": "20",
+                "load_balancing.algorithm.type": "round_robin",
+                "slow_start.duration_seconds": "0",
+                "stickiness.app_cookie.cookie_name": "",
+                "stickiness.app_cookie.duration_seconds": "86400",
+                "stickiness.enabled": "false",
+                "stickiness.lb_cookie.duration_seconds": "86400",
+                "stickiness.type": "lb_cookie"
+              },
+              "HealthCheckEnabled": true,
+              "HealthCheckIntervalSeconds": 15,
+              "HealthCheckPath": "/",
+              "HealthCheckPort": "traffic-port",
+              "HealthCheckProtocol": "HTTP",
+              "HealthCheckTimeoutSeconds": 5,
+              "HealthyThresholdCount": 3,
+              "IpAddressType": "ipv4",
+              "LoadBalancerArns": [
+                "arn:aws:elasticloadbalancing:us-east-2:000000000000:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d"
+              ],
+              "Matcher": {
+                "HttpCode": "200"
+              },
+              "Port": 80,
+              "Protocol": "HTTP",
+              "ProtocolVersion": "HTTP1",
+              "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+              "TargetGroupName": "awseb-AWSEB-73M0SYFL0IST",
+              "TargetHealthDescriptions": [
+                {
+                  "HealthCheckPort": "80",
+                  "Target": {
+                    "Id": "i-0f2fb1ba386eac636",
+                    "Port": 80
+                  },
+                  "TargetHealth": {
+                    "State": "healthy"
+                  }
+                }
+              ],
+              "TargetType": "instance",
+              "UnhealthyThresholdCount": 5,
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "Type": "application",
+          "VpcId": "vpc-0000000000000000",
+          "type": "lb"
+        }
+      }
+    }
+  ]
+}

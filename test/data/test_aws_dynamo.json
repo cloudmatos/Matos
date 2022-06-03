@@ -1,0 +1,125 @@
+{
+  "no_sql": [
+    {
+      "self": {
+        "source_data": {
+          "AttributeDefinitions": [
+            {
+              "AttributeName": "matos",
+              "AttributeType": "S"
+            }
+          ],
+          "ContinuousBackupsDescription": {
+            "ContinuousBackupsStatus": "ENABLED",
+            "PointInTimeRecoveryDescription": {
+              "EarliestRestorableDateTime": "Sat, 21 May 2022 01:44:57 GMT",
+              "LatestRestorableDateTime": "Sat, 21 May 2022 09:01:38 GMT",
+              "PointInTimeRecoveryStatus": "ENABLED"
+            }
+          },
+          "CreationDateTime": "Sat, 21 May 2022 01:37:49 GMT",
+          "GlobalTableVersion": "2019.11.21",
+          "ItemCount": 0,
+          "KeySchema": [
+            {
+              "AttributeName": "matos",
+              "KeyType": "HASH"
+            }
+          ],
+          "LatestStreamArn": "arn:aws:dynamodb:us-east-2:000000000000:table/Test/stream/2022-05-21T01:56:30.889",
+          "LatestStreamLabel": "2022-05-21T01:56:30.889",
+          "ProvisionedThroughput": {
+            "LastDecreaseDateTime": "Sat, 21 May 2022 01:50:17 GMT",
+            "NumberOfDecreasesToday": 2,
+            "ReadCapacityUnits": 1,
+            "WriteCapacityUnits": 1
+          },
+          "Replicas": [
+            {
+              "RegionName": "us-east-1",
+              "ReplicaStatus": "ACTIVE"
+            }
+          ],
+          "StreamSpecification": {
+            "StreamEnabled": true,
+            "StreamViewType": "NEW_AND_OLD_IMAGES"
+          },
+          "TableArn": "arn:aws:dynamodb:us-east-2:000000000000:table/Test",
+          "TableAutoScalingDescription": {
+            "Replicas": [
+              {
+                "GlobalSecondaryIndexes": [],
+                "RegionName": "us-east-1",
+                "ReplicaProvisionedReadCapacityAutoScalingSettings": {
+                  "AutoScalingRoleArn": "arn:aws:iam::000000000000:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+                  "MaximumUnits": 10,
+                  "MinimumUnits": 1,
+                  "ScalingPolicies": [
+                    {
+                      "PolicyName": "$Test-scaling-policy",
+                      "TargetTrackingScalingPolicyConfiguration": {
+                        "TargetValue": 70.0
+                      }
+                    }
+                  ]
+                },
+                "ReplicaProvisionedWriteCapacityAutoScalingSettings": {
+                  "AutoScalingRoleArn": "arn:aws:iam::000000000000:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+                  "MaximumUnits": 10,
+                  "MinimumUnits": 1,
+                  "ScalingPolicies": [
+                    {
+                      "PolicyName": "$Test-scaling-policy",
+                      "TargetTrackingScalingPolicyConfiguration": {
+                        "TargetValue": 70.0
+                      }
+                    }
+                  ]
+                },
+                "ReplicaStatus": "ACTIVE"
+              },
+              {
+                "GlobalSecondaryIndexes": [],
+                "RegionName": "us-east-2",
+                "ReplicaProvisionedReadCapacityAutoScalingSettings": {
+                  "AutoScalingRoleArn": "arn:aws:iam::000000000000:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+                  "MaximumUnits": 10,
+                  "MinimumUnits": 1,
+                  "ScalingPolicies": [
+                    {
+                      "PolicyName": "$Test-scaling-policy",
+                      "TargetTrackingScalingPolicyConfiguration": {
+                        "TargetValue": 70.0
+                      }
+                    }
+                  ]
+                },
+                "ReplicaProvisionedWriteCapacityAutoScalingSettings": {
+                  "AutoScalingRoleArn": "arn:aws:iam::000000000000:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+                  "MaximumUnits": 10,
+                  "MinimumUnits": 1,
+                  "ScalingPolicies": [
+                    {
+                      "PolicyName": "$Test-scaling-policy",
+                      "TargetTrackingScalingPolicyConfiguration": {
+                        "TargetValue": 70.0
+                      }
+                    }
+                  ]
+                },
+                "ReplicaStatus": "ACTIVE"
+              }
+            ],
+            "TableName": "Test",
+            "TableStatus": "ACTIVE"
+          },
+          "TableId": "118106fb-061a-4553-93c7-fb465d562dc6",
+          "TableName": "Test",
+          "TableSizeBytes": 0,
+          "TableStatus": "ACTIVE",
+          "type": "no_sql"
+        }
+      }
+    }
+  ]
+}

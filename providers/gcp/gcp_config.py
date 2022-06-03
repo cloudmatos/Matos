@@ -234,7 +234,11 @@ RESOURCE_TYPE_REQUESTS = {
     'kms': [],
     'policy': [],
     'no_sql': [],
-    "eip": []
+    "eip": [],
+    'apphosting': [],
+    'lb': [],
+    'analyzer': [],
+    "filesystem": [],
 }
 
 POD_STATUS = ['Running']

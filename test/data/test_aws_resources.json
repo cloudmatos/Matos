@@ -655,7 +655,7 @@
                       "NetworkAclId": "acl-0362dd6ef51926cbb",
                       "OwnerId": "000000000000",
                       "Tags": [],
-                      "VpcId": "vpc-08a183e2a9e8053f9"
+                      "VpcId": "vpc-0000000000000000"
                   }
               ],
               "owner_id": "000000000000",
@@ -673,8 +673,8 @@
                       "MapPublicIpOnLaunch": true,
                       "OwnerId": "000000000000",
                       "State": "available",
-                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0859a98419bd17b42",
-                      "SubnetId": "subnet-0859a98419bd17b42",
+                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+                      "SubnetId": "subnet-0000000000000000",
                       "Tags": [
                           {
                               "Key": "kubernetes.io/role/elb",
@@ -689,7 +689,7 @@
                               "Value": "wpcon-public-us-east-2a"
                           }
                       ],
-                      "VpcId": "vpc-08a183e2a9e8053f9"
+                      "VpcId": "vpc-0000000000000000"
                   },
                   {
                       "AssignIpv6AddressOnCreation": false,
@@ -703,8 +703,8 @@
                       "MapPublicIpOnLaunch": false,
                       "OwnerId": "000000000000",
                       "State": "available",
-                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-02b4646bab9f6883d",
-                      "SubnetId": "subnet-02b4646bab9f6883d",
+                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+                      "SubnetId": "subnet-0000000000000000",
                       "Tags": [
                           {
                               "Key": "Name",
@@ -719,7 +719,7 @@
                               "Value": "1"
                           }
                       ],
-                      "VpcId": "vpc-08a183e2a9e8053f9"
+                      "VpcId": "vpc-0000000000000000"
                   },
                   {
                       "AssignIpv6AddressOnCreation": false,
@@ -733,8 +733,8 @@
                       "MapPublicIpOnLaunch": true,
                       "OwnerId": "000000000000",
                       "State": "available",
-                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-083ce84e1c9731b8c",
-                      "SubnetId": "subnet-083ce84e1c9731b8c",
+                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+                      "SubnetId": "subnet-0000000000000000",
                       "Tags": [
                           {
                               "Key": "kubernetes.io/role/elb",
@@ -749,7 +749,7 @@
                               "Value": "shared"
                           }
                       ],
-                      "VpcId": "vpc-08a183e2a9e8053f9"
+                      "VpcId": "vpc-0000000000000000"
                   },
                   {
                       "AssignIpv6AddressOnCreation": false,
@@ -763,8 +763,8 @@
                       "MapPublicIpOnLaunch": false,
                       "OwnerId": "000000000000",
                       "State": "available",
-                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0fab6904794f03db1",
-                      "SubnetId": "subnet-0fab6904794f03db1",
+                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+                      "SubnetId": "subnet-0000000000000000",
                       "Tags": [
                           {
                               "Key": "kubernetes.io/role/internal-elb",
@@ -779,7 +779,7 @@
                               "Value": "wpcon-private-us-east-2a"
                           }
                       ],
-                      "VpcId": "vpc-08a183e2a9e8053f9"
+                      "VpcId": "vpc-0000000000000000"
                   },
                   {
                       "AssignIpv6AddressOnCreation": false,
@@ -793,8 +793,8 @@
                       "MapPublicIpOnLaunch": false,
                       "OwnerId": "000000000000",
                       "State": "available",
-                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-09ad5e7053a11ab70",
-                      "SubnetId": "subnet-09ad5e7053a11ab70",
+                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+                      "SubnetId": "subnet-0000000000000000",
                       "Tags": [
                           {
                               "Key": "kubernetes.io/role/internal-elb",
@@ -809,7 +809,7 @@
                               "Value": "shared"
                           }
                       ],
-                      "VpcId": "vpc-08a183e2a9e8053f9"
+                      "VpcId": "vpc-0000000000000000"
                   },
                   {
                       "AssignIpv6AddressOnCreation": false,
@@ -823,8 +823,8 @@
                       "MapPublicIpOnLaunch": true,
                       "OwnerId": "000000000000",
                       "State": "available",
-                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-079562ba83f0c86c7",
-                      "SubnetId": "subnet-079562ba83f0c86c7",
+                      "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+                      "SubnetId": "subnet-0000000000000000",
                       "Tags": [
                           {
                               "Key": "Name",
@@ -839,7 +839,7 @@
                               "Value": "1"
                           }
                       ],
-                      "VpcId": "vpc-08a183e2a9e8053f9"
+                      "VpcId": "vpc-0000000000000000"
                   }
               ],
               "tags": [

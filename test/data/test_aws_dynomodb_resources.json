@@ -1,0 +1,173 @@
+{
+  "no_sql": [
+    {
+        "self": {
+            "source_data": {
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "id",
+                        "AttributeType": "S"
+                    }
+                ],
+                "ContinuousBackupsDescription": {
+                    "ContinuousBackupsStatus": "ENABLED",
+                    "PointInTimeRecoveryDescription": {
+                        "PointInTimeRecoveryStatus": "DISABLED"
+                    }
+                },
+                "CreationDateTime": "Mon, 23 May 2022 04:47:19 GMT",
+                "ItemCount": 0,
+                "KeySchema": [
+                    {
+                        "AttributeName": "id",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "LastDecreaseDateTime": "Mon, 23 May 2022 05:00:53 GMT",
+                    "NumberOfDecreasesToday": 2,
+                    "ReadCapacityUnits": 1,
+                    "WriteCapacityUnits": 1
+                },
+                "TableArn": "arn:aws:dynamodb:us-east-2:000000000000:table/custom-table-default",
+                "TableCapacity": {
+                    "ReadCapacityUnits": {
+                        "AutoScalingStatus": true,
+                        "ProvisionedCapacityUnits": 1,
+                        "ProvisionedRange": {
+                            "MaxCapacity": 10,
+                            "MinCapacity": 1
+                        },
+                        "TargetTrackingScalingPolicyConfiguration": 70.0
+                    },
+                    "WriteCapacityUnits": {
+                        "AutoScalingStatus": true,
+                        "ProvisionedCapacityUnits": 1,
+                        "ProvisionedRange": {
+                            "MaxCapacity": 10,
+                            "MinCapacity": 1
+                        },
+                        "TargetTrackingScalingPolicyConfiguration": 70.0
+                    }
+                },
+                "TableCapacityMode": "Provisioned",
+                "TableId": "697256ee-9955-4254-a6cd-c5f27eae0d41",
+                "TableName": "custom-table-default",
+                "TableSizeBytes": 0,
+                "TableStatus": "ACTIVE",
+                "type": "no_sql"
+            }
+        }
+    },
+    {
+        "self": {
+            "source_data": {
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "id",
+                        "AttributeType": "S"
+                    }
+                ],
+                "ContinuousBackupsDescription": {
+                    "ContinuousBackupsStatus": "ENABLED",
+                    "PointInTimeRecoveryDescription": {
+                        "PointInTimeRecoveryStatus": "DISABLED"
+                    }
+                },
+                "CreationDateTime": "Mon, 23 May 2022 04:48:15 GMT",
+                "ItemCount": 0,
+                "KeySchema": [
+                    {
+                        "AttributeName": "id",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 5,
+                    "WriteCapacityUnits": 5
+                },
+                "TableArn": "arn:aws:dynamodb:us-east-2:000000000000:table/table-without-autoscaling",
+                "TableCapacity": {
+                    "ReadCapacityUnits": {
+                        "AutoScalingStatus": false,
+                        "ProvisionedCapacityUnits": 5
+                    },
+                    "WriteCapacityUnits": {
+                        "AutoScalingStatus": false,
+                        "ProvisionedCapacityUnits": 5
+                    }
+                },
+                "TableCapacityMode": "Provisioned",
+                "TableId": "1a35b0bc-b5fc-4151-bfe4-7028235ac56a",
+                "TableName": "table-without-autoscaling",
+                "TableSizeBytes": 0,
+                "TableStatus": "ACTIVE",
+                "type": "no_sql"
+            }
+        }
+    },
+    {
+        "self": {
+            "source_data": {
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "id",
+                        "AttributeType": "S"
+                    }
+                ],
+                "BillingModeSummary": {
+                    "BillingMode": "PROVISIONED",
+                    "LastUpdateToPayPerRequestDateTime": "Mon, 23 May 2022 09:09:03 GMT"
+                },
+                "ContinuousBackupsDescription": {
+                    "ContinuousBackupsStatus": "ENABLED",
+                    "PointInTimeRecoveryDescription": {
+                        "PointInTimeRecoveryStatus": "DISABLED"
+                    }
+                },
+                "CreationDateTime": "Mon, 23 May 2022 04:46:38 GMT",
+                "ItemCount": 0,
+                "KeySchema": [
+                    {
+                        "AttributeName": "id",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 1,
+                    "WriteCapacityUnits": 1
+                },
+                "TableArn": "arn:aws:dynamodb:us-east-2:000000000000:table/test-table-customize",
+                "TableCapacity": {
+                    "ReadCapacityUnits": {
+                        "AutoScalingStatus": true,
+                        "ProvisionedCapacityUnits": 1,
+                        "ProvisionedRange": {
+                            "MaxCapacity": 10,
+                            "MinCapacity": 1
+                        },
+                        "TargetTrackingScalingPolicyConfiguration": 70.0
+                    },
+                    "WriteCapacityUnits": {
+                        "AutoScalingStatus": true,
+                        "ProvisionedCapacityUnits": 1,
+                        "ProvisionedRange": {
+                            "MaxCapacity": 10,
+                            "MinCapacity": 1
+                        },
+                        "TargetTrackingScalingPolicyConfiguration": 70.0
+                    }
+                },
+                "TableCapacityMode": "Provisioned",
+                "TableId": "48003d0f-75c1-4092-a2ae-c9dc54fd3e3d",
+                "TableName": "test-table-customize",
+                "TableSizeBytes": 0,
+                "TableStatus": "ACTIVE",
+                "type": "no_sql"
+            }
+        }
+    }
+]
+}

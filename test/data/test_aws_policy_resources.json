@@ -331,7 +331,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::000000000000:policy/vpc_vpc-08a183e2a9e8053f9_flow_log_policy_",
+                    "Arn": "arn:aws:iam::000000000000:policy/vpc_vpc-0000000000000000_flow_log_policy_",
                     "AttachmentCount": 1,
                     "CreateDate": "Tue, 17 May 2022 10:31:38 GMT",
                     "DefaultVersionId": "v1",
@@ -339,7 +339,7 @@
                     "Path": "/",
                     "PermissionsBoundaryUsageCount": 0,
                     "PolicyId": "XXXXXXXXXXXXXXXXXXXX",
-                    "PolicyName": "vpc_vpc-08a183e2a9e8053f9_flow_log_policy_",
+                    "PolicyName": "vpc_vpc-0000000000000000_flow_log_policy_",
                     "PolicyVersionList": [
                         {
                             "CreateDate": "Tue, 17 May 2022 10:31:38 GMT",
@@ -405,7 +405,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::000000000000:policy/vpc_vpc-0085e45c576a1504b_flow_log_policy_",
+                    "Arn": "arn:aws:iam::000000000000:policy/vpc_vpc-00000000000000000_flow_log_policy_",
                     "AttachmentCount": 1,
                     "CreateDate": "Tue, 17 May 2022 10:32:05 GMT",
                     "DefaultVersionId": "v1",
@@ -413,7 +413,7 @@
                     "Path": "/",
                     "PermissionsBoundaryUsageCount": 0,
                     "PolicyId": "XXXXXXXXXXXXXXXXXXXX",
-                    "PolicyName": "vpc_vpc-0085e45c576a1504b_flow_log_policy_",
+                    "PolicyName": "vpc_vpc-00000000000000000_flow_log_policy_",
                     "PolicyVersionList": [
                         {
                             "CreateDate": "Tue, 17 May 2022 10:32:05 GMT",

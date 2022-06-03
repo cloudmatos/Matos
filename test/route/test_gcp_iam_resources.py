@@ -16,8 +16,7 @@ class TestIAM(TestCase):
         Check service accounts has admin permissions or not
         """
         test = [match.value for match in
-                parse('project[*].self.iam_policy.bindings[*]').find(self.resources) if
-                'Admin' in match.value.get('role', '') and [sa for sa in match.value.get('members', []) if 'serviceAccount' in sa ]]
+                parse('project[*].self.iam_policy.bindings[*]').find(self.resources) if 'Admin' in match.value.get('role', '') and [sa for sa in match.value.get('members', []) if 'serviceAccount' in sa ]]
         flag = len(test) > 0
         self.assertEqual(False, flag, msg="There are few service accounts having admin permission assinged.")
 
@@ -25,9 +24,7 @@ class TestIAM(TestCase):
         """
         Check users has service account user permission at project level
         """
-        test = [match.value for match in
-                parse('project[*].self.iam_policy.bindings[*].role').find(self.resources) if
-                'roles/iam.serviceAccountUser' in match.value]
+        test = [match.value for match in parse('project[*].self.iam_policy.bindings[*].role').find(self.resources) if 'roles/iam.serviceAccountUser' in match.value]
         flag = len(test) > 0
         self.assertEqual(False, flag, msg="There are few users having service account user permission assinged at project level.")
 
@@ -35,9 +32,7 @@ class TestIAM(TestCase):
         """
         Check service account has project wise roles assigned or not
         """
-        test = [match.value for match in
-                parse('project[*].self.iam_policy.bindings[*].role').find(self.resources) if
-                match.value in ['roles/editor', 'roles/owner']]
+        test = [match.value for match in parse('project[*].self.iam_policy.bindings[*].role').find(self.resources) if match.value in ['roles/editor', 'roles/owner']]
         flag = len(test) > 0
         self.assertEqual(False, flag, msg="There are few identity having administrative permission at project level.")
 
@@ -45,8 +40,6 @@ class TestIAM(TestCase):
         """
         Check either gmail account is being used or not
         """
-        test = [match.value for match in
-                parse('project[*].self.iam_policy.bindings[*].members[*]').find(self.resources) if
-                'gmail.com' in match.value]
+        test = [match.value for match in parse('project[*].self.iam_policy.bindings[*].members[*]').find(self.resources) if 'gmail.com' in match.value]
         flag = len(test) > 0
         self.assertEqual(False, flag, msg="There are few roles assigned to gmail accounts.")

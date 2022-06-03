@@ -14,3 +14,7 @@ class ResourceModel:
         self.policy = resource.get('policy')
         self.no_sql = resource.get('no_sql')
         self.eip = resource.get('eip')
+        self.apphosting = resource.get('apphosting')
+        self.lb = resource.get('lb')
+        self.analyzer = resource.get('analyzer')
+        self.filesystem = resource.get('filesystem')

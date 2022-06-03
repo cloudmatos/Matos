@@ -39,6 +39,11 @@ class AWSResourceManager:
             "disk": Disk,
             "snapshot": Snapshot,
             "eip": EIP,
+            "apphosting": ElasticBeanstalk,
+            "lb": LoadBalancing,
+            "iam": IAM,
+            "analyzer": Analyzer,
+            "filesystem": ElasticFileSystem,
         }
 
         log = logger.new()
@@ -349,6 +354,7 @@ class Instance(AWS):
             super(Instance, self).__init__()
             self.conn = self.client("ec2")
             self.iam = self.client("iam")
+            self.ssm = self.client('ssm')
             self.instance_ids = resource.get('instance_id') or resource.get('name')
             self._iam_instance_profiles = None
 
@@ -407,10 +413,32 @@ class Instance(AWS):
                     iam_instance_profile_details = self.get_iam_instance_profile(iam_instance_profile_id)
                     instance_details['IamInstanceProfile'] = iam_instance_profile_details
 
+                ssm_info = self.get_ssm_info(instance_details.get('InstanceId'))
+                if ssm_info:
+                    instance_details['SSM'] = ssm_info
+
                 if self.instance_ids and \
                         instance_details.get("InstanceId") in self.instance_ids:
                     return instance_details
             return instances
+
+    def get_ssm_info(self, instance_id):
+        result = []
+        try:
+            result = self.ssm.describe_instance_information(
+                InstanceInformationFilterList=[
+                    {
+                        'key': 'InstanceIds',
+                        'valueSet': [
+                            instance_id
+                        ]
+                    }
+                ]
+            ).get('InstanceInformationList', [])
+        except Exception as ex:
+            print(ex, "===== fetch instance information for SSM")
+
+        return result[0] if result else None
 
     def update_volume_details(self, instance_details):
         """
@@ -484,8 +512,26 @@ class Storage(AWS):
             "logging": self.get_bucket_logging(),
             "public_access_block": self.get_bucket_public_access_block(),
             "ownership": self.get_bucket_ownership(),
+            "notification": self.get_bucket_notification_configuration(),
+            "replicationConfiguration": self.get_bucket_replication()
         }
         return self.bucket
+
+    def get_bucket_replication(self):
+        try:
+            replication = self.conn.get_bucket_replication(Bucket=self.bucket.get('name')).get(
+                'ReplicationConfiguration')
+        except Exception as ex:
+            print(ex, "======= fetch bucket replication")
+            replication = None
+        return replication
+
+    def get_bucket_notification_configuration(self):
+        resp = self.conn.get_bucket_notification_configuration(Bucket=self.bucket.get('name'))
+        print(self.bucket.get('name'), "=====bucket name")
+        del resp['ResponseMetadata']
+
+        return resp
 
     def get_bucket_policy_list(self):
         bucket_name = self.bucket['name']
@@ -736,9 +782,67 @@ class Network(AWS):
             "subnets": subnets,
             "network_acl": network_acl,
             "security_group": self.get_security_group(),
-            "flow_logs": self.get_flow_logs()
+            "flow_logs": self.get_flow_logs(),
+            "instance_sg": self.get_instance_sg_list(),
+            "endpoints": self.get_vpc_endpoints(),
+            "network_interfaces": self.get_network_interface()
         }
         return self.network
+
+    def get_network_interface(self):
+        try:
+            interfaces = self.conn.describe_network_interfaces(Filters=[{
+                "Name": 'vpc-id',
+                "Values": [self.network.get('id')]
+            }]).get('NetworkInterfaces')
+        except Exception as ex:
+            interfaces = []
+            print(ex, "====== fetch network interface")
+        interfaces = [{
+            "NetworkInterfaceId": interface.get('NetworkInterfaceId'),
+            "Status": interface.get('Status'),
+            "OwnerId": interface.get('OwnerId'),
+            "RequesterId": interface.get('RequesterId'),
+        } for interface in interfaces]
+
+        return interfaces
+
+    def get_vpc_endpoints(self):
+        def fetch_vpc_endpoints(endpoints=None, continueToken: str = None):
+            request = {
+                "Filters": [
+                    {
+                        "Name": "vpc-id",
+                        "Values": [self.network.get('id')]
+                    }
+                ]
+            }
+            if continueToken:
+                request['NextToken'] = continueToken
+            response = self.conn.describe_vpc_endpoints(**request)
+            continueToken = response.get('NextToken', None)
+            current_endpoint = [] if not endpoints else endpoints
+            current_endpoint.extend(response.get('VpcEndpoints', []))
+
+            return current_endpoint, continueToken
+
+        try:
+            endpoint_list, nextToken = fetch_vpc_endpoints()
+
+            while nextToken:
+                endpoint_list, nextToken = fetch_vpc_endpoints(endpoint_list, nextToken)
+        except Exception as ex:
+            print("network Endpoints fetch error: ", ex)
+            return []
+
+        return endpoint_list
+
+    def get_instance_sg_list(self):
+        instances = self.conn.describe_instances()
+        instance_sg_list = [sg.get('GroupId') for reserve in instances.get('Reservations', []) for instance in
+                            reserve.get('Instances', []) for sg in instance.get('SecurityGroups', [])]
+
+        return instance_sg_list
 
     def get_subnet(self):
         def fetch_subnet(subnetwork_list=None, continueToken: str = None):
@@ -965,13 +1069,34 @@ class ServiceAccount(AWS):
                 'PolicyVersion')
             policy_details.append({**policy_detail, "PolicyVersion": policy_version, "Scope": scope})
 
+        access_keys = self.get_access_keys(self.user.get('UserName'))
         user_data = {
             **user,
             "PasswordEnable": pwd_enable,
             "AttachedManagedPolicies": policy_details,
+            "GroupList": self.get_group_list(user.get('UserName')),
+            "MFADevices": self.get_mfa_devices(user.get('UserName')),
+            "PasswordLastUsed": self.get_password_last_used(user.get('UserName'))
         }
 
+        if access_keys:
+            user_data['AccessKeys'] = access_keys
+
         return user_data
+
+    def get_access_keys(self, user_name):
+        access_keys = None
+        try:
+            access_keys = self.conn.list_access_keys(UserName=user_name).get('AccessKeyMetadata', [])
+            access_keys = [{
+                **key,
+                "AccessKeyLastUsed": self.conn.get_access_key_last_used(AccessKeyId=key.get('AccessKeyId')).get(
+                    'AccessKeyLastUsed', {}).get('LastUsedDate')
+            } for key in access_keys]
+        except Exception as ex:
+            print(ex, "===== fetch list access key error")
+
+        return access_keys
 
     def get_credential_report(self, user_name):
         content = []
@@ -985,6 +1110,36 @@ class ServiceAccount(AWS):
             print(ex, "===== credential report")
 
         return content
+
+    def get_group_list(self, user_name):
+        try:
+            groups = self.conn.list_groups_for_user(UserName=user_name).get('Groups')
+        except:
+            groups = []
+        group_list = []
+        for group in groups:
+            try:
+                group_policies = self.conn.list_attached_group_policies(GroupName=group.get('GroupName')).get(
+                    'AttachedPolicies')
+            except:
+                group_policies = []
+            group_list.append({
+                **group,
+                "AttachedPolicies": group_policies
+            })
+
+        return group_list
+
+    def get_mfa_devices(self, user_name):
+        try:
+            mfa_devices = self.conn.list_mfa_devices(UserName=user_name).get('MFADevices', [])
+        except:
+            mfa_devices = []
+
+        return mfa_devices
+
+    def get_password_last_used(self, user_name):
+        return self.conn.get_user(UserName=user_name).get('User').get('PasswordLastUsed')
 
 
 class KMS(AWS):
@@ -1275,7 +1430,274 @@ class DynamoDB(AWS):
         """
         dynamo_db = {
             **self.conn.describe_table(TableName=self.ddb.get('name')).get('Table', {}),
-            "type": 'dynamodb'
+            "TableAutoScalingDescription": self.get_table_replica_auto_scaling(),
+            "ContinuousBackupsDescription": self.get_continuous_backups(),
+            "type": 'no_sql'
         }
 
         return dynamo_db
+
+    def get_table_replica_auto_scaling(self):
+        try:
+            resp = self.conn.describe_table_replica_auto_scaling(TableName=self.ddb.get('name'))
+        except Exception as ex:
+            print(ex, "==== no sql auto scaling")
+            resp = {}
+        return resp.get('TableAutoScalingDescription')
+
+    def get_continuous_backups(self):
+        try:
+            resp = self.conn.describe_continuous_backups(TableName=self.ddb.get('name'))
+        except Exception as ex:
+            print(ex, "===== no sql continuous backups")
+            resp = {}
+        return resp.get('ContinuousBackupsDescription')
+
+
+class ElasticBeanstalk(AWS):
+    def __init__(self,
+                 resource,
+                 **kwargs,
+                 ) -> None:
+        try:
+            super(ElasticBeanstalk, self).__init__()
+            self.conn = self.client("elasticbeanstalk")
+            self.environment = resource
+            self.environment_details = {}
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        """
+
+        settings = self.conn.describe_configuration_settings(
+            ApplicationName=self.environment['ApplicationName'],
+            EnvironmentName=self.environment['EnvironmentName'],
+        )
+
+        ConfigurationSettings = settings["ConfigurationSettings"]
+
+        requied_options = ["ManagedActionsEnabled", "SystemType"]
+
+        for ConfigurationSetting in ConfigurationSettings:
+            OptionSettings = ConfigurationSetting["OptionSettings"]
+            required_OptionSettings = []
+
+            for OptionSetting in OptionSettings:
+                if OptionSetting["OptionName"] in requied_options:
+                    required_OptionSettings.append(OptionSetting)
+
+            ConfigurationSetting["OptionSettings"] = required_OptionSettings
+
+        self.environment_details = {
+            **self.environment,
+            "ConfigurationSettings": settings["ConfigurationSettings"],
+        }
+        return self.environment_details
+
+
+class LoadBalancing(AWS):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(LoadBalancing, self).__init__()
+            self.conn = self.client("elbv2")
+            self.elbv1 = self.client("elb")
+            self.elb = resource
+
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        Fetches instance details.
+
+        Args:
+        instance_id (str): Ec2 instance id.
+        return: dictionary object.
+        """
+        if self.elb.get('Type') in ['classic']:
+            elb = {
+                **self.elb,
+                "Attributes": self.get_elbv1_attributes(self.elb.get('LoadBalancerName'))
+            }
+        else:
+            elb = {
+                **self.elb,
+                "Attributes": self.get_attributes(),
+                "Listeners": self.get_listeners(),
+                "TargetGroups": self.get_target_groups()
+            }
+
+        return elb
+
+    def get_attributes(self):
+        resp = self.conn.describe_load_balancer_attributes(LoadBalancerArn=self.elb.get('LoadBalancerArn'))
+
+        attributes = resp.get('Attributes', [])
+        attr_data = {}
+        for attr in attributes:
+            attr_data[attr.get('Key')] = attr.get('Value')
+        return attr_data
+
+    def get_listeners(self):
+        resources = []
+        try:
+            resp = self.conn.describe_listeners(LoadBalancerArn=self.elb.get('LoadBalancerArn'))
+            listeners = resp.get('Listeners', [])
+            for listener in listeners:
+                try:
+                    rules = self.conn.describe_rules(ListenerArn=listener.get('ListenerArn')).get('Rules', [])
+                except Exception as ex:
+                    rules = []
+
+                try:
+                    sslPolicies = self.conn.describe_ssl_policies(Names=[listener.get('SslPolicy')]).get('SslPolicies',
+                                                                                                         [])
+                    sslPolicy = sslPolicies[0] if sslPolicies else {"Name": listener.get('SslPolicy')}
+                except:
+                    sslPolicy = {"Name": listener.get('SslPolicy')}
+
+                resources.append({
+                    **listener,
+                    "SslPolicy": sslPolicy,
+                    "Rules": rules
+                })
+        except Exception as ex:
+            print(ex, "=== fetch elb listener issue")
+
+        return resources
+
+    def get_target_groups(self):
+        resources = []
+        try:
+            target_groups = self.conn.describe_target_groups(LoadBalancerArn=self.elb.get('LoadBalancerArn')).get(
+                'TargetGroups', [])
+            for target in target_groups:
+                arn = target.get('TargetGroupArn')
+                # target group attrs
+                tg_attrs = self.conn.describe_target_group_attributes(TargetGroupArn=arn).get('Attributes')
+                attr = {}
+                for att in tg_attrs:
+                    attr[att.get('Key')] = att.get('Value')
+                # target health
+                target_health = self.conn.describe_target_health(TargetGroupArn=arn).get('TargetHealthDescriptions', [])
+                resources.append({
+                    **target,
+                    "Attributes": attr,
+                    "TargetHealthDescriptions": target_health
+                })
+        except Exception as ex:
+            print(ex, "===== target group fetch error")
+
+        return resources
+
+    def get_elbv1_attributes(self, name):
+        attr = {}
+        try:
+            attr = self.elbv1.describe_load_balancer_attributes(LoadBalancerName=name).get('LoadBalancerAttributes')
+        except Exception as ex:
+            print(ex, "=== fetch elb v1 attributes")
+
+        return attr
+
+
+class IAM(AWS):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(IAM, self).__init__()
+            self.conn = self.client("iam")
+
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        Fetches instance details.
+
+        Args:
+        instance_id (str): Ec2 instance id.
+        return: dictionary object.
+        """
+        pwd_policy = None
+        try:
+            pwd_policy = self.conn.get_account_password_policy().get('PasswordPolicy')
+        except Exception as ex:
+            print(ex, "==== password policy fetch error")
+        user_data = {
+            "type": "iam",
+        }
+        if pwd_policy:
+            user_data['PasswordPolicy'] = pwd_policy
+        return user_data
+
+
+class Analyzer(AWS):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(Analyzer, self).__init__()
+            self.conn = self.client("accessanalyzer")
+            self.analyzer = resource
+
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        Fetches instance details.
+
+        Args:
+        instance_id (str): Ec2 instance id.
+        return: dictionary object.
+        """
+        analyzer = {**self.analyzer}
+        return analyzer
+
+
+class ElasticFileSystem(AWS):
+    def __init__(self,
+                 resource,
+                 **kwargs,
+                 ) -> None:
+        try:
+            super(ElasticFileSystem, self).__init__()
+            self.conn = self.client("efs")
+            self.filesystem = resource
+            self.filesystem_details = {}
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        """
+
+        print("get_resource_inventory")
+        backup_policy = {}
+
+        try:
+            response = self.conn.describe_backup_policy(FileSystemId=self.filesystem['FileSystemId'])
+            backup_policy = response['BackupPolicy']
+        except Exception as ex:
+            # PolicyNotFound
+            pass
+
+        self.filesystem_details = {
+            **self.filesystem,
+            "BackupPolicy": backup_policy,
+        }
+        return self.filesystem_details

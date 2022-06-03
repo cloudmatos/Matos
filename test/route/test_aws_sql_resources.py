@@ -107,5 +107,15 @@ class TestCloudSql(TestCase):
         flag = len(test)
         self.assertEqual(False, flag, msg="There are few rds instances without enable logging.")
 
+    # Use case: RDS.14 Amazon Aurora clusters should have backtracking enabled
+    def test_aurora_back_tracking(self):
+        """
+        Check back tracking is enabled for aurora db
+        """
+        test = [match.value for match in parse('sql[*].self.source_data').find(self.resources) if match.value.get('StorageType', True) == 'aurora' and not (match.value.get('DBCluster').get('BacktrackWindow', False) or match.value.get('DBCluster').get('BacktrackWindow', 0) > 0)]
+        flag = len(test)
+        self.assertEqual(False, flag, msg="There are few aurora rds instances without back tracking enabled.")
+
+
 
 

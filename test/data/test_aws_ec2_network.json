@@ -1,0 +1,1786 @@
+{
+  "network": [
+    {
+      "self": {
+        "description": "",
+        "name": "vpc-0000000000000000",
+        "source_data": {
+          "cidr_block_association_set": [
+            {
+              "AssociationId": "vpc-cidr-assoc-0483a8b22e1a8027a",
+              "CidrBlock": "10.0.0.0/16",
+              "CidrBlockState": {
+                "State": "associated"
+              }
+            }
+          ],
+          "description": "",
+          "dhcp_options_id": "dopt-01fd31a3fa9a29648",
+          "endpoints": [],
+          "flow_logs": [
+            {
+              "CreationTime": "Tue, 17 May 2022 10:31:46 GMT",
+              "DeliverLogsErrorMessage": "Access error",
+              "DeliverLogsPermissionArn": "arn:aws:iam::000000000000:role/vpc_vpc-0000000000000000_flow_log_role_",
+              "DeliverLogsStatus": "FAILED",
+              "FlowLogId": "fl-020bb8c4a30716bce",
+              "FlowLogStatus": "ACTIVE",
+              "LogDestinationType": "cloud-watch-logs",
+              "LogFormat": "${version} ${account-id} ${interface-id} ${srcaddr} ${dstaddr} ${srcport} ${dstport} ${protocol} ${packets} ${bytes} ${start} ${end} ${action} ${log-status}",
+              "LogGroupName": "vpc_vpc-0000000000000000_flow_log_log_group_",
+              "MaxAggregationInterval": 600,
+              "ResourceId": "vpc-0000000000000000",
+              "Tags": [],
+              "TrafficType": "ALL"
+            }
+          ],
+          "id": "vpc-0000000000000000",
+          "instance_tenancy": "default",
+          "ipv6_cidr_block_association_set": [],
+          "is_default": false,
+          "network_acl": [
+            {
+              "Associations": [
+                {
+                  "NetworkAclAssociationId": "aclassoc-00844e77ac8cd03b2",
+                  "NetworkAclId": "acl-0362dd6ef51926cbb",
+                  "SubnetId": "subnet-0000000000000000"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-08622860940ac6040",
+                  "NetworkAclId": "acl-0362dd6ef51926cbb",
+                  "SubnetId": "subnet-0000000000000000"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-0e98981bf9465197a",
+                  "NetworkAclId": "acl-0362dd6ef51926cbb",
+                  "SubnetId": "subnet-0000000000000000"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-0afd5fec4efeda7e1",
+                  "NetworkAclId": "acl-0362dd6ef51926cbb",
+                  "SubnetId": "subnet-0000000000000000"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-054b83bfb347a8ba2",
+                  "NetworkAclId": "acl-0362dd6ef51926cbb",
+                  "SubnetId": "subnet-0000000000000000"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-06912ecd0d5211bbb",
+                  "NetworkAclId": "acl-0362dd6ef51926cbb",
+                  "SubnetId": "subnet-0000000000000000"
+                }
+              ],
+              "Entries": [
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": true,
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 100
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": true,
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32767
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": false,
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 100
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": false,
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32767
+                }
+              ],
+              "IsDefault": true,
+              "NetworkAclId": "acl-0362dd6ef51926cbb",
+              "OwnerId": "000000000000",
+              "Tags": [],
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "network_interfaces": [
+            {
+              "NetworkInterfaceId": "eni-0ee12df68a76306a7",
+              "OwnerId": "000000000000",
+              "RequesterId": "081571953449",
+              "Status": "in-use",
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "owner_id": "000000000000",
+          "security_group": [
+            {
+              "Description": "Security group for all nodes in the cluster.",
+              "GroupId": "sg-03137a1a5a01bbc94",
+              "GroupName": "wpcon2022010308464086280000000c",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": [
+                    {
+                      "Description": "Allow node to communicate with each other.",
+                      "GroupId": "sg-03137a1a5a01bbc94",
+                      "UserId": "000000000000"
+                    },
+                    {
+                      "GroupId": "sg-07862e8c4b3e863bc",
+                      "UserId": "000000000000"
+                    }
+                  ]
+                },
+                {
+                  "FromPort": 1025,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 65535,
+                  "UserIdGroupPairs": [
+                    {
+                      "Description": "Allow workers pods to receive communication from the cluster control plane.",
+                      "GroupId": "sg-0d6e11b100ad2def0",
+                      "UserId": "000000000000"
+                    }
+                  ]
+                },
+                {
+                  "FromPort": 20,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 20,
+                  "UserIdGroupPairs": [
+                    {
+                      "GroupId": "sg-0d6e11b100ad2def0",
+                      "UserId": "000000000000"
+                    }
+                  ]
+                },
+                {
+                  "FromPort": 443,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 443,
+                  "UserIdGroupPairs": [
+                    {
+                      "Description": "Allow pods running extension API servers on port 443 to receive communication from cluster control plane.",
+                      "GroupId": "sg-0d6e11b100ad2def0",
+                      "UserId": "000000000000"
+                    }
+                  ]
+                }
+              ],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0",
+                      "Description": "Allow nodes all egress to the Internet."
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "Tags": [
+                {
+                  "Key": "GithubOrg",
+                  "Value": "terraform-aws-modules"
+                },
+                {
+                  "Key": "GithubRepo",
+                  "Value": "terraform-aws-eks"
+                },
+                {
+                  "Key": "Name",
+                  "Value": "wpcon-eks_worker_sg"
+                },
+                {
+                  "Key": "Environment",
+                  "Value": "demoblog"
+                },
+                {
+                  "Key": "kubernetes.io/cluster/wpcon",
+                  "Value": "owned"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "Security group for Kubernetes ELB a1c44e388ad6f452899712bac85ece5d (default/conwp-wordpress)",
+              "GroupId": "sg-07862e8c4b3e863bc",
+              "GroupName": "k8s-elb-a1c44e388ad6f452899712bac85ece5d",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [
+                {
+                  "FromPort": 80,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 80,
+                  "UserIdGroupPairs": []
+                },
+                {
+                  "FromPort": 443,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 443,
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "Tags": [
+                {
+                  "Key": "kubernetes.io/cluster/wpcon",
+                  "Value": "owned"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "EKS cluster security group.",
+              "GroupId": "sg-0d6e11b100ad2def0",
+              "GroupName": "wpcon2022010308464457210000000d",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [
+                {
+                  "FromPort": 443,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 443,
+                  "UserIdGroupPairs": [
+                    {
+                      "Description": "Allow pods to communicate with the EKS cluster API.",
+                      "GroupId": "sg-03137a1a5a01bbc94",
+                      "UserId": "000000000000"
+                    }
+                  ]
+                }
+              ],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0",
+                      "Description": "Allow cluster egress access to the Internet."
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "Tags": [
+                {
+                  "Key": "GithubOrg",
+                  "Value": "terraform-aws-modules"
+                },
+                {
+                  "Key": "Environment",
+                  "Value": "demoblog"
+                },
+                {
+                  "Key": "Name",
+                  "Value": "wpcon-eks_cluster_sg"
+                },
+                {
+                  "Key": "GithubRepo",
+                  "Value": "terraform-aws-eks"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "default VPC security group",
+              "GroupId": "sg-0fa1f17686343b9e6",
+              "GroupName": "default",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [],
+              "IpPermissionsEgress": [],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "state": "available",
+          "subnets": [
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2a",
+              "AvailabilityZoneId": "use2-az1",
+              "AvailableIpAddressCount": 250,
+              "CidrBlock": "10.0.4.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": true,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+              "SubnetId": "subnet-0000000000000000",
+              "Tags": [
+                {
+                  "Key": "kubernetes.io/role/elb",
+                  "Value": "1"
+                },
+                {
+                  "Key": "kubernetes.io/cluster/wpcon",
+                  "Value": "shared"
+                },
+                {
+                  "Key": "Name",
+                  "Value": "wpcon-public-us-east-2a"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2b",
+              "AvailabilityZoneId": "use2-az2",
+              "AvailableIpAddressCount": 251,
+              "CidrBlock": "10.0.2.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+              "SubnetId": "subnet-0000000000000000",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "wpcon-private-us-east-2b"
+                },
+                {
+                  "Key": "kubernetes.io/role/internal-elb",
+                  "Value": "1"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2b",
+              "AvailabilityZoneId": "use2-az2",
+              "AvailableIpAddressCount": 251,
+              "CidrBlock": "10.0.5.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": true,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+              "SubnetId": "subnet-0000000000000000",
+              "Tags": [
+                {
+                  "Key": "kubernetes.io/role/elb",
+                  "Value": "1"
+                },
+                {
+                  "Key": "Name",
+                  "Value": "wpcon-public-us-east-2b"
+                },
+                {
+                  "Key": "kubernetes.io/cluster/wpcon",
+                  "Value": "shared"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2a",
+              "AvailabilityZoneId": "use2-az1",
+              "AvailableIpAddressCount": 251,
+              "CidrBlock": "10.0.1.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+              "SubnetId": "subnet-0000000000000000",
+              "Tags": [
+                {
+                  "Key": "kubernetes.io/role/internal-elb",
+                  "Value": "1"
+                },
+                {
+                  "Key": "Name",
+                  "Value": "wpcon-private-us-east-2a"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2c",
+              "AvailabilityZoneId": "use2-az3",
+              "AvailableIpAddressCount": 251,
+              "CidrBlock": "10.0.3.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+              "SubnetId": "subnet-0000000000000000",
+              "Tags": [
+                {
+                  "Key": "kubernetes.io/role/internal-elb",
+                  "Value": "1"
+                },
+                {
+                  "Key": "Name",
+                  "Value": "wpcon-private-us-east-2c"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2c",
+              "AvailabilityZoneId": "use2-az3",
+              "AvailableIpAddressCount": 251,
+              "CidrBlock": "10.0.6.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": true,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0000000000000000",
+              "SubnetId": "subnet-0000000000000000",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "wpcon-public-us-east-2c"
+                },
+                {
+                  "Key": "kubernetes.io/cluster/wpcon",
+                  "Value": "shared"
+                },
+                {
+                  "Key": "kubernetes.io/role/elb",
+                  "Value": "1"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "tags": [
+            {
+              "Key": "kubernetes.io/cluster/wpcon",
+              "Value": "shared"
+            },
+            {
+              "Key": "Name",
+              "Value": "wpcon"
+            }
+          ],
+          "type": "network"
+        },
+        "status": "available"
+      }
+    },
+    {
+      "self": {
+        "description": "",
+        "name": "vpc-00000000000000",
+        "source_data": {
+          "cidr_block_association_set": [
+            {
+              "AssociationId": "vpc-cidr-assoc-084a046ffcc3631cd",
+              "CidrBlock": "10.0.0.0/24",
+              "CidrBlockState": {
+                "State": "associated"
+              }
+            }
+          ],
+          "description": "",
+          "dhcp_options_id": "dopt-01fd31a3fa9a29648",
+          "endpoints": [
+            {
+              "CreationTimestamp": "Mon, 23 May 2022 12:21:37 GMT",
+              "DnsEntries": [],
+              "Groups": [
+                {
+                  "GroupId": "sg-0daf8300bb0f99668",
+                  "GroupName": "default"
+                }
+              ],
+              "NetworkInterfaceIds": [],
+              "OwnerId": "000000000000",
+              "PolicyDocument": "{\n  \"Statement\": [\n    {\n      \"Action\": \"*\", \n      \"Effect\": \"Allow\", \n      \"Principal\": \"*\", \n      \"Resource\": \"*\"\n    }\n  ]\n}",
+              "PrivateDnsEnabled": true,
+              "RequesterManaged": false,
+              "RouteTableIds": [],
+              "ServiceName": "com.amazonaws.us-east-2.ec2",
+              "State": "available",
+              "SubnetIds": [],
+              "Tags": [],
+              "VpcEndpointId": "vpce-09bc66a9d58664b3b",
+              "VpcEndpointType": "Interface",
+              "VpcId": "vpc-00000000000000"
+            }
+          ],
+          "flow_logs": [
+            {
+              "CreationTime": "Mon, 16 May 2022 11:37:38 GMT",
+              "DeliverLogsPermissionArn": "arn:aws:iam::000000000000:role/user01-test-vpc-flow-log-01",
+              "DeliverLogsStatus": "SUCCESS",
+              "FlowLogId": "fl-07530fd58a1df6c5a",
+              "FlowLogStatus": "ACTIVE",
+              "LogDestinationType": "cloud-watch-logs",
+              "LogFormat": "${version} ${account-id} ${interface-id} ${srcaddr} ${dstaddr} ${srcport} ${dstport} ${protocol} ${packets} ${bytes} ${start} ${end} ${action} ${log-status}",
+              "LogGroupName": "user01-test-flow-log-01",
+              "MaxAggregationInterval": 600,
+              "ResourceId": "vpc-00000000000000",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "user01-test-flow-log-01"
+                }
+              ],
+              "TrafficType": "ALL"
+            }
+          ],
+          "id": "vpc-00000000000000",
+          "instance_tenancy": "default",
+          "ipv6_cidr_block_association_set": [],
+          "is_default": false,
+          "network_acl": [
+            {
+              "Associations": [
+                {
+                  "NetworkAclAssociationId": "aclassoc-0696fd6b43e15a382",
+                  "NetworkAclId": "acl-00c7c3d8ffe6c7f7e",
+                  "SubnetId": "subnet-0c0761bb3d99a05c8"
+                }
+              ],
+              "Entries": [
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": true,
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 100
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": true,
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32767
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": false,
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 100
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": false,
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32767
+                }
+              ],
+              "IsDefault": true,
+              "NetworkAclId": "acl-00c7c3d8ffe6c7f7e",
+              "OwnerId": "000000000000",
+              "Tags": [],
+              "VpcId": "vpc-00000000000000"
+            }
+          ],
+          "network_interfaces": [
+            {
+              "NetworkInterfaceId": "eni-0b3d8266ecfdd5524",
+              "OwnerId": "000000000000",
+              "RequesterId": null,
+              "Status": "in-use",
+              "VpcId": "vpc-00000000000000"
+            },
+            {
+              "NetworkInterfaceId": "eni-067380c871c58fdc5",
+              "OwnerId": "000000000000",
+              "RequesterId": null,
+              "Status": "in-use",
+              "VpcId": "vpc-00000000000000"
+            }
+          ],
+          "owner_id": "000000000000",
+          "security_group": [
+            {
+              "Description": "default VPC security group",
+              "GroupId": "sg-0daf8300bb0f99668",
+              "GroupName": "default",
+              "InstanceAssignStatus": true,
+              "IpPermissions": [
+                {
+                  "FromPort": 22,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 22,
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-00000000000000"
+            }
+          ],
+          "state": "available",
+          "subnets": [
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2c",
+              "AvailabilityZoneId": "use2-az3",
+              "AvailableIpAddressCount": 249,
+              "CidrBlock": "10.0.0.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0c0761bb3d99a05c8",
+              "SubnetId": "subnet-0c0761bb3d99a05c8",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "user01-test-vpc-subnet"
+                }
+              ],
+              "VpcId": "vpc-00000000000000"
+            }
+          ],
+          "tags": [
+            {
+              "Key": "Name",
+              "Value": "user01-sg-test-vpc"
+            }
+          ],
+          "type": "network"
+        },
+        "status": "available"
+      }
+    },
+    {
+      "self": {
+        "description": "",
+        "name": "vpc-00000000000000000",
+        "source_data": {
+          "cidr_block_association_set": [
+            {
+              "AssociationId": "vpc-cidr-assoc-0dbb1f452e47e5dc2",
+              "CidrBlock": "10.0.1.0/24",
+              "CidrBlockState": {
+                "State": "associated"
+              }
+            }
+          ],
+          "description": "",
+          "dhcp_options_id": "dopt-01fd31a3fa9a29648",
+          "endpoints": [],
+          "flow_logs": [
+            {
+              "CreationTime": "Tue, 17 May 2022 10:32:13 GMT",
+              "DeliverLogsPermissionArn": "arn:aws:iam::000000000000:role/vpc_vpc-00000000000000000_flow_log_role_",
+              "DeliverLogsStatus": "SUCCESS",
+              "FlowLogId": "fl-0a1ac456c1c10ca5d",
+              "FlowLogStatus": "ACTIVE",
+              "LogDestinationType": "cloud-watch-logs",
+              "LogFormat": "${version} ${account-id} ${interface-id} ${srcaddr} ${dstaddr} ${srcport} ${dstport} ${protocol} ${packets} ${bytes} ${start} ${end} ${action} ${log-status}",
+              "LogGroupName": "vpc_vpc-00000000000000000_flow_log_log_group_",
+              "MaxAggregationInterval": 600,
+              "ResourceId": "vpc-00000000000000000",
+              "Tags": [],
+              "TrafficType": "ALL"
+            }
+          ],
+          "id": "vpc-00000000000000000",
+          "instance_tenancy": "default",
+          "ipv6_cidr_block_association_set": [
+            {
+              "AssociationId": "vpc-cidr-assoc-02999d02f703d63cd",
+              "Ipv6CidrBlock": "2600:1f16:5b1:f600::/56",
+              "Ipv6CidrBlockState": {
+                "State": "associated"
+              },
+              "Ipv6Pool": "Amazon",
+              "NetworkBorderGroup": "us-east-2"
+            }
+          ],
+          "is_default": false,
+          "network_acl": [
+            {
+              "Associations": [
+                {
+                  "NetworkAclAssociationId": "aclassoc-0c0e31a31a1bcdc80",
+                  "NetworkAclId": "acl-0ea839a8bad308e19",
+                  "SubnetId": "subnet-0a98fecda91e7b05f"
+                }
+              ],
+              "Entries": [
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": true,
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 100
+                },
+                {
+                  "Egress": true,
+                  "Ipv6CidrBlock": "::/0",
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 101
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": true,
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32767
+                },
+                {
+                  "Egress": true,
+                  "Ipv6CidrBlock": "::/0",
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32768
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": false,
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 100
+                },
+                {
+                  "Egress": false,
+                  "Ipv6CidrBlock": "::/0",
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 101
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": false,
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32767
+                },
+                {
+                  "Egress": false,
+                  "Ipv6CidrBlock": "::/0",
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32768
+                }
+              ],
+              "IsDefault": true,
+              "NetworkAclId": "acl-0ea839a8bad308e19",
+              "OwnerId": "000000000000",
+              "Tags": [],
+              "VpcId": "vpc-00000000000000000"
+            }
+          ],
+          "network_interfaces": [
+            {
+              "NetworkInterfaceId": "eni-04dbf969988f8f500",
+              "OwnerId": "000000000000",
+              "RequesterId": "AIDASDPJUEZWNQDAAT5IB",
+              "Status": "available",
+              "VpcId": "vpc-00000000000000000"
+            }
+          ],
+          "owner_id": "000000000000",
+          "security_group": [
+            {
+              "Description": "default VPC security group",
+              "GroupId": "sg-075726df199707004",
+              "GroupName": "default",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [],
+              "IpPermissionsEgress": [],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-00000000000000000"
+            }
+          ],
+          "state": "available",
+          "subnets": [
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2b",
+              "AvailabilityZoneId": "use2-az2",
+              "AvailableIpAddressCount": 250,
+              "CidrBlock": "10.0.1.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0a98fecda91e7b05f",
+              "SubnetId": "subnet-0a98fecda91e7b05f",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "my-subnet-01"
+                }
+              ],
+              "VpcId": "vpc-00000000000000000"
+            }
+          ],
+          "tags": [
+            {
+              "Key": "Name",
+              "Value": "rancher-server"
+            }
+          ],
+          "type": "network"
+        },
+        "status": "available"
+      }
+    },
+    {
+      "self": {
+        "description": "",
+        "name": "vpc-0000000000000000",
+        "source_data": {
+          "cidr_block_association_set": [
+            {
+              "AssociationId": "vpc-cidr-assoc-050b1ebacd3e90a8e",
+              "CidrBlock": "172.31.0.0/16",
+              "CidrBlockState": {
+                "State": "associated"
+              }
+            }
+          ],
+          "description": "",
+          "dhcp_options_id": "dopt-01fd31a3fa9a29648",
+          "endpoints": [
+            {
+              "CreationTimestamp": "Mon, 23 May 2022 19:17:19 GMT",
+              "DnsEntries": [],
+              "Groups": [],
+              "NetworkInterfaceIds": [],
+              "OwnerId": "000000000000",
+              "PolicyDocument": "{\"Version\":\"2008-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"*\",\"Resource\":\"*\"}]}",
+              "PrivateDnsEnabled": false,
+              "RequesterManaged": false,
+              "RouteTableIds": [
+                "rtb-08f1e3766685dcb31",
+                "rtb-093faeec6365988c9"
+              ],
+              "ServiceName": "com.amazonaws.us-east-2.s3",
+              "State": "available",
+              "SubnetIds": [],
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "beanstalk-vpce-s3"
+                }
+              ],
+              "VpcEndpointId": "vpce-01b8e05caeab100c8",
+              "VpcEndpointType": "Gateway",
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "flow_logs": [],
+          "id": "vpc-0000000000000000",
+          "instance_tenancy": "default",
+          "ipv6_cidr_block_association_set": [],
+          "is_default": false,
+          "network_acl": [
+            {
+              "Associations": [
+                {
+                  "NetworkAclAssociationId": "aclassoc-01354e77f95fbb0c6",
+                  "NetworkAclId": "acl-03539ce174cb01d1f",
+                  "SubnetId": "subnet-06873b8154d358d15"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-08f7dc03b757cab62",
+                  "NetworkAclId": "acl-03539ce174cb01d1f",
+                  "SubnetId": "subnet-09464f442866b17e1"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-0cd7e6742c202928b",
+                  "NetworkAclId": "acl-03539ce174cb01d1f",
+                  "SubnetId": "subnet-019969c9b5c714763"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-0ab68c098cd4e72c1",
+                  "NetworkAclId": "acl-03539ce174cb01d1f",
+                  "SubnetId": "subnet-0fcac3e01a7a49e8c"
+                }
+              ],
+              "Entries": [
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": true,
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 100
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": true,
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32767
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": false,
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 100
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": false,
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32767
+                }
+              ],
+              "IsDefault": true,
+              "NetworkAclId": "acl-03539ce174cb01d1f",
+              "OwnerId": "000000000000",
+              "Tags": [],
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "network_interfaces": [
+            {
+              "NetworkInterfaceId": "eni-00cc6e137585f1b67",
+              "OwnerId": "000000000000",
+              "RequesterId": "amazon-elb",
+              "Status": "in-use",
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "owner_id": "000000000000",
+          "security_group": [
+            {
+              "Description": "default VPC security group",
+              "GroupId": "sg-0d1b914235f50d4b2",
+              "GroupName": "default",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": [
+                    {
+                      "GroupId": "sg-0d1b914235f50d4b2",
+                      "UserId": "000000000000"
+                    }
+                  ]
+                }
+              ],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "Load Balancer Security Group",
+              "GroupId": "sg-0ed0a56dc4e47b4da",
+              "GroupName": "awseb-e-xknk9yta8y-stack-AWSEBLoadBalancerSecurityGroup-1E5M2OEGDUW1C",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [
+                {
+                  "FromPort": 80,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 80,
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "IpPermissionsEgress": [
+                {
+                  "FromPort": 80,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 80,
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "Tags": [
+                {
+                  "Key": "aws:cloudformation:logical-id",
+                  "Value": "AWSEBLoadBalancerSecurityGroup"
+                },
+                {
+                  "Key": "Name",
+                  "Value": "matos-remediation-dev"
+                },
+                {
+                  "Key": "aws:cloudformation:stack-name",
+                  "Value": "awseb-e-xknk9yta8y-stack"
+                },
+                {
+                  "Key": "elasticbeanstalk:environment-id",
+                  "Value": "e-xknk9yta8y"
+                },
+                {
+                  "Key": "elasticbeanstalk:environment-name",
+                  "Value": "matos-remediation-dev"
+                },
+                {
+                  "Key": "aws:cloudformation:stack-id",
+                  "Value": "arn:aws:cloudformation:us-east-2:000000000000:stack/awseb-e-xknk9yta8y-stack/63cc3180-dacd-11ec-9ba8-022799202bb6"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "state": "available",
+          "subnets": [
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2b",
+              "AvailabilityZoneId": "use2-az2",
+              "AvailableIpAddressCount": 4090,
+              "CidrBlock": "172.31.16.0/20",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-09464f442866b17e1",
+              "SubnetId": "subnet-09464f442866b17e1",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "beanstalk-subnet-public2-us-east-2b"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2a",
+              "AvailabilityZoneId": "use2-az1",
+              "AvailableIpAddressCount": 4091,
+              "CidrBlock": "172.31.0.0/20",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0fcac3e01a7a49e8c",
+              "SubnetId": "subnet-0fcac3e01a7a49e8c",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "beanstalk-subnet-public1-us-east-2a"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2a",
+              "AvailabilityZoneId": "use2-az1",
+              "AvailableIpAddressCount": 4091,
+              "CidrBlock": "172.31.128.0/20",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-019969c9b5c714763",
+              "SubnetId": "subnet-019969c9b5c714763",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "beanstalk-subnet-private1-us-east-2a"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2b",
+              "AvailabilityZoneId": "use2-az2",
+              "AvailableIpAddressCount": 4091,
+              "CidrBlock": "172.31.144.0/20",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-06873b8154d358d15",
+              "SubnetId": "subnet-06873b8154d358d15",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "beanstalk-subnet-private2-us-east-2b"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "tags": [
+            {
+              "Key": "Name",
+              "Value": "beanstalk-vpc"
+            }
+          ],
+          "type": "network"
+        },
+        "status": "available"
+      }
+    },
+    {
+      "self": {
+        "description": "",
+        "name": "vpc-0000000000000000",
+        "source_data": {
+          "cidr_block_association_set": [
+            {
+              "AssociationId": "vpc-cidr-assoc-0e535349105afbaba",
+              "CidrBlock": "172.31.0.0/16",
+              "CidrBlockState": {
+                "State": "associated"
+              }
+            }
+          ],
+          "description": "",
+          "dhcp_options_id": "dopt-01fd31a3fa9a29648",
+          "endpoints": [],
+          "flow_logs": [
+            {
+              "CreationTime": "Tue, 17 May 2022 10:32:26 GMT",
+              "DeliverLogsErrorMessage": "Access error",
+              "DeliverLogsPermissionArn": "arn:aws:iam::000000000000:role/vpc_vpc-0000000000000000_flow_log_role_",
+              "DeliverLogsStatus": "FAILED",
+              "FlowLogId": "fl-002d3522bf0e501db",
+              "FlowLogStatus": "ACTIVE",
+              "LogDestinationType": "cloud-watch-logs",
+              "LogFormat": "${version} ${account-id} ${interface-id} ${srcaddr} ${dstaddr} ${srcport} ${dstport} ${protocol} ${packets} ${bytes} ${start} ${end} ${action} ${log-status}",
+              "LogGroupName": "vpc_vpc-0000000000000000_flow_log_log_group_",
+              "MaxAggregationInterval": 600,
+              "ResourceId": "vpc-0000000000000000",
+              "Tags": [],
+              "TrafficType": "ALL"
+            }
+          ],
+          "id": "vpc-0000000000000000",
+          "instance_tenancy": "default",
+          "ipv6_cidr_block_association_set": [],
+          "is_default": false,
+          "network_acl": [
+            {
+              "Associations": [
+                {
+                  "NetworkAclAssociationId": "aclassoc-08a6c6105915efce1",
+                  "NetworkAclId": "acl-03f3fe33107c8851f",
+                  "SubnetId": "subnet-0f41bb1e57c22109a"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-09e67b6305bb5de7a",
+                  "NetworkAclId": "acl-03f3fe33107c8851f",
+                  "SubnetId": "subnet-02d93642c1d3009cf"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-0201492ab1e9b9648",
+                  "NetworkAclId": "acl-03f3fe33107c8851f",
+                  "SubnetId": "subnet-085f137294010a4f2"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-092bde56370a7a388",
+                  "NetworkAclId": "acl-03f3fe33107c8851f",
+                  "SubnetId": "subnet-035a1eda8cd493270"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-0797bc0e444fedd47",
+                  "NetworkAclId": "acl-03f3fe33107c8851f",
+                  "SubnetId": "subnet-04b6d465530a2a808"
+                },
+                {
+                  "NetworkAclAssociationId": "aclassoc-0ea7dee1598dae064",
+                  "NetworkAclId": "acl-03f3fe33107c8851f",
+                  "SubnetId": "subnet-080aa51ac46b81b99"
+                }
+              ],
+              "Entries": [
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": true,
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 100
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": true,
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32767
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": false,
+                  "Protocol": "-1",
+                  "RuleAction": "allow",
+                  "RuleNumber": 100
+                },
+                {
+                  "CidrBlock": "0.0.0.0/0",
+                  "Egress": false,
+                  "Protocol": "-1",
+                  "RuleAction": "deny",
+                  "RuleNumber": 32767
+                }
+              ],
+              "IsDefault": true,
+              "NetworkAclId": "acl-03f3fe33107c8851f",
+              "OwnerId": "000000000000",
+              "Tags": [],
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "network_interfaces": [
+            {
+              "NetworkInterfaceId": "eni-04da21e76ac06c3de",
+              "OwnerId": "000000000000",
+              "RequesterId": "amazon-rds",
+              "Status": "in-use",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "NetworkInterfaceId": "eni-05f8c688fc95495b3",
+              "OwnerId": "000000000000",
+              "RequesterId": null,
+              "Status": "in-use",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "NetworkInterfaceId": "eni-076ca2b9cac98d683",
+              "OwnerId": "000000000000",
+              "RequesterId": null,
+              "Status": "in-use",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "NetworkInterfaceId": "eni-0ac78f36386ef1adb",
+              "OwnerId": "000000000000",
+              "RequesterId": "amazon-rds",
+              "Status": "in-use",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "NetworkInterfaceId": "eni-09771644738b69bbd",
+              "OwnerId": "000000000000",
+              "RequesterId": "amazon-rds",
+              "Status": "in-use",
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "owner_id": "000000000000",
+          "security_group": [
+            {
+              "Description": "To test that security group is not having a ingress rule to be accessed publicly",
+              "GroupId": "sg-00e79bb76ccdbda48",
+              "GroupName": "test-sg-ingress-public-access",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [
+                {
+                  "FromPort": 10,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "111.118.246.106/32"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 10,
+                  "UserIdGroupPairs": []
+                },
+                {
+                  "FromPort": 445,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 445,
+                  "UserIdGroupPairs": [
+                    {
+                      "GroupId": "sg-08b87c2f99238741d",
+                      "UserId": "000000000000"
+                    }
+                  ]
+                }
+              ],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "boto test one",
+              "GroupId": "sg-08b87c2f99238741d",
+              "GroupName": "boto3_sg_test_prowler",
+              "InstanceAssignStatus": true,
+              "IpPermissions": [],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "Managed by Terraform",
+              "GroupId": "sg-0bdbbd0f980c2662e",
+              "GroupName": "webservers-dev-sg1",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [
+                {
+                  "FromPort": 8080,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 8080,
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "IpPermissionsEgress": [],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "Managed by Terraform",
+              "GroupId": "sg-0bde65fb7fb6cfde4",
+              "GroupName": "webservers-dev-elb-sg1",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [
+                {
+                  "FromPort": 80,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 80,
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "launch-wizard created 2022-05-19T15:32:58.842Z",
+              "GroupId": "sg-0c69e1de095f81be6",
+              "GroupName": "launch-wizard-2",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [
+                {
+                  "FromPort": 22,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 22,
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "launch-wizard-1 created 2022-02-17T16:08:15.186-05:00",
+              "GroupId": "sg-0c764df72da41b8b3",
+              "GroupName": "launch-wizard-1",
+              "InstanceAssignStatus": true,
+              "IpPermissions": [],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "default VPC security group",
+              "GroupId": "sg-0e6b3e54cae255959",
+              "GroupName": "default",
+              "InstanceAssignStatus": true,
+              "IpPermissions": [],
+              "IpPermissionsEgress": [],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "To test whether we receive alarm when a security group is created/updated",
+              "GroupId": "sg-0e71f144e5bcbdd21",
+              "GroupName": "SecurityGroupAlarmTest",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [],
+              "IpPermissionsEgress": [
+                {
+                  "IpProtocol": "-1",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "Description": "test-soc2",
+              "GroupId": "sg-0ec7030bc256627cb",
+              "GroupName": "test-sourabh-soc2",
+              "InstanceAssignStatus": false,
+              "IpPermissions": [],
+              "IpPermissionsEgress": [
+                {
+                  "FromPort": 22,
+                  "IpProtocol": "tcp",
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ],
+                  "Ipv6Ranges": [],
+                  "PrefixListIds": [],
+                  "ToPort": 22,
+                  "UserIdGroupPairs": []
+                }
+              ],
+              "OwnerId": "000000000000",
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "state": "available",
+          "subnets": [
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2b",
+              "AvailabilityZoneId": "use2-az2",
+              "AvailableIpAddressCount": 4090,
+              "CidrBlock": "172.31.16.0/20",
+              "DefaultForAz": true,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": true,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-0f41bb1e57c22109a",
+              "SubnetId": "subnet-0f41bb1e57c22109a",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "Default subnet for current region"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2b",
+              "AvailabilityZoneId": "use2-az2",
+              "AvailableIpAddressCount": 249,
+              "CidrBlock": "172.31.10.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-080aa51ac46b81b99",
+              "SubnetId": "subnet-080aa51ac46b81b99",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "my-cmdb-subnet-02"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2c",
+              "AvailabilityZoneId": "use2-az3",
+              "AvailableIpAddressCount": 249,
+              "CidrBlock": "172.31.1.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-085f137294010a4f2",
+              "SubnetId": "subnet-085f137294010a4f2",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "cmdb-subnet"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2c",
+              "AvailabilityZoneId": "use2-az3",
+              "AvailableIpAddressCount": 4091,
+              "CidrBlock": "172.31.48.0/20",
+              "DefaultForAz": true,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": true,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-04b6d465530a2a808",
+              "SubnetId": "subnet-04b6d465530a2a808",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "Default subnet for current region"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2a",
+              "AvailabilityZoneId": "use2-az1",
+              "AvailableIpAddressCount": 251,
+              "CidrBlock": "172.31.2.0/24",
+              "DefaultForAz": false,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": false,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-035a1eda8cd493270",
+              "SubnetId": "subnet-035a1eda8cd493270",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "my-cmdb-sutnet"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            },
+            {
+              "AssignIpv6AddressOnCreation": false,
+              "AvailabilityZone": "us-east-2a",
+              "AvailabilityZoneId": "use2-az1",
+              "AvailableIpAddressCount": 4091,
+              "CidrBlock": "172.31.32.0/20",
+              "DefaultForAz": true,
+              "Ipv6CidrBlockAssociationSet": [],
+              "MapCustomerOwnedIpOnLaunch": false,
+              "MapPublicIpOnLaunch": true,
+              "OwnerId": "000000000000",
+              "State": "available",
+              "SubnetArn": "arn:aws:ec2:us-east-2:000000000000:subnet/subnet-02d93642c1d3009cf",
+              "SubnetId": "subnet-02d93642c1d3009cf",
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "Default subnet for current region"
+                }
+              ],
+              "VpcId": "vpc-0000000000000000"
+            }
+          ],
+          "tags": [
+            {
+              "Key": "Name",
+              "Value": "Rancher"
+            }
+          ],
+          "type": "network"
+        },
+        "status": "available"
+      }
+    }
+  ]
+}

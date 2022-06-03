@@ -1,0 +1,104 @@
+{
+  "apphosting": [
+    {
+      "self": {
+        "source_data": {
+          "AbortableOperationInProgress": false,
+          "ApplicationName": "project-worker-beanstalk",
+          "ConfigurationSettings": [
+            {
+              "ApplicationName": "project-worker-beanstalk",
+              "DateCreated": "Wed, 18 May 2022 07:51:15 GMT",
+              "DateUpdated": "Wed, 18 May 2022 13:38:48 GMT",
+              "DeploymentStatus": "deployed",
+              "EnvironmentName": "Projectworkerbeanstalk-env",
+              "OptionSettings": [
+                {
+                  "Namespace": "aws:elasticbeanstalk:healthreporting:system",
+                  "OptionName": "SystemType",
+                  "Value": "enhanced"
+                },
+                {
+                  "Namespace": "aws:elasticbeanstalk:managedactions",
+                  "OptionName": "ManagedActionsEnabled",
+                  "Value": "true"
+                }
+              ],
+              "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.8 running on 64bit Amazon Linux 2/3.3.13",
+              "SolutionStackName": "64bit Amazon Linux 2 v3.3.13 running Python 3.8"
+            }
+          ],
+          "DateCreated": "Wed, 18 May 2022 07:51:16 GMT",
+          "DateUpdated": "Wed, 18 May 2022 13:40:06 GMT",
+          "EnvironmentArn": "arn:aws:elasticbeanstalk:us-east-1:00000000000:environment/project-worker-beanstalk/Projectworkerbeanstalk-env",
+          "EnvironmentId": "e-xxxxxxxxxx",
+          "EnvironmentLinks": [],
+          "EnvironmentName": "Projectworkerbeanstalk-env",
+          "Health": "Green",
+          "HealthStatus": "Ok",
+          "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.8 running on 64bit Amazon Linux 2/3.3.13",
+          "SolutionStackName": "64bit Amazon Linux 2 v3.3.13 running Python 3.8",
+          "Status": "Ready",
+          "Tier": {
+            "Name": "Worker",
+            "Type": "SQS/HTTP",
+            "Version": "3.0"
+          },
+          "VersionLabel": "Sample Application",
+          "type": "apphosting"
+        }
+      }
+    },
+    {
+      "self": {
+        "source_data": {
+          "AbortableOperationInProgress": false,
+          "ApplicationName": "Project-beanstalk",
+          "CNAME": "Project-env.eba-af2qusiv.us-east-1.elasticbeanstalk.com",
+          "ConfigurationSettings": [
+            {
+              "ApplicationName": "Project-beanstalk",
+              "DateCreated": "Wed, 18 May 2022 04:45:53 GMT",
+              "DateUpdated": "Thu, 19 May 2022 14:53:24 GMT",
+              "DeploymentStatus": "deployed",
+              "EnvironmentName": "Project-env",
+              "OptionSettings": [
+                {
+                  "Namespace": "aws:elasticbeanstalk:healthreporting:system",
+                  "OptionName": "SystemType",
+                  "Value": "enhanced"
+                },
+                {
+                  "Namespace": "aws:elasticbeanstalk:managedactions",
+                  "OptionName": "ManagedActionsEnabled",
+                  "Value": "true"
+                }
+              ],
+              "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Node.js 16 running on 64bit Amazon Linux 2/5.5.2",
+              "SolutionStackName": "64bit Amazon Linux 2 v5.5.2 running Node.js 16"
+            }
+          ],
+          "DateCreated": "Wed, 18 May 2022 04:45:55 GMT",
+          "DateUpdated": "Thu, 19 May 2022 14:58:34 GMT",
+          "EndpointURL": "xxxx.us-east-1.elb.amazonaws.com",
+          "EnvironmentArn": "arn:aws:elasticbeanstalk:us-east-1:00000000000:environment/Project-beanstalk/Project-env",
+          "EnvironmentId": "e-xxxxxxxxxx",
+          "EnvironmentLinks": [],
+          "EnvironmentName": "Project-env",
+          "Health": "Green",
+          "HealthStatus": "Ok",
+          "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Node.js 16 running on 64bit Amazon Linux 2/5.5.2",
+          "SolutionStackName": "64bit Amazon Linux 2 v5.5.2 running Node.js 16",
+          "Status": "Ready",
+          "Tier": {
+            "Name": "WebServer",
+            "Type": "Standard",
+            "Version": "1.0"
+          },
+          "VersionLabel": "Sample Application",
+          "type": "apphosting"
+        }
+      }
+    }
+  ]
+}

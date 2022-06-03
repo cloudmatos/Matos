@@ -2,7 +2,7 @@ import os
 from unittest import TestCase
 from json import loads, dumps
 from jsonpath_ng import parse
-
+import json
 
 class TestCloudStorage(TestCase):
     def setUp(self):
@@ -62,5 +62,41 @@ class TestCloudStorage(TestCase):
         flag = len(test)
         self.assertEqual(False, flag, msg="There are few buckets without logging enabled")
     
+    #use case: PCI.S3.3 S3 buckets should have cross-region replication enabled
+    def test_cross_region_replication(self):
+        """
+        Check storage has cross region replication enabled.
+        """
+        test = [match.value for match in parse('storage[*].self.source_data.replicationConfiguration').find(self.resources) if not match.value]
+        flag = len(test)
+        self.assertEqual(False, flag, msg="There are few buckets without replication enabled")
+    
+    #use case: PCI.S3.4 S3 buckets should have server-side encryption enabled
+    def test_server_side_encryption(self):
+        """
+        Check storage bucket has server side encryption enabled
+        """
+        test = [match.value for match in parse('storage[*].self.source_data.encryption').find(self.resources) if not match.value.get('ServerSideEncryptionConfiguration')]
+        flag = len(test)
+        self.assertEqual(False, flag, msg="There are few buckets server side encryption enabled enabled")
+    
+    #Use case: PCI.S3.5 S3 buckets should require requests to use Secure Socket Layer
+    def test_allow_ssl_connection(self):
+        """
+        Check storage bucket ssl only policy attached or not
+        """
+        final_data = [json.loads(match.value) if type(match.value) == str else match.value  for match in parse('storage[*].self.source_data.policy').find(self.resources)]
+        test = [match.value  for match in parse('[*]').find(final_data) if  len([ssl for ssl in parse('Statement[*].Sid').find(match.value) if ssl.value == 'AllowSSLRequestsOnly']) < 1]
+        flag = len(test)
+        self.assertEqual(False, flag, msg="There are few buckets without ssl only policy attached")
+    
 
+    #Use case: S3.11 S3 buckets should have event notifications enabled
+    def test_configure_event_notification(self):
+        """
+        Check storage bucket has notifications enabled
+        """
+        test = [match.value  for match in parse('storage[*].self.source_data.notification').find(self.resources) if len(match.value) < 1]
+        flag = len(test)
+        self.assertEqual(False, flag, msg="There are few buckets without notifications configured.")
     

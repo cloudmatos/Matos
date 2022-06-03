@@ -1,0 +1,120 @@
+{
+  "apphosting": [],
+  "cluster": [],
+  "disk": [],
+  "eip": [],
+  "filesystem": [
+    {
+      "self": {
+        "source_data": {
+          "BackupPolicy": {
+            "Status": "ENABLED"
+          },
+          "CreationTime": "Wed, 25 May 2022 06:53:39 GMT",
+          "CreationToken": "quickCreated-ed32620e-71a1-45ea-8cbc-8a265c365372",
+          "Encrypted": true,
+          "FileSystemArn": "arn:aws:elasticfilesystem:us-east-2:000000000000:file-system/fs-0009451383a68da71",
+          "FileSystemId": "fs-0009451383a68da71",
+          "KmsKeyId": "arn:aws:kms:us-east-2:000000000000:key/dc02a477-3742-4af0-8553-0251c40dc352",
+          "LifeCycleState": "available",
+          "Name": "cm-filesystem-03",
+          "NumberOfMountTargets": 3,
+          "OwnerId": "000000000000",
+          "PerformanceMode": "generalPurpose",
+          "SizeInBytes": {
+            "Value": 6144,
+            "ValueInIA": 0,
+            "ValueInStandard": 6144
+          },
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "cm-filesystem-03"
+            },
+            {
+              "Key": "aws:elasticfilesystem:default-backup",
+              "Value": "enabled"
+            }
+          ],
+          "ThroughputMode": "bursting",
+          "type": "filesystem"
+        }
+      }
+    },
+    {
+      "self": {
+        "source_data": {
+          "BackupPolicy": {},
+          "CreationTime": "Wed, 25 May 2022 06:23:24 GMT",
+          "CreationToken": "console-1e72c142-97de-4db6-8ff7-43d85c516f81",
+          "Encrypted": false,
+          "FileSystemArn": "arn:aws:elasticfilesystem:us-east-2:000000000000:file-system/fs-047e4b92923cf3e9a",
+          "FileSystemId": "fs-047e4b92923cf3e9a",
+          "LifeCycleState": "available",
+          "Name": "cm-filesystem-02",
+          "NumberOfMountTargets": 3,
+          "OwnerId": "000000000000",
+          "PerformanceMode": "generalPurpose",
+          "SizeInBytes": {
+            "Value": 6144,
+            "ValueInIA": 0,
+            "ValueInStandard": 6144
+          },
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "cm-filesystem-02"
+            }
+          ],
+          "ThroughputMode": "bursting",
+          "type": "filesystem"
+        }
+      }
+    },
+    {
+      "self": {
+        "source_data": {
+          "BackupPolicy": {
+            "Status": "DISABLED"
+          },
+          "CreationTime": "Wed, 25 May 2022 05:51:33 GMT",
+          "CreationToken": "quickCreated-0977a7f2-7cb5-4c12-92d3-50a904c3d416",
+          "Encrypted": true,
+          "FileSystemArn": "arn:aws:elasticfilesystem:us-east-2:000000000000:file-system/fs-00667c3e0dc275d90",
+          "FileSystemId": "fs-00667c3e0dc275d90",
+          "KmsKeyId": "arn:aws:kms:us-east-2:000000000000:key/dc02a477-3742-4af0-8553-0251c40dc352",
+          "LifeCycleState": "available",
+          "Name": "cm-filesystem",
+          "NumberOfMountTargets": 2,
+          "OwnerId": "000000000000",
+          "PerformanceMode": "generalPurpose",
+          "SizeInBytes": {
+            "Timestamp": "Wed, 25 May 2022 06:59:30 GMT",
+            "Value": 6144,
+            "ValueInIA": 0,
+            "ValueInStandard": 6144
+          },
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "cm-filesystem"
+            }
+          ],
+          "ThroughputMode": "bursting",
+          "type": "filesystem"
+        }
+      }
+    }
+  ],
+  "iam": [],
+  "instance": [],
+  "kms": [],
+  "log_monitor": [],
+  "network": [],
+  "no_sql": [],
+  "policy": [],
+  "serviceAccount": [],
+  "snapshot": [],
+  "sql": [],
+  "storage": []
+}
