@@ -44,6 +44,9 @@ class AWSResourceManager:
             "iam": IAM,
             "analyzer": Analyzer,
             "filesystem": ElasticFileSystem,
+            "user_groups": UserGroups,
+            "sagemaker":SageMaker,
+            "config_service":ConfigService
         }
 
         log = logger.new()
@@ -530,7 +533,6 @@ class Storage(AWS):
         resp = self.conn.get_bucket_notification_configuration(Bucket=self.bucket.get('name'))
         print(self.bucket.get('name'), "=====bucket name")
         del resp['ResponseMetadata']
-
         return resp
 
     def get_bucket_policy_list(self):
@@ -1196,6 +1198,7 @@ class CloudTrail(AWS):
 
         except Exception as ex:
             raise Exception(ex)
+    
 
     def get_resource_inventory(self):
         """
@@ -1205,14 +1208,17 @@ class CloudTrail(AWS):
         instance_id (str): Ec2 instance id.
         return: dictionary object.
         """
-        response = self.conn.get_trail(Name=self.trail['name'])
+        trail_arn = self.trail['arn']
+        response = self.conn.describe_trails(trailNameList=[trail_arn])
         trail_data = {
             "type": "cloudtrail",
-            **response.get('Trail', {})
+            **response.get('trailList', [{}])[0]
         }
         log_group_arn = trail_data.get('CloudWatchLogsLogGroupArn')
+        home_region = trail_data.get('HomeRegion')
+        trail_data['event_selectors'] = self.get_trail_event_selector(trail_arn)
         if log_group_arn:
-            log_group = self.get_log_group(log_group_arn)
+            log_group = self.get_log_group(log_group_arn,home_region)
             log_group_name = log_group.get('logGroupName')
             if log_group_name:
                 metric_filters = self.get_metric_filters(log_group_name)
@@ -1228,11 +1234,13 @@ class CloudTrail(AWS):
 
         return trail_data
 
-    def get_log_group(self, arn):
+    def get_log_group(self, arn, home_region):
         def fetch_log_group(log_list=None, continueToken=None):
             request = {}
             if continueToken:
                 request['nextToken'] = continueToken
+                request['Region'] = 'us-east-1'
+            self.logs = self.client('logs',region_name=home_region)
             response = self.logs.describe_log_groups(**request)
             continueToken = response.get('NextToken', None)
             current_logs = [] if not log_list else log_list
@@ -1244,7 +1252,7 @@ class CloudTrail(AWS):
             logs, nextToken = fetch_log_group()
 
             while nextToken:
-                logs = fetch_cloudtrails(logs, nextToken)
+                logs = fetch_log_group(logs, nextToken)
         except Exception as ex:
             print("cloudwatchlogs log group: ", ex)
             return {}
@@ -1268,7 +1276,7 @@ class CloudTrail(AWS):
             metric_filters, nextToken = fetch_metric_filters(name=logGroupName)
 
             while nextToken:
-                metric_filters = fetch_cloudtrails(metric_filters, nextToken, logGroupName)
+                metric_filters = fetch_metric_filters(metric_filters, nextToken, logGroupName)
         except Exception as ex:
             print("cloudwatchlogs log group metric filter: ", ex)
             return {}
@@ -1278,6 +1286,10 @@ class CloudTrail(AWS):
     def get_alarms_for_metric(self, filterName, filterNamespace):
         response = self.watch.describe_alarms_for_metric(MetricName=filterName, Namespace=filterNamespace)
         return response.get('MetricAlarms')
+    
+    def get_trail_event_selector(self, trail_arn):
+        response = self.conn.get_event_selectors(TrailName=trail_arn)
+        return response.get("EventSelectors",[])
 
 
 class Policy(AWS):
@@ -1307,10 +1319,16 @@ class Policy(AWS):
             **self.policy,
             "Document": self.conn.get_policy_version(PolicyArn=self.policy.get('Arn'),
                                                      VersionId=self.policy.get('DefaultVersionId')).get(
-                'PolicyVersion').get('Document')
+                'PolicyVersion').get('Document'),
+            **self.get_entity_for_policy(self.policy.get('Arn'))
         }
 
         return policy
+
+    def get_entity_for_policy(self, arn):
+        resp = self.conn.list_entities_for_policy(PolicyArn=arn)
+        del resp['ResponseMetadata']
+        return resp
 
 
 class Snapshot(AWS):
@@ -1686,7 +1704,6 @@ class ElasticFileSystem(AWS):
         """
         """
 
-        print("get_resource_inventory")
         backup_policy = {}
 
         try:
@@ -1701,3 +1718,112 @@ class ElasticFileSystem(AWS):
             "BackupPolicy": backup_policy,
         }
         return self.filesystem_details
+
+
+class UserGroups(AWS):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(UserGroups, self).__init__()
+            self.conn = self.client("iam")
+            self.user_groups = resource
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        Fetches user groups
+
+        Args:
+        return: dictionary object.
+        """
+        group = {**self.user_groups}
+        finalttachedPolicies = []
+        try:
+            AttachedPolicies = self.conn.list_attached_group_policies(GroupName=group.get('GroupName')).get(
+                'AttachedPolicies')
+            for group_policy in AttachedPolicies:
+                if group_policy.get('PolicyArn') in group.get('UserPoliciesArn'):
+                    policy_detail = self.conn.get_policy(PolicyArn=group_policy.get('PolicyArn')).get('Policy')
+                    policy_version = self.conn.get_policy_version(PolicyArn=group_policy.get('PolicyArn'), VersionId=policy_detail.get('DefaultVersionId')).get(
+                    'PolicyVersion')
+                    finalttachedPolicies.append({
+                        **group_policy,
+                        **policy_detail,
+                        "PolicyVersion": policy_version
+                    })
+        except:
+            finalttachedPolicies = []
+        final_group = group.copy()
+        final_group.pop('UserPoliciesArn', [])
+        return {
+            **final_group,
+            "AttachedPolicies": finalttachedPolicies
+        }
+
+class SageMaker(AWS):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(SageMaker, self).__init__()
+            self.client = self.client("sagemaker")
+            self.sagemaker_instance = resource
+
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        Fetches instance details.
+
+        Args:
+        instance_id (str): Ec2 instance id.
+        return: dictionary object.
+        """
+        if self.sagemaker_instance.get('NotebookInstanceName') is not None:
+            sagemaker_instance = {
+                **self.sagemaker_instance,
+                **self.describe_notebook_instance(self.sagemaker_instance.get('NotebookInstanceName'))
+            }
+
+        return sagemaker_instance
+
+    def describe_notebook_instance(self, instance_name):
+        resp = self.client.describe_notebook_instance(NotebookInstanceName=instance_name)
+        print(f"notebook instance {resp}")
+        del resp["ResponseMetadata"]
+        return resp
+
+class ConfigService(AWS):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(ConfigService, self).__init__()
+            self.client = self.client("config")
+            self.config_service = resource
+
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        Fetches config service details.
+        """
+
+        config_service = {
+            **self.config_service
+        }
+
+        return config_service

@@ -85,6 +85,37 @@ def aws_instance(resource, provider):
         "source_data": resource
     })
 
+def aws_sagemaker(resource, provider):
+    """
+    Mapper for AWS Sagemaker service.
+
+    Parameters:
+    - resource: AWS Sagemaker resource to map
+    - provider: provider. AWS/GCP/Azure
+
+    """
+
+    return selfish({
+        "notebook_instance_arn": from_dict(resource, "NotebookInstanceArn"),
+        "notebook_instance_name": from_dict(resource, "NotebookInstanceName"),
+        
+        "source_data": resource
+    })
+
+def aws_config_service(resource, provider):
+    """
+    Mapper for AWS config service.
+
+    Parameters:
+    - resource: AWS config resource to map
+    - provider: provider. AWS/GCP/Azure
+
+    """
+
+    return selfish({
+        "source_data": resource
+    })
+
 
 def aws_network(resource, provider):
     """
@@ -202,6 +233,12 @@ def aws_iam(resource, provider):
         "source_data": resource
     })
 
+def user_groups(resource, provider):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
 
 def aws_filesystem(resource, provider):
     """
@@ -625,6 +662,10 @@ cloud_resource_mappers = {
         'iam': aws_elb,
         'analyzer': aws_analyzer,
         'filesystem': aws_filesystem,
+        'user_groups': user_groups,
+        'sagemaker': aws_sagemaker,
+        'config_service': aws_config_service
+        
     },
     'azure': {
         'cluster': azure_cluster,

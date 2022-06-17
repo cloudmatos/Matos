@@ -102,6 +102,8 @@ class AWS:
         """"""
         return self.session.resource(service_name)
 
-    def client(self, service_name: str):
+    def client(self, service_name: str,region_name=None):
         """"""
+        if region_name is not None:
+            return self.session.client(service_name,region_name=region_name)
         return self.session.client(service_name)

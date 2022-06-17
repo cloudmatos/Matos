@@ -18,3 +18,6 @@ class ResourceModel:
         self.lb = resource.get('lb')
         self.analyzer = resource.get('analyzer')
         self.filesystem = resource.get('filesystem')
+        self.user_groups = resource.get('user_groups')
+        self.sagemaker = resource.get('sagemaker')
+        self.config_service = resource.get('config_service')

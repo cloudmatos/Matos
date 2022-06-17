@@ -239,6 +239,7 @@ RESOURCE_TYPE_REQUESTS = {
     'lb': [],
     'analyzer': [],
     "filesystem": [],
+    "user_groups": []
 }
 
 POD_STATUS = ['Running']

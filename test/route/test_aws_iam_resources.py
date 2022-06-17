@@ -16,17 +16,37 @@ class TestCluster(TestCase):
         """
         Ensure IAM policies are attached only to groups or roles
         """
-        test = [match.value for match in parse('serviceAccount[*].self.UserName').find(self.resources) if re.search('^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$', match.value) and match.value.get('PasswordEnable') in ['true', True]]
-        flag = len(test)
+        test = [match.value for match in parse('serviceAccount[*].self').find(self.resources) if match.value.get('PasswordEnable') in ['true', True] and len(match.value.get('AttachedManagedPolicies'))]
+        flag = len(test) > 0
         self.assertEqual(False, flag, msg="There are few users having policy attached directly.")
-    
+        
+    #Use Case: IAM.21 IAM customer managed policies that you create should not allow wildcard actions for services
     def test_user_has_custom_policy_wildcard_permissions(self):
         """
         Check user has customer manage policy attached which support wildcard permission
         """
-        test = [match.value for match in parse('serviceAccount[*].self.AttachedManagedPolicies[*]').find(self.resources) if 'Local' in match.value.get('Scope') and  [policy for policy in parse('Document.Statement[*]').find(match.value.get('PolicyVersion')) if 'Allow' in policy.value.get('Effect') and '*' in policy.value.get('Action') ]]
-        flag = len(test)
+        test = [match.value for match in parse('serviceAccount[*].self.AttachedManagedPolicies[*]').find(self.resources) 
+                    if len([policy_version.value for policy_version in parse('PolicyVersion.Document.Statement[*]').find(match.value) if policy_version.value.get('Resource') == '*' and  policy_version.value.get('Effect') == 'Allow' and len([i for i in policy_version.value.get('Action', []) if ':*' in i or i == '*'])])
+                ]
+
+        flag = len(test) > 0 
         self.assertEqual(False, flag, msg="There are few policies with wildcard permissions assigned to the users")
+
+    #Use Case: IAM.21 IAM customer managed policies that you create should not allow wildcard actions for services
+    def test_group_has_custom_policy_wildcard_permissions(self):
+        """
+        Check user has customer manage policy attached which support wildcard permission
+        """
+        fp1 = open(os.getcwd() + "/test/data/test_aws_user_groups_resources.json", "r")
+        content1 = fp1.read()
+        fp1.close()
+        self.resources1 = loads(content1)
+
+        test1 = [match.value for match in parse('user_groups[*].self.source_data.AttachedPolicies[*]').find(self.resources1) 
+                    if len([policy_version.value for policy_version in parse('PolicyVersion.Document.Statement[*]').find(match.value) if policy_version.value.get('Resource') == '*' and  policy_version.value.get('Effect') == 'Allow' and len([i for i in policy_version.value.get('Action', []) if ':*' in i or i == '*'])])
+                ]
+        flag = len(test1) > 0
+        self.assertEqual(False, flag, msg="There are few policies with wildcard permissions assigned to the groups")
 
 
     # Use Case: 1.5 [check15] Ensure IAM password policy requires at least one uppercase letter - iam [Medium]

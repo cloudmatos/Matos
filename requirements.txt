@@ -59,7 +59,7 @@ protobuf==3.19.1
 py==1.11.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
-pycrypto==2.6.1
+pycryptodome
 pyparsing==3.0.6
 pyrsistent==0.18.0
 pytest==6.2.5

@@ -1,25 +1,38 @@
 import os
+import re
 from unittest import TestCase
 from json import loads, dumps
 from jsonpath_ng import parse
 
 
-class TestAWSEC2InstanceRole(TestCase):
+class TestAWSEC2UseVPCEndpoint(TestCase):
     def setUp(self):
         fp = open(os.getcwd() + "/test/data/test_aws_resources.json", "r")
         content = fp.read()
         fp.close()
         self.resources = loads(content)
+        self.service_regex = "com.amazonaws\.(.+).ec2"
 
-    def test_instance_profile_assigned_or_not(self):
+    def test_endpoint_created_for_ec2_vpc(self):
         """
         Check if EC2 instance is assigned an instance profile or not.
         Note: To assign a role to the EC2 instance an instance profile is assigned.
         """
-        test = [match.value for match in parse('instance[*].IamInstanceProfile').find(self.resources)]
-        print(f"test {test}")
-        flag = len(test) == len(self.resources.get("instance"))
-        self.assertEqual(True, flag, msg="Instance profile is not attached")
+        ec2_vpc_criteria = 'instance[*].self.source_data.NetworkInterfaces[*].VpcId'
+        ec2_vpcs = [match.value for match in parse(ec2_vpc_criteria).find(self.resources)]
+        vpcs_endpoints = [match.value for match in parse('network[*].self.VpcEndpoints[*]').find(self.resources)]
+        ec2_endpoints = []
+        for endpoint in vpcs_endpoints:
+            service_name = endpoint.get("ServiceName")
+            if service_name is not None and re.search(self.service_regex,\
+                service_name) is None:
+                ec2_endpoints.append(endpoint)
+
+        endpoint_exits = True
+        for vpc in ec2_vpcs:
+            if vpc not in ec2_endpoints:
+                endpoint_exits = False
+        self.assertEqual(True, endpoint_exits, msg="Endpoint does not exist for some VPC")
 
     def test_instance_profile_associated_with_role(self):
         """

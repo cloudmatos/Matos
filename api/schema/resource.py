@@ -167,7 +167,8 @@ class ResourceInstanceSchema(Schema):
 class ResourceSchema(Schema):
     class Meta:
         fields = ['cluster', 'instance', 'storage', 'sql', 'serviceAccount', 'network', 'iam', 'disk', 'snapshot',
-                  'log_monitor', 'kms', 'policy', 'no_sql', 'eip', 'apphosting', 'lb', 'analyzer', 'filesystem']
+                  'log_monitor', 'kms', 'policy', 'no_sql', 'eip', 'apphosting', 'lb', 'analyzer', 'filesystem', 'user_groups',
+                  'sagemaker','config_service']
 
     cluster = List(Nested(ResourceClusterSchema), required=True)
     instance = List(Nested(ResourceInstanceSchema), required=True)
@@ -187,3 +188,7 @@ class ResourceSchema(Schema):
     lb = List(Dict())
     analyzer = List(Dict())
     filesystem = List(Dict())
+    user_groups = List(Dict())
+    sagemaker = List(Dict())
+    config_service = List(Dict())
+

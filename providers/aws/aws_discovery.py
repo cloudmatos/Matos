@@ -1,4 +1,5 @@
 from .connection import AWS
+import threading
 
 
 class AWSDiscovery(AWS):
@@ -24,8 +25,41 @@ class AWSDiscovery(AWS):
             self.elbv2 = self.client('elbv2')
             self.elb = self.client('elb')
             self.analyzer = self.client('accessanalyzer')
+            self.sagemaker = self.client('sagemaker')
+            self.resources = [{"type": 'iam'}]
+            self.user_groups = self.client('iam')
+            self.config_service = self.client('config')
+            self.func = {
+                'cluster': self.get_clusters,
+                'instance': self.get_instances,
+                'cloudtrail': self.get_cloudtrails,
+                'storage': self.get_buckets,
+                'snapshot': self.get_snapshot,
+                'network': self.get_networks,
+                'kms': self.get_kms,
+                'disk': self.get_disk,
+                'serviceAccount': self.get_iam,
+                'sql': self.get_database,
+                'no_sql': self.get_dynamo_db,
+                'lb': self.get_elb(),
+                'eip': self.get_eip,
+                'filesystem': self.get_efs,
+                'apphosting': self.get_apphosting,
+                'analyzer': self.get_analyzer,
+                'policy': self.get_policy,
+                'user_groups': self.get_user_groups,
+                'sagemaker':self.get_sagemaker_instances,
+                'config_service':self.get_config_service
+            }
         except Exception as ex:
             raise Exception(ex)
+
+    def get_user_groups(self):
+        response = self.user_groups.list_groups()
+        Policies = self.user_groups.list_policies(Scope='Local').get('Policies')
+        Policies = [policy.get('Arn') for policy in Policies]
+        users = [{**item, "UserPoliciesArn": Policies, "type": "user_groups"} for item in response.get('Groups', [])]
+        self.resources.extend(users)
 
     def get_instances(self):
         """
@@ -44,8 +78,7 @@ class AWSDiscovery(AWS):
                     'name': instance['InstanceId'],
                     'location': instance['Placement']['AvailabilityZone']
                 })
-
-        return instances
+        self.resources.extend(instances)
 
     def get_clusters(self):
         """
@@ -57,15 +90,23 @@ class AWSDiscovery(AWS):
         cluster_resources = []
 
         for cluster in clusters:
+            location = ""
+
             cluster_details = self.eks.describe_cluster(name=cluster)
             cluster_details = cluster_details['cluster']
+
+            try:
+                location = cluster_details['endpoint'].replace('.eks.amazonaws.com', '').split('.')[-1]
+            except Exception as ex:
+                # In some cases location is not available. e.g. when the status is in "CREATING"
+                pass
+            
             cluster_resources.append({
                 'name': cluster_details['name'],
                 'type': 'cluster',
-                'location': cluster_details['endpoint'].replace('.eks.amazonaws.com', '').split('.')[-1]
+                'location': location
             })
-
-        return cluster_resources
+        self.resources.extend(cluster_resources)
 
     def get_buckets(self):
         """
@@ -86,7 +127,8 @@ class AWSDiscovery(AWS):
                 },
             }
             bucket_resources.append(detail)
-        return bucket_resources
+
+        self.resources.extend(bucket_resources)
 
     def get_networks(self):
         def fetch_network(network_list=None, continueToken: str = None):
@@ -124,8 +166,7 @@ class AWSDiscovery(AWS):
                 "instance_tenancy": network.get("InstanceTenancy", []),
             }
             network_resources.append(detail)
-
-        return network_resources
+        self.resources.extend(network_resources)
 
     def get_firewalls(self):
         def fetch_firewalls(firewall_list=None, continueToken: str = None):
@@ -156,7 +197,7 @@ class AWSDiscovery(AWS):
             }
             firewall_resources.append(detail)
 
-        return firewall_resources
+        self.resources.extend(firewall_resources)
 
     def get_cloudtrails(self):
         def fetch_cloudtrails(cloudtrail_list=None, continueToken: str = None):
@@ -188,34 +229,40 @@ class AWSDiscovery(AWS):
             }
             cloudtrail_resources.append(detail)
 
-        return cloudtrail_resources
+        self.resources.extend(cloudtrail_resources)
 
     def get_database(self):
         response = self.rds.describe_db_instances()
         databases = [{**item, "type": "sql"} for item in response.get('DBInstances', [])]
-
-        return databases
+        self.resources.extend(databases)
 
     def get_iam(self):
         response = self.iam.list_users()
         users = [{**item, "type": "serviceAccount"} for item in response.get('Users', [])]
-        return users
+        self.resources.extend(users)
 
     def get_kms(self):
         response = self.kms.list_keys()
         keys = [{**item, "type": "kms"} for item in response.get('Keys', [])]
-        return keys
+        self.resources.extend(keys)
 
     def get_policy(self):
-        response = self.iam.list_policies(Scope='Local')
-        policies = [{**item, "type": "policy"} for item in response.get('Policies', [])]
-        return policies
+        response = self.iam.list_policies(Scope="Local")
+        policies = [{**item, "type": "policy", "Scope": "Local"} for item in response.get('Policies', [])]
+
+        aws_support_policy = self.iam.get_policy(PolicyArn="arn:aws:iam::aws:policy/AWSSupportAccess").get('Policy')
+        policies.append({
+            **aws_support_policy,
+            "type": "policy",
+            "Scope": "AWS"
+        })
+        self.resources.extend(policies)
 
     def get_dynamo_db(self):
         response = self.dynamodb.list_tables()
         dynamodbs = [{"name": item, "type": "no_sql"} for item in response.get('TableNames', [])]
         print(dynamodbs, "==== dynamodb")
-        return dynamodbs
+        self.resources.extend(dynamodbs)
 
     def get_snapshot(self):
         user = self.iam.list_users().get('Users', [])[0]
@@ -229,20 +276,17 @@ class AWSDiscovery(AWS):
             },
         ], )
         snapshots = [{**item, "type": "snapshot"} for item in response.get('Snapshots', [])]
-        # print(len(snapshots), "===== snapshot length")
-        return snapshots
+        self.resources.extend(snapshots)
 
     def get_disk(self):
         response = self.ec2.describe_volumes()
         volumes = [{**item, "type": "disk"} for item in response.get('Volumes', [])]
-        # print(volumes, "==== volumes")
-        return volumes
+        self.resources.extend(volumes)
 
     def get_eip(self):
         response = self.ec2.describe_addresses()
         eip = [{**item, "type": "eip"} for item in response.get('Addresses', [])]
-        # print(eip, "==== volumes")
-        return eip
+        self.resources.extend(eip)
 
     def get_apphosting(self):
         resources = self.apphosting.describe_environments()
@@ -255,8 +299,7 @@ class AWSDiscovery(AWS):
                 'type': 'apphosting',
                 **environment,
             })
-
-        return environment_resources
+        self.resources.extend(environment_resources)
 
     def get_efs(self):
         resources = self.filesystem.describe_file_systems()
@@ -268,8 +311,7 @@ class AWSDiscovery(AWS):
                 'type': 'filesystem',
                 **file,
             })
-
-        return filesystem_resources
+        self.resources.extend(filesystem_resources)
 
     def get_elb(self):
         resources = self.elb.describe_load_balancers()
@@ -278,40 +320,37 @@ class AWSDiscovery(AWS):
         resources = self.elbv2.describe_load_balancers()
         elbv2 = [{"type": "lb", **lb} for lb in resources.get("LoadBalancers", [])]
 
-        return elb + elbv2
+        self.resources.extend(elb + elbv2)
 
     def get_analyzer(self):
         resources = self.analyzer.list_analyzers().get('analyzers')
         resources = [{**resource, "type": 'analyzer'} for resource in resources]
         resources = resources if resources else [{"type": 'analyzer', 'empty': True}]
-        print(resources, "==== analyzer")
-
-        return resources
+        self.resources.extend(resources)
+    
+    def get_sagemaker_instances(self):
+        resources = self.sagemaker.list_notebook_instances().get('NotebookInstances')
+        resources = [{**resource, "type": 'sagemaker'} for resource in resources]
+        resources = resources if resources else [{"type": 'sagemaker', 'empty': True}]
+        self.resources.extend(resources)
+    
+    def get_config_service(self):
+        resources = self.config_service.describe_configuration_recorder_status().get('ConfigurationRecordersStatus')
+        resources = [{**resource, "type": 'config_service'} for resource in resources]
+        resources = resources if resources else [{"type": 'config_service', 'empty': True}]
+        self.resources.extend(resources)
 
     def find_resources(self, **kwargs):
         """
         """
+        threads = []
+        print(self.func.keys())
+        for rsc_type in self.func.keys():
+            thread = threading.Thread(target=self.func.get(rsc_type))
+            thread.start()
+            threads.append(thread)
 
-        resources = []
+        for t in threads:
+            t.join()
 
-        resources.extend(self.get_clusters())
-        resources.extend(self.get_instances())
-        resources.extend(self.get_buckets())
-        # resources.extend(self.get_firewalls())
-        resources.extend(self.get_networks())
-        resources.extend(self.get_database())
-        resources.extend(self.get_iam())
-        resources.extend(self.get_cloudtrails())
-        resources.extend(self.get_kms())
-        resources.extend(self.get_policy())
-        resources.extend(self.get_snapshot())
-        resources.extend(self.get_dynamo_db())
-        resources.extend(self.get_disk())
-        resources.extend(self.get_eip())
-        resources.extend(self.get_apphosting())
-        resources.extend(self.get_efs())
-        resources.extend(self.get_elb())
-        resources.extend(self.get_analyzer())
-        resources.append({"type": 'iam'})
-
-        return resources
+        return self.resources

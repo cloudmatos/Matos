@@ -1,5 +1,6 @@
 from .config import PROVIDERS, PROVIDER_RESOURCE_MANAGER
 from .gcp.gcp_config import RESOURCE_TYPE_REQUESTS
+import threading
 
 
 # TODO: Logging needs to be initialise and apply.
@@ -13,6 +14,7 @@ class Resource:
             raise Exception(f"Provider {provider} is not supported.")
         self.provider = provider
         self._manager = None
+        self.resources = {}
 
     @property
     def manager(self):
@@ -29,22 +31,35 @@ class Resource:
         return self._manager
 
     def get_resource_inventory(
-        self,
-        resource_list
+            self,
+            resource_list
     ):
         """
         """
+        def fetch_resource_details(rsc):
+            type = rsc.get('type')
+            detail = self.manager.get_assets_inventory(rsc)
+            self.resources[type] = [detail] if type not in self.resources else [*self.resources[type], detail]
 
         if self.manager:
-            resources = {}
+            # resources = {}
             if self.provider == 'gcp':
                 try:
                     for resource_type in RESOURCE_TYPE_REQUESTS.keys():
-                        resources[resource_type] = self.manager.get_assets_inventory({"type": resource_type})
+                        self.resources[resource_type] = self.manager.get_assets_inventory({"type": resource_type})
                 except Exception as ex:
                     raise Exception(ex)
             else:
-                for resource_type in RESOURCE_TYPE_REQUESTS.keys():
-                    resources[resource_type] = [self.manager.get_assets_inventory(resource) for resource in resource_list if resource['type'] == resource_type]
+                # Old code
+                # for resource_type in RESOURCE_TYPE_REQUESTS.keys():
+                #     self.resources[resource_type] = [self.manager.get_assets_inventory(resource) for resource in
+                #                                      resource_list if resource['type'] == resource_type]
+                threads = []
+                for resource in resource_list:
+                    thread = threading.Thread(target=fetch_resource_details, args=(resource,))
+                    thread.start()
+                    threads.append(thread)
+                for t in threads:
+                    t.join()
 
-            return resources
+            return self.resources
