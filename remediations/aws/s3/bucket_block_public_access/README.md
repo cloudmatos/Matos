@@ -3,7 +3,7 @@ S3 Block Public Access provides controls across an entire AWS Account or at the 
 
 > Remediation Type   - [Ansible](https://www.ansible.com/)
 
-> Remediation Script - [playbook.yaml](playbook.yml)
+> Remediation Script - [playbook.yml](playbook.yml)
 
 ## Remediation Requirements
 The below python requirements are needed on the host that executes this module.
