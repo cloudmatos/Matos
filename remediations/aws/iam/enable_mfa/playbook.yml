@@ -10,7 +10,7 @@
           - aws_account_id is defined
           - iam_usernames is defined
   vars:
-    policy_document_file: ./policy_document_file.json
+    policy_document_file: ./mfa_policy.json
     policy_name: "mfa_enable_access_{{ aws_account_id }}"
     group_name: "mfa_enable_access_group_{{ aws_account_id }}"
   tasks:
@@ -23,7 +23,7 @@
           aws_region: "{{ region }}"
           policy_name: "{{ policy_name }}"
           policy_description: "A Helpful managed policy"
-          policy: "{{ lookup('file', mfa_policy.json) }}"
+          policy: "{{ lookup('file', policy_document_file) }}"
           state: present
         register: policy_resp
 
