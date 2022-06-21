@@ -1,0 +1,24 @@
+- name: "AWS S3 Remediation - Block Bucket Public Access"
+  hosts: localhost
+  gather_facts: no
+  pre_tasks:
+    - name: Validate Input
+    assert:
+      that:
+        - aws_access_key is defined
+        - aws_secret_key is defined
+        - region is defined
+        - bucket_name is defined
+  tasks:
+    - name: "Disable S3 bucket public access"
+      s3_bucket:
+        name: "{{ bucket_name }}"
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        state: present
+        region: "{{ region }}"
+        public_access:
+          block_public_acls: yes
+          block_public_policy: yes
+          ignore_public_acls: yes
+          restrict_public_buckets: yes
