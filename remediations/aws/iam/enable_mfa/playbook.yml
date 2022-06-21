@@ -1,5 +1,6 @@
 - name: Enable MFA to AWS IAM users
   hosts: localhost
+  gather_facts: no
   pre_tasks:
     - name: Validate Input
       assert:
