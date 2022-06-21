@@ -1,13 +1,14 @@
 # Remediation - Enable Multi-factor authentication (MFA)
 Multi-factor authentication (MFA) in AWS is a simple best practice that adds an extra layer of protection on top of your user name and password. With MFA enabled, when a user signs in to an AWS Management Console, they will be prompted for their user name and password (the first factor—what they know), as well as for an authentication code from their AWS MFA device (the second factor—what they have). Taken together, these multiple factors provide increased security for your AWS account settings and resources.
 
-> Remediation Type   - [Ansible](https://www.ansible.com/)
+> Remediation Tool   - [Ansible](https://www.ansible.com/)
 
 > Remediation Script - [playbook.yml](playbook.yml)
 
 ## Remediation Requirements
 The below python requirements are needed on the host that executes this module.
 
+> pip packages
 - python >= 3.6
 - boto3 >= 1.15.0
 - botocore >= 1.18.0

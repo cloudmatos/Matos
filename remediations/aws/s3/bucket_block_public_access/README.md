@@ -1,13 +1,14 @@
 # Remediation - S3 Bucket Block Public Access
 S3 Block Public Access provides controls across an entire AWS Account or at the individual S3 bucket level to ensure that objects never have public access, now and in the future
 
-> Remediation Type   - [Ansible](https://www.ansible.com/)
+> Remediation Tool   - [Ansible](https://www.ansible.com/)
 
 > Remediation Script - [playbook.yml](playbook.yml)
 
 ## Remediation Requirements
 The below python requirements are needed on the host that executes this module.
 
+> pip packages
 - python >= 3.6
 - boto3 >= 1.15.0
 - botocore >= 1.18.0
