@@ -1,0 +1,41 @@
+- name: Enable MFA to AWS IAM users
+  hosts: localhost
+  pre_tasks:
+    - name: Validate Input
+      assert:
+        that:
+          - aws_access_key is defined
+          - aws_secret_key is defined
+          - region is defined
+          - aws_account_id is defined
+          - iam_usernames is defined
+  vars:
+    policy_document_file: ./policy_document_file.json
+    policy_name: "mfa_enable_access_{{ aws_account_id }}"
+    group_name: "mfa_enable_access_group_{{ aws_account_id }}"
+  tasks:
+    - block: # Create policy and role to only allow MFA enable rights
+      - name: Create IAM Managed Policy
+        community.aws.iam_managed_policy:
+          aws_access_key: "{{ aws_access_key }}"
+          aws_secret_key: "{{ aws_secret_key }}"
+          region: "{{ region }}"
+          aws_region: "{{ region }}"
+          policy_name: "{{ policy_name }}"
+          policy_description: "A Helpful managed policy"
+          policy: "{{ lookup('file', mfa_policy.json) }}"
+          state: present
+        register: policy_resp
+
+      - name: Create group
+        community.aws.iam_group:
+          aws_access_key: "{{ aws_access_key }}"
+          aws_secret_key: "{{ aws_secret_key }}"
+          region: "{{ region }}"
+          aws_region: "{{ region }}"
+          name: "{{ group_name }}"
+          managed_policies:
+            - "{{ policy_resp.policy.arn }}"
+          state: present
+          users: "{{ iam_usernames }}"
+        register: instance_group_resp
