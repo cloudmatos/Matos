@@ -12,7 +12,7 @@ decorator==5.1.0
 docutils==0.15.2
 flasgger==0.9.5
 Flask==2.0.2
-Flask-Caching==1.10.1
+Flask-Caching==1.11.1
 Flask-Cors==3.0.10
 flask-marshmallow==0.14.0
 google-api-core==2.3.2
