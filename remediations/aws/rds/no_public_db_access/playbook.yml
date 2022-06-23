@@ -1,0 +1,29 @@
+# Project: Matos by CloudMatos (https://www.cloudmatos.com/) - Automate your Cloud Security & Compliance 
+# Remediation ID: matos-aws-rds-001
+# Asset: aws-rds
+# Licensing: MIT
+
+- name: "AWS RDS DB Remediation - No Public Access"
+  hosts: localhost
+  gather_facts: no
+  pre_tasks:
+    - name: Validate Input
+      assert:
+        that:
+          - aws_access_key is defined
+          - aws_secret_key is defined
+          - region is defined
+          - db_instance is defined
+  tasks:
+    - name: "RDS No Public access"
+      community.aws.rds_instance:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        db_instance_identifier: "{{ db_instance }}"      
+        region: "{{ region }}"
+        publicly_accessible: no
+      register: rds
+
+    - name: Results
+      debug:
+        msg: "{{ rds }}"

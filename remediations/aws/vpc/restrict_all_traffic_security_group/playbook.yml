@@ -1,0 +1,31 @@
+# Project: Matos by CloudMatos (https://www.cloudmatos.com/) - Automate your Cloud Security & Compliance 
+# Remediation ID: matos-aws-vpc-001
+# Asset: aws-vpc
+# Licensing: MIT
+
+- name: "AWS VPC Remediation - default security group should restrict all traffic"
+  hosts: localhost
+  gather_facts: no
+  pre_tasks:
+    - name: Validate Input
+      assert:
+        that:
+          - aws_access_key is defined
+          - aws_secret_key is defined
+          - security_groups is defined
+  tasks:
+    - name: Purge security groups
+      amazon.aws.ec2_group:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        group_id: "{{ item.id }}"
+        name: "{{ item.name }}"
+        description: "{{ item.description }}"
+        rules: []
+        rules_egress: []
+        purge_rules : True
+        purge_rules_egress: True
+        state: present
+      register: security_groups_edit_resp
+      loop: "{{ security_groups }}"
+
