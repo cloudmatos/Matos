@@ -1,3 +1,8 @@
+# Project: Matos by CloudMatos (https://www.cloudmatos.com/) - Automate your Cloud Security & Compliance 
+# Remediation ID: matos-aws-iam-001
+# Asset: aws-iam
+# Licensing: MIT
+
 - name: Enable MFA to AWS IAM users
   hosts: localhost
   gather_facts: no

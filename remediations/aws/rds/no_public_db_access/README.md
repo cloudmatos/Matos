@@ -6,7 +6,7 @@ Ensure that your RDS database instances are not exposed to the internet as this 
 > Remediation Script - [playbook.yml](playbook.yml)
 
 ## Remediation Requirements
-The below python requirements are needed on the host that executes this module.
+The below requirements are needed to execute remediation script
 
 > pip packages
 - python >= 3.6
