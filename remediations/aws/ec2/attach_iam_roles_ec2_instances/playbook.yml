@@ -3,7 +3,7 @@
 # Asset: aws-ec2
 # Licensing: MIT
 
-- name: "AWS VPC Remediation - Attaching AWS IAM Roles To EC2 Instances
+- name: "AWS VPC Remediation - Attaching AWS IAM Roles To EC2 Instances"
   hosts: localhost
   gather_facts: no
   vars:

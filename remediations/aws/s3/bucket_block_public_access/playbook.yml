@@ -23,7 +23,5 @@
         state: present
         region: "{{ region }}"
         public_access:
-          block_public_acls: yes
-          block_public_policy: yes
           ignore_public_acls: yes
           restrict_public_buckets: yes
