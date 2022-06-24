@@ -22,6 +22,9 @@
         aws_secret_key: "{{ aws_secret_key }}"
         state: present
         region: "{{ region }}"
+        purge_tags: no
+        tags:
+          matos_public_block: "True"
         public_access:
           ignore_public_acls: yes
           restrict_public_buckets: yes
