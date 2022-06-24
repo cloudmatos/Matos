@@ -29,7 +29,6 @@ Following command need to execute
 ansible-playbook playbook.yml --extra-vars '{
   "aws_access_key": "xxxx",
   "aws_secret_key": "xxxx",
-  "aws_region": "us-east-2",
   "security_groups": [
       {
         "id": "sg-0daf8300bb0f99668",

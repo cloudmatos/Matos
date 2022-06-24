@@ -31,7 +31,7 @@ ansible-galaxy collection install community.aws
 | aws_access_key | AWS Access key |
 | aws_secret_key | AWS Secret key |
 | instance_id | EC2 instance ID |
-| instance_not_assigned_instance_profile | Boolean varaible |
+| region | The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region |
 
 
 ## Remediation Execution
