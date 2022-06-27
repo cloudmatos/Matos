@@ -1,4 +1,4 @@
-![Matos Logo](../images/matos-logo.png)
+[<img src="../images/matos-logo.png" width="200" height="200">](https://www.cloudmatos.com/)
 # Contributing Guidelines for Matos
 
 The developer guide is for anyone wanting to contribute directly to the Matos project. We welcome all contributions, suggestions, and feedback, so please do not hesitate to reach out! If you've already developed new functionality we'd be happy to take a look at them and merge them as part of the [Matos][MatosCommunity] [repsitory][MatosGitHub].
