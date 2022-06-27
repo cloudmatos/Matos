@@ -1,4 +1,4 @@
-[<img src="https://github.com/cloudmatos/Matos/blob/main/images/matos-logo.png" width="150" height="150">](https://www.cloudmatos.com/)
+[<img src="https://github.com/cloudmatos/Matos/blob/main/images/matos-logo.png" width="200" height="200">](https://www.cloudmatos.com/)
 
 # Remediation - RDS DB Block Public Access
 Ensure that your RDS database instances are not exposed to the internet as this could lead to potential data loss as you are giving direct access to your database. This is why it is considered a security best practice and should have public access removed. Ensuring public access is blocked will help you with PCI-DSS,NIST, HIPPA and GDPR compliance.

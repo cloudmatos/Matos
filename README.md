@@ -1,4 +1,4 @@
-[<img src="images/matos-logo.png" width="200" height="200">](https://www.cloudmatos.com/)
+[<img src="images/matos-logo.png" width="250" height="250">](https://www.cloudmatos.com/)
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/matos/matos)
 ![GitHub Downloads](https://img.shields.io/github/downloads/matos/matos/total?logo=github&logoColor=white)
