@@ -1,16 +1,16 @@
-# Project: Matos by CloudMatos (https://www.cloudmatos.com/) - Automate your Cloud Security & Compliance 
+# Project: Matos by CloudMatos (https://www.cloudmatos.com/) - Automate your Cloud Security & Compliance
 # Remediation ID: matos-aws-ec2-001
 # Asset: aws-ec2
 # Licensing: MIT
 
-- name: "AWS VPC Remediation - Attaching AWS IAM Roles To EC2 Instances
+- name: AWS VPC Remediation - Attaching AWS IAM Roles To EC2 Instances
   hosts: localhost
   gather_facts: no
   vars:
     policy_name: "{{ instance_id }}_policy"
     role_name: "{{ instance_id }}_role"
-    assume_policy_document_file : "./files/assume_policy_document.json"
-    policy_document_file: "./files/policy_document.json" 
+    assume_policy_document_file: "./files/assume_policy_document.json"
+    policy_document_file: "./files/policy_document.json"
   pre_tasks:
     - name: Validate Input
       assert:
@@ -53,7 +53,3 @@
           - "{{ instance_id }}"
         instance_role: "{{ role_name }}"
         region: "{{ region }}"
-
-    
-
-
