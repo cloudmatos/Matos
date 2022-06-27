@@ -1,4 +1,4 @@
-<img align="right" src="https://github.com/cloudmatos/Matos/blob/main/images/matos-logo-new.png" width="150" height="150">
+<img align="right" src="https://github.com/cloudmatos/Matos/blob/main/images/matos-logo.png" width="150" height="150">
 
 # Remediation - Enable Multi-factor authentication (MFA)
 Multi-factor authentication (MFA) in AWS is a simple best practice that adds an extra layer of protection on top of your user name and password. With MFA enabled, when a user signs in to an AWS Management Console, they will be prompted for their user name and password (the first factor—what they know), as well as for an authentication code from their AWS MFA device (the second factor—what they have). Taken together, these multiple factors provide increased security for your AWS account settings and resources.

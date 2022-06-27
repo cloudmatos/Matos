@@ -1,3 +1,5 @@
+<img align="right" src="https://github.com/cloudmatos/Matos/blob/main/images/matos-logo.png" width="150" height="150">
+
 # Remediation - AWS VPC Default Security Group Restricts All Traffic
 This policy validates that the default Security Group for a given AWS VPC restricts all inbound and outbound traffic.
 The principle of least privilege dictates that all traffic should be blocked unless explicitly needed, and it's recommended to create security groups for all categorizations of inbound/outbound traffic flows. Ensuring the default security group blocks all traffic enables this behavior by forcing all new EC2 instances to be moved off the default security group if they require internet access.
