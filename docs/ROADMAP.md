@@ -1,4 +1,4 @@
-![Matos Logo](../images/matos-logo.png)
+[<img src="../images/matos-logo.png" width="200" height="200">](https://www.cloudmatos.com/)
 # Roadmap
 
 Roadmap is where you can learn about what features community is currently working on and expected release time. Existing reported issues can be found at [issues][MatosIssues]. Contributions to defined roadmap items can be done by following [Contribution Guidelines][ContributionGuidelines]. Have any questions or comments about items on the roadmap? Share your feedback via [mailing list][MatosMailingList].

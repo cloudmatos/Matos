@@ -1,4 +1,4 @@
-![Matos Logo](../images/matos-logo.png)
+[<img src="../images/matos-logo.png" width="200" height="200">](https://www.cloudmatos.com/)
 # Open Matos Community Code of Conduct v1.0
 
 ## Our Pledge
