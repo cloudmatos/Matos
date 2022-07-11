@@ -10,9 +10,9 @@
             "CACertificateIdentifier": "rds-ca-2019",
             "CopyTagsToSnapshot": true,
             "CustomerOwnedIpEnabled": false,
-            "DBInstanceArn": "arn:aws:rds:us-east-2:000000000000:db:test-1",
+            "DBInstanceArn": "arn:aws:rds:us-east-2:144908232300:db:cmdb-1",
             "DBInstanceClass": "db.t2.micro",
-            "DBInstanceIdentifier": "test-1",
+            "DBInstanceIdentifier": "cmdb-1",
             "DBInstanceStatus": "available",
             "DBParameterGroups": [
                 {
@@ -23,14 +23,14 @@
             "DBSecurityGroups": [],
             "DBSubnetGroup": {
                 "DBSubnetGroupDescription": "Created from the RDS Management Console",
-                "DBSubnetGroupName": "default-vpc-000000000000000",
+                "DBSubnetGroupName": "default-vpc-0abf607f6e4d9d6e1",
                 "SubnetGroupStatus": "Complete",
                 "Subnets": [
                     {
                         "SubnetAvailabilityZone": {
                             "Name": "us-east-2a"
                         },
-                        "SubnetIdentifier": "subnet-000000000000000",
+                        "SubnetIdentifier": "subnet-035a1eda8cd493270",
                         "SubnetOutpost": {},
                         "SubnetStatus": "Active"
                     },
@@ -38,7 +38,7 @@
                         "SubnetAvailabilityZone": {
                             "Name": "us-east-2c"
                         },
-                        "SubnetIdentifier": "subnet-000000000000000",
+                        "SubnetIdentifier": "subnet-085f137294010a4f2",
                         "SubnetOutpost": {},
                         "SubnetStatus": "Active"
                     },
@@ -46,20 +46,20 @@
                         "SubnetAvailabilityZone": {
                             "Name": "us-east-2b"
                         },
-                        "SubnetIdentifier": "subnet-000000000000000",
+                        "SubnetIdentifier": "subnet-080aa51ac46b81b99",
                         "SubnetOutpost": {},
                         "SubnetStatus": "Active"
                     }
                 ],
-                "VpcId": "vpc-000000000000000"
+                "VpcId": "vpc-0abf607f6e4d9d6e1"
             },
             "DbInstancePort": 0,
-            "DbiResourceId": "db-XXXXXXXXXXXXXXXXXXXXXXXXX",
+            "DbiResourceId": "db-VKQG3CSDOS3MGY34RFRHVLYFBY",
             "DeletionProtection": false,
             "DomainMemberships": [],
             "Endpoint": {
-                "Address": "XXX-0000000000.us-east-2.rds.amazonaws.com",
-                "HostedZoneId": "0000000000",
+                "Address": "cmdb-1.c38y8kzjmzns.us-east-2.rds.amazonaws.com",
+                "HostedZoneId": "Z2XHWR1WZ565X2",
                 "Port": 3306
             },
             "Engine": "mysql",
@@ -90,7 +90,7 @@
             "VpcSecurityGroups": [
                 {
                     "Status": "active",
-                    "VpcSecurityGroupId": "sg-00000000000000000"
+                    "VpcSecurityGroupId": "sg-0e6b3e54cae255959"
                 }
             ],
             "type": "sql"

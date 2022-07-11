@@ -1,0 +1,207 @@
+{
+  "redshift": [
+    {
+      "self": {
+        "source_data": {
+          "AllowVersionUpgrade": true,
+          "AquaConfiguration": {
+            "AquaConfigurationStatus": "auto",
+            "AquaStatus": "disabled"
+          },
+          "AutomatedSnapshotRetentionPeriod": 1,
+          "AvailabilityZone": "us-west-1a",
+          "AvailabilityZoneRelocationStatus": "disabled",
+          "ClusterAvailabilityStatus": "Available",
+          "ClusterCreateTime": "Thu, 07 Jul 2022 12:28:26 GMT",
+          "ClusterIdentifier": "redshift-cluster-1",
+          "ClusterNamespaceArn": "arn:aws:redshift:us-west-1:XXXXXXXXXXXXXXXXXXXXX:namespace:deef1248-c994-48e7-9aff-94d6846960b7",
+          "ClusterNodes": [
+            {
+              "NodeRole": "SHARED",
+              "PrivateIPAddress": "172.31.242.100",
+              "PublicIPAddress": "13.52.49.18"
+            }
+          ],
+          "ClusterParameterGroups": [
+            {
+              "ParameterApplyStatus": "in-sync",
+              "ParameterGroupName": "default.redshift-1.0"
+            }
+          ],
+          "ClusterPublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqgWRa4oTdGI77zxGUijJOBa+Fr0afgEOJ2eZK4lEzyhd54/ca3YJ+scBQhp9igxVDm8LbeHBXtokYUd9Nj6WF2E2BqQG7eOTPLkakDkS0iad3zdTp5w3XTIxh6r918a9xwmr5814AV3QR8lc6Eno3L0hVzPgp3TbzCgBJVQixW8IYPZXbnhiwbIDhihGms7w3g3pdF9I7Arm/tSqZp8vqjxptxduqeA6gqgqq3HNCXIq3kgdfxxxt3BiECj1ayBWFE7BvWifsKr8swFMshP5nuuT1yw95WTlExmUj1PwKY/p3J2kuxIYSf3z6hdYP6YrepVTVHRBoYfIIiuTzirgJ Amazon-Redshift\n",
+          "ClusterRevisionNumber": "39380",
+          "ClusterSecurityGroups": [],
+          "ClusterStatus": "available",
+          "ClusterSubnetGroupName": "default",
+          "ClusterVersion": "1.0",
+          "DBName": "dev",
+          "DeferredMaintenanceWindows": [],
+          "Encrypted": false,
+          "Endpoint": {
+            "Address": "redshift-cluster-1.cqi9gjclmcgo.us-west-1.redshift.amazonaws.com",
+            "Port": 5439
+          },
+          "EnhancedVpcRouting": false,
+          "IamRoles": [],
+          "LoggingEnabled": true,
+          "MaintenanceTrackName": "current",
+          "ManualSnapshotRetentionPeriod": -1,
+          "MasterUsername": "awsuser",
+          "NextMaintenanceWindowStartTime": "Mon, 11 Jul 2022 10:30:00 GMT",
+          "NodeType": "dc2.large",
+          "NumberOfNodes": 1,
+          "ParameterGroups": [
+            {
+              "AllowedValues": "true,false",
+              "ApplyType": "static",
+              "DataType": "boolean",
+              "Description": "Use auto analyze",
+              "IsModifiable": true,
+              "ParameterName": "auto_analyze",
+              "ParameterValue": "true",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "true,false",
+              "ApplyType": "static",
+              "DataType": "boolean",
+              "Description": "Enable AutoMV",
+              "IsModifiable": true,
+              "ParameterName": "auto_mv",
+              "ParameterValue": "true",
+              "Source": "engine-default"
+            },
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "Setsthedisplayformatfordateandtimevalues.",
+              "IsModifiable": true,
+              "ParameterName": "datestyle",
+              "ParameterValue": "ISO,MDY",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "true,false",
+              "ApplyType": "static",
+              "DataType": "boolean",
+              "Description": "Preserve case sensitivity for database identifiers such as table or column names in parser",
+              "IsModifiable": true,
+              "ParameterName": "enable_case_sensitive_identifier",
+              "ParameterValue": "false",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "true,false",
+              "ApplyType": "static",
+              "DataType": "boolean",
+              "Description": "parameterforauditloggingpurpose",
+              "IsModifiable": true,
+              "ParameterName": "enable_user_activity_logging",
+              "ParameterValue": "false",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "-15-2",
+              "ApplyType": "static",
+              "DataType": "integer",
+              "Description": "Setsthenumberofdigitsdisplayedforfloating-pointvalues",
+              "IsModifiable": true,
+              "ParameterName": "extra_float_digits",
+              "ParameterValue": "0",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "0-10",
+              "ApplyType": "static",
+              "DataType": "integer",
+              "Description": "The maximum concurrency scaling clusters can be used.",
+              "IsModifiable": true,
+              "ParameterName": "max_concurrency_scaling_clusters",
+              "ParameterValue": "1",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "0-14400000",
+              "ApplyType": "static",
+              "DataType": "integer",
+              "Description": "Setsthemaxcursorresultsetsize",
+              "IsModifiable": true,
+              "ParameterName": "max_cursor_result_set_size",
+              "ParameterValue": "default",
+              "Source": "engine-default"
+            },
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "Thisparameterappliesauser-definedlabeltoagroupofqueriesthatarerunduringthesamesession..",
+              "IsModifiable": true,
+              "ParameterName": "query_group",
+              "ParameterValue": "default",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "true,false",
+              "ApplyType": "static",
+              "DataType": "boolean",
+              "Description": "requiresslforalldatabaseconnections",
+              "IsModifiable": true,
+              "ParameterName": "require_ssl",
+              "ParameterValue": "false",
+              "Source": "engine-default"
+            },
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "Setstheschemasearchorderfornamesthatarenotschema-qualified.",
+              "IsModifiable": true,
+              "ParameterName": "search_path",
+              "ParameterValue": "$user,public",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "0,100-2147483647",
+              "ApplyType": "static",
+              "DataType": "integer",
+              "Description": "Abortsanystatementthattakesoverthespecifiednumberofmilliseconds.",
+              "IsModifiable": true,
+              "ParameterName": "statement_timeout",
+              "ParameterValue": "0",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "true,false",
+              "ApplyType": "static",
+              "DataType": "boolean",
+              "Description": "Use fips ssl library",
+              "IsModifiable": true,
+              "ParameterName": "use_fips_ssl",
+              "ParameterValue": "false",
+              "Source": "engine-default"
+            },
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "wlmjsonconfiguration",
+              "IsModifiable": true,
+              "ParameterName": "wlm_json_configuration",
+              "ParameterValue": "[{\"auto_wlm\":true}]",
+              "Source": "engine-default"
+            }
+          ],
+          "PendingModifiedValues": {},
+          "PreferredMaintenanceWindow": "mon:10:30-mon:11:00",
+          "PubliclyAccessible": false,
+          "Tags": [],
+          "VpcId": "vpc-0bf028396a14eddc2",
+          "VpcSecurityGroups": [
+            {
+              "Status": "active",
+              "VpcSecurityGroupId": "sg-0faec5d2f703c5941"
+            }
+          ],
+          "type": "redshift"
+        }
+      }
+    }
+  ]
+}

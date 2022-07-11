@@ -116,6 +116,58 @@ def aws_config_service(resource, provider):
         "source_data": resource
     })
 
+def aws_elasticsearch(resource, provider):
+    """
+    Mapper for AWS elasticsearch.
+
+    Parameters:
+    - resource: AWS config resource to map
+    - provider: provider. AWS/GCP/Azure
+
+    """
+
+    return selfish({
+        "source_data": resource
+    })
+
+def aws_guardduty(resource, provider):
+    """
+    Mapper for AWS Guard Duty.
+
+    Parameters:
+    - resource: AWS guard duty resource to map
+    - provider: provider. AWS/GCP/Azure
+
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+def aws_s3control(resource, provider):
+    """
+    Mapper for AWS S3Control.
+
+    Parameters:
+    - resource: AWS s3control resource to map
+    - provider: provider. AWS/GCP/Azure
+
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+def aws_dax(resource, provider):
+    """
+    Mapper for AWS Dax.
+
+    Parameters:
+    - resource: AWS dax resource to map
+    - provider: provider. AWS/GCP/Azure
+
+    """
+    return selfish({
+        "source_data": resource
+    })
 
 def aws_network(resource, provider):
     """
@@ -233,10 +285,93 @@ def aws_iam(resource, provider):
         "source_data": resource
     })
 
-def user_groups(resource, provider):
+def aws_user_groups(resource, provider):
     """
     """
     return selfish({
+        "source_data": resource
+    })
+
+def aws_functions(resource, provider):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+def aws_redshift(resource, provider):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+def aws_apigateway(resource, provider):
+    """
+    """
+    return selfish({
+        "name": from_dict(resource, "Name"),
+        "region":from_dict(resource, "ApiEndpoint").split('.')[2],
+        "source_data": resource
+    })
+
+def aws_rest_api(resource, provider):
+    """
+    """
+    return selfish({
+        "name": from_dict(resource, "Name"),
+        "region": from_dict(resource, "region"),
+        "source_data": resource
+    })
+
+def aws_sqs(resource, provider):
+    """
+    """
+    return selfish({
+        "name": from_dict(resource, "QueueArn").split('.')[5],
+        "region": from_dict(resource, "QueueArn").split('.')[3],
+        "source_data": resource
+    })
+
+def aws_opensearch(resource, provider):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+def aws_cloudfront(resource, provider):
+    """
+    """
+    return selfish({
+        "name": from_dict(resource, "Id"),
+        "source_data": resource
+    })
+
+def aws_ssm(resource, provider):
+    """
+    """
+    return selfish({
+        "name": from_dict(resource, "Name"),
+        "region":"global",
+        "source_data": resource
+    })
+
+def aws_sns(resource, provider):
+    """
+    """
+    return selfish({
+        "name": from_dict(resource, "TopicArn").split(':')[-1],
+        "region":from_dict(resource, "TopicArn").split(':')[3],
+        "source_data": resource
+    })
+
+def aws_docdb(resource, provider):
+    """
+    """
+    return selfish({
+        "name": from_dict(resource, "DBClusterArn").split(':')[-1],
+        "region":from_dict(resource, "DBClusterArn").split(':')[3],
         "source_data": resource
     })
 
@@ -662,9 +797,23 @@ cloud_resource_mappers = {
         'iam': aws_elb,
         'analyzer': aws_analyzer,
         'filesystem': aws_filesystem,
-        'user_groups': user_groups,
+        'user_groups': aws_user_groups,
         'sagemaker': aws_sagemaker,
-        'config_service': aws_config_service
+        'config_service': aws_config_service,
+        'elasticsearch': aws_elasticsearch,
+        'guardduty': aws_guardduty,
+        's3control': aws_s3control,
+        'dax': aws_dax,
+        'functions': aws_functions,
+        'redshift': aws_redshift,
+        'opensearch': aws_opensearch,
+        'cloudfront': aws_cloudfront,
+        'apigateway': aws_apigateway,
+        'rest_api': aws_rest_api,
+        'sqs': aws_sqs,
+        'ssm': aws_ssm,
+        'sns': aws_sns,
+        'docdb': aws_docdb
         
     },
     'azure': {

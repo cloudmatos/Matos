@@ -1,0 +1,492 @@
+{
+    "user_groups": [
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/ECS", 
+            "AttachedPolicies": [], 
+            "CreateDate": "Fri, 13 Aug 2021 14:47:20 GMT", 
+            "GroupId": "AGPAUMYIJVCU5UQEFDEUH", 
+            "GroupName": "ECS", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/MatosNewServices", 
+            "AttachedPolicies": [], 
+            "CreateDate": "Mon, 13 Jun 2022 13:57:22 GMT", 
+            "GroupId": "AGPAUMYIJVCU5FGJWBH54", 
+            "GroupName": "MatosNewServices", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/IAMFullAccess", 
+            "AttachedPolicies": [], 
+            "CreateDate": "Tue, 08 Mar 2022 22:03:20 GMT", 
+            "GroupId": "AGPAUMYIJVCU4KA2L6Z46", 
+            "GroupName": "IAMFullAccess", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/EKS", 
+            "AttachedPolicies": [], 
+            "CreateDate": "Fri, 13 Aug 2021 14:46:39 GMT", 
+            "GroupId": "AGPAUMYIJVCUV2CTBIJDJ", 
+            "GroupName": "EKS", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/MatosRemediate", 
+            "AttachedPolicies": [], 
+            "CreateDate": "Wed, 08 Jun 2022 08:28:45 GMT", 
+            "GroupId": "AGPAUMYIJVCU24XY6NJRP", 
+            "GroupName": "MatosRemediate", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/Admins", 
+            "AttachedPolicies": [], 
+            "CreateDate": "Mon, 30 Aug 2021 13:28:34 GMT", 
+            "GroupId": "AGPAUMYIJVCU36ELKSC5A", 
+            "GroupName": "Admins", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/Monitoring", 
+            "AttachedPolicies": [], 
+            "CreateDate": "Mon, 30 Aug 2021 12:45:33 GMT", 
+            "GroupId": "AGPAUMYIJVCUS5EIBWQFQ", 
+            "GroupName": "Monitoring", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/S3_RDS_EC2", 
+            "AttachedPolicies": [], 
+            "CreateDate": "Thu, 12 Aug 2021 19:08:23 GMT", 
+            "GroupId": "AGPAUMYIJVCUXB2VEV74L", 
+            "GroupName": "S3_RDS_EC2", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/Organization_Policies", 
+            "AttachedPolicies": [], 
+            "CreateDate": "Tue, 08 Mar 2022 18:53:17 GMT", 
+            "GroupId": "AGPAUMYIJVCU2DPXY6TL2", 
+            "GroupName": "Organization_Policies", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/MatosDevelopment", 
+            "AttachedPolicies": [
+              {
+                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/MatosDevCustomPolicy", 
+                "AttachmentCount": 1, 
+                "CreateDate": "Thu, 09 Jun 2022 14:43:01 GMT", 
+                "DefaultVersionId": "v23", 
+                "IsAttachable": true, 
+                "Path": "/", 
+                "PermissionsBoundaryUsageCount": 0, 
+                "PolicyArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/MatosDevCustomPolicy", 
+                "PolicyId": "ANPAUMYIJVCUZD2BJOY2X", 
+                "PolicyName": "MatosDevCustomPolicy", 
+                "PolicyVersion": {
+                  "CreateDate": "Thu, 16 Jun 2022 08:09:32 GMT", 
+                  "Document": {
+                    "Statement": [
+                      {
+                        "Action": "iam:CreateServiceLinkedRole", 
+                        "Effect": "Allow", 
+                        "Resource": [
+                          "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/aws-service-role/es.amazonaws.com/*"
+                        ]
+                      }, 
+                      {
+                        "Action": "iam:PassRole", 
+                        "Condition": {
+                          "StringEquals": {
+                            "iam:PassedToService": "config.amazonaws.com"
+                          }
+                        }, 
+                        "Effect": "Allow", 
+                        "Resource": "*"
+                      }, 
+                      {
+                        "Action": "iam:PassRole", 
+                        "Condition": {
+                          "StringEquals": {
+                            "iam:PassedToService": "cloudtrail.amazonaws.com"
+                          }
+                        }, 
+                        "Effect": "Allow", 
+                        "Resource": "*"
+                      }, 
+                      {
+                        "Action": "iam:PassRole", 
+                        "Condition": {
+                          "StringEquals": {
+                            "iam:PassedToService": "s3.amazonaws.com"
+                          }
+                        }, 
+                        "Effect": "Allow", 
+                        "Resource": "*"
+                      }, 
+                      {
+                        "Action": "iam:PassRole", 
+                        "Condition": {
+                          "StringEquals": {
+                            "iam:PassedToService": "vpc-flow-logs.amazonaws.com"
+                          }
+                        }, 
+                        "Effect": "Allow", 
+                        "Resource": "*"
+                      }, 
+                      {
+                        "Action": "iam:PassRole", 
+                        "Effect": "Allow", 
+                        "Resource": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/eksClusterRole"
+                      }, 
+                      {
+                        "Action": [
+                          "access-analyzer:*", 
+                          "acm-pca:*", 
+                          "acm:*", 
+                          "autoscaling:*", 
+                          "cloudformation:*", 
+                          "cloudtrail:*", 
+                          "cloudwatch:*", 
+                          "dynamodb:*", 
+                          "ec2:*", 
+                          "elasticloadbalancing:*", 
+                          "eks:*", 
+                          "guardduty:*", 
+                          "iam:Add*", 
+                          "iam:Attach*", 
+                          "iam:CreateInstanceProfile", 
+                          "iam:CreatePolicy", 
+                          "iam:CreatePolicyVersion", 
+                          "iam:CreateRole", 
+                          "iam:CreateGroup", 
+                          "iam:DetachUserPolicy", 
+                          "iam:Enable*", 
+                          "iam:Generate*", 
+                          "iam:Get*", 
+                          "iam:List*", 
+                          "iam:Simulate*", 
+                          "iam:Tag*", 
+                          "iam:Update*", 
+                          "kms:*", 
+                          "lambda:*", 
+                          "logs:*", 
+                          "redshift:*", 
+                          "resource-groups:*", 
+                          "s3:*", 
+                          "sns:*", 
+                          "ssm:*", 
+                          "tag:*"
+                        ], 
+                        "Effect": "Allow", 
+                        "Resource": "*"
+                      }
+                    ], 
+                    "Version": "2012-10-17"
+                  }, 
+                  "IsDefaultVersion": true, 
+                  "VersionId": "v23"
+                }, 
+                "Tags": [], 
+                "UpdateDate": "Thu, 16 Jun 2022 08:09:32 GMT"
+              }
+            ], 
+            "CreateDate": "Wed, 08 Jun 2022 08:28:54 GMT", 
+            "GroupId": "AGPAUMYIJVCUUI5FAU63Y", 
+            "GroupName": "MatosDevelopment", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/abhay-test-wildcard-01", 
+            "AttachedPolicies": [
+              {
+                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/abhay-test-wildcard-policy", 
+                "AttachmentCount": 1, 
+                "CreateDate": "Tue, 14 Jun 2022 05:03:02 GMT", 
+                "DefaultVersionId": "v2", 
+                "Description": "To test wildcard policy", 
+                "IsAttachable": true, 
+                "Path": "/", 
+                "PermissionsBoundaryUsageCount": 0, 
+                "PolicyArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/abhay-test-wildcard-policy", 
+                "PolicyId": "ANPAUMYIJVCUZ4YTELRJL", 
+                "PolicyName": "abhay-test-wildcard-policy", 
+                "PolicyVersion": {
+                  "CreateDate": "Tue, 14 Jun 2022 05:17:10 GMT", 
+                  "Document": {
+                    "Statement": [
+                      {
+                        "Action": "*", 
+                        "Effect": "Allow", 
+                        "Resource": "*", 
+                        "Sid": "VisualEditor0"
+                      }
+                    ], 
+                    "Version": "2012-10-17"
+                  }, 
+                  "IsDefaultVersion": true, 
+                  "VersionId": "v2"
+                }, 
+                "Tags": [
+                  {
+                    "Key": "user", 
+                    "Value": "matos_customer1"
+                  }
+                ], 
+                "UpdateDate": "Tue, 14 Jun 2022 05:17:10 GMT"
+              }
+            ], 
+            "CreateDate": "Thu, 16 Jun 2022 07:21:32 GMT", 
+            "GroupId": "AGPAUMYIJVCUQK5LRFF2F", 
+            "GroupName": "abhay-test-wildcard-01", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/MatosObserve", 
+            "AttachedPolicies": [], 
+            "CreateDate": "Wed, 08 Jun 2022 08:28:09 GMT", 
+            "GroupId": "AGPAUMYIJVCUVGIH3XSHQ", 
+            "GroupName": "MatosObserve", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/BillingAdmin", 
+            "AttachedPolicies": [
+              {
+                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/BillingFullAccess", 
+                "AttachmentCount": 1, 
+                "CreateDate": "Tue, 14 Jun 2022 18:37:31 GMT", 
+                "DefaultVersionId": "v1", 
+                "IsAttachable": true, 
+                "Path": "/", 
+                "PermissionsBoundaryUsageCount": 0, 
+                "PolicyArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/BillingFullAccess", 
+                "PolicyId": "ANPAUMYIJVCU2YBKTWQAZ", 
+                "PolicyName": "BillingFullAccess", 
+                "PolicyVersion": {
+                  "CreateDate": "Tue, 14 Jun 2022 18:37:31 GMT", 
+                  "Document": {
+                    "Statement": [
+                      {
+                        "Action": "aws-portal:*", 
+                        "Effect": "Allow", 
+                        "Resource": "*", 
+                        "Sid": "VisualEditor0"
+                      }
+                    ], 
+                    "Version": "2012-10-17"
+                  }, 
+                  "IsDefaultVersion": true, 
+                  "VersionId": "v1"
+                }, 
+                "Tags": [], 
+                "UpdateDate": "Tue, 14 Jun 2022 18:37:31 GMT"
+              }
+            ], 
+            "CreateDate": "Tue, 14 Jun 2022 18:20:41 GMT", 
+            "GroupId": "AGPAUMYIJVCU5HVGBSUM3", 
+            "GroupName": "BillingAdmin", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }, 
+      {
+        "self": {
+          "source_data": {
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/MatosDeploy", 
+            "AttachedPolicies": [
+              {
+                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/MatosAdminCustomPolicy", 
+                "AttachmentCount": 1, 
+                "CreateDate": "Thu, 09 Jun 2022 14:39:48 GMT", 
+                "DefaultVersionId": "v29", 
+                "IsAttachable": true, 
+                "Path": "/", 
+                "PermissionsBoundaryUsageCount": 0, 
+                "PolicyArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/MatosAdminCustomPolicy", 
+                "PolicyId": "ANPAUMYIJVCU7HESM6OFC", 
+                "PolicyName": "MatosAdminCustomPolicy", 
+                "PolicyVersion": {
+                  "CreateDate": "Thu, 16 Jun 2022 08:09:20 GMT", 
+                  "Document": {
+                    "Statement": [
+                      {
+                        "Action": "iam:CreateServiceLinkedRole", 
+                        "Effect": "Allow", 
+                        "Resource": [
+                          "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/aws-service-role/es.amazonaws.com/*"
+                        ]
+                      }, 
+                      {
+                        "Action": "iam:PassRole", 
+                        "Condition": {
+                          "StringEquals": {
+                            "iam:PassedToService": "config.amazonaws.com"
+                          }
+                        }, 
+                        "Effect": "Allow", 
+                        "Resource": "*"
+                      }, 
+                      {
+                        "Action": "iam:PassRole", 
+                        "Condition": {
+                          "StringEquals": {
+                            "iam:PassedToService": "cloudtrail.amazonaws.com"
+                          }
+                        }, 
+                        "Effect": "Allow", 
+                        "Resource": "*"
+                      }, 
+                      {
+                        "Action": "iam:PassRole", 
+                        "Condition": {
+                          "StringEquals": {
+                            "iam:PassedToService": "s3.amazonaws.com"
+                          }
+                        }, 
+                        "Effect": "Allow", 
+                        "Resource": "*"
+                      }, 
+                      {
+                        "Action": "iam:PassRole", 
+                        "Condition": {
+                          "StringEquals": {
+                            "iam:PassedToService": "vpc-flow-logs.amazonaws.com"
+                          }
+                        }, 
+                        "Effect": "Allow", 
+                        "Resource": "*"
+                      }, 
+                      {
+                        "Action": "iam:PassRole", 
+                        "Effect": "Allow", 
+                        "Resource": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/eksClusterRole"
+                      }, 
+                      {
+                        "Action": [
+                          "access-analyzer:*", 
+                          "acm-pca:*", 
+                          "acm:*", 
+                          "autoscaling:*", 
+                          "cloudformation:*", 
+                          "cloudtrail:*", 
+                          "cloudwatch:*", 
+                          "dynamodb:*", 
+                          "ec2:*", 
+                          "elasticloadbalancing:*", 
+                          "eks:*", 
+                          "guardduty:*", 
+                          "iam:Add*", 
+                          "iam:Attach*", 
+                          "iam:CreateInstanceProfile", 
+                          "iam:CreatePolicy", 
+                          "iam:CreatePolicyVersion", 
+                          "iam:CreateRole", 
+                          "iam:CreateGroup", 
+                          "iam:DetachUserPolicy", 
+                          "iam:Enable*", 
+                          "iam:Generate*", 
+                          "iam:Get*", 
+                          "iam:List*", 
+                          "iam:Simulate*", 
+                          "iam:Tag*", 
+                          "iam:Update*", 
+                          "kms:*", 
+                          "lambda:*", 
+                          "logs:*", 
+                          "redshift:*", 
+                          "resource-groups:*", 
+                          "s3:*", 
+                          "sns:*", 
+                          "ssm:*", 
+                          "tag:*"
+                        ], 
+                        "Effect": "Allow", 
+                        "Resource": "*"
+                      }
+                    ], 
+                    "Version": "2012-10-17"
+                  }, 
+                  "IsDefaultVersion": true, 
+                  "VersionId": "v29"
+                }, 
+                "Tags": [], 
+                "UpdateDate": "Thu, 16 Jun 2022 08:09:20 GMT"
+              }
+            ], 
+            "CreateDate": "Thu, 09 Jun 2022 13:01:16 GMT", 
+            "GroupId": "AGPAUMYIJVCUWLBFMKAU4", 
+            "GroupName": "MatosDeploy", 
+            "Path": "/", 
+            "type": "user_groups"
+          }
+        }
+      }
+    ]
+  }

@@ -1,0 +1,66 @@
+{
+    "sqs": [
+        {
+            "self": {
+                "source_data": {
+                    "ApproximateNumberOfMessages": "0",
+                    "ApproximateNumberOfMessagesDelayed": "0",
+                    "ApproximateNumberOfMessagesNotVisible": "0",
+                    "CreatedTimestamp": "1657168120",
+                    "DelaySeconds": "0",
+                    "KmsDataKeyReusePeriodSeconds": "300",
+                    "KmsMasterKeyId": "alias/akshay_km_testing",
+                    "LastModifiedTimestamp": "1657170216",
+                    "MaximumMessageSize": "262144",
+                    "MessageRetentionPeriod": "345600",
+                    "Policy": "{\"Version\":\"2008-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:test-narayan\"}]}",
+                    "QueueArn": "arn:aws:sqs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:test-narayan",
+                    "ReceiveMessageWaitTimeSeconds": "0",
+                    "SqsManagedSseEnabled": "false",
+                    "VisibilityTimeout": "30",
+                    "url": "https://queue.amazonaws.com/XXXXXXXXXXXXXXXXXXXXX/test-narayan"
+                }
+            }
+        },
+        {
+            "self": {
+                "source_data": {
+                    "ApproximateNumberOfMessages": "0",
+                    "ApproximateNumberOfMessagesDelayed": "0",
+                    "ApproximateNumberOfMessagesNotVisible": "0",
+                    "CreatedTimestamp": "1656568778",
+                    "DelaySeconds": "0",
+                    "LastModifiedTimestamp": "1657170375",
+                    "MaximumMessageSize": "262144",
+                    "MessageRetentionPeriod": "345600",
+                    "Policy": "{\"Version\":\"2008-10-17\",\"Id\":\"arn:aws:sqs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:akshay-test-1/SQSDefaultPolicy\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:akshay-test-1\"},{\"Sid\":\"topic-subscription-arn:aws:sns:us-east-1:XXXXXXXXXXXXXXXXXXXXX:Default_CloudWatch_Alarms_Topic\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"SQS:SendMessage\",\"Resource\":\"arn:aws:sqs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:akshay-test-1\",\"Condition\":{\"ArnLike\":{\"aws:SourceArn\":\"arn:aws:sns:us-east-1:XXXXXXXXXXXXXXXXXXXXX:Default_CloudWatch_Alarms_Topic\"}}}]}",
+                    "QueueArn": "arn:aws:sqs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:akshay-test-1",
+                    "ReceiveMessageWaitTimeSeconds": "0",
+                    "SqsManagedSseEnabled": "true",
+                    "VisibilityTimeout": "30",
+                    "url": "https://queue.amazonaws.com/XXXXXXXXXXXXXXXXXXXXX/akshay-test-1"
+                }
+            }
+        },
+        {
+            "self": {
+                "source_data": {
+                    "ApproximateNumberOfMessages": "0",
+                    "ApproximateNumberOfMessagesDelayed": "0",
+                    "ApproximateNumberOfMessagesNotVisible": "0",
+                    "CreatedTimestamp": "1655464086",
+                    "DelaySeconds": "0",
+                    "LastModifiedTimestamp": "1655464086",
+                    "MaximumMessageSize": "262144",
+                    "MessageRetentionPeriod": "345600",
+                    "Policy": "{\"Version\":\"2008-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:test\"}]}",
+                    "QueueArn": "arn:aws:sqs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:test",
+                    "ReceiveMessageWaitTimeSeconds": "0",
+                    "SqsManagedSseEnabled": "false",
+                    "VisibilityTimeout": "30",
+                    "url": "https://queue.amazonaws.com/XXXXXXXXXXXXXXXXXXXXX/test"
+                }
+            }
+        }
+    ]
+}

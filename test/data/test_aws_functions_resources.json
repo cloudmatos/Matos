@@ -1,0 +1,193 @@
+{
+    "functions": [
+        {
+            "self": {
+                "source_data": {
+                    "Architectures": [
+                        "x86_64"
+                    ],
+                    "AttachedPolicies": [],
+                    "CodeSha256": "BoZeaw/DbJn9WCuwWo55uYOBIKfOwod6Mg372ZVNbSI=",
+                    "CodeSize": 304,
+                    "Description": "",
+                    "FunctionArn": "arn:aws:lambda:us-east-1:XXXXXXXXXXXXXXXXXXXXX:function:connect-with-vpc",
+                    "FunctionDetails": {
+                        "Code": {
+                            "Location": "https://prod-04-2014-tasks.s3.us-east-1.amazonaws.com/snapshots/XXXXXXXXXXXXXXXXXXXXX/connect-with-vpc-f4df94c4-9524-446a-97fe-bd055280d770?versionId=L9doBk2eA9gG00MB7DOW4e5LzB5NFM5.&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIEbXRiJ%2B24jbbMU7McfrV25UBDqrK64SThK6fPiZoWbwAiEA0Ndm2SWoaf5ls9SbMh8YbwpgamboHXYpR4hS3rrHZvAq2wQI1P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw3NDk2Nzg5MDI4MzkiDNHPsYF0yTOz9w7XZCqvBJ8qKGviUkrg5oUEEBct4OtT4Y4pl061Q97EX1KsTmpI4iYUtCvq3MJlx4R37m9gRm%2BnLbriyiY0zXBwI7pb6lGjhb01XrWQORSs1FMPudfJeBdmHbVIWijl%2F57jWZ6x9gMRWFnGxurL1TEUN3qF8%2BIzOafKszsLqZq4QrbzvoG1HLvp0F%2B39iLW3mVSuVCigCjJKTtY4oWNmnVuCLIEPeJ1wNHS0sRvWVCf7FAK9xkr3v%2BjrZPOhpQ6ydRqz24h90HlUGQAzrPtAKWVs5DYC%2BE0sJEDy7B1UqxXl1UyssTbJ7%2FvuF6zt2BEFgnrXFlt7XNF9TIlNhF%2B9umHH2nn%2BmSCjujLg1z9gFk2CI2YojNVIA%2FThBWPqk52p8tSYmwYvA24UWconlG1wbP30jOLQ16%2FVNZB3TAM4hYFqnbedV5tESrr8xrKBwAncDYDlbFtD%2FQmM6FyepWjQr%2FJtohkLDJLF3%2FBzGFbCBfv8tAHqrcdmlWvkGQj%2B4IXbMNpJYtgrIDNQCRl6uJKzM0Sooa3%2B2w5vHxlW1Cg1BXAJJc8JcpATaf4Sz5KM5Nt7HcilzQSYIP1wmxQwTNp381SujmdCAb%2F%2Fz0Ez%2FQyxq07UUx8L4SlTefu44uzETla%2BwWeNw0E7tn32GZ48RuA0Uzy3XEZ5ZCDK0Z6pVdjFKyV%2BnUzJxEMGUWQHR7ym9aPbC0k2Yr5fKPv%2BQtLKg3xPjU5N63LjcrS2CWTw551QqQKQwkLIVcw1L6xlQY6qQFYUfyDltbLWHEv1jsf6xZFBfumIMsc%2FhG3M0rdduj7Or79d9p3PxJwwKC8UnxIYbWafk2bA61MVD2leicJ%2FQg0n7EAyGf2wpB%2BQoiAVR9TeV2aYfpAWSNdJ594s810HFXBsUlbL6MvxzKSKr%2BlNS5%2FGpTE0gw4m%2BTdzi7PRxH3X9mSV%2B0SroDUv6UgV3yPW24VJO6cCWFJkSAsZP55KCOfW12BuwSOWcrI&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220617T113719Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIA25DCYHY33YJ2SK6B%2F20220617%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=7541795ff7df4f639cfac916a8271835e4f8402e3ad7dc73e09d1826f1861fb8",
+                            "RepositoryType": "S3"
+                        },
+                        "Configuration": {
+                            "Architectures": [
+                                "x86_64"
+                            ],
+                            "CodeSha256": "BoZeaw/DbJn9WCuwWo55uYOBIKfOwod6Mg372ZVNbSI=",
+                            "CodeSize": 304,
+                            "Description": "",
+                            "FunctionArn": "arn:aws:lambda:us-east-1:XXXXXXXXXXXXXXXXXXXXX:function:connect-with-vpc",
+                            "FunctionName": "connect-with-vpc",
+                            "Handler": "index.handler",
+                            "LastModified": "2022-06-17T09:09:17.197+0000",
+                            "LastUpdateStatus": "Successful",
+                            "MemorySize": 128,
+                            "PackageType": "Zip",
+                            "RevisionId": "be274b35-a1c4-4f21-ab74-a12701ac2698",
+                            "Role": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/service-role/connect-with-vpc-role-mucjnejp",
+                            "Runtime": "nodejs16.x",
+                            "State": "Active",
+                            "Timeout": 3,
+                            "TracingConfig": {
+                                "Mode": "PassThrough"
+                            },
+                            "Version": "$LATEST",
+                            "VpcConfig": {
+                                "SecurityGroupIds": [
+                                    "sg-068e0c6d38218d35f"
+                                ],
+                                "SubnetIds": [
+                                    "subnet-04e2480bf3799ffa2"
+                                ],
+                                "VpcId": "vpc-0b2976133e5456967"
+                            }
+                        },
+                        "ResponseMetadata": {
+                            "HTTPHeaders": {
+                                "connection": "keep-alive",
+                                "content-length": "2970",
+                                "content-type": "application/json",
+                                "date": "Fri, 17 Jun 2022 11:37:19 GMT",
+                                "x-amzn-requestid": "89167873-358e-4886-9aef-ff948d0948ff"
+                            },
+                            "HTTPStatusCode": 200,
+                            "RequestId": "89167873-358e-4886-9aef-ff948d0948ff",
+                            "RetryAttempts": 0
+                        }
+                    },
+                    "FunctionName": "connect-with-vpc",
+                    "Handler": "index.handler",
+                    "LastModified": "2022-06-17T09:09:17.197+0000",
+                    "MemorySize": 128,
+                    "PackageType": "Zip",
+                    "RevisionId": "be274b35-a1c4-4f21-ab74-a12701ac2698",
+                    "Role": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/service-role/connect-with-vpc-role-mucjnejp",
+                    "Runtime": "nodejs16.x",
+                    "Timeout": 3,
+                    "TracingConfig": {
+                        "Mode": "PassThrough"
+                    },
+                    "Version": "$LATEST",
+                    "VpcConfig": {
+                        "SecurityGroupIds": [
+                            "sg-068e0c6d38218d35f"
+                        ],
+                        "SubnetIds": [
+                            "subnet-04e2480bf3799ffa2"
+                        ],
+                        "VpcId": "vpc-0b2976133e5456967"
+                    },
+                    "type": "functions"
+                }
+            }
+        },
+        {
+            "source_data": {
+                "self": {
+                    "Architectures": [
+                        "x86_64"
+                    ],
+                    "AttachedPolicies": {
+                        "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"default\",\"Statement\":[{\"Sid\":\"aws-account-access-without-in-org\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"lambda:GetPolicy\",\"Resource\":\"arn:aws:lambda:us-east-1:XXXXXXXXXXXXXXXXXXXXX:function:test-functions\"},{\"Sid\":\"FunctionURLAllowPublicAccess\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"lambda:InvokeFunctionUrl\",\"Resource\":\"arn:aws:lambda:us-east-1:XXXXXXXXXXXXXXXXXXXXX:function:test-functions\",\"Condition\":{\"StringEquals\":{\"lambda:FunctionUrlAuthType\":\"NONE\"}}},{\"Sid\":\"test\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"lambda:InvokeFunction\",\"Resource\":\"arn:aws:lambda:us-east-1:XXXXXXXXXXXXXXXXXXXXX:function:test-functions\"}]}",
+                        "ResponseMetadata": {
+                            "HTTPHeaders": {
+                                "connection": "keep-alive",
+                                "content-length": "782",
+                                "content-type": "application/json",
+                                "date": "Fri, 17 Jun 2022 11:37:19 GMT",
+                                "x-amzn-requestid": "30bc122e-17d8-4ffe-8692-f0c4fcf93eeb"
+                            },
+                            "HTTPStatusCode": 200,
+                            "RequestId": "30bc122e-17d8-4ffe-8692-f0c4fcf93eeb",
+                            "RetryAttempts": 0
+                        },
+                        "RevisionId": "f2d54c7c-f12b-49b3-920b-ed75397d635e"
+                    },
+                    "CodeSha256": "BoZeaw/DbJn9WCuwWo55uYOBIKfOwod6Mg372ZVNbSI=",
+                    "CodeSize": 304,
+                    "DeadLetterConfig": {
+                        "TargetArn": "arn:aws:sqs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:test"
+                    },
+                    "Description": "",
+                    "Environment": {
+                        "Variables": {
+                            "env": "prod"
+                        }
+                    },
+                    "FunctionArn": "arn:aws:lambda:us-east-1:XXXXXXXXXXXXXXXXXXXXX:function:test-functions",
+                    "FunctionDetails": {
+                        "Code": {
+                            "Location": "https://prod-04-2014-tasks.s3.us-east-1.amazonaws.com/snapshots/XXXXXXXXXXXXXXXXXXXXX/test-functions-68fc7158-c8b9-473a-ad17-e7ee564b2814?versionId=gjPWSEz6XHu_LYfU6ocXpRy33kb5lyxm&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDgZDWnys2rTAsQEPo5A2xBA5PcK%2BPLJgYj74uL216hoQIhAI%2F59bSUhdtP4l8hEOQW4%2FEKZcScCfIR6yRpj%2FbrMj%2FOKtwECNP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNzQ5Njc4OTAyODM5Igx6vl8xF4nZKAdYXGEqsATu3FI2jKeYwI9oCZ%2BMsaeRMJriWxt%2BsxnslungoLc58iQhex04lIS6o%2BSIZNkAt%2F%2FNGSzGZ13mcsrjdqmUo931ETLPa%2BdJDuKY96%2FpyNZ0U1yU37ZeQY3PAuehv6LMB3zT0HFH9b0rVDxpQg8DjkHIqBoJewTH67ePMDEhj9y8GLWUQBFZBX120quGEhHVIyyTdJ4tPpWDEucFqQb3r4qR%2F%2FQC4%2FSa0HduIHId46RVN7UX6NutrR7rKXFe8Qhmq8aj1n9gisSjr6Pv08p8oXrpCoEO6MDk1rrrEGaBfgX9%2FCTxC%2FGcpQStqEuGkSQlYJyPIE1ERUB8Oo%2BTpzwxSjYX6g5cKOhENlyI5aH%2BRAqL7%2B2DMXwlMYab1iQMJhGz5iqQ%2BsSvCRbl%2FeBTYsdHI2q1eRMAisiVpGTfANyfvq%2BEgDygqYWJcfsaa6S1i2c2oLiKjxROojYiSMQE4diYp9ZQPrabD95m64mrMTeyQoTtSi5yIqeE%2FB0ytnikijlQwo8s2vJFeKUZj4%2BxBy5rkPNnLgbe2kar%2BBxjbsl1yMuw8jRPsspJFaOvVlxN9jD2W8gLn5roClWmrFRa7Tg5H6pwB3ykXMd5UTmsM3ujvqe7h%2B26RvGneDfhyFc7v4Woy1MwG%2BbuFaAwgGX%2BR1c1QqSuPpoWmYobNakJpcdde2js1c30DlWVCechsR2RAOrIMMYe8SjRRNxR6VHJqwd0MMTt4uyQ5aR455zuIhN8tji6QzCcrbGVBjqoAeBINQmblu7aIBdu98N2HM1uEvl9KFDCYauDxqxV1YkEQw0bI9IOLXjXJrhd040%2BaB3aaWp17nL%2B3lPsl9QiqJOTUUe4kPdM4iPGjXb%2BJacMg2J5W4iFzPdHXmArCBybd7qHM03WqtODXkNOQWUITO1uMlBsZJASefAsW87FVT%2F0X%2B%2B1l3KXVzwtpo824dFYx3X2DBOYl0qw6hhM1nnPqi9SQInJ4XHfEg%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220617T113719Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIA25DCYHY3Y3NRBY6K%2F20220617%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=9d1b039b18e92d4a0a95b07e10a2936c86b76e66dc3fb68ff4cf0d429c74a832",
+                            "RepositoryType": "S3"
+                        },
+                        "Configuration": {
+                            "Architectures": [
+                                "x86_64"
+                            ],
+                            "CodeSha256": "BoZeaw/DbJn9WCuwWo55uYOBIKfOwod6Mg372ZVNbSI=",
+                            "CodeSize": 304,
+                            "DeadLetterConfig": {
+                                "TargetArn": "arn:aws:sqs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:test"
+                            },
+                            "Description": "",
+                            "Environment": {
+                                "Variables": {
+                                    "env": "prod"
+                                }
+                            },
+                            "FunctionArn": "arn:aws:lambda:us-east-1:XXXXXXXXXXXXXXXXXXXXX:function:test-functions",
+                            "FunctionName": "test-functions",
+                            "Handler": "index.handler",
+                            "LastModified": "2022-06-17T11:29:55.000+0000",
+                            "LastUpdateStatus": "Successful",
+                            "MemorySize": 128,
+                            "PackageType": "Zip",
+                            "RevisionId": "f2d54c7c-f12b-49b3-920b-ed75397d635e",
+                            "Role": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/service-role/test-functions-role-mc2jpszs",
+                            "Runtime": "nodejs16.x",
+                            "State": "Active",
+                            "Timeout": 3,
+                            "TracingConfig": {
+                                "Mode": "PassThrough"
+                            },
+                            "Version": "$LATEST"
+                        },
+                        "ResponseMetadata": {
+                            "HTTPHeaders": {
+                                "connection": "keep-alive",
+                                "content-length": "2954",
+                                "content-type": "application/json",
+                                "date": "Fri, 17 Jun 2022 11:37:19 GMT",
+                                "x-amzn-requestid": "1344dc48-1117-4abf-adfe-8dbe1e7f0b9a"
+                            },
+                            "HTTPStatusCode": 200,
+                            "RequestId": "1344dc48-1117-4abf-adfe-8dbe1e7f0b9a",
+                            "RetryAttempts": 0
+                        }
+                    },
+                    "FunctionName": "test-functions",
+                    "Handler": "index.handler",
+                    "LastModified": "2022-06-17T11:29:55.000+0000",
+                    "MemorySize": 128,
+                    "PackageType": "Zip",
+                    "RevisionId": "f2d54c7c-f12b-49b3-920b-ed75397d635e",
+                    "Role": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/service-role/test-functions-role-mc2jpszs",
+                    "Runtime": "nodejs16.x",
+                    "Timeout": 3,
+                    "TracingConfig": {
+                        "Mode": "PassThrough"
+                    },
+                    "Version": "$LATEST",
+                    "type": "functions"
+                }
+            }
+        }
+    ]
+}

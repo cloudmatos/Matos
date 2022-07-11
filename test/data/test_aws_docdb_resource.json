@@ -1,0 +1,105 @@
+{
+    "docdb": [
+        {
+            "self": {
+                "source_data": {
+                    "AssociatedRoles": [],
+                    "AvailabilityZones": [
+                        "us-east-1c",
+                        "us-east-1d",
+                        "us-east-1f"
+                    ],
+                    "BackupRetentionPeriod": 1,
+                    "ClusterCreateTime": "Thu, 07 Jul 2022 09:25:16 GMT",
+                    "DBClusterArn": "arn:aws:rds:us-east-1:XXXXXXXXXXXXXXXXXXXXX:cluster:docdb-akshay-1",
+                    "DBClusterIdentifier": "docdb-akshay-1",
+                    "DBClusterMembers": [
+                        {
+                            "DBClusterParameterGroupStatus": "in-sync",
+                            "DBInstanceIdentifier": "docdb-akshay-1",
+                            "IsClusterWriter": true,
+                            "PromotionTier": 1
+                        }
+                    ],
+                    "DBClusterParameterGroup": "default.docdb4.0",
+                    "DBSubnetGroup": "default-vpc-0b2976133e5456967",
+                    "DbClusterResourceId": "cluster-LLW5QPDDRA5UVZ2LPLVHGVZJZA",
+                    "DeletionProtection": true,
+                    "EarliestRestorableTime": "Thu, 07 Jul 2022 09:26:17 GMT",
+                    "Endpoint": "docdb-akshay-1.cluster-cq3hhv98ffhq.us-east-1.docdb.amazonaws.com",
+                    "Engine": "docdb",
+                    "EngineVersion": "4.0.0",
+                    "HostedZoneId": "ZNKXH85TT8WVW",
+                    "LatestRestorableTime": "Fri, 08 Jul 2022 05:39:37 GMT",
+                    "MasterUsername": "akshay",
+                    "MultiAZ": false,
+                    "Port": 27017,
+                    "PreferredBackupWindow": "00:00-00:30",
+                    "PreferredMaintenanceWindow": "sun:07:42-sun:08:12",
+                    "ReadReplicaIdentifiers": [],
+                    "ReaderEndpoint": "docdb-akshay-1.cluster-ro-cq3hhv98ffhq.us-east-1.docdb.amazonaws.com",
+                    "Status": "available",
+                    "StorageEncrypted": false,
+                    "VpcSecurityGroups": [
+                        {
+                            "Status": "active",
+                            "VpcSecurityGroupId": "sg-05c547a268c4420ec"
+                        }
+                    ],
+                    "type": "docdb"
+                }
+            }
+        },
+        {
+            "self": {
+                "source_data": {
+                    "AssociatedRoles": [],
+                    "AvailabilityZones": [
+                        "us-east-1b",
+                        "us-east-1d",
+                        "us-east-1a"
+                    ],
+                    "BackupRetentionPeriod": 1,
+                    "ClusterCreateTime": "Wed, 22 Jun 2022 07:28:38 GMT",
+                    "DBClusterArn": "arn:aws:rds:us-east-1:XXXXXXXXXXXXXXXXXXXXX:cluster:cmatostestdb",
+                    "DBClusterIdentifier": "cmatostestdb",
+                    "DBClusterMembers": [
+                        {
+                            "DBClusterParameterGroupStatus": "in-sync",
+                            "DBInstanceIdentifier": "cmatostestdb-instance-1",
+                            "IsClusterWriter": true,
+                            "PromotionTier": 1
+                        }
+                    ],
+                    "DBClusterParameterGroup": "default.aurora-mysql5.7",
+                    "DBSubnetGroup": "default-vpc-0b2976133e5456967",
+                    "DbClusterResourceId": "cluster-6QQOYNNTBTJNANNY6JDWIGNGOE",
+                    "DeletionProtection": false,
+                    "EarliestRestorableTime": "Wed, 06 Jul 2022 10:35:55 GMT",
+                    "Endpoint": "cmatostestdb.cluster-cq3hhv98ffhq.us-east-1.rds.amazonaws.com",
+                    "Engine": "aurora-mysql",
+                    "EngineVersion": "5.7.mysql_aurora.2.10.2",
+                    "HostedZoneId": "Z2R2ITUGPM61AM",
+                    "KmsKeyId": "arn:aws:kms:us-east-1:XXXXXXXXXXXXXXXXXXXXX:key/ed2e567e-b8f3-4e2c-86b5-0e9392d8c1b4",
+                    "LatestRestorableTime": "Fri, 08 Jul 2022 05:41:14 GMT",
+                    "MasterUsername": "admin",
+                    "MultiAZ": false,
+                    "Port": 3306,
+                    "PreferredBackupWindow": "10:23-10:53",
+                    "PreferredMaintenanceWindow": "mon:05:53-mon:06:23",
+                    "ReadReplicaIdentifiers": [],
+                    "ReaderEndpoint": "cmatostestdb.cluster-ro-cq3hhv98ffhq.us-east-1.rds.amazonaws.com",
+                    "Status": "available",
+                    "StorageEncrypted": true,
+                    "VpcSecurityGroups": [
+                        {
+                            "Status": "active",
+                            "VpcSecurityGroupId": "sg-05c547a268c4420ec"
+                        }
+                    ],
+                    "type": "docdb"
+                }
+            }
+        }
+    ]
+}

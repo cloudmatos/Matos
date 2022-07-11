@@ -1,0 +1,222 @@
+{
+  "apigateway": [
+    {
+      "self": {
+        "source_data": {
+          "ApiEndpoint": "https://cvidavidzh.execute-api.us-east-1.amazonaws.com",
+          "ApiId": "cvidavidzh",
+          "ApiKeySelectionExpression": "$request.header.x-api-key",
+          "CreatedDate": "Fri, 01 Jul 2022 04:55:07 GMT",
+          "DisableExecuteApiEndpoint": false,
+          "Name": "testapi",
+          "ProtocolType": "HTTP",
+          "RouteSelectionExpression": "$request.method $request.path",
+          "Tags": {},
+          "stages": [
+            {
+              "AccessLogSettings": {
+                "DestinationArn": "arn:aws:logs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:log-group:/aws/apigateway/welcome",
+                "Format": "{ \"requestId\":\"$context.requestId\", \"ip\": \"$context.identity.sourceIp\", \"requestTime\":\"$context.requestTime\", \"httpMethod\":\"$context.httpMethod\",\"routeKey\":\"$context.routeKey\", \"status\":\"$context.status\",\"protocol\":\"$context.protocol\", \"responseLength\":\"$context.responseLength\" }"
+              },
+              "AutoDeploy": true,
+              "CreatedDate": "Fri, 01 Jul 2022 04:55:08 GMT",
+              "DefaultRouteSettings": {
+                "DetailedMetricsEnabled": false
+              },
+              "LastDeploymentStatusMessage": "Deployment attempt failed: Unable to deploy API because no routes exist in this API",
+              "LastUpdatedDate": "Fri, 01 Jul 2022 08:36:38 GMT",
+              "RouteSettings": {},
+              "StageName": "$default",
+              "StageVariables": {},
+              "Tags": {}
+            }
+          ],
+          "type": "apigateway"
+        }
+      }
+    },
+    {
+      "self": {
+        "source_data": {
+          "ApiEndpoint": "wss://7072j42kpb.execute-api.us-east-1.amazonaws.com",
+          "ApiId": "7072j42kpb",
+          "ApiKeySelectionExpression": "$request.header.x-api-key",
+          "CreatedDate": "Fri, 01 Jul 2022 05:53:48 GMT",
+          "DisableExecuteApiEndpoint": false,
+          "Name": "api-websocket",
+          "ProtocolType": "WEBSOCKET",
+          "RouteSelectionExpression": "$request.body.action",
+          "Tags": {},
+          "stages": [
+            {
+              "AccessLogSettings": {
+                "DestinationArn": "arn:aws:logs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:log-group:/aws/apigateway/welcome",
+                "Format": "{ \"requestId\":\"$context.requestId\", \"ip\": \"$context.identity.sourceIp\", \"caller\":\"$context.identity.caller\", \"user\":\"$context.identity.user\",\"requestTime\":\"$context.requestTime\", \"eventType\":\"$context.eventType\",\"routeKey\":\"$context.routeKey\", \"status\":\"$context.status\",\"connectionId\":\"$context.connectionId\" }"
+              },
+              "CreatedDate": "Fri, 01 Jul 2022 05:53:50 GMT",
+              "DefaultRouteSettings": {
+                "DataTraceEnabled": false,
+                "DetailedMetricsEnabled": false,
+                "LoggingLevel": "ERROR",
+                "ThrottlingBurstLimit": 5000,
+                "ThrottlingRateLimit": 10000.0
+              },
+              "LastUpdatedDate": "Fri, 01 Jul 2022 08:47:09 GMT",
+              "RouteSettings": {},
+              "StageName": "production",
+              "StageVariables": {},
+              "Tags": {}
+            }
+          ],
+          "type": "apigateway"
+        }
+      }
+    }
+  ],
+  "rest_api": [
+    {
+      "self": {
+        "source_data": {
+          "apiKeySource": "HEADER",
+          "createdDate": "Tue, 05 Jul 2022 04:51:11 GMT",
+          "disableExecuteApiEndpoint": false,
+          "endpointConfiguration": {
+            "types": [
+              "REGIONAL"
+            ]
+          },
+          "id": "6ypfm7cyu6",
+          "name": "rest-api-2",
+          "resources": [
+            {
+              "id": "jciyl4vx15",
+              "path": "/",
+              "resourceMethods": {
+                "ANY": {
+                  "apiKeyRequired": false,
+                  "authorizationType": "AWS_IAM",
+                  "httpMethod": "ANY",
+                  "methodIntegration": {
+                    "cacheKeyParameters": [],
+                    "cacheNamespace": "jciyl4vx15",
+                    "connectionType": "INTERNET",
+                    "httpMethod": "ANY",
+                    "integrationResponses": {
+                      "200": {
+                        "responseTemplates": {},
+                        "statusCode": "200"
+                      }
+                    },
+                    "passthroughBehavior": "WHEN_NO_MATCH",
+                    "timeoutInMillis": 29000,
+                    "type": "HTTP",
+                    "uri": "https://www.google.com"
+                  },
+                  "methodResponses": {
+                    "200": {
+                      "responseModels": {
+                        "application/json": "Empty"
+                      },
+                      "statusCode": "200"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "stages": [],
+          "type": "rest_api"
+        }
+      }
+    },
+    {
+      "self": {
+        "source_data": {
+          "apiKeySource": "AUTHORIZER",
+          "createdDate": "Fri, 01 Jul 2022 08:51:51 GMT",
+          "disableExecuteApiEndpoint": false,
+          "endpointConfiguration": {
+            "types": [
+              "PRIVATE"
+            ]
+          },
+          "id": "094it85tu1",
+          "minimumCompressionSize": 2,
+          "name": "rest-api",
+          "resources": [
+            {
+              "id": "a5d2xxa79h",
+              "path": "/",
+              "resourceMethods": {
+                "ANY": {
+                  "apiKeyRequired": true,
+                  "authorizationType": "CUSTOM",
+                  "authorizerId": "umbrbp",
+                  "httpMethod": "ANY",
+                  "methodIntegration": {
+                    "cacheKeyParameters": [],
+                    "cacheNamespace": "a5d2xxa79h",
+                    "connectionType": "INTERNET",
+                    "httpMethod": "ANY",
+                    "integrationResponses": {
+                      "200": {
+                        "responseTemplates": {},
+                        "statusCode": "200"
+                      }
+                    },
+                    "passthroughBehavior": "WHEN_NO_MATCH",
+                    "timeoutInMillis": 29000,
+                    "type": "HTTP",
+                    "uri": "https://www.google.com"
+                  },
+                  "methodResponses": {
+                    "200": {
+                      "responseModels": {
+                        "application/json": "Empty"
+                      },
+                      "statusCode": "200"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "stages": [
+            {
+              "CertificateExpirationDate": "Sat, 01 Jul 2023 08:52:06 GMT",
+              "accessLogSettings": {
+                "destinationArn": "arn:aws:logs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:log-group:/aws/apigateway/welcome",
+                "format": "{ \"requestId\":\"$context.requestId\", \"ip\": \"$context.identity.sourceIp\", \"caller\":\"$context.identity.caller\", \"user\":\"$context.identity.user\",\"requestTime\":\"$context.requestTime\", \"httpMethod\":\"$context.httpMethod\",\"resourcePath\":\"$context.resourcePath\", \"status\":\"$context.status\",\"protocol\":\"$context.protocol\", \"responseLength\":\"$context.responseLength\" }"
+              },
+              "cacheClusterEnabled": true,
+              "cacheClusterSize": "0.5",
+              "cacheClusterStatus": "AVAILABLE",
+              "clientCertificateId": "5pud5f",
+              "createdDate": "Mon, 04 Jul 2022 04:37:17 GMT",
+              "deploymentId": "2eia1s",
+              "lastUpdatedDate": "Mon, 04 Jul 2022 08:10:22 GMT",
+              "methodSettings": {
+                "*/*": {
+                  "cacheDataEncrypted": true,
+                  "cacheTtlInSeconds": 300,
+                  "cachingEnabled": true,
+                  "dataTraceEnabled": false,
+                  "loggingLevel": "ERROR",
+                  "metricsEnabled": true,
+                  "requireAuthorizationForCacheControl": true,
+                  "throttlingBurstLimit": 5000,
+                  "throttlingRateLimit": 10000.0,
+                  "unauthorizedCacheControlHeaderStrategy": "SUCCEED_WITH_RESPONSE_HEADER"
+                }
+              },
+              "stageName": "state1",
+              "tracingEnabled": true,
+              "webAclArn": "arn:aws:wafv2:us-east-1:XXXXXXXXXXXXXXXXXXXXX:regional/webacl/testing_akshay/1ffeb3b1-4eee-4d9e-877b-2b40109ba035"
+            }
+          ],
+          "type": "rest_api"
+        }
+      }
+    }
+  ]
+}

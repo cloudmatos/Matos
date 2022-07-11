@@ -1,0 +1,15 @@
+{
+  "s3control": [
+    {
+      "self": {
+        "source_data": {
+          "BlockPublicAcls": false,
+          "BlockPublicPolicy": false,
+          "IgnorePublicAcls": false,
+          "RestrictPublicBuckets": false,
+          "type": "s3control"
+        }
+      }
+    }
+  ]
+}

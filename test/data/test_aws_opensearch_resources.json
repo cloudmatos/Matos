@@ -1,0 +1,108 @@
+{
+    "opensearch": [
+        {
+            "self": {
+                "source_data": {
+                    "DomainName": "test-domain",
+                    "DomainStatus": {
+                        "ARN": "arn:aws:es:us-east-1:XXXXXXXXXXXXXXXXXXXXX:domain/test-domain",
+                        "AccessPolicies": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Deny\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"es:*\",\"Resource\":\"arn:aws:es:us-east-1:XXXXXXXXXXXXXXXXXXXXX:domain/test-domain/*\"}]}",
+                        "AdvancedOptions": {
+                            "indices.fielddata.cache.size": "20",
+                            "indices.query.bool.max_clause_count": "1024",
+                            "override_main_response_version": "false",
+                            "rest.action.multi.allow_explicit_index": "true"
+                        },
+                        "AdvancedSecurityOptions": {
+                            "Enabled": true,
+                            "InternalUserDatabaseEnabled": true
+                        },
+                        "AutoTuneOptions": {
+                            "State": "ENABLED"
+                        },
+                        "ClusterConfig": {
+                            "ColdStorageOptions": {
+                                "Enabled": false
+                            },
+                            "DedicatedMasterEnabled": false,
+                            "InstanceCount": 3,
+                            "InstanceType": "r6gd.16xlarge.search",
+                            "WarmEnabled": false,
+                            "ZoneAwarenessConfig": {
+                                "AvailabilityZoneCount": 3
+                            },
+                            "ZoneAwarenessEnabled": true
+                        },
+                        "CognitoOptions": {
+                            "Enabled": false
+                        },
+                        "Created": true,
+                        "Deleted": false,
+                        "DomainEndpointOptions": {
+                            "CustomEndpointEnabled": false,
+                            "EnforceHTTPS": true,
+                            "TLSSecurityPolicy": "Policy-Min-TLS-1-0-2019-07"
+                        },
+                        "DomainId": "XXXXXXXXXXXXXXXXXXXXX/test-domain",
+                        "DomainName": "test-domain",
+                        "EBSOptions": {
+                            "EBSEnabled": false
+                        },
+                        "EncryptionAtRestOptions": {
+                            "Enabled": true,
+                            "KmsKeyId": "arn:aws:kms:us-east-1:XXXXXXXXXXXXXXXXXXXXX:key/74bc7f76-a379-48fe-b2e7-afb377dbf759"
+                        },
+                        "Endpoints": {
+                            "vpc": "vpc-test-domain-wiwtnvxczaspqpnvx25qzo3gte.us-east-1.es.amazonaws.com"
+                        },
+                        "EngineVersion": "OpenSearch_1.2",
+                        "LogPublishingOptions": {
+                            "AUDIT_LOGS": {
+                                "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:log-group:/aws/OpenSearchService/domains/test-domain/audit-logs",
+                                "Enabled": true
+                            },
+                            "ES_APPLICATION_LOGS": {
+                                "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:XXXXXXXXXXXXXXXXXXXXX:log-group:/aws/OpenSearchService/domains/test-domain/application-logs",
+                                "Enabled": true
+                            }
+                        },
+                        "NodeToNodeEncryptionOptions": {
+                            "Enabled": true
+                        },
+                        "Processing": true,
+                        "ServiceSoftwareOptions": {
+                            "AutomatedUpdateDate": "Thu, 01 Jan 1970 00:00:00 GMT",
+                            "Cancellable": false,
+                            "CurrentVersion": "R20220323-P3",
+                            "Description": "There is no software update available for this domain.",
+                            "NewVersion": "",
+                            "OptionalDeployment": true,
+                            "UpdateAvailable": false,
+                            "UpdateStatus": "COMPLETED"
+                        },
+                        "SnapshotOptions": {},
+                        "UpgradeProcessing": false,
+                        "VPCOptions": {
+                            "AvailabilityZones": [
+                                "us-east-1a",
+                                "us-east-1b",
+                                "us-east-1f"
+                            ],
+                            "SecurityGroupIds": [
+                                "sg-051b8a9654c55aaca"
+                            ],
+                            "SubnetIds": [
+                                "subnet-080c08b020fe8f5e4",
+                                "subnet-0b5c6f0f400819d51",
+                                "subnet-0bb6653ad3e80ddb6"
+                            ],
+                            "VPCId": "vpc-0b2976133e5456967"
+                        }
+                    },
+                    "EngineType": "OpenSearch",
+                    "type": "opensearch"
+                }
+            }
+        }
+    ]
+}

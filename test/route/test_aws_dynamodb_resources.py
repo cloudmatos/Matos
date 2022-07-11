@@ -19,6 +19,16 @@ class TestCloudSql(TestCase):
         test = [match.value for match in parse('no_sql[*].self.source_data.TableCapacity').find(self.resources) if match.value.get('ReadCapacityUnits', '').get('AutoScalingStatus') not in ['true', True] or match.value.get('WriteCapacityUnits', '').get('AutoScalingStatus') not in ['true', True]]
         flag = len(test)
         self.assertEqual(False, flag, msg="There are few dynomodb tables without enable autoscaling for read or write.")
+
+    #Use Case: DynamoDB.1 DynamoDB tables should automatically scale capacity with demand
+    def test_automatic_scalling_new(self):
+        """
+        Check if dynomodb tables configured to be autoscaled or not
+        """
+        resource_ids = [match.value for match in parse('no_sql[*].self.source_data.ScalableTargets[*].ResourceId').find(self.resources)]
+        secondary_indexes = [match.value for match in parse('no_sql[*].self.source_data.GlobalSecondaryIndexes[*].IndexName').find(self.resources)]
+        flag = len(set(resource_ids))==len(secondary_indexes)+1
+        self.assertEqual(True, flag, msg="There are few dynomodb tables without enable autoscaling for read or write.")
     
     #Use Case: DynamoDB.2 DynamoDB tables should have point-in-time recovery enabled
     def test_point_in_time_recovery(self):
@@ -28,4 +38,13 @@ class TestCloudSql(TestCase):
         test = [match.value for match in parse('no_sql[*].self.source_data.ContinuousBackupsDescription.PointInTimeRecoveryDescription.PointInTimeRecoveryStatus').find(self.resources) if match.value == 'DISABLED']
         flag = len(test)
         self.assertEqual(False, flag, msg="There are few dynomodb tables without enable point in time recovery.")
+    
+    #Use Case: DynamoDB Accelerator (DAX) clusters should be encrypted at rest
+    def test_dax_cluster_should_have_encryption_at_rest_enabled(self):
+        """
+        Check if DynamoDB Accelerator (DAX) clusters should be encrypted at rest
+        """
+        test = [match.value for match in parse('dax[*].self.source_data.SSEDescription.Status').find(self.resources) if match.value == 'DISABLED']
+        flag = len(test)
+        self.assertEqual(False, flag, msg="There are few dx clusters without encryption at rest enabled.")
     

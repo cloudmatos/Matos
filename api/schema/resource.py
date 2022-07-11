@@ -166,9 +166,43 @@ class ResourceInstanceSchema(Schema):
 
 class ResourceSchema(Schema):
     class Meta:
-        fields = ['cluster', 'instance', 'storage', 'sql', 'serviceAccount', 'network', 'iam', 'disk', 'snapshot',
-                  'log_monitor', 'kms', 'policy', 'no_sql', 'eip', 'apphosting', 'lb', 'analyzer', 'filesystem', 'user_groups',
-                  'sagemaker','config_service']
+        fields = [
+            'cluster',
+            'instance',
+            'storage',
+            'sql',
+            'serviceAccount',
+            'network',
+            'iam',
+            'disk',
+            'snapshot',
+            'log_monitor',
+            'kms', 
+            'policy', 
+            'no_sql', 
+            'eip', 
+            'apphosting', 
+            'lb', 
+            'analyzer', 
+            'filesystem', 
+            'user_groups',
+            'sagemaker',
+            'config_service',
+            'elasticsearch',
+            'guardduty', 
+            'functions', 
+            'redshift',
+            's3control',
+            'dax', 
+            'opensearch',
+            'cloudfront',
+            'apigateway', 
+            'rest_api',
+            'sqs',
+            'ssm',
+            'sns',
+            'docdb'
+        ]
 
     cluster = List(Nested(ResourceClusterSchema), required=True)
     instance = List(Nested(ResourceInstanceSchema), required=True)
@@ -189,6 +223,20 @@ class ResourceSchema(Schema):
     analyzer = List(Dict())
     filesystem = List(Dict())
     user_groups = List(Dict())
+    functions = List(Dict())
     sagemaker = List(Dict())
     config_service = List(Dict())
-
+    elasticsearch =List(Dict())
+    guardduty =List(Dict())
+    redshift = List(Dict())
+    s3control =List(Dict())
+    dax =List(Dict())
+    opensearch = List(Dict())
+    cloudfront = List(Dict())
+    apigateway = List(Dict())
+    rest_api = List(Dict())
+    sqs = List(Dict())
+    ssm = List(Dict())
+    sns = List(Dict())
+    docdb = List(Dict())
+    
