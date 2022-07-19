@@ -41,5 +41,5 @@ def fetchResources(provider):
             "status": 400
         }
         return ExceptionSchema().dump(ExceptionModel(exception)), 400
-
+    # print(pretty_resources)
     return ResourceSchema().dump(ResourceModel(pretty_resources)), 200

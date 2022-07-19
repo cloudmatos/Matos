@@ -1,0 +1,287 @@
+{
+    "log_monitor": [
+        {
+            "self": [
+                {
+                    "actions": {
+                        "action_groups": [
+                            {
+                                "action_group_id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/Test-ActivityLogAlerts-RG/providers/microsoft.insights/actionGroups/test-action-group"
+                            }
+                        ]
+                    },
+                    "condition": {
+                        "all_of": [
+                            {
+                                "equals": "Administrative",
+                                "field": "category"
+                            },
+                            {
+                                "equals": "Microsoft.Network/loadBalancers/write",
+                                "field": "operationName"
+                            }
+                        ]
+                    },
+                    "description": "Alert for Create or Update Load Balancer events",
+                    "enabled": true,
+                    "id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/Test-ActivityLogAlerts-RG/providers/microsoft.insights/activityLogAlerts/Create-Update-Load-Balancer",
+                    "location": "Global",
+                    "name": "Create-Update-Load-Balancer",
+                    "scopes": [
+                        "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/Test-ActivityLogAlerts-RG"
+                    ],
+                    "tags": {},
+                    "type": "Microsoft.Insights/ActivityLogAlerts"
+                },
+                {
+                    "actions": {
+                        "action_groups": [
+                            {
+                                "action_group_id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/Test-ActivityLogAlerts-RG/providers/microsoft.insights/actionGroups/test-action-group"
+                            }
+                        ]
+                    },
+                    "condition": {
+                        "all_of": [
+                            {
+                                "equals": "Administrative",
+                                "field": "category"
+                            },
+                            {
+                                "equals": "Microsoft.Network/loadBalancers/write",
+                                "field": "operationName"
+                            }
+                        ]
+                    },
+                    "description": "Create or Update Load Balancer events alert",
+                    "enabled": true,
+                    "id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/Test-ActivityLogAlerts-RG/providers/microsoft.insights/activityLogAlerts/test-create-update-load-balancer-alert",
+                    "location": "Global",
+                    "name": "test-create-update-load-balancer-alert",
+                    "scopes": [
+                        "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/Test-ActivityLogAlerts-RG"
+                    ],
+                    "tags": {},
+                    "type": "Microsoft.Insights/ActivityLogAlerts"
+                }
+            ]
+        },
+        {
+            "self": [
+                {
+                    "actions": {
+                        "action_groups": []
+                    },
+                    "condition": {
+                        "all_of": [
+                            {
+                                "equals": "Administrative",
+                                "field": "category"
+                            },
+                            {
+                                "equals": "Microsoft.Resources/subscriptions/resourcegroups",
+                                "field": "resourceType"
+                            },
+                            {
+                                "equals": "Microsoft.Resources/subscriptions/resourceGroups/validateMoveResources/action",
+                                "field": "operationName"
+                            }
+                        ]
+                    },
+                    "description": "",
+                    "enabled": true,
+                    "id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup/providers/microsoft.insights/activityLogAlerts/Validate Move Resource Group Resources",
+                    "location": "Global",
+                    "name": "Validate Move Resource Group Resources",
+                    "scopes": [
+                        "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup"
+                    ],
+                    "tags": {},
+                    "type": "Microsoft.Insights/ActivityLogAlerts"
+                },
+                {
+                    "actions": {
+                        "action_groups": []
+                    },
+                    "condition": {
+                        "all_of": [
+                            {
+                                "equals": "Administrative",
+                                "field": "category"
+                            },
+                            {
+                                "equals": "Microsoft.Resources/subscriptions/resourcegroups",
+                                "field": "resourceType"
+                            },
+                            {
+                                "equals": "Microsoft.Resources/subscriptions/resourceGroups/write",
+                                "field": "operationName"
+                            }
+                        ]
+                    },
+                    "description": "",
+                    "enabled": true,
+                    "id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup/providers/microsoft.insights/activityLogAlerts/create and update",
+                    "location": "Global",
+                    "name": "create and update",
+                    "scopes": [
+                        "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup"
+                    ],
+                    "tags": {},
+                    "type": "Microsoft.Insights/ActivityLogAlerts"
+                },
+                {
+                    "actions": {
+                        "action_groups": []
+                    },
+                    "condition": {
+                        "all_of": [
+                            {
+                                "equals": "Administrative",
+                                "field": "category"
+                            },
+                            {
+                                "equals": "microsoft.network/networksecuritygroups",
+                                "field": "resourceType"
+                            },
+                            {
+                                "equals": "Microsoft.Network/networkSecurityGroups/write",
+                                "field": "operationName"
+                            }
+                        ]
+                    },
+                    "description": "for testing network security group",
+                    "enabled": true,
+                    "id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup/providers/microsoft.insights/activityLogAlerts/create and update network security group",
+                    "location": "Global",
+                    "name": "create and update network security group",
+                    "scopes": [
+                        "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e"
+                    ],
+                    "tags": {},
+                    "type": "Microsoft.Insights/ActivityLogAlerts"
+                },
+                {
+                    "actions": {
+                        "action_groups": []
+                    },
+                    "condition": {
+                        "all_of": [
+                            {
+                                "equals": "Administrative",
+                                "field": "category"
+                            },
+                            {
+                                "equals": "microsoft.authorization/policyassignments",
+                                "field": "resourceType"
+                            },
+                            {
+                                "equals": "Microsoft.Authorization/policyAssignments/write",
+                                "field": "operationName"
+                            }
+                        ]
+                    },
+                    "description": "this is for testing purpose",
+                    "enabled": true,
+                    "id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup/providers/microsoft.insights/activityLogAlerts/create policy for myresourcegroup",
+                    "location": "Global",
+                    "name": "create policy for myresourcegroup",
+                    "scopes": [
+                        "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup"
+                    ],
+                    "tags": {},
+                    "type": "Microsoft.Insights/ActivityLogAlerts"
+                },
+                {
+                    "actions": {
+                        "action_groups": []
+                    },
+                    "condition": {
+                        "all_of": [
+                            {
+                                "equals": "Administrative",
+                                "field": "category"
+                            },
+                            {
+                                "equals": "Microsoft.Resources/subscriptions/resourcegroups",
+                                "field": "resourceType"
+                            },
+                            {
+                                "equals": "Microsoft.Resources/subscriptions/resourceGroups/delete",
+                                "field": "operationName"
+                            }
+                        ]
+                    },
+                    "description": "",
+                    "enabled": true,
+                    "id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup/providers/microsoft.insights/activityLogAlerts/delete",
+                    "location": "Global",
+                    "name": "delete",
+                    "scopes": [
+                        "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup"
+                    ],
+                    "tags": {},
+                    "type": "Microsoft.Insights/ActivityLogAlerts"
+                },
+                {
+                    "actions": {
+                        "action_groups": []
+                    },
+                    "condition": {
+                        "all_of": [
+                            {
+                                "equals": "Administrative",
+                                "field": "category"
+                            },
+                            {
+                                "equals": "Microsoft.AAD/domainServices/delete",
+                                "field": "operationName"
+                            }
+                        ]
+                    },
+                    "description": "",
+                    "enabled": true,
+                    "id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup/providers/microsoft.insights/activityLogAlerts/delete domain service",
+                    "location": "Global",
+                    "name": "delete domain service",
+                    "scopes": [
+                        "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup"
+                    ],
+                    "tags": {},
+                    "type": "Microsoft.Insights/ActivityLogAlerts"
+                },
+                {
+                    "actions": {
+                        "action_groups": []
+                    },
+                    "condition": {
+                        "all_of": [
+                            {
+                                "equals": "Administrative",
+                                "field": "category"
+                            },
+                            {
+                                "equals": "microsoft.authorization/policyassignments",
+                                "field": "resourceType"
+                            },
+                            {
+                                "equals": "Microsoft.Authorization/policyAssignments/delete",
+                                "field": "operationName"
+                            }
+                        ]
+                    },
+                    "description": "testing delete policy assignment rule",
+                    "enabled": true,
+                    "id": "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup/providers/microsoft.insights/activityLogAlerts/policy assignment delete",
+                    "location": "Global",
+                    "name": "policy assignment delete",
+                    "scopes": [
+                        "/subscriptions/c707c34a-02b1-4109-80b5-ca5bf89bfd0e/resourceGroups/MyResourceGroup"
+                    ],
+                    "tags": {},
+                    "type": "Microsoft.Insights/ActivityLogAlerts"
+                }
+            ]
+        }
+    ]
+}

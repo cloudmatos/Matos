@@ -42,7 +42,7 @@ Matos is a cloud resource anomaly detection application. It helps detect anomali
 
 Clone the Matos repository into a directory
 
-    git clone https://github.com/cloudmatos/Matos.git
+    git clone https://github.com/Ashishcloudmatos/matosphere.git
 
 Change directory
 

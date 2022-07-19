@@ -4,18 +4,18 @@
       "node": [
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-28T05:33:20Z", 
-            "display_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
-            "name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "display_name": "google-project-01-np-xxxxxxxxx-xxxx", 
+            "name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "self_link": "", 
             "source_data": {
               "metadata": {
                 "annotations": {
-                  "container.googleapis.com/instance_id": "2409296997784965297", 
-                  "csi.volume.kubernetes.io/nodeid": "{\"pd.csi.storage.gke.io\":\"projects/cloudmatos-demoblog/zones/us-west1-a/instances/gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89\"}", 
+                  "container.googleapis.com/instance_id": "000000000000000", 
+                  "csi.volume.kubernetes.io/nodeid": "{\"pd.csi.storage.gke.io\":\"projects/google-project-01/zones/us-west1-a/instances/google-project-01-np-xxxxxxxxx-xxxx\"}", 
                   "node.alpha.kubernetes.io/ttl": "0", 
-                  "node.gke.io/last-applied-node-labels": "cloud.google.com/gke-boot-disk=pd-standard,cloud.google.com/gke-container-runtime=docker,cloud.google.com/gke-nodepool=cmdbnodepool,cloud.google.com/gke-os-distribution=cos,cloud.google.com/gke-preemptible=true,cloud.google.com/machine-family=e2", 
+                  "node.gke.io/last-applied-node-labels": "cloud.google.com/gke-boot-disk=pd-standard,cloud.google.com/gke-container-runtime=docker,cloud.google.com/gke-nodepool=np,cloud.google.com/gke-os-distribution=cos,cloud.google.com/gke-preemptible=true,cloud.google.com/machine-family=e2", 
                   "volumes.kubernetes.io/controller-managed-attach-detach": "true"
                 }, 
                 "clusterName": "", 
@@ -28,14 +28,14 @@
                   "beta.kubernetes.io/os": "linux", 
                   "cloud.google.com/gke-boot-disk": "pd-standard", 
                   "cloud.google.com/gke-container-runtime": "docker", 
-                  "cloud.google.com/gke-nodepool": "cmdbnodepool", 
+                  "cloud.google.com/gke-nodepool": "np", 
                   "cloud.google.com/gke-os-distribution": "cos", 
                   "cloud.google.com/gke-preemptible": "true", 
                   "cloud.google.com/machine-family": "e2", 
                   "failure-domain.beta.kubernetes.io/region": "us-west1", 
                   "failure-domain.beta.kubernetes.io/zone": "us-west1-a", 
                   "kubernetes.io/arch": "amd64", 
-                  "kubernetes.io/hostname": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                  "kubernetes.io/hostname": "google-project-01-np-xxxxxxxxx-xxxx", 
                   "kubernetes.io/os": "linux", 
                   "node.kubernetes.io/instance-type": "e2-micro", 
                   "topology.gke.io/zone": "us-west1-a", 
@@ -84,7 +84,7 @@
                     "time": "2021-12-31T11:58:47Z"
                   }
                 ], 
-                "name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "name": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "namespace": "", 
                 "selfLink": "", 
                 "uid": "7ea2f9f7-eb59-49ea-af27-9637863c9d6d"
@@ -95,7 +95,7 @@
                 "podCIDRs": [
                   "10.24.6.0/24"
                 ], 
-                "providerID": "gce://cloudmatos-demoblog/us-west1-a/gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "providerID": "gce://google-project-01/us-west1-a/google-project-01-np-xxxxxxxxx-xxxx", 
                 "unschedulable": false
               }, 
               "status": {
@@ -109,11 +109,11 @@
                     "type": "ExternalIP"
                   }, 
                   {
-                    "address": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89.us-west1-a.c.cloudmatos-demoblog.internal", 
+                    "address": "google-project-01-np-xxxxxxxxx-xxxx.us-west1-a.c.google-project-01.internal", 
                     "type": "InternalDNS"
                   }, 
                   {
-                    "address": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89.us-west1-a.c.cloudmatos-demoblog.internal", 
+                    "address": "google-project-01-np-xxxxxxxxx-xxxx.us-west1-a.c.google-project-01.internal", 
                     "type": "Hostname"
                   }
                 ], 
@@ -444,11 +444,11 @@
                   "type": "ExternalIP"
                 }, 
                 {
-                  "address": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89.us-west1-a.c.cloudmatos-demoblog.internal", 
+                  "address": "google-project-01-np-xxxxxxxxx-xxxx.us-west1-a.c.google-project-01.internal", 
                   "type": "InternalDNS"
                 }, 
                 {
-                  "address": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89.us-west1-a.c.cloudmatos-demoblog.internal", 
+                  "address": "google-project-01-np-xxxxxxxxx-xxxx.us-west1-a.c.google-project-01.internal", 
                   "type": "Hostname"
                 }
               ], 
@@ -475,21 +475,21 @@
       "pod": [
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:48:46Z", 
-            "display_name": "cmdbwp-77ccc4fc57-kqdbj", 
-            "name": "cmdbwp-77ccc4fc57-kqdbj", 
+            "display_name": "testwp-77ccc4fc57-kqdbj", 
+            "name": "testwp-77ccc4fc57-kqdbj", 
             "namespace": "default", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "clusterName": "", 
                 "creationTimestamp": "2021-12-31T11:48:46Z", 
-                "generateName": "cmdbwp-77ccc4fc57-", 
+                "generateName": "testwp-77ccc4fc57-", 
                 "generation": 0.0, 
                 "labels": {
                   "env": "Demo", 
-                  "pod": "cmdbwp", 
+                  "pod": "testwp", 
                   "pod-template-hash": "77ccc4fc57"
                 }, 
                 "managedFields": [
@@ -524,7 +524,7 @@
                     "time": "2021-12-31T11:56:36Z"
                   }
                 ], 
-                "name": "cmdbwp-77ccc4fc57-kqdbj", 
+                "name": "testwp-77ccc4fc57-kqdbj", 
                 "namespace": "default", 
                 "ownerReferences": [
                   {
@@ -532,7 +532,7 @@
                     "blockOwnerDeletion": true, 
                     "controller": true, 
                     "kind": "ReplicaSet", 
-                    "name": "cmdbwp-77ccc4fc57", 
+                    "name": "testwp-77ccc4fc57", 
                     "uid": "de290d90-3b78-48d1-a376-ecf30fcc51a6"
                   }
                 ], 
@@ -602,7 +602,7 @@
                 "hostNetwork": false, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "preemptionPolicy": "PreemptLowerPriority", 
                 "priority": 0.0, 
                 "priorityClassName": "", 
@@ -723,12 +723,12 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:48:47Z", 
             "display_name": "event-exporter-gke-564fb97f9-zk4tb", 
             "name": "event-exporter-gke-564fb97f9-zk4tb", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
@@ -798,7 +798,7 @@
                     "command": [
                       "/event-exporter", 
                       "-sink-opts=-stackdriver-resource-model=new -endpoint=https://logging.googleapis.com", 
-                      "-prometheus-endpoint=:8080"
+                      "-prometheus-endpoint=:8088"
                     ], 
                     "image": "gke.gcr.io/event-exporter:v0.3.4-gke.0", 
                     "imagePullPolicy": "IfNotPresent", 
@@ -833,7 +833,7 @@
                       "/monitor", 
                       "--stackdriver-prefix=container.googleapis.com/internal/addons", 
                       "--api-override=https://monitoring.googleapis.com/", 
-                      "--source=event_exporter:http://localhost:8080?whitelisted=stackdriver_sink_received_entry_count,stackdriver_sink_request_count,stackdriver_sink_successfully_sent_entry_count", 
+                      "--source=event_exporter:http://localhost:8088?whitelisted=stackdriver_sink_received_entry_count,stackdriver_sink_request_count,stackdriver_sink_successfully_sent_entry_count", 
                       "--pod-id=$(POD_NAME)", 
                       "--namespace-id=$(POD_NAMESPACE)", 
                       "--node-name=$(NODE_NAME)"
@@ -905,7 +905,7 @@
                 "hostNetwork": false, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "nodeSelector": {
                   "kubernetes.io/os": "linux"
                 }, 
@@ -1061,12 +1061,12 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:49:13Z", 
             "display_name": "fluentbit-gke-29twp", 
             "name": "fluentbit-gke-29twp", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
@@ -1137,7 +1137,7 @@
                               "key": "metadata.name", 
                               "operator": "In", 
                               "values": [
-                                "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89"
+                                "google-project-01-np-xxxxxxxxx-xxxx"
                               ]
                             }
                           ]
@@ -1314,7 +1314,7 @@
                 "hostNetwork": true, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "nodeSelector": {
                   "kubernetes.io/os": "linux"
                 }, 
@@ -1545,27 +1545,27 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:49:12Z", 
-            "display_name": "gke-metrics-agent-7sp4z", 
-            "name": "gke-metrics-agent-7sp4z", 
+            "display_name": "google-xxx-metric-agent-7sp4z", 
+            "name": "google-xxx-metric-agent-7sp4z", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
-                  "components.gke.io/component-name": "gke-metrics-agent", 
+                  "components.gke.io/component-name": "google-xxx-metric-agent", 
                   "components.gke.io/component-version": "0.66.0", 
                   "configHash": "WymkZJG6Lrl1H4+d4Ti5OkgK5vJ9gP5cE7QfrNVHscE="
                 }, 
                 "clusterName": "", 
                 "creationTimestamp": "2021-12-31T11:49:12Z", 
-                "generateName": "gke-metrics-agent-", 
+                "generateName": "google-xxx-metric-agent-", 
                 "generation": 0.0, 
                 "labels": {
-                  "component": "gke-metrics-agent", 
+                  "component": "google-xxx-metric-agent", 
                   "controller-revision-hash": "74d76d94cf", 
-                  "k8s-app": "gke-metrics-agent", 
+                  "k8s-app": "google-xxx-metric-agent", 
                   "pod-template-generation": "1"
                 }, 
                 "managedFields": [
@@ -1590,7 +1590,7 @@
                     "time": "2021-12-31T11:52:51Z"
                   }
                 ], 
-                "name": "gke-metrics-agent-7sp4z", 
+                "name": "google-xxx-metric-agent-7sp4z", 
                 "namespace": "kube-system", 
                 "ownerReferences": [
                   {
@@ -1598,7 +1598,7 @@
                     "blockOwnerDeletion": true, 
                     "controller": true, 
                     "kind": "DaemonSet", 
-                    "name": "gke-metrics-agent", 
+                    "name": "google-xxx-metric-agent", 
                     "uid": "599442cc-95e5-4cbb-8393-a6f8629494b7"
                   }
                 ], 
@@ -1617,7 +1617,7 @@
                               "key": "metadata.name", 
                               "operator": "In", 
                               "values": [
-                                "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89"
+                                "google-project-01-np-xxxxxxxxx-xxxx"
                               ]
                             }
                           ]
@@ -1689,7 +1689,7 @@
                     ], 
                     "image": "gke.gcr.io/gke-metrics-agent:1.2.0-gke.0", 
                     "imagePullPolicy": "IfNotPresent", 
-                    "name": "gke-metrics-agent", 
+                    "name": "google-xxx-metric-agent", 
                     "resources": {
                       "limits": {
                         "memory": "50Mi"
@@ -1718,7 +1718,7 @@
                     "volumeMounts": [
                       {
                         "mountPath": "/conf", 
-                        "name": "gke-metrics-agent-config-vol", 
+                        "name": "google-xxx-metric-agent-config-vol", 
                         "readOnly": false, 
                         "subPath": "", 
                         "subPathExpr": ""
@@ -1732,7 +1732,7 @@
                       }, 
                       {
                         "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount", 
-                        "name": "gke-metrics-agent-token-6dg2n", 
+                        "name": "google-xxx-metric-agent-token-6dg2n", 
                         "readOnly": true, 
                         "subPath": "", 
                         "subPathExpr": ""
@@ -1747,7 +1747,7 @@
                 "hostNetwork": true, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "nodeSelector": {
                   "kubernetes.io/os": "linux"
                 }, 
@@ -1757,8 +1757,8 @@
                 "restartPolicy": "Always", 
                 "schedulerName": "default-scheduler", 
                 "securityContext": {}, 
-                "serviceAccount": "gke-metrics-agent", 
-                "serviceAccountName": "gke-metrics-agent", 
+                "serviceAccount": "google-xxx-metric-agent", 
+                "serviceAccountName": "google-xxx-metric-agent", 
                 "subdomain": "", 
                 "terminationGracePeriodSeconds": 30.0, 
                 "tolerations": [
@@ -1825,18 +1825,18 @@
                 ], 
                 "volumes": [
                   {
-                    "name": "gke-metrics-agent-config-vol", 
+                    "name": "google-xxx-metric-agent-config-vol", 
                     "volumeSource": {
                       "configMap": {
                         "defaultMode": 420.0, 
                         "items": [
                           {
-                            "key": "gke-metrics-agent-config", 
-                            "path": "gke-metrics-agent-config.yaml"
+                            "key": "google-xxx-metric-agent-config", 
+                            "path": "google-xxx-metric-agent-config.yaml"
                           }
                         ], 
                         "localObjectReference": {
-                          "name": "gke-metrics-agent-conf"
+                          "name": "google-xxx-metric-agent-conf"
                         }
                       }
                     }
@@ -1851,11 +1851,11 @@
                     }
                   }, 
                   {
-                    "name": "gke-metrics-agent-token-6dg2n", 
+                    "name": "google-xxx-metric-agent-token-6dg2n", 
                     "volumeSource": {
                       "secret": {
                         "defaultMode": 420.0, 
-                        "secretName": "gke-metrics-agent-token-6dg2n"
+                        "secretName": "google-xxx-metric-agent-token-6dg2n"
                       }
                     }
                   }
@@ -1902,7 +1902,7 @@
                     "image": "gke.gcr.io/gke-metrics-agent:1.2.0-gke.0", 
                     "imageID": "docker-pullable://gke.gcr.io/gke-metrics-agent@sha256:4c8fa47f743516bb66c4feaa9d4179ff988cc38e5c2c7de1815471f1263a48bd", 
                     "lastState": {}, 
-                    "name": "gke-metrics-agent", 
+                    "name": "google-xxx-metric-agent", 
                     "ready": true, 
                     "restartCount": 0.0, 
                     "started": true, 
@@ -1942,12 +1942,12 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:49:09Z", 
             "display_name": "konnectivity-agent-5655b6ccb4-bllgd", 
             "name": "konnectivity-agent-5655b6ccb4-bllgd", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
@@ -2017,7 +2017,7 @@
                     "args": [
                       "--logtostderr=true", 
                       "--ca-cert=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt", 
-                      "--proxy-server-host=35.247.32.119", 
+                      "--proxy-server-host=10.0.0.1", 
                       "--proxy-server-port=8132", 
                       "--health-server-port=8093", 
                       "--admin-server-port=8094", 
@@ -2124,7 +2124,7 @@
                 "hostNetwork": false, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "nodeSelector": {
                   "beta.kubernetes.io/os": "linux"
                 }, 
@@ -2308,12 +2308,12 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:49:11Z", 
             "display_name": "konnectivity-agent-autoscaler-6cb774c9cc-cq9sc", 
             "name": "konnectivity-agent-autoscaler-6cb774c9cc-cq9sc", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
@@ -2427,7 +2427,7 @@
                 "hostNetwork": false, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "nodeSelector": {
                   "beta.kubernetes.io/os": "linux"
                 }, 
@@ -2565,12 +2565,12 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:49:09Z", 
             "display_name": "kube-dns-autoscaler-844c9d9448-np24d", 
             "name": "kube-dns-autoscaler-844c9d9448-np24d", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
@@ -2676,7 +2676,7 @@
                 "hostNetwork": false, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "nodeSelector": {
                   "kubernetes.io/os": "linux"
                 }, 
@@ -2816,17 +2816,17 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:49:08Z", 
             "display_name": "kube-dns-b4f5c58c7-s7tpc", 
             "name": "kube-dns-b4f5c58c7-s7tpc", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
                   "components.gke.io/component-name": "kubedns", 
-                  "prometheus.io/port": "10054", 
+                  "prometheus.io/port": "10088", 
                   "prometheus.io/scrape": "true", 
                   "scheduler.alpha.kubernetes.io/critical-pod": "", 
                   "seccomp.security.alpha.kubernetes.io/pod": "runtime/default"
@@ -2933,7 +2933,7 @@
                         "httpGet": {
                           "host": "", 
                           "path": "/healthcheck/kubedns", 
-                          "port": 10054.0, 
+                          "port": 10088.0, 
                           "scheme": "HTTP"
                         }
                       }, 
@@ -3043,7 +3043,7 @@
                         "httpGet": {
                           "host": "", 
                           "path": "/healthcheck/dnsmasq", 
-                          "port": 10054.0, 
+                          "port": 10088.0, 
                           "scheme": "HTTP"
                         }
                       }, 
@@ -3124,7 +3124,7 @@
                         "httpGet": {
                           "host": "", 
                           "path": "/metrics", 
-                          "port": 10054.0, 
+                          "port": 10088.0, 
                           "scheme": "HTTP"
                         }
                       }, 
@@ -3136,7 +3136,7 @@
                     "name": "sidecar", 
                     "ports": [
                       {
-                        "containerPort": 10054.0, 
+                        "containerPort": 10088.0, 
                         "hostIP": "", 
                         "hostPort": 0.0, 
                         "name": "metrics", 
@@ -3174,7 +3174,7 @@
                   {
                     "command": [
                       "/monitor", 
-                      "--source=kubedns:http://localhost:10054?whitelisted=probe_kubedns_latency_ms,probe_kubedns_errors,dnsmasq_misses,dnsmasq_hits", 
+                      "--source=kubedns:http://localhost:10088?whitelisted=probe_kubedns_latency_ms,probe_kubedns_errors,dnsmasq_misses,dnsmasq_hits", 
                       "--stackdriver-prefix=container.googleapis.com/internal/addons", 
                       "--api-override=https://monitoring.googleapis.com/", 
                       "--pod-id=$(POD_NAME)", 
@@ -3236,7 +3236,7 @@
                 "hostNetwork": false, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "nodeSelector": {
                   "kubernetes.io/os": "linux"
                 }, 
@@ -3433,12 +3433,12 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-28T05:35:31Z", 
-            "display_name": "kube-proxy-gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
-            "name": "kube-proxy-gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "display_name": "kube-proxy-google-project-01-np-xxxxxxxxx-xxxx", 
+            "name": "kube-proxy-google-project-01-np-xxxxxxxxx-xxxx", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
@@ -3467,14 +3467,14 @@
                     "time": "2021-12-31T11:50:34Z"
                   }
                 ], 
-                "name": "kube-proxy-gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "name": "kube-proxy-google-project-01-np-xxxxxxxxx-xxxx", 
                 "namespace": "kube-system", 
                 "ownerReferences": [
                   {
                     "apiVersion": "v1", 
                     "controller": true, 
                     "kind": "Node", 
-                    "name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                    "name": "google-project-01-np-xxxxxxxxx-xxxx", 
                     "uid": "7ea2f9f7-eb59-49ea-af27-9637863c9d6d"
                   }
                 ], 
@@ -3488,7 +3488,7 @@
                     "command": [
                       "/bin/sh", 
                       "-c", 
-                      "exec kube-proxy --master=https://35.247.32.119 --kubeconfig=/var/lib/kube-proxy/kubeconfig --cluster-cidr=10.24.0.0/14 --oom-score-adj=-998 --v=2 --feature-gates=DynamicKubeletConfig=false,RotateKubeletServerCertificate=true,GracefulNodeShutdown=true,ExecProbeTimeout=false --iptables-sync-period=1m --iptables-min-sync-period=10s --ipvs-sync-period=1m --ipvs-min-sync-period=10s --detect-local-mode=NodeCIDR 1>>/var/log/kube-proxy.log 2>&1"
+                      "exec kube-proxy --master=https://10.0.0.1 --kubeconfig=/var/lib/kube-proxy/kubeconfig --cluster-cidr=10.24.0.0/14 --oom-score-adj=-998 --v=2 --feature-gates=DynamicKubeletConfig=false,RotateKubeletServerCertificate=true,GracefulNodeShutdown=true,ExecProbeTimeout=false --iptables-sync-period=1m --iptables-min-sync-period=10s --ipvs-sync-period=1m --ipvs-min-sync-period=10s --detect-local-mode=NodeCIDR 1>>/var/log/kube-proxy.log 2>&1"
                     ], 
                     "image": "gke.gcr.io/kube-proxy-amd64:v1.20.10-gke.1600", 
                     "imagePullPolicy": "IfNotPresent", 
@@ -3559,7 +3559,7 @@
                 "hostNetwork": true, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "preemptionPolicy": "PreemptLowerPriority", 
                 "priority": 2000001000.0, 
                 "priorityClassName": "system-node-critical", 
@@ -3722,12 +3722,12 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:48:47Z", 
             "display_name": "l7-default-backend-56cb9644f6-m9bsg", 
             "name": "l7-default-backend-56cb9644f6-m9bsg", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
@@ -3801,7 +3801,7 @@
                         "httpGet": {
                           "host": "", 
                           "path": "/healthz", 
-                          "port": 8080.0, 
+                          "port": 8088.0, 
                           "scheme": "HTTP"
                         }
                       }, 
@@ -3813,7 +3813,7 @@
                     "name": "default-http-backend", 
                     "ports": [
                       {
-                        "containerPort": 8080.0, 
+                        "containerPort": 8088.0, 
                         "hostIP": "", 
                         "hostPort": 0.0, 
                         "name": "", 
@@ -3853,7 +3853,7 @@
                 "hostNetwork": false, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "preemptionPolicy": "PreemptLowerPriority", 
                 "priority": 0.0, 
                 "priorityClassName": "", 
@@ -3979,12 +3979,12 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:49:11Z", 
             "display_name": "metrics-server-v0.3.6-9c5bbf784-v4pwv", 
             "name": "metrics-server-v0.3.6-9c5bbf784-v4pwv", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
@@ -4177,7 +4177,7 @@
                 "hostNetwork": false, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "nodeSelector": {
                   "kubernetes.io/os": "linux"
                 }, 
@@ -4338,12 +4338,12 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-12-31T11:49:09Z", 
             "display_name": "pdcsi-node-w44lv", 
             "name": "pdcsi-node-w44lv", 
             "namespace": "kube-system", 
-            "node_name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+            "node_name": "google-project-01-np-xxxxxxxxx-xxxx", 
             "source_data": {
               "metadata": {
                 "annotations": {
@@ -4408,7 +4408,7 @@
                               "key": "metadata.name", 
                               "operator": "In", 
                               "values": [
-                                "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89"
+                                "google-project-01-np-xxxxxxxxx-xxxx"
                               ]
                             }
                           ]
@@ -4572,7 +4572,7 @@
                 "hostNetwork": true, 
                 "hostPID": false, 
                 "hostname": "", 
-                "nodeName": "gke-cmdbgke-cmdbnodepool-7e6be4cc-dl89", 
+                "nodeName": "google-project-01-np-xxxxxxxxx-xxxx", 
                 "nodeSelector": {
                   "kubernetes.io/os": "linux"
                 }, 
@@ -4835,12 +4835,12 @@
       ], 
       "self": {
         "create_time": "2021-04-21T13:38:35+00:00", 
-        "description": "cmdbgke", 
-        "display_name": "cmdbgke", 
-        "endpoint": "35.247.32.119", 
-        "name": "cmdbgke", 
+        "description": "testgke", 
+        "display_name": "testgke", 
+        "endpoint": "10.0.0.1", 
+        "name": "testgke", 
         "region": "us-west1", 
-        "self_link": "https://container.googleapis.com/v1/projects/cloudmatos-demoblog/locations/us-west1/clusters/cmdbgke", 
+        "self_link": "https://container.googleapis.com/v1/projects/google-project-01/locations/us-west1/clusters/testgke", 
         "source_data": {
           "addonsConfig": {
             "gcePersistentDiskCsiDriverConfig": {
@@ -4866,13 +4866,13 @@
           "databaseEncryption": {
             "state": "DECRYPTED"
           }, 
-          "description": "cmdbgke", 
-          "endpoint": "35.247.32.119", 
-          "id": "7a30a76e771443c0bfcddd7242cf590adef354fd950a4452a2b2d0ac72912028", 
+          "description": "testgke", 
+          "endpoint": "10.0.0.1", 
+          "id": "000000000000000000", 
           "initialClusterVersion": "1.18.16-gke.502", 
           "initialNodeCount": 1.0, 
           "instanceGroupUrls": [
-            "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instanceGroupManagers/gke-cmdbgke-cmdbnodepool-7e6be4cc-grp"
+            "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instanceGroupManagers/google-project-01-np-7e6be4cc-grp"
           ], 
           "enableKubernetesAlpha": true, 
           "ipAllocationPolicy": {
@@ -4910,16 +4910,16 @@
             }
           }, 
           "monitoringService": "monitoring.googleapis.com/kubernetes", 
-          "name": "cmdbgke", 
-          "network": "cmdbvpc", 
+          "name": "testgke", 
+          "network": "test-vpc", 
           "networkConfig": {
             "enableIntraNodeVisibility": true,
             "defaultSnatStatus": {}, 
-            "network": "projects/cloudmatos-demoblog/global/networks/cmdbvpc", 
+            "network": "projects/google-project-01/global/networks/test-vpc", 
             "serviceExternalIpsConfig": {
               "enabled": true
             }, 
-            "subnetwork": "projects/cloudmatos-demoblog/regions/us-west1/subnetworks/cmdbsubnet"
+            "subnetwork": "projects/google-project-01/regions/us-west1/subnetworks/testsubnet"
           }, 
           "nodeConfig": {
             "diskSizeGb": 100.0, 
@@ -4970,7 +4970,7 @@
               }, 
               "initialNodeCount": 1.0, 
               "instanceGroupUrls": [
-                "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instanceGroupManagers/gke-cmdbgke-cmdbnodepool-7e6be4cc-grp"
+                "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instanceGroupManagers/google-project-01-np-7e6be4cc-grp"
               ], 
               "locations": [
                 "us-west1-a"
@@ -4979,9 +4979,9 @@
                 "autoRepair": true, 
                 "autoUpgrade": true
               }, 
-              "name": "cmdbnodepool", 
+              "name": "np", 
               "podIpv4CidrSize": 24.0, 
-              "selfLink": "https://container.googleapis.com/v1/projects/cloudmatos-demoblog/locations/us-west1/clusters/cmdbgke/nodePools/cmdbnodepool", 
+              "selfLink": "https://container.googleapis.com/v1/projects/google-project-01/locations/us-west1/clusters/testgke/nodePools/np", 
               "status": "RUNNING", 
               "upgradeSettings": {
                 "maxSurge": 1.0
@@ -4995,13 +4995,13 @@
           "resourceLabels": {
             "env": "test-environment"
           },
-          "selfLink": "https://container.googleapis.com/v1/projects/cloudmatos-demoblog/locations/us-west1/clusters/cmdbgke", 
+          "selfLink": "https://container.googleapis.com/v1/projects/google-project-01/locations/us-west1/clusters/testgke", 
           "servicesIpv4Cidr": "10.27.240.0/20", 
           "shieldedNodes": {
             "enabled": true
           }, 
           "status": "RUNNING", 
-          "subnetwork": "cmdbsubnet", 
+          "subnetwork": "testsubnet", 
           "zone": "us-west1"
         }, 
         "status": "RUNNING"
@@ -5009,7 +5009,7 @@
       "service": [
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-04-21T13:41:07Z", 
             "name": "kubernetes", 
             "namespace": "default", 
@@ -5071,7 +5071,7 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-04-21T13:49:20Z", 
             "name": "wp-svc", 
             "namespace": "default", 
@@ -5132,7 +5132,7 @@
                 ], 
                 "publishNotReadyAddresses": false, 
                 "selector": {
-                  "pod": "cmdbwp"
+                  "pod": "testwp"
                 }, 
                 "sessionAffinity": "None", 
                 "type": "LoadBalancer"
@@ -5162,14 +5162,14 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-04-21T13:41:26Z", 
             "name": "default-http-backend", 
             "namespace": "kube-system", 
             "source_data": {
               "metadata": {
                 "annotations": {
-                  "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"addonmanager.kubernetes.io/mode\":\"Reconcile\",\"k8s-app\":\"glbc\",\"kubernetes.io/cluster-service\":\"true\",\"kubernetes.io/name\":\"GLBCDefaultBackend\"},\"name\":\"default-http-backend\",\"namespace\":\"kube-system\"},\"spec\":{\"ports\":[{\"name\":\"http\",\"port\":80,\"protocol\":\"TCP\",\"targetPort\":8080}],\"selector\":{\"k8s-app\":\"glbc\"},\"type\":\"NodePort\"}}\n"
+                  "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"addonmanager.kubernetes.io/mode\":\"Reconcile\",\"k8s-app\":\"glbc\",\"kubernetes.io/cluster-service\":\"true\",\"kubernetes.io/name\":\"GLBCDefaultBackend\"},\"name\":\"default-http-backend\",\"namespace\":\"kube-system\"},\"spec\":{\"ports\":[{\"name\":\"http\",\"port\":80,\"protocol\":\"TCP\",\"targetPort\":8088}],\"selector\":{\"k8s-app\":\"glbc\"},\"type\":\"NodePort\"}}\n"
                 }, 
                 "clusterName": "", 
                 "creationTimestamp": "2021-04-21T13:41:26Z", 
@@ -5211,7 +5211,7 @@
                     "nodePort": 31548.0, 
                     "port": 80.0, 
                     "protocol": "TCP", 
-                    "targetPort": 8080.0
+                    "targetPort": 8088.0
                   }
                 ], 
                 "publishNotReadyAddresses": false, 
@@ -5232,7 +5232,7 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-04-21T13:41:25Z", 
             "name": "kube-dns", 
             "namespace": "kube-system", 
@@ -5309,7 +5309,7 @@
         }, 
         {
           "self": {
-            "cluster_name": "cmdbgke", 
+            "cluster_name": "testgke", 
             "create_time": "2021-04-21T13:41:28Z", 
             "name": "metrics-server", 
             "namespace": "kube-system", 
@@ -5383,8 +5383,8 @@
     {
       "self": {
         "create_time": "2021-09-28T12:08:09.271-07:00", 
-        "id": "9032467426737837815", 
-        "self_link": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-central1-a/instances/jump-box", 
+        "id": "000000000000000000", 
+        "self_link": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-central1-a/instances/jump-box", 
         "source_data": {
           "allocationAffinity": {
             "consumeAllocationType": "ANY_ALLOCATION"
@@ -5431,7 +5431,7 @@
                   }
                 ]
               }, 
-              "source": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-central1-a/disks/jump-box", 
+              "source": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-central1-a/disks/jump-box", 
               "type": "PERSISTENT"
             }
           ], 
@@ -5439,13 +5439,13 @@
             "enableDisplay": false
           }, 
           "fingerprint": "xf5iJH17LLA=", 
-          "id": "9032467426737837815", 
+          "id": "000000000000000000", 
           "labelFingerprint": "0SNEHg3MVsw=", 
           "labels": {
             "name": "mohan"
           }, 
           "lastStartTimestamp": "2021-09-28T12:08:18.755-07:00", 
-          "machineType": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-central1-a/machineTypes/e2-micro", 
+          "machineType": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-central1-a/machineTypes/e2-micro", 
           "metadata": {
             "items": [
               {
@@ -5475,10 +5475,10 @@
               ], 
               "fingerprint": "XVhKrS281Eo=", 
               "name": "nic0", 
-              "network": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/global/networks/default", 
+              "network": "https://www.googleapis.com/compute/v1/projects/google-project-01/global/networks/default", 
               "networkIP": "10.128.0.2", 
               "stackType": "IPV4_ONLY", 
-              "subnetwork": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/regions/us-central1/subnetworks/default"
+              "subnetwork": "https://www.googleapis.com/compute/v1/projects/google-project-01/regions/us-central1/subnetworks/default"
             }
           ], 
           "scheduling": {
@@ -5486,10 +5486,10 @@
             "onHostMaintenance": "MIGRATE", 
             "preemptible": false
           }, 
-          "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-central1-a/instances/jump-box", 
+          "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-central1-a/instances/jump-box", 
           "serviceAccounts": [
             {
-              "email": "234821169729-compute@developer.gserviceaccount.com", 
+              "email": "00000000000-compute@developer.gserviceaccount.com", 
               "scopes": [
                 "https://www.googleapis.com/auth/devstorage.read_only", 
                 "https://www.googleapis.com/auth/logging.write", 
@@ -5516,7 +5516,7 @@
               "http-server"
             ]
           }, 
-          "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-central1-a"
+          "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-central1-a"
         }, 
         "status": "RUNNING"
       }
@@ -5524,8 +5524,8 @@
     {
       "self": {
         "create_time": "2021-04-29T05:39:58.384-07:00", 
-        "id": "4260511954850224114", 
-        "self_link": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/cmdbonvm-vm", 
+        "id": "000000000000000000", 
+        "self_link": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/testonvm-vm", 
         "source_data": {
           "canIpForward": false, 
           "cpuPlatform": "Intel Broadwell", 
@@ -5549,18 +5549,18 @@
                 "https://www.googleapis.com/compute/v1/projects/click-to-deploy-images/global/licenses/c2d-wordpressmulti"
               ], 
               "mode": "READ_WRITE", 
-              "source": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/cmdbonvm-vm", 
+              "source": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/testonvm-vm", 
               "type": "PERSISTENT"
             }
           ], 
           "fingerprint": "qZ5zDiLjHl4=", 
-          "id": "4260511954850224114", 
+          "id": "000000000000000000", 
           "labelFingerprint": "/SyUmPYAj80=", 
           "labels": {
-            "goog-dm": "cmdbonvm"
+            "goog-dm": "testonvm"
           }, 
           "lastStartTimestamp": "2021-04-29T05:40:06.541-07:00", 
-          "machineType": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/machineTypes/g1-small", 
+          "machineType": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/machineTypes/g1-small", 
           "metadata": {
             "items": [
               {
@@ -5577,7 +5577,7 @@
               }
             ]
           }, 
-          "name": "cmdbonvm-vm", 
+          "name": "testonvm-vm", 
           "networkInterfaces": [
             {
               "accessConfigs": [
@@ -5590,9 +5590,9 @@
               ], 
               "fingerprint": "xbD45OVNLW8=", 
               "name": "nic0", 
-              "network": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/global/networks/default", 
+              "network": "https://www.googleapis.com/compute/v1/projects/google-project-01/global/networks/default", 
               "networkIP": "10.138.0.2", 
-              "subnetwork": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/regions/us-west1/subnetworks/default"
+              "subnetwork": "https://www.googleapis.com/compute/v1/projects/google-project-01/regions/us-west1/subnetworks/default"
             }
           ], 
           "scheduling": {
@@ -5600,10 +5600,10 @@
             "onHostMaintenance": "MIGRATE", 
             "preemptible": false
           }, 
-          "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/cmdbonvm-vm", 
+          "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/testonvm-vm", 
           "serviceAccounts": [
             {
-              "email": "234821169729-compute@developer.gserviceaccount.com", 
+              "email": "00000000000-compute@developer.gserviceaccount.com", 
               "scopes": [
                 "https://www.googleapis.com/auth/cloud.useraccounts.readonly", 
                 "https://www.googleapis.com/auth/devstorage.read_only", 
@@ -5618,12 +5618,12 @@
           "tags": {
             "fingerprint": "avgzyhGaHEM=", 
             "items": [
-              "cmdbonvm-deployment", 
+              "testonvm-deployment", 
               "http-server", 
               "https-server"
             ]
           }, 
-          "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+          "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
         }, 
         "status": "RUNNING"
       }

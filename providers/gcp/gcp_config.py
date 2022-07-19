@@ -239,14 +239,7 @@ RESOURCE_TYPE_REQUESTS = {
     'lb': [],
     'analyzer': [],
     "filesystem": [],
-    "user_groups": [],
-    "functions": [],
-    "redshift": [],
-    "opensearch": [],
-    "apigateway": [],
-    "rest_api": [],
-    "sqs": [],
-    "docdb": []
+    "user_groups": []
 }
 
 POD_STATUS = ['Running']

@@ -16,9 +16,12 @@ class Azure:
                  **kwargs) -> None:
 
         svc_account_filename = "azure_account.json"
-        azure_svc_account_path = os.getenv("AZURE_SVC_ACCOUNT_PATH", "credentials")
-        self._azure_svc_account_file = os.path.join(azure_svc_account_path, svc_account_filename)
+        azure_svc_account_path = os.getenv(
+            "AZURE_SVC_ACCOUNT_PATH", "credentials")
+        self._azure_svc_account_file = os.path.join(
+            azure_svc_account_path, svc_account_filename)
         # TODO: Change to local credential file
+        # print(self._azure_svc_account_file)
         try:
             azure_credentials = json.load(open(self._azure_svc_account_file))
         except:

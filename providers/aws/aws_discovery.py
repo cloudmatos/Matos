@@ -1,7 +1,6 @@
-from doctest import register_optionflag
 from .connection import AWS
 import threading
-import botocore
+
 
 class AWSDiscovery(AWS):
     """
@@ -30,22 +29,6 @@ class AWSDiscovery(AWS):
             self.resources = [{"type": 'iam'}]
             self.user_groups = self.client('iam')
             self.config_service = self.client('config')
-            self.elasticsearch = self.client('es')
-            self.guardduty = self.client('guardduty')
-            self.functions = self.client('lambda')
-            self.redshift = self.client('redshift')
-            self.sts = self.client('sts')
-            self.s3control = self.client('s3control')
-            self.dax = self.client('dax')
-            self.opensearch = self.client('opensearch')
-            self.cloudfront = self.client('cloudfront')
-            self.rest_api = self.client('apigateway')
-            self.apigatewayv2 = self.client('apigatewayv2')
-            self.sqs = self.client('sqs')
-            self.ssm = self.client('ssm')
-            self.sns = self.client('sns')
-            self.docdb = self.client('docdb')
-            
             self.func = {
                 'cluster': self.get_clusters,
                 'instance': self.get_instances,
@@ -66,21 +49,7 @@ class AWSDiscovery(AWS):
                 'policy': self.get_policy,
                 'user_groups': self.get_user_groups,
                 'sagemaker':self.get_sagemaker_instances,
-                'config_service':self.get_config_service,
-                'elasticsearch':self.get_elasticsearch,
-                'guardduty':self.get_guardduty,
-                'redshift':self.get_redshift,
-                'functions': self.get_functions,
-                's3control':self.get_s3_control,
-                'dax':self.get_dax,
-                'opensearch': self.get_opensearch,
-                'cloudfront': self.get_cloudfront,
-                'apigateway': self.get_apigatewayv2,
-                'rest_api': self.get_rest_api,
-                'sqs': self.get_sqs,
-                'ssm': self.get_ssm,
-                'sns': self.get_sns,
-                'docdb': self.get_docdb
+                'config_service':self.get_config_service
             }
         except Exception as ex:
             raise Exception(ex)
@@ -91,60 +60,6 @@ class AWSDiscovery(AWS):
         Policies = [policy.get('Arn') for policy in Policies]
         users = [{**item, "UserPoliciesArn": Policies, "type": "user_groups"} for item in response.get('Groups', [])]
         self.resources.extend(users)
-
-    def get_functions(self):
-        response = self.functions.list_functions()
-        functions = [{**item,  "type": "functions"} for item in response.get('Functions', [])]
-        self.resources.extend(functions)
-
-    def get_cloudfront(self):
-        response = self.cloudfront.list_distributions()
-        cloudfront = [{**item,  "type": "cloudfront"} for item in response.get('DistributionList', {}).get('Items',[])]
-        self.resources.extend(cloudfront)
-    
-    def get_rest_api(self):
-        response = self.rest_api.get_rest_apis()
-        rest_api = [{**item,  "type": "rest_api"} for item in response.get('items', [])]
-        self.resources.extend(rest_api)
-
-    def get_apigatewayv2(self):
-        response = self.apigatewayv2.get_apis()
-        apigateway = [{**item,  "type": "apigateway"} for item in response.get('Items', [])]
-        self.resources.extend(apigateway)
-    
-    def get_sqs(self):
-        response = self.sqs.list_queues()
-        sqs = [{"url":item, "type": "sqs"} for item in response.get('QueueUrls')]
-        self.resources.extend(sqs)
-        
-    def get_ssm(self):
-        response = self.ssm.list_documents(Filters=[{"Key":"Owner","Values":["Self"]}])
-        ssm = [{**item,  "type": "ssm"} for item in response.get('DocumentIdentifiers', [])]
-        self.resources.extend(ssm)
-    
-    def get_sns(self):
-        topics = []
-        def list_topics(topics,next_token=None):
-            if next_token:
-                response = self.sns.list_topics(NextToken=next_token)
-            else:
-                response = self.sns.list_topics()
-            topics += [{**item,  "type": "sns"} for item in response.get('Topics', [])]
-            if 'NextToken' in response:
-                list_topics(topics,response['NextToken'])
-        list_topics(topics)
-        self.resources.extend(topics)
-
-    def get_opensearch(self):
-        response = self.opensearch.list_domain_names()
-        opensearch = [{**item,  "type": "opensearch"} for item in response.get('DomainNames', [])]
-        self.resources.extend(opensearch)
-
-
-    def get_docdb(self):
-        response = self.docdb.describe_db_clusters()
-        docdb = [{**item,  "type": "docdb"} for item in response.get('DBClusters', [])]
-        self.resources.extend(docdb)
 
     def get_instances(self):
         """
@@ -416,59 +331,20 @@ class AWSDiscovery(AWS):
     def get_sagemaker_instances(self):
         resources = self.sagemaker.list_notebook_instances().get('NotebookInstances')
         resources = [{**resource, "type": 'sagemaker'} for resource in resources]
+        resources = resources if resources else [{"type": 'sagemaker', 'empty': True}]
         self.resources.extend(resources)
     
     def get_config_service(self):
         resources = self.config_service.describe_configuration_recorder_status().get('ConfigurationRecordersStatus')
         resources = [{**resource, "type": 'config_service'} for resource in resources]
+        resources = resources if resources else [{"type": 'config_service', 'empty': True}]
         self.resources.extend(resources)
-    
-    def get_elasticsearch(self):
-        resources = self.elasticsearch.list_domain_names().get('DomainNames')
-        resources = [{**resource, "type": 'elasticsearch'} for resource in resources]
-        self.resources.extend(resources)
-
-    def get_guardduty(self):
-        resources = self.guardduty.list_detectors().get('DetectorIds')
-        resources = [{"detector_id":resource, "type": 'guardduty'} for resource in resources]
-        self.resources.extend(resources)
-    
-    def get_s3_control(self):
-        caller_identity = self.sts.get_caller_identity()
-        try:
-            response = self.s3control.get_public_access_block(AccountId=caller_identity['Account'])
-            resources = response.get("PublicAccessBlockConfiguration",{})
-        except botocore.exceptions.ClientError as e:
-            if e.response['Error']['Code'] == 'NoSuchPublicAccessBlockConfiguration':
-                resources = {
-            "BlockPublicAcls": False,
-            "BlockPublicPolicy": False,
-            "IgnorePublicAcls": False,
-            "RestrictPublicBuckets": False
-          }
-        resources = [{**resources, "type": 's3control'}]
-        self.resources.extend(resources)
-
-    def get_redshift(self):
-        response = self.redshift.describe_clusters()
-        redshift = [{**item, "type": "redshift"} for item in response.get('Clusters', [])]
-        self.resources.extend(redshift)
-
-    def get_dax(self):
-        try:
-            response = self.dax.describe_clusters()
-            resources = response.get("Clusters",{})
-        except botocore.exceptions.ClientError as e:
-            return []
-        resources = [{**resource, "type": 'dax'} for resource in resources]
-        self.resources.extend(resources)
-    
-   
 
     def find_resources(self, **kwargs):
         """
         """
         threads = []
+        print(self.func.keys())
         for rsc_type in self.func.keys():
             thread = threading.Thread(target=self.func.get(rsc_type))
             thread.start()

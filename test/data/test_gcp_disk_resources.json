@@ -6,11 +6,11 @@
           "name": "jump-box", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-central1-a/disks/jump-box", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-central1-a/disks/jump-box", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-09-28T12:08:09.286-07:00", 
@@ -28,31 +28,31 @@
                     "type": "GVNIC"
                   }
                 ], 
-                "id": "3261413660303480567", 
+                "id": "00000000000000", 
                 "labelFingerprint": "42WmSpB8rSM=", 
                 "lastAttachTimestamp": "2021-09-28T12:08:09.287-07:00", 
                 "licenseCodes": [
-                  "5926592092274602096"
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/licenses/ubuntu-1804-lts"
                 ], 
                 "name": "jump-box", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-central1-a/disks/jump-box", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-central1-a/disks/jump-box", 
                 "sizeGb": "10", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20210918", 
                 "sourceImageId": "4889869687609214827", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-central1-a/diskTypes/pd-balanced", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-central1-a/diskTypes/pd-balanced", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-central1-a/instances/jump-box"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-central1-a/instances/jump-box"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-central1-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-central1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -63,31 +63,31 @@
           "name": "disk-1-test", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-east4-a/disks/disk-1-test", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-east4-a/disks/disk-1-test", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-04-21T21:33:13.053-07:00", 
-                "id": "6826048855923986151", 
+                "id": "00000000000000", 
                 "labelFingerprint": "42WmSpB8rSM=", 
                 "lastAttachTimestamp": "2022-04-21T21:33:27.094-07:00", 
                 "name": "disk-1-test", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a/disks/disk-1-test", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a/disks/disk-1-test", 
                 "sizeGb": "10", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a/diskTypes/pd-balanced", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a/diskTypes/pd-balanced", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a/instances/quickstart-quickstart-node"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a/instances/quickstart-quickstart-node"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -98,11 +98,11 @@
           "name": "quickstart-quickstart-node", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-east4-a/disks/quickstart-quickstart-node", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-east4-a/disks/quickstart-quickstart-node", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-02-15T19:44:35.854-08:00", 
@@ -120,31 +120,31 @@
                     "type": "GVNIC"
                   }
                 ], 
-                "id": "889015172094610892", 
+                "id": "00000000000000", 
                 "labelFingerprint": "42WmSpB8rSM=", 
                 "lastAttachTimestamp": "2022-02-15T19:44:35.855-08:00", 
                 "licenseCodes": [
-                  "5422776498422280384"
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/suse-cloud/global/licenses/sles-15"
                 ], 
                 "name": "quickstart-quickstart-node", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a/disks/quickstart-quickstart-node", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a/disks/quickstart-quickstart-node", 
                 "sizeGb": "10", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/suse-cloud/global/images/sles-15-sp3-v20220126", 
                 "sourceImageId": "2441718185483623909", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a/instances/quickstart-quickstart-node"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a/instances/quickstart-quickstart-node"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -155,11 +155,11 @@
           "name": "quickstart-rancher-server", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-east4-a/disks/quickstart-rancher-server", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-east4-a/disks/quickstart-rancher-server", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-02-15T19:36:13.686-08:00", 
@@ -177,31 +177,31 @@
                     "type": "GVNIC"
                   }
                 ], 
-                "id": "5561382266596347842", 
+                "id": "00000000000000", 
                 "labelFingerprint": "42WmSpB8rSM=", 
                 "lastAttachTimestamp": "2022-02-15T19:36:13.687-08:00", 
                 "licenseCodes": [
-                  "5422776498422280384"
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/suse-cloud/global/licenses/sles-15"
                 ], 
                 "name": "quickstart-rancher-server", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a/disks/quickstart-rancher-server", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a/disks/quickstart-rancher-server", 
                 "sizeGb": "10", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/suse-cloud/global/images/sles-15-sp3-v20220126", 
                 "sourceImageId": "2441718185483623909", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a/instances/quickstart-rancher-server"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a/instances/quickstart-rancher-server"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-east4-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-east4-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -209,14 +209,14 @@
       }, 
       {
         "self": {
-          "name": "cmdbonvm-vm", 
+          "name": "testonvm-vm", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/cmdbonvm-vm", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/testonvm-vm", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-04-29T05:39:58.400-07:00", 
@@ -225,33 +225,33 @@
                     "type": "VIRTIO_SCSI_MULTIQUEUE"
                   }
                 ], 
-                "id": "8172485287510218737", 
+                "id": "00000000000000", 
                 "labelFingerprint": "42WmSpB8rSM=", 
                 "lastAttachTimestamp": "2021-04-29T05:39:58.400-07:00", 
                 "licenseCodes": [
-                  "1000205", 
-                  "1006001"
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/licenses/debian-9-stretch", 
                   "https://www.googleapis.com/compute/v1/projects/click-to-deploy-images/global/licenses/c2d-wordpressmulti"
                 ], 
-                "name": "cmdbonvm-vm", 
+                "name": "testonvm-vm", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/cmdbonvm-vm", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/testonvm-vm", 
                 "sizeGb": "10", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/click-to-deploy-images/global/images/wordpress-multisite-v20200610", 
                 "sourceImageId": "3770538846279511436", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/cmdbonvm-vm"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/testonvm-vm"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -259,14 +259,14 @@
       }, 
       {
         "self": {
-          "name": "gke-cmdbgke-cmdbn-5c63c6ea-r7yn", 
+          "name": "google-project-01-testn-5c63c6ea-r7yn", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-cmdbgke-cmdbn-5c63c6ea-r7yn", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/google-project-01-testn-5c63c6ea-r7yn", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T13:18:55.666-07:00", 
@@ -284,7 +284,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "2543449279030467392", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -292,10 +292,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T13:18:55.667-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -303,22 +303,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-cmdbgke-cmdbn-5c63c6ea-r7yn", 
+                "name": "google-project-01-testn-5c63c6ea-r7yn", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-cmdbgke-cmdbn-5c63c6ea-r7yn", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/google-project-01-testn-5c63c6ea-r7yn", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/gke-cmdbgke-cmdbn-5c63c6ea-r7yn"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/google-project-01-testn-5c63c6ea-r7yn"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -326,14 +326,14 @@
       }, 
       {
         "self": {
-          "name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-8rxw", 
+          "name": "google-project-01-np-7e6be4cc-8rxw", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-cmdbgke-cmdbnodepool-7e6be4cc-8rxw", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/google-project-01-np-7e6be4cc-8rxw", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T12:39:02.338-07:00", 
@@ -351,7 +351,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "6294759558868214458", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -359,10 +359,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T12:39:02.338-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -370,22 +370,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-cmdbgke-cmdbnodepool-7e6be4cc-8rxw", 
+                "name": "google-project-01-np-7e6be4cc-8rxw", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-cmdbgke-cmdbnodepool-7e6be4cc-8rxw", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/google-project-01-np-7e6be4cc-8rxw", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-pre", 
                 "sourceImageId": "7200814349121298352", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/gke-cmdbgke-cmdbnodepool-7e6be4cc-8rxw"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/google-project-01-np-7e6be4cc-8rxw"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -393,19 +393,19 @@
       }, 
       {
         "self": {
-          "name": "gke-test-clusters-617b-pvc-ed3f5fd6-a564-4e8c-8939-2e381cd2b93c", 
+          "name": "google-tst-cluster-617b-pvc-ed3f5fd6-a564-4e8c-8939-2e381cd2b93c", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-test-clusters-617b-pvc-ed3f5fd6-a564-4e8c-8939-2e381cd2b93c", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/gke-test-clusters-617b-pvc-ed3f5fd6-a564-4e8c-8939-2e381cd2b93c", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-04-10T22:13:35.136-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-ed3f5fd6-a564-4e8c-8939-2e381cd2b93c\",\"kubernetes.io/created-for/pvc/name\":\"gkebackup-agent-vol-agent-0\",\"kubernetes.io/created-for/pvc/namespace\":\"gkebackup\"}", 
-                "id": "1796696780000069137", 
+                "id": "00000000000000", 
                 "labelFingerprint": "hGgAhpyekQM=", 
                 "labels": {
                   "asf": "asdfa", 
@@ -415,17 +415,17 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-07T05:25:29.813-07:00", 
                 "lastDetachTimestamp": "2022-05-07T14:09:20.074-07:00", 
-                "name": "gke-test-clusters-617b-pvc-ed3f5fd6-a564-4e8c-8939-2e381cd2b93c", 
+                "name": "google-tst-cluster-617b-pvc-ed3f5fd6-a564-4e8c-8939-2e381cd2b93c", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-test-clusters-617b-pvc-ed3f5fd6-a564-4e8c-8939-2e381cd2b93c", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/gke-test-clusters-617b-pvc-ed3f5fd6-a564-4e8c-8939-2e381cd2b93c", 
                 "sizeGb": "10", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -433,14 +433,14 @@
       }, 
       {
         "self": {
-          "name": "gke-test-clusters-default-pool-a19e7898-8nmg", 
+          "name": "google-tst-cluster-default-pool-a19e7898-8nmg", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-8nmg", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-8nmg", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T05:26:31.396-07:00", 
@@ -458,7 +458,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "5077382483618170905", 
+                "id": "00000000000000", 
                 "labelFingerprint": "UvONiLzdVFQ=", 
                 "labels": {
                   "asf": "asdfa", 
@@ -468,10 +468,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T05:26:31.397-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -479,22 +479,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-test-clusters-default-pool-a19e7898-8nmg", 
+                "name": "google-tst-cluster-default-pool-a19e7898-8nmg", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-8nmg", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-8nmg", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/gke-test-clusters-default-pool-a19e7898-8nmg"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/gke-test-clusters-default-pool-a19e7898-8nmg"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -502,14 +502,14 @@
       }, 
       {
         "self": {
-          "name": "gke-test-clusters-default-pool-a19e7898-txpf", 
+          "name": "google-tst-cluster-default-pool-a19e7898-txpf", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-txpf", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-txpf", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T14:12:36.070-07:00", 
@@ -527,7 +527,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "4620816233008565420", 
+                "id": "00000000000000", 
                 "labelFingerprint": "UvONiLzdVFQ=", 
                 "labels": {
                   "asf": "asdfa", 
@@ -537,10 +537,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T14:12:36.070-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -548,22 +548,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-test-clusters-default-pool-a19e7898-txpf", 
+                "name": "google-tst-cluster-default-pool-a19e7898-txpf", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-txpf", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-txpf", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/gke-test-clusters-default-pool-a19e7898-txpf"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/gke-test-clusters-default-pool-a19e7898-txpf"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -571,14 +571,14 @@
       }, 
       {
         "self": {
-          "name": "gke-test-clusters-default-pool-a19e7898-udd8", 
+          "name": "google-tst-cluster-default-pool-a19e7898-udd8", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-udd8", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-udd8", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T14:18:34.963-07:00", 
@@ -596,7 +596,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "9124960488001998149", 
+                "id": "00000000000000", 
                 "labelFingerprint": "UvONiLzdVFQ=", 
                 "labels": {
                   "asf": "asdfa", 
@@ -606,10 +606,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T14:18:34.964-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -617,22 +617,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-test-clusters-default-pool-a19e7898-udd8", 
+                "name": "google-tst-cluster-default-pool-a19e7898-udd8", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-udd8", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/gke-test-clusters-default-pool-a19e7898-udd8", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/gke-test-clusters-default-pool-a19e7898-udd8"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/gke-test-clusters-default-pool-a19e7898-udd8"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -640,36 +640,36 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-9a6645d4-dyn-pvc-73fddc02-814b-4c6e-8ee9-a5f3993c52cc", 
+          "name": "google-test-9a6645d4-dyn-pvc-73fddc02-814b-4c6e-8ee9-a5f3993c52cc", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-wpcon-9a6645d4-dyn-pvc-73fddc02-814b-4c6e-8ee9-a5f3993c52cc", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/gke-wpcon-9a6645d4-dyn-pvc-73fddc02-814b-4c6e-8ee9-a5f3993c52cc", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-04-23T06:31:26.807-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-73fddc02-814b-4c6e-8ee9-a5f3993c52cc\",\"kubernetes.io/created-for/pvc/name\":\"data-conwp-mariadb-0\",\"kubernetes.io/created-for/pvc/namespace\":\"default\"}", 
-                "id": "6956013806114796225", 
+                "id": "00000000000000", 
                 "labelFingerprint": "nT7/dAxskBs=", 
                 "labels": {
                   "goog-gke-volume": ""
                 }, 
                 "lastAttachTimestamp": "2021-04-23T06:31:48.970-07:00", 
                 "lastDetachTimestamp": "2021-04-23T06:42:54.201-07:00", 
-                "name": "gke-wpcon-9a6645d4-dyn-pvc-73fddc02-814b-4c6e-8ee9-a5f3993c52cc", 
+                "name": "google-test-9a6645d4-dyn-pvc-73fddc02-814b-4c6e-8ee9-a5f3993c52cc", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-wpcon-9a6645d4-dyn-pvc-73fddc02-814b-4c6e-8ee9-a5f3993c52cc", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/gke-wpcon-9a6645d4-dyn-pvc-73fddc02-814b-4c6e-8ee9-a5f3993c52cc", 
                 "sizeGb": "8", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -677,39 +677,39 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-a5ed6682-dyn-pvc-ec0103f3-6f7d-4af7-96e8-88f235660cbc", 
+          "name": "gke-xxxx-xxxxxxx-dyn-pvc-ec0103f3-6f7d-4af7-96e8-88f235660cbc", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-wpcon-a5ed6682-dyn-pvc-ec0103f3-6f7d-4af7-96e8-88f235660cbc", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/gke-xxxx-xxxxxxx-dyn-pvc-ec0103f3-6f7d-4af7-96e8-88f235660cbc", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-04-23T07:00:18.089-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-ec0103f3-6f7d-4af7-96e8-88f235660cbc\",\"kubernetes.io/created-for/pvc/name\":\"conwp-wordpress\",\"kubernetes.io/created-for/pvc/namespace\":\"default\"}", 
-                "id": "7287519125984734238", 
+                "id": "00000000000000", 
                 "labelFingerprint": "nT7/dAxskBs=", 
                 "labels": {
                   "goog-gke-volume": ""
                 }, 
                 "lastAttachTimestamp": "2022-05-08T02:40:59.160-07:00", 
                 "lastDetachTimestamp": "2022-05-08T02:40:44.690-07:00", 
-                "name": "gke-wpcon-a5ed6682-dyn-pvc-ec0103f3-6f7d-4af7-96e8-88f235660cbc", 
+                "name": "gke-xxxx-xxxxxxx-dyn-pvc-ec0103f3-6f7d-4af7-96e8-88f235660cbc", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-wpcon-a5ed6682-dyn-pvc-ec0103f3-6f7d-4af7-96e8-88f235660cbc", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/gke-xxxx-xxxxxxx-dyn-pvc-ec0103f3-6f7d-4af7-96e8-88f235660cbc", 
                 "sizeGb": "10", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/gke-wpcon-wpconpool-6044ff58-5gav"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/gke-wpcon-wpconpool-6044ff58-5gav"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -717,36 +717,36 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-ad3c0743-dyn-pvc-84d06b40-2669-4a43-bd91-b0439d114d36", 
+          "name": "google-test-ad3c0743-dyn-pvc-84d06b40-2669-4a43-bd91-b0439d114d36", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-wpcon-ad3c0743-dyn-pvc-84d06b40-2669-4a43-bd91-b0439d114d36", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/gke-wpcon-ad3c0743-dyn-pvc-84d06b40-2669-4a43-bd91-b0439d114d36", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-04-22T11:01:20.532-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-84d06b40-2669-4a43-bd91-b0439d114d36\",\"kubernetes.io/created-for/pvc/name\":\"data-conwp-mariadb-0\",\"kubernetes.io/created-for/pvc/namespace\":\"default\"}", 
-                "id": "6410325884601632543", 
+                "id": "00000000000000", 
                 "labelFingerprint": "nT7/dAxskBs=", 
                 "labels": {
                   "goog-gke-volume": ""
                 }, 
                 "lastAttachTimestamp": "2021-04-22T11:01:40.767-07:00", 
                 "lastDetachTimestamp": "2021-04-23T02:08:56.834-07:00", 
-                "name": "gke-wpcon-ad3c0743-dyn-pvc-84d06b40-2669-4a43-bd91-b0439d114d36", 
+                "name": "google-test-ad3c0743-dyn-pvc-84d06b40-2669-4a43-bd91-b0439d114d36", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-wpcon-ad3c0743-dyn-pvc-84d06b40-2669-4a43-bd91-b0439d114d36", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/gke-wpcon-ad3c0743-dyn-pvc-84d06b40-2669-4a43-bd91-b0439d114d36", 
                 "sizeGb": "8", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -754,14 +754,14 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-wpconpool-6044ff58-5gav", 
+          "name": "google-test-wpconpool-6044ff58-5gav", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-wpcon-wpconpool-6044ff58-5gav", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/gke-wpcon-wpconpool-6044ff58-5gav", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T02:39:48.252-07:00", 
@@ -779,7 +779,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "5538938330879242508", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -787,10 +787,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T02:39:48.253-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -798,22 +798,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-wpcon-wpconpool-6044ff58-5gav", 
+                "name": "google-test-wpconpool-6044ff58-5gav", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-wpcon-wpconpool-6044ff58-5gav", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/gke-wpcon-wpconpool-6044ff58-5gav", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-pre", 
                 "sourceImageId": "7200814349121298352", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/gke-wpcon-wpconpool-6044ff58-5gav"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/gke-wpcon-wpconpool-6044ff58-5gav"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -821,14 +821,14 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-wpconpool-6044ff58-mg8s", 
+          "name": "google-test-wpconpool-6044ff58-mg8s", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-wpcon-wpconpool-6044ff58-mg8s", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-a/disks/gke-wpcon-wpconpool-6044ff58-mg8s", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T02:40:03.488-07:00", 
@@ -846,7 +846,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "1391057047538774300", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -854,10 +854,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T02:40:03.488-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -865,22 +865,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-wpcon-wpconpool-6044ff58-mg8s", 
+                "name": "google-test-wpconpool-6044ff58-mg8s", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/disks/gke-wpcon-wpconpool-6044ff58-mg8s", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/disks/gke-wpcon-wpconpool-6044ff58-mg8s", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-pre", 
                 "sourceImageId": "7200814349121298352", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a/instances/gke-wpcon-wpconpool-6044ff58-mg8s"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a/instances/gke-wpcon-wpconpool-6044ff58-mg8s"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -888,14 +888,14 @@
       }, 
       {
         "self": {
-          "name": "gke-cmdbgke-cmdbn-323e5d89-p660", 
+          "name": "google-project-01-testn-323e5d89-p660", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-b/disks/gke-cmdbgke-cmdbn-323e5d89-p660", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-b/disks/google-project-01-testn-323e5d89-p660", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T13:09:58.784-07:00", 
@@ -913,7 +913,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "8718596203150155129", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -921,10 +921,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T13:09:58.784-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -932,22 +932,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-cmdbgke-cmdbn-323e5d89-p660", 
+                "name": "google-project-01-testn-323e5d89-p660", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/disks/gke-cmdbgke-cmdbn-323e5d89-p660", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/disks/google-project-01-testn-323e5d89-p660", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/instances/gke-cmdbgke-cmdbn-323e5d89-p660"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/instances/google-project-01-testn-323e5d89-p660"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -955,36 +955,36 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-1ef190ad-dyn-pvc-6ae7d4cd-83de-4d47-9108-bd8c3354eba9", 
+          "name": "google-test-1ef190ad-dyn-pvc-6ae7d4cd-83de-4d47-9108-bd8c3354eba9", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-b/disks/gke-wpcon-1ef190ad-dyn-pvc-6ae7d4cd-83de-4d47-9108-bd8c3354eba9", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-b/disks/gke-wpcon-1ef190ad-dyn-pvc-6ae7d4cd-83de-4d47-9108-bd8c3354eba9", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-04-23T05:37:13.794-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-6ae7d4cd-83de-4d47-9108-bd8c3354eba9\",\"kubernetes.io/created-for/pvc/name\":\"data-conwp-mariadb-0\",\"kubernetes.io/created-for/pvc/namespace\":\"default\"}", 
-                "id": "5361375981928907158", 
+                "id": "00000000000000", 
                 "labelFingerprint": "nT7/dAxskBs=", 
                 "labels": {
                   "goog-gke-volume": ""
                 }, 
                 "lastAttachTimestamp": "2021-04-23T06:08:38.914-07:00", 
                 "lastDetachTimestamp": "2021-04-23T06:13:02.039-07:00", 
-                "name": "gke-wpcon-1ef190ad-dyn-pvc-6ae7d4cd-83de-4d47-9108-bd8c3354eba9", 
+                "name": "google-test-1ef190ad-dyn-pvc-6ae7d4cd-83de-4d47-9108-bd8c3354eba9", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/disks/gke-wpcon-1ef190ad-dyn-pvc-6ae7d4cd-83de-4d47-9108-bd8c3354eba9", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/disks/gke-wpcon-1ef190ad-dyn-pvc-6ae7d4cd-83de-4d47-9108-bd8c3354eba9", 
                 "sizeGb": "8", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/diskTypes/pd-standard", 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b"
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/diskTypes/pd-standard", 
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -992,14 +992,14 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-wpconpool-089a53bc-d3sr", 
+          "name": "google-test-wpconpool-089a53bc-d3sr", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-b/disks/gke-wpcon-wpconpool-089a53bc-d3sr", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-b/disks/gke-wpcon-wpconpool-089a53bc-d3sr", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T02:42:12.451-07:00", 
@@ -1017,7 +1017,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "1570594647675907739", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -1025,10 +1025,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T02:42:12.452-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1036,22 +1036,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-wpcon-wpconpool-089a53bc-d3sr", 
+                "name": "google-test-wpconpool-089a53bc-d3sr", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/disks/gke-wpcon-wpconpool-089a53bc-d3sr", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/disks/gke-wpcon-wpconpool-089a53bc-d3sr", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-pre", 
                 "sourceImageId": "7200814349121298352", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/instances/gke-wpcon-wpconpool-089a53bc-d3sr"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/instances/gke-wpcon-wpconpool-089a53bc-d3sr"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1062,11 +1062,11 @@
           "name": "test-app-71n2", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-b/disks/test-app-71n2", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-b/disks/test-app-71n2", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-03-02T22:00:15.305-08:00", 
@@ -1078,31 +1078,31 @@
                     "type": "VIRTIO_SCSI_MULTIQUEUE"
                   }
                 ], 
-                "id": "287014418239055744", 
+                "id": "00000000000000", 
                 "labelFingerprint": "42WmSpB8rSM=", 
                 "lastAttachTimestamp": "2022-03-02T22:00:15.306-08:00", 
                 "licenseCodes": [
-                  "5543610867827062957"
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/licenses/debian-10-buster"
                 ], 
                 "name": "test-app-71n2", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/disks/test-app-71n2", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/disks/test-app-71n2", 
                 "sizeGb": "10", 
-                "sourceImage": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/global/images/custom-nginx-image", 
+                "sourceImage": "https://www.googleapis.com/compute/v1/projects/google-project-01/global/images/custom-nginx-image", 
                 "sourceImageId": "4323481367998232918", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b/instances/test-app-71n2"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b/instances/test-app-71n2"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-b"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-b"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1110,14 +1110,14 @@
       }, 
       {
         "self": {
-          "name": "gke-cmdbgke-cmdbn-af3c9fe7-gl3z", 
+          "name": "google-project-01-testn-af3c9fe7-gl3z", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-cmdbgke-cmdbn-af3c9fe7-gl3z", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/google-project-01-testn-af3c9fe7-gl3z", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T13:13:40.651-07:00", 
@@ -1135,7 +1135,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "7899110868205804187", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -1143,10 +1143,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T13:13:40.651-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1154,22 +1154,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-cmdbgke-cmdbn-af3c9fe7-gl3z", 
+                "name": "google-project-01-testn-af3c9fe7-gl3z", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-cmdbgke-cmdbn-af3c9fe7-gl3z", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/google-project-01-testn-af3c9fe7-gl3z", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/instances/gke-cmdbgke-cmdbn-af3c9fe7-gl3z"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/instances/google-project-01-testn-af3c9fe7-gl3z"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1177,34 +1177,34 @@
       }, 
       {
         "self": {
-          "name": "gke-test-cluster-40136-pvc-49d8910d-2925-460a-b2a5-ca0433780449", 
+          "name": "gke-xxx-cluster-40136-pvc-49d8910d-2925-460a-b2a5-ca0433780449", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-test-cluster-40136-pvc-49d8910d-2925-460a-b2a5-ca0433780449", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/gke-test-cluster-40136-pvc-49d8910d-2925-460a-b2a5-ca0433780449", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-04-10T01:18:31.803-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-49d8910d-2925-460a-b2a5-ca0433780449\",\"kubernetes.io/created-for/pvc/name\":\"data-conwp-mariadb-0\",\"kubernetes.io/created-for/pvc/namespace\":\"default\"}", 
-                "id": "3397702911109573688", 
+                "id": "00000000000000", 
                 "labelFingerprint": "nT7/dAxskBs=", 
                 "labels": {
                   "goog-gke-volume": ""
                 }, 
-                "name": "gke-test-cluster-40136-pvc-49d8910d-2925-460a-b2a5-ca0433780449", 
+                "name": "gke-xxx-cluster-40136-pvc-49d8910d-2925-460a-b2a5-ca0433780449", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-test-cluster-40136-pvc-49d8910d-2925-460a-b2a5-ca0433780449", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/gke-test-cluster-40136-pvc-49d8910d-2925-460a-b2a5-ca0433780449", 
                 "sizeGb": "8", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1212,33 +1212,33 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-3ca6c271-dyn-pvc-e6ef3cff-dd8c-4b7f-8e0d-b7008995ba40", 
+          "name": "google-test-3ca6c271-dyn-pvc-e6ef3cff-dd8c-4b7f-8e0d-b7008995ba40", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-3ca6c271-dyn-pvc-e6ef3cff-dd8c-4b7f-8e0d-b7008995ba40", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-3ca6c271-dyn-pvc-e6ef3cff-dd8c-4b7f-8e0d-b7008995ba40", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-04-23T04:23:55.620-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-e6ef3cff-dd8c-4b7f-8e0d-b7008995ba40\",\"kubernetes.io/created-for/pvc/name\":\"data-conwp-mariadb-0\",\"kubernetes.io/created-for/pvc/namespace\":\"default\"}", 
-                "id": "8581882850065715364", 
+                "id": "00000000000000", 
                 "labelFingerprint": "42WmSpB8rSM=", 
                 "lastAttachTimestamp": "2021-04-23T04:24:11.442-07:00", 
                 "lastDetachTimestamp": "2021-04-23T04:43:53.869-07:00", 
-                "name": "gke-wpcon-3ca6c271-dyn-pvc-e6ef3cff-dd8c-4b7f-8e0d-b7008995ba40", 
+                "name": "google-test-3ca6c271-dyn-pvc-e6ef3cff-dd8c-4b7f-8e0d-b7008995ba40", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-3ca6c271-dyn-pvc-e6ef3cff-dd8c-4b7f-8e0d-b7008995ba40", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-3ca6c271-dyn-pvc-e6ef3cff-dd8c-4b7f-8e0d-b7008995ba40", 
                 "sizeGb": "8", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1246,36 +1246,36 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-535acbb1-dyn-pvc-462b3483-515d-4deb-a617-407eb215506a", 
+          "name": "google-test-535acbb1-dyn-pvc-462b3483-515d-4deb-a617-407eb215506a", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-535acbb1-dyn-pvc-462b3483-515d-4deb-a617-407eb215506a", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-535acbb1-dyn-pvc-462b3483-515d-4deb-a617-407eb215506a", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-04-23T02:43:33.199-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-462b3483-515d-4deb-a617-407eb215506a\",\"kubernetes.io/created-for/pvc/name\":\"data-conwp-mariadb-0\",\"kubernetes.io/created-for/pvc/namespace\":\"default\"}", 
-                "id": "2694213755108010027", 
+                "id": "00000000000000", 
                 "labelFingerprint": "nT7/dAxskBs=", 
                 "labels": {
                   "goog-gke-volume": ""
                 }, 
                 "lastAttachTimestamp": "2021-04-23T02:43:37.717-07:00", 
                 "lastDetachTimestamp": "2021-04-23T03:28:34.441-07:00", 
-                "name": "gke-wpcon-535acbb1-dyn-pvc-462b3483-515d-4deb-a617-407eb215506a", 
+                "name": "google-test-535acbb1-dyn-pvc-462b3483-515d-4deb-a617-407eb215506a", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-535acbb1-dyn-pvc-462b3483-515d-4deb-a617-407eb215506a", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-535acbb1-dyn-pvc-462b3483-515d-4deb-a617-407eb215506a", 
                 "sizeGb": "8", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1283,39 +1283,39 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-a5ed6682-dyn-pvc-1580d058-b5f5-46f3-a60b-4f5acf05b64b", 
+          "name": "gke-xxxx-xxxxxxx-dyn-pvc-1580d058-b5f5-46f3-a60b-4f5acf05b64b", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-a5ed6682-dyn-pvc-1580d058-b5f5-46f3-a60b-4f5acf05b64b", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/gke-xxxx-xxxxxxx-dyn-pvc-1580d058-b5f5-46f3-a60b-4f5acf05b64b", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-04-23T07:00:18.152-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-1580d058-b5f5-46f3-a60b-4f5acf05b64b\",\"kubernetes.io/created-for/pvc/name\":\"data-conwp-mariadb-0\",\"kubernetes.io/created-for/pvc/namespace\":\"default\"}", 
-                "id": "4902934836360997918", 
+                "id": "00000000000000", 
                 "labelFingerprint": "nT7/dAxskBs=", 
                 "labels": {
                   "goog-gke-volume": ""
                 }, 
                 "lastAttachTimestamp": "2022-05-08T02:49:46.960-07:00", 
                 "lastDetachTimestamp": "2022-05-08T02:49:44.868-07:00", 
-                "name": "gke-wpcon-a5ed6682-dyn-pvc-1580d058-b5f5-46f3-a60b-4f5acf05b64b", 
+                "name": "gke-xxxx-xxxxxxx-dyn-pvc-1580d058-b5f5-46f3-a60b-4f5acf05b64b", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-a5ed6682-dyn-pvc-1580d058-b5f5-46f3-a60b-4f5acf05b64b", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/gke-xxxx-xxxxxxx-dyn-pvc-1580d058-b5f5-46f3-a60b-4f5acf05b64b", 
                 "sizeGb": "8", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/instances/gke-wpcon-wpconpool-628a8cb8-9bra"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/instances/gke-wpcon-wpconpool-628a8cb8-9bra"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1323,33 +1323,33 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-c59084fd-dyn-pvc-9d067c97-edf6-4598-a78a-8b233620c42e", 
+          "name": "google-test-c59084fd-dyn-pvc-9d067c97-edf6-4598-a78a-8b233620c42e", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-c59084fd-dyn-pvc-9d067c97-edf6-4598-a78a-8b233620c42e", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-c59084fd-dyn-pvc-9d067c97-edf6-4598-a78a-8b233620c42e", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-04-23T05:12:17.479-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-9d067c97-edf6-4598-a78a-8b233620c42e\",\"kubernetes.io/created-for/pvc/name\":\"data-conwp-mariadb-0\",\"kubernetes.io/created-for/pvc/namespace\":\"default\"}", 
-                "id": "1984389805792757582", 
+                "id": "00000000000000", 
                 "labelFingerprint": "42WmSpB8rSM=", 
                 "lastAttachTimestamp": "2021-04-23T05:12:35.183-07:00", 
                 "lastDetachTimestamp": "2021-04-23T05:19:59.429-07:00", 
-                "name": "gke-wpcon-c59084fd-dyn-pvc-9d067c97-edf6-4598-a78a-8b233620c42e", 
+                "name": "google-test-c59084fd-dyn-pvc-9d067c97-edf6-4598-a78a-8b233620c42e", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-c59084fd-dyn-pvc-9d067c97-edf6-4598-a78a-8b233620c42e", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-c59084fd-dyn-pvc-9d067c97-edf6-4598-a78a-8b233620c42e", 
                 "sizeGb": "8", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1357,36 +1357,36 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-ff05438c-dyn-pvc-5d8537f7-b895-41d3-8251-d3c07760ec89", 
+          "name": "google-test-ff05438c-dyn-pvc-5d8537f7-b895-41d3-8251-d3c07760ec89", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-ff05438c-dyn-pvc-5d8537f7-b895-41d3-8251-d3c07760ec89", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-ff05438c-dyn-pvc-5d8537f7-b895-41d3-8251-d3c07760ec89", 
             "resource": {
               "data": {
                 "creationTimestamp": "2021-04-22T09:18:44.364-07:00", 
                 "description": "{\"kubernetes.io/created-for/pv/name\":\"pvc-5d8537f7-b895-41d3-8251-d3c07760ec89\",\"kubernetes.io/created-for/pvc/name\":\"data-conwp-mariadb-0\",\"kubernetes.io/created-for/pvc/namespace\":\"default\"}", 
-                "id": "1062298711464091403", 
+                "id": "00000000000000", 
                 "labelFingerprint": "nT7/dAxskBs=", 
                 "labels": {
                   "goog-gke-volume": ""
                 }, 
                 "lastAttachTimestamp": "2021-04-22T10:40:41.609-07:00", 
                 "lastDetachTimestamp": "2021-04-22T10:45:22.626-07:00", 
-                "name": "gke-wpcon-ff05438c-dyn-pvc-5d8537f7-b895-41d3-8251-d3c07760ec89", 
+                "name": "google-test-ff05438c-dyn-pvc-5d8537f7-b895-41d3-8251-d3c07760ec89", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-ff05438c-dyn-pvc-5d8537f7-b895-41d3-8251-d3c07760ec89", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-ff05438c-dyn-pvc-5d8537f7-b895-41d3-8251-d3c07760ec89", 
                 "sizeGb": "8", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1394,14 +1394,14 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-wpconpool-628a8cb8-9bra", 
+          "name": "google-test-wpconpool-628a8cb8-9bra", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-9bra", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-9bra", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T02:47:00.838-07:00", 
@@ -1419,7 +1419,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "7581212790708907899", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -1427,10 +1427,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T02:47:00.838-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1438,22 +1438,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-wpcon-wpconpool-628a8cb8-9bra", 
+                "name": "google-test-wpconpool-628a8cb8-9bra", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-9bra", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-9bra", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-pre", 
                 "sourceImageId": "7200814349121298352", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/instances/gke-wpcon-wpconpool-628a8cb8-9bra"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/instances/gke-wpcon-wpconpool-628a8cb8-9bra"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1461,14 +1461,14 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-wpconpool-628a8cb8-9juw", 
+          "name": "google-test-wpconpool-628a8cb8-9juw", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-9juw", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-9juw", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T02:48:32.601-07:00", 
@@ -1486,7 +1486,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "4540748456244424479", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -1494,10 +1494,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T02:48:32.602-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1505,22 +1505,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-wpcon-wpconpool-628a8cb8-9juw", 
+                "name": "google-test-wpconpool-628a8cb8-9juw", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-9juw", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-9juw", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-pre", 
                 "sourceImageId": "7200814349121298352", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/instances/gke-wpcon-wpconpool-628a8cb8-9juw"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/instances/gke-wpcon-wpconpool-628a8cb8-9juw"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1528,14 +1528,14 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-wpconpool-628a8cb8-afan", 
+          "name": "google-test-wpconpool-628a8cb8-afan", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-afan", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-afan", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T02:49:32.489-07:00", 
@@ -1553,7 +1553,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "8358741801319410884", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -1561,10 +1561,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T02:49:32.490-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1572,22 +1572,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-wpcon-wpconpool-628a8cb8-afan", 
+                "name": "google-test-wpconpool-628a8cb8-afan", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-afan", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-afan", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-pre", 
                 "sourceImageId": "7200814349121298352", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/instances/gke-wpcon-wpconpool-628a8cb8-afan"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/instances/gke-wpcon-wpconpool-628a8cb8-afan"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1595,14 +1595,14 @@
       }, 
       {
         "self": {
-          "name": "gke-wpcon-wpconpool-628a8cb8-jog6", 
+          "name": "google-test-wpconpool-628a8cb8-jog6", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-jog6", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-jog6", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T02:43:58.363-07:00", 
@@ -1620,7 +1620,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "3447366129051905586", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -1628,10 +1628,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T02:43:58.364-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1639,22 +1639,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-wpcon-wpconpool-628a8cb8-jog6", 
+                "name": "google-test-wpconpool-628a8cb8-jog6", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-jog6", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/disks/gke-wpcon-wpconpool-628a8cb8-jog6", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-pre", 
                 "sourceImageId": "7200814349121298352", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c/instances/gke-wpcon-wpconpool-628a8cb8-jog6"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c/instances/gke-wpcon-wpconpool-628a8cb8-jog6"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west1-c"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west1-c"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1662,14 +1662,14 @@
       }, 
       {
         "self": {
-          "name": "gke-lrscmpdbgke-lrscmpdbnodepooljji-1146038a-w9jc", 
+          "name": "gke-xxx-project03project-xxxnodepooljji-1146038a-w9jc", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-lrscmpdbgke-lrscmpdbnodepooljji-1146038a-w9jc", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west3-a/disks/project-xxxproject-xxxnodepooljji-1146038a-w9jc", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T20:42:14.679-07:00", 
@@ -1687,17 +1687,17 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "5010843428634047353", 
+                "id": "00000000000000", 
                 "labelFingerprint": "2ixRno2sGuM=", 
                 "labels": {
                   "goog-gke-node": ""
                 }, 
                 "lastAttachTimestamp": "2022-05-08T20:42:14.680-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1705,22 +1705,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-lrscmpdbgke-lrscmpdbnodepooljji-1146038a-w9jc", 
+                "name": "gke-xxx-project03project-xxxnodepooljji-1146038a-w9jc", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-lrscmpdbgke-lrscmpdbnodepooljji-1146038a-w9jc", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/disks/project-xxxproject-xxxnodepooljji-1146038a-w9jc", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/instances/gke-lrscmpdbgke-lrscmpdbnodepooljji-1146038a-w9jc"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/instances/project-xxxproject-xxxnodepooljji-1146038a-w9jc"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1728,14 +1728,14 @@
       }, 
       {
         "self": {
-          "name": "gke-rscmpdbgke163050-rscmpdbnodepool1-549e0705-xwzu", 
+          "name": "google-resourcepdbgke163050-rsproject03nodepool1-549e0705-xwzu", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-rscmpdbgke163050-rscmpdbnodepool1-549e0705-xwzu", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west3-a/disks/google-resourcepdbgke163050-rsproject03nodepool1-549e0705-xwzu", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T18:34:09.079-07:00", 
@@ -1753,7 +1753,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "7275658505054703999", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -1761,10 +1761,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T18:34:09.080-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1772,22 +1772,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-rscmpdbgke163050-rscmpdbnodepool1-549e0705-xwzu", 
+                "name": "google-resourcepdbgke163050-rsproject03nodepool1-549e0705-xwzu", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-rscmpdbgke163050-rscmpdbnodepool1-549e0705-xwzu", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/disks/google-resourcepdbgke163050-rsproject03nodepool1-549e0705-xwzu", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/instances/gke-rscmpdbgke163050-rscmpdbnodepool1-549e0705-xwzu"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/instances/google-resourcepdbgke163050-rsproject03nodepool1-549e0705-xwzu"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1795,14 +1795,14 @@
       }, 
       {
         "self": {
-          "name": "gke-runpodsgke163032-runpodsnodepool1-72932589-rba9", 
+          "name": "google-xxx-pod-projectpodsnodepool1-72932589-rba9", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-runpodsgke163032-runpodsnodepool1-72932589-rba9", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west3-a/disks/gke-projectpodsgke163032-projectpodsnodepool1-72932589-rba9", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T18:31:50.001-07:00", 
@@ -1820,7 +1820,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "1336932612703637994", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -1828,10 +1828,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T18:31:50.001-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1839,22 +1839,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-runpodsgke163032-runpodsnodepool1-72932589-rba9", 
+                "name": "google-xxx-pod-projectpodsnodepool1-72932589-rba9", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-runpodsgke163032-runpodsnodepool1-72932589-rba9", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/disks/gke-projectpodsgke163032-projectpodsnodepool1-72932589-rba9", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/instances/gke-runpodsgke163032-runpodsnodepool1-72932589-rba9"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/instances/gke-projectpodsgke163032-projectpodsnodepool1-72932589-rba9"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1862,14 +1862,14 @@
       }, 
       {
         "self": {
-          "name": "gke-runpodsgke163032-runpodsnodepool1-b3c6037c-w2nf", 
+          "name": "google-xxx-pod-projectpodsnodepool1-b3c6037c-w2nf", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-runpodsgke163032-runpodsnodepool1-b3c6037c-w2nf", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west3-a/disks/gke-projectpodsgke163032-projectpodsnodepool1-b3c6037c-w2nf", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T18:36:50.999-07:00", 
@@ -1887,7 +1887,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "4504824958938369757", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -1895,10 +1895,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T18:36:51.000-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1906,22 +1906,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-runpodsgke163032-runpodsnodepool1-b3c6037c-w2nf", 
+                "name": "google-xxx-pod-projectpodsnodepool1-b3c6037c-w2nf", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-runpodsgke163032-runpodsnodepool1-b3c6037c-w2nf", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/disks/gke-projectpodsgke163032-projectpodsnodepool1-b3c6037c-w2nf", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/instances/gke-runpodsgke163032-runpodsnodepool1-b3c6037c-w2nf"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/instances/gke-projectpodsgke163032-projectpodsnodepool1-b3c6037c-w2nf"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1929,14 +1929,14 @@
       }, 
       {
         "self": {
-          "name": "gke-runpodsgke163032-runpodsnodepool1-c2a41fb8-mzq7", 
+          "name": "google-xxx-pod-projectpodsnodepool1-c2a41fb8-mzq7", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-runpodsgke163032-runpodsnodepool1-c2a41fb8-mzq7", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west3-a/disks/gke-projectpodsgke163032-projectpodsnodepool1-c2a41fb8-mzq7", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T18:34:54.466-07:00", 
@@ -1954,7 +1954,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "5663533992106119506", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -1962,10 +1962,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T18:34:54.467-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -1973,22 +1973,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-runpodsgke163032-runpodsnodepool1-c2a41fb8-mzq7", 
+                "name": "google-xxx-pod-projectpodsnodepool1-c2a41fb8-mzq7", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-runpodsgke163032-runpodsnodepool1-c2a41fb8-mzq7", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/disks/gke-projectpodsgke163032-projectpodsnodepool1-c2a41fb8-mzq7", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/instances/gke-runpodsgke163032-runpodsnodepool1-c2a41fb8-mzq7"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/instances/gke-projectpodsgke163032-projectpodsnodepool1-c2a41fb8-mzq7"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
@@ -1996,14 +1996,14 @@
       }, 
       {
         "self": {
-          "name": "gke-runpodsgke163032-runpodsnodepool1-eaa9020b-kxug", 
+          "name": "google-xxx-pod-projectpodsnodepool1-eaa9020b-kxug", 
           "source_data": {
             "ancestors": [
-              "projects/234821169729", 
-              "organizations/592371966970"
+              "projects/00000000000", 
+              "organizations/00000000000"
             ], 
             "assetType": "compute.googleapis.com/Disk", 
-            "name": "//compute.googleapis.com/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-runpodsgke163032-runpodsnodepool1-eaa9020b-kxug", 
+            "name": "//compute.googleapis.com/projects/google-project-01/zones/us-west3-a/disks/gke-projectpodsgke163032-projectpodsnodepool1-eaa9020b-kxug", 
             "resource": {
               "data": {
                 "creationTimestamp": "2022-05-08T18:28:56.651-07:00", 
@@ -2021,7 +2021,7 @@
                     "type": "SECURE_BOOT"
                   }
                 ], 
-                "id": "1160490837878362295", 
+                "id": "00000000000000", 
                 "labelFingerprint": "wlu2T0lriLA=", 
                 "labels": {
                   "goog-gke-node": "", 
@@ -2029,10 +2029,10 @@
                 }, 
                 "lastAttachTimestamp": "2022-05-08T18:28:56.652-07:00", 
                 "licenseCodes": [
-                  "1001003", 
-                  "1001010", 
-                  "166739712233658766", 
-                  "6880041984096540132"
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000", 
+                  "00000000000000"
                 ], 
                 "licenses": [
                   "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/licenses/gke-node", 
@@ -2040,22 +2040,22 @@
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos", 
                   "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
                 ], 
-                "name": "gke-runpodsgke163032-runpodsnodepool1-eaa9020b-kxug", 
+                "name": "google-xxx-pod-projectpodsnodepool1-eaa9020b-kxug", 
                 "physicalBlockSizeBytes": "4096", 
-                "selfLink": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/disks/gke-runpodsgke163032-runpodsnodepool1-eaa9020b-kxug", 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/disks/gke-projectpodsgke163032-projectpodsnodepool1-eaa9020b-kxug", 
                 "sizeGb": "100", 
                 "sourceImage": "https://www.googleapis.com/compute/v1/projects/gke-node-images/global/images/gke-12110-gke2000-cos-89-16108-604-19-v220317-c-pre", 
                 "sourceImageId": "8040052912969817984", 
                 "status": "READY", 
-                "type": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/diskTypes/pd-standard", 
+                "type": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/diskTypes/pd-standard", 
                 "users": [
-                  "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a/instances/gke-runpodsgke163032-runpodsnodepool1-eaa9020b-kxug"
+                  "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a/instances/gke-projectpodsgke163032-projectpodsnodepool1-eaa9020b-kxug"
                 ], 
-                "zone": "https://www.googleapis.com/compute/v1/projects/cloudmatos-demoblog/zones/us-west3-a"
+                "zone": "https://www.googleapis.com/compute/v1/projects/google-project-01/zones/us-west3-a"
               }, 
               "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest", 
               "discoveryName": "Disk", 
-              "parent": "//cloudresourcemanager.googleapis.com/projects/234821169729", 
+              "parent": "//cloudresourcemanager.googleapis.com/projects/00000000000", 
               "version": "v1"
             }
           }
