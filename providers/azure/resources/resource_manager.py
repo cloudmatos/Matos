@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
+from grpc import server
 from structlog import get_logger
 
 from providers.azure.azure_connection import Azure
 # from providers.azure.azure_config import INSTANCE_TYPE_CONFIG
 from datetime import datetime, timedelta
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import json
 import yaml
 import ruamel.yaml
@@ -30,6 +31,9 @@ class AzureResourceManager:
             "storage": Storage,
             "network": Network,
             "sql": SQL,
+            "monitor": Monitor,
+            "key_vault": KeyVault,
+            "postgresql": PostgreSQL
         }
 
         log = logger.new()
@@ -44,14 +48,12 @@ class AzureResourceManager:
             cloud_resource = Resource(
                 resource,
             )
-
             resource_details = cloud_resource.get_resource_inventory()
         except Exception as ex:
             raise Exception(ex)
 
         if resource_details:
             resource.update(details=resource_details)
-
         return resource
 
 
@@ -102,7 +104,8 @@ class Cluster(Azure):
     def get_cluster_client(self, cluster_info):
         rg_name = cluster_info.get('id', '').split('/')[-5]
         k8s_name = cluster_info.get('name')
-        kubeconfig = self.conn.managed_clusters.list_cluster_admin_credentials(rg_name, k8s_name).kubeconfigs[0]
+        kubeconfig = self.conn.managed_clusters.list_cluster_admin_credentials(
+            rg_name, k8s_name).kubeconfigs[0]
         k8s_kubeconfig = base64.b64decode((kubeconfig.as_dict())['value'])
         obj_data = ruamel.yaml.safe_load(k8s_kubeconfig)
         with open(f'{k8s_name}.yml', 'w') as f:
@@ -114,14 +117,17 @@ class Cluster(Azure):
         return k8s_client_v1
 
     def get_cluster_details(self):
-        resources = [self.scrub(item) for item in self.conn.managed_clusters.list()]
+        resources = [self.scrub(item)
+                     for item in self.conn.managed_clusters.list()]
         resources = [{
             **resource,
             "pod": self.replace_none_with(
-                self.get_cluster_client(resource).list_pod_for_all_namespaces().to_dict(),
+                self.get_cluster_client(
+                    resource).list_pod_for_all_namespaces().to_dict(),
                 replacement='None').get('items', []),
             "service": self.replace_none_with(
-                self.get_cluster_client(resource).list_service_for_all_namespaces().to_dict(),
+                self.get_cluster_client(
+                    resource).list_service_for_all_namespaces().to_dict(),
                 replacement='None').get('items', []),
         } for resource in resources if resource.get('name', '') == self.resource.get('name')]
         return resources[0] if len(resources) > 0 else self.resource
@@ -150,9 +156,33 @@ class Instance(Azure):
         instance_id (str): Ec2 instance id.
         return: dictionary object.
         """
-        resources = [self.scrub(item) for item in self.conn.virtual_machines.list_all()]
-        resources = [resource for resource in resources if resource.get('name', '') == self.resource.get('name')]
+        resources = [self.scrub(item)
+                     for item in self.conn.virtual_machines.list_all()]
+        resources = [resource for resource in resources if resource.get(
+            'name', '') == self.resource.get('name')]
         return resources[0] if len(resources) > 0 else self.resource
+
+
+class Monitor(Azure):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(Monitor, self).__init__()
+            self.conn = self.client("monitor")
+            self.resource = resource
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+
+        client = self.client('monitor')
+        resources = [i.as_dict() for i in client.activity_log_alerts.list_by_resource_group(
+            self.resource['name'])]
+        return resources
 
 
 class Storage(Azure):
@@ -178,8 +208,10 @@ class Storage(Azure):
         instance_id (str): Ec2 instance id.
         return: dictionary object.
         """
-        resources = [self.scrub(item) for item in self.conn.storage_accounts.list()]
-        resources = [resource for resource in resources if resource.get('name', '') == self.resource.get('name')]
+        resources = [self.scrub(item)
+                     for item in self.conn.storage_accounts.list()]
+        resources = [resource for resource in resources if resource.get(
+            'name', '') == self.resource.get('name')]
         return resources[0] if len(resources) > 0 else self.resource
 
 
@@ -206,8 +238,10 @@ class Network(Azure):
         instance_id (str): Ec2 instance id.
         return: dictionary object.
         """
-        resources = [self.scrub(item) for item in self.conn.virtual_networks.list_all()]
-        resources = [resource for resource in resources if resource.get('name', '') == self.resource.get('name')]
+        resources = [self.scrub(item)
+                     for item in self.conn.virtual_networks.list_all()]
+        resources = [resource for resource in resources if resource.get(
+            'name', '') == self.resource.get('name')]
         return resources[0] if len(resources) > 0 else self.resource
 
 
@@ -246,7 +280,7 @@ class SQL(Azure):
                     sqldb = self.scrub(sqldbitem)
                     sqldb["Bckup_retention_policies"] = [self.scrub(sqldbbkitem) for sqldbbkitem in
                                                          self.conn.backup_short_term_retention_policies.list_by_database(
-                                                             obj_rg_name, obj_name, sqldb["name"])]
+                        obj_rg_name, obj_name, sqldb["name"])]
                     sqlbdlist.append(sqldb)
                 objitem["Firewall_rules"] = [self.scrub(fwitem) for fwitem in
                                              self.conn.firewall_rules.list_by_server(obj_rg_name, obj_name)]
@@ -259,3 +293,63 @@ class SQL(Azure):
         # resources = [self.scrub(item) for item in self.conn.servers.list()]
         # resources = [resource for resource in resources if resource.get('name', '') == self.resource.get('name')]
         return resource if resource else self.resource
+
+
+class KeyVault(Azure):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(KeyVault, self).__init__()
+            self.conn = self.client("key_vault")
+            self.resource = resource
+
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        # print(self.resource)
+        client = self.client('key_vault')
+        resources = [client.vaults.get(self.resource['resource_name'], self.resource['name']
+                                       ).as_dict()]
+        return resources
+
+
+class PostgreSQL(Azure):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(PostgreSQL, self).__init__()
+            self.conn = self.client("postgresql")
+            self.resource = resource
+
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        # print(self.resource)
+        client = self.client('postgresql')
+        servers = client.servers.get(self.resource['resource_name'], self.resource['name']
+                                     ).as_dict()
+        admin_users = []
+        try:
+            server_admin = client.server_administrators.get(self.resource['resource_name'], self.resource['name']
+                                                            ).as_dict()
+            admin_users.append(server_admin)
+        except:
+            pass
+
+        logs = [i.as_dict() for i in client.configurations.list_by_server(
+            self.resource['resource_name'], self.resource['name'])]
+        resources = [{
+            "servers": servers,
+            "administrators": admin_users,
+            "Logs": logs}]
+        return resources

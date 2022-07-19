@@ -25,7 +25,7 @@ class TestAWSEC2IsSSMManaged(TestCase):
         """
         Check if assume role policy document associated with the instance role is having permission for the EC2 service.
         """
-        criteria = 'instance[*].self[*].source_data.SSM[*].InstanceId'
+        criteria = 'instance[*].self[*].source_data.SSM.InstanceId'
         ssm_managed_instances = [match.value for match in parse(criteria).find(self.resources)]
         all_instances_are_ssm_managed = len(set(ssm_managed_instances)) == len(self.resources['instance'])
         self.assertEqual(True, all_instances_are_ssm_managed, 

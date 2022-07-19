@@ -2,10 +2,10 @@
     "serviceAccount": [
         {
             "self": {
-                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:user/user-01",
+                "Arn": "arn:aws:iam::000000000000:user/user-01",
                 "AttachedManagedPolicies": [
                     {
-                        "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/user-01-test-ebs-policy",
+                        "Arn": "arn:aws:iam::000000000000:policy/user-01-test-ebs-policy",
                         "AttachmentCount": 2,
                         "CreateDate": "Wed, 18 May 2022 07:07:25 GMT",
                         "DefaultVersionId": "v7",
@@ -53,7 +53,7 @@
         },
         {
             "self": {
-                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:user/user-02@example.com",
+                "Arn": "arn:aws:iam::000000000000:user/user-02@example.com",
                 "AttachedManagedPolicies": [
                     {
                         "Arn": "arn:aws:iam::aws:policy/IAMUserChangePassword",
@@ -115,7 +115,7 @@
         },
         {
             "self": {
-                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:user/user-03@example.com",
+                "Arn": "arn:aws:iam::000000000000:user/user-03@example.com",
                 "AttachedManagedPolicies": [
                     {
                         "Arn": "arn:aws:iam::aws:policy/IAMUserChangePassword",
@@ -177,7 +177,7 @@
         },
         {
             "self": {
-                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:user/user-10",
+                "Arn": "arn:aws:iam::000000000000:user/user-10",
                 "AttachedManagedPolicies": [
                     {
                         "Arn": "arn:aws:iam::aws:policy/AdministratorAccess",
@@ -251,7 +251,7 @@
                         "UpdateDate": "Tue, 15 Nov 2016 23:18:55 GMT"
                     },
                     {
-                        "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/test-policy-kms-decrypt",
+                        "Arn": "arn:aws:iam::000000000000:policy/test-policy-kms-decrypt",
                         "AttachmentCount": 2,
                         "CreateDate": "Sun, 15 May 2022 14:59:57 GMT",
                         "DefaultVersionId": "v1",
@@ -267,7 +267,7 @@
                                     {
                                         "Action": "kms:Decrypt",
                                         "Effect": "Allow",
-                                        "Resource": "arn:aws:kms:*:XXXXXXXXXXXXXXXXXXXXX:key/*",
+                                        "Resource": "arn:aws:kms:*:000000000000:key/*",
                                         "Sid": "VisualEditor0"
                                     }
                                 ],
@@ -292,7 +292,7 @@
         },
         {
             "self": {
-                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:user/user-04@example.com",
+                "Arn": "arn:aws:iam::000000000000:user/user-04@example.com",
                 "AttachedManagedPolicies": [],
                 "CreateDate": "Mon, 02 May 2022 03:59:18 GMT",
                 "GroupList": [
@@ -312,7 +312,7 @@
         },
         {
             "self": {
-                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:user/testaccountops",
+                "Arn": "arn:aws:iam::000000000000:user/testaccountops",
                 "AttachedManagedPolicies": [],
                 "CreateDate": "Wed, 15 Sep 2021 12:17:28 GMT",
                 "GroupList": [
@@ -336,7 +336,7 @@
         },
         {
             "self": {
-                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:user/testaccountsa",
+                "Arn": "arn:aws:iam::000000000000:user/testaccountsa",
                 "AttachedManagedPolicies": [
                     {
                         "Arn": "arn:aws:iam::aws:policy/AdministratorAccess",
@@ -410,7 +410,7 @@
                         "UpdateDate": "Tue, 15 Nov 2016 23:18:55 GMT"
                     },
                     {
-                        "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/test-policy-kms-decrypt",
+                        "Arn": "arn:aws:iam::000000000000:policy/test-policy-kms-decrypt",
                         "AttachmentCount": 2,
                         "CreateDate": "Sun, 15 May 2022 14:59:57 GMT",
                         "DefaultVersionId": "v1",
@@ -426,7 +426,7 @@
                                     {
                                         "Action": "kms:Decrypt",
                                         "Effect": "Allow",
-                                        "Resource": "arn:aws:kms:*:XXXXXXXXXXXXXXXXXXXXX:key/*",
+                                        "Resource": "arn:aws:kms:*:000000000000:key/*",
                                         "Sid": "VisualEditor0"
                                     }
                                 ],
@@ -472,7 +472,7 @@
                                 {
                                     "Action": "cloudshell:*",
                                     "Effect": "Allow",
-                                    "Resource": "arn:aws:cloudshell:*:XXXXXXXXXXXXXXXXXXXXX:environment/*",
+                                    "Resource": "arn:aws:cloudshell:*:000000000000:environment/*",
                                     "Sid": "VisualEditor1"
                                 }
                             ],
@@ -557,11 +557,11 @@
                                     "Action": "eks:*",
                                     "Effect": "Allow",
                                     "Resource": [
-                                        "arn:aws:eks:*:XXXXXXXXXXXXXXXXXXXXX:addon/*/*/*",
-                                        "arn:aws:eks:*:XXXXXXXXXXXXXXXXXXXXX:identityproviderconfig/*/*/*/*",
-                                        "arn:aws:eks:*:XXXXXXXXXXXXXXXXXXXXX:cluster/*",
-                                        "arn:aws:eks:*:XXXXXXXXXXXXXXXXXXXXX:fargateprofile/*/*/*",
-                                        "arn:aws:eks:*:XXXXXXXXXXXXXXXXXXXXX:nodegroup/*/*/*"
+                                        "arn:aws:eks:*:000000000000:addon/*/*/*",
+                                        "arn:aws:eks:*:000000000000:identityproviderconfig/*/*/*/*",
+                                        "arn:aws:eks:*:000000000000:cluster/*",
+                                        "arn:aws:eks:*:000000000000:fargateprofile/*/*/*",
+                                        "arn:aws:eks:*:000000000000:nodegroup/*/*/*"
                                     ],
                                     "Sid": "VisualEditor1"
                                 }
@@ -577,8 +577,8 @@
                                     "Action": "kms:Decrypt",
                                     "Effect": "Allow",
                                     "Resource": [
-                                        "arn:aws:kms:*:XXXXXXXXXXXXXXXXXXXXX:alias/*",
-                                        "arn:aws:kms:*:XXXXXXXXXXXXXXXXXXXXX:key/*"
+                                        "arn:aws:kms:*:000000000000:alias/*",
+                                        "arn:aws:kms:*:000000000000:key/*"
                                     ],
                                     "Sid": "VisualEditor0"
                                 },

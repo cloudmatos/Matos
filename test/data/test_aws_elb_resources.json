@@ -42,17 +42,17 @@
                     },
                     "TargetGroups": [
                       {
-                        "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:XXXXXXXXXXXXXXXXXXXXX:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                        "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
                         "Weight": 1
                       }
                     ]
                   },
-                  "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:XXXXXXXXXXXXXXXXXXXXX:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                  "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
                   "Type": "forward"
                 }
               ],
-              "ListenerArn": "arn:aws:elasticloadbalancing:us-east-2:XXXXXXXXXXXXXXXXXXXXX:listener/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d/44228d101b9e84d9",
-              "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-2:XXXXXXXXXXXXXXXXXXXXX:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d",
+              "ListenerArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:listener/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d/44228d101b9e84d9",
+              "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d",
               "Port": 80,
               "Protocol": "HTTP",
               "Rules": [
@@ -65,19 +65,19 @@
                         },
                         "TargetGroups": [
                           {
-                            "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:XXXXXXXXXXXXXXXXXXXXX:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                            "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
                             "Weight": 1
                           }
                         ]
                       },
-                      "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:XXXXXXXXXXXXXXXXXXXXX:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                      "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
                       "Type": "forward"
                     }
                   ],
                   "Conditions": [],
                   "IsDefault": true,
                   "Priority": "default",
-                  "RuleArn": "arn:aws:elasticloadbalancing:us-east-2:XXXXXXXXXXXXXXXXXXXXX:listener-rule/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d/44228d101b9e84d9/0dbe7e1e4d7d7ac7"
+                  "RuleArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:listener-rule/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d/44228d101b9e84d9/0dbe7e1e4d7d7ac7"
                 }
               ],
               "SslPolicy": {
@@ -85,7 +85,7 @@
               }
             }
           ],
-          "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-2:XXXXXXXXXXXXXXXXXXXXX:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d",
+          "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d",
           "LoadBalancerName": "awseb-AWSEB-BO57MY2816KV",
           "Scheme": "internet-facing",
           "SecurityGroups": [
@@ -115,7 +115,7 @@
               "HealthyThresholdCount": 3,
               "IpAddressType": "ipv4",
               "LoadBalancerArns": [
-                "arn:aws:elasticloadbalancing:us-east-2:XXXXXXXXXXXXXXXXXXXXX:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d"
+                "arn:aws:elasticloadbalancing:us-east-2:000000000000:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d"
               ],
               "Matcher": {
                 "HttpCode": "200"
@@ -123,7 +123,7 @@
               "Port": 80,
               "Protocol": "HTTP",
               "ProtocolVersion": "HTTP1",
-              "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:XXXXXXXXXXXXXXXXXXXXX:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+              "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
               "TargetGroupName": "awseb-AWSEB-73M0SYFL0IST",
               "TargetHealthDescriptions": [
                 {
@@ -139,11 +139,11 @@
               ],
               "TargetType": "instance",
               "UnhealthyThresholdCount": 5,
-              "VpcId": "vpc-XXXXXXXXXXXXXXXXXXXXX0000"
+              "VpcId": "vpc-0000000000000000"
             }
           ],
           "Type": "application",
-          "VpcId": "vpc-XXXXXXXXXXXXXXXXXXXXX0000",
+          "VpcId": "vpc-0000000000000000",
           "type": "lb"
         }
       }

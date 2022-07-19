@@ -26,7 +26,7 @@
               "KeyType": "HASH"
             }
           ],
-          "LatestStreamArn": "arn:aws:dynamodb:us-east-2:XXXXXXXXXXXXXXXXXXXXX:table/Test/stream/2022-05-21T01:56:30.889",
+          "LatestStreamArn": "arn:aws:dynamodb:us-east-2:000000000000:table/Test/stream/2022-05-21T01:56:30.889",
           "LatestStreamLabel": "2022-05-21T01:56:30.889",
           "ProvisionedThroughput": {
             "LastDecreaseDateTime": "Sat, 21 May 2022 01:50:17 GMT",
@@ -44,14 +44,14 @@
             "StreamEnabled": true,
             "StreamViewType": "NEW_AND_OLD_IMAGES"
           },
-          "TableArn": "arn:aws:dynamodb:us-east-2:XXXXXXXXXXXXXXXXXXXXX:table/Test",
+          "TableArn": "arn:aws:dynamodb:us-east-2:000000000000:table/Test",
           "TableAutoScalingDescription": {
             "Replicas": [
               {
                 "GlobalSecondaryIndexes": [],
                 "RegionName": "us-east-1",
                 "ReplicaProvisionedReadCapacityAutoScalingSettings": {
-                  "AutoScalingRoleArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+                  "AutoScalingRoleArn": "arn:aws:iam::000000000000:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
                   "MaximumUnits": 10,
                   "MinimumUnits": 1,
                   "ScalingPolicies": [
@@ -64,7 +64,7 @@
                   ]
                 },
                 "ReplicaProvisionedWriteCapacityAutoScalingSettings": {
-                  "AutoScalingRoleArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+                  "AutoScalingRoleArn": "arn:aws:iam::000000000000:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
                   "MaximumUnits": 10,
                   "MinimumUnits": 1,
                   "ScalingPolicies": [
@@ -82,7 +82,7 @@
                 "GlobalSecondaryIndexes": [],
                 "RegionName": "us-east-2",
                 "ReplicaProvisionedReadCapacityAutoScalingSettings": {
-                  "AutoScalingRoleArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+                  "AutoScalingRoleArn": "arn:aws:iam::000000000000:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
                   "MaximumUnits": 10,
                   "MinimumUnits": 1,
                   "ScalingPolicies": [
@@ -95,7 +95,7 @@
                   ]
                 },
                 "ReplicaProvisionedWriteCapacityAutoScalingSettings": {
-                  "AutoScalingRoleArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+                  "AutoScalingRoleArn": "arn:aws:iam::000000000000:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
                   "MaximumUnits": 10,
                   "MinimumUnits": 1,
                   "ScalingPolicies": [

@@ -10,7 +10,6 @@ from datetime import datetime, timedelta
 from awscli.customizations.eks.get_token import STSClientFactory, TokenGenerator, TOKEN_EXPIRATION_MINS
 import json
 import base64
-import botocore
 
 logger = get_logger(__file__)
 
@@ -47,21 +46,7 @@ class AWSResourceManager:
             "filesystem": ElasticFileSystem,
             "user_groups": UserGroups,
             "sagemaker":SageMaker,
-            "config_service":ConfigService,
-            "elasticsearch":ElasticSearch,
-            "guardduty":GuardDuty,
-            "redshift": RedShift,
-            "functions": Functions,
-            "s3control":S3Control,
-            "dax":Dax,
-            "opensearch": OpenSearch,
-            'cloudfront':CloudFront,
-            'apigateway': APIGateway,
-            "rest_api": RestAPI,
-            'sqs': SQS,
-            'ssm':SSM,
-            'sns':SNS,
-            'docdb': DocDB
+            "config_service":ConfigService
         }
 
         log = logger.new()
@@ -434,15 +419,6 @@ class Instance(AWS):
                 ssm_info = self.get_ssm_info(instance_details.get('InstanceId'))
                 if ssm_info:
                     instance_details['SSM'] = ssm_info
-                    instance_details['ssm_patch_compliance'] = self.get_compliance_status(
-                        instance_details.get('InstanceId'),
-                        'Patch'
-                    )
-                    instance_details['ssm_association_compliance'] = self.get_compliance_status(
-                        instance_details.get('InstanceId'),
-                        'Association'
-                    )
-                
 
                 if self.instance_ids and \
                         instance_details.get("InstanceId") in self.instance_ids:
@@ -452,23 +428,21 @@ class Instance(AWS):
     def get_ssm_info(self, instance_id):
         result = []
         try:
-            result = self.ssm.describe_instance_associations_status(
-                        InstanceId=instance_id
-            ).get('InstanceAssociationStatusInfos', [])
+            result = self.ssm.describe_instance_information(
+                InstanceInformationFilterList=[
+                    {
+                        'key': 'InstanceIds',
+                        'valueSet': [
+                            instance_id
+                        ]
+                    }
+                ]
+            ).get('InstanceInformationList', [])
         except Exception as ex:
             print(ex, "===== fetch instance information for SSM")
 
-        return result 
+        return result[0] if result else None
 
-    def get_compliance_status(self,resource_id,compliance_type):
-        response = self.ssm.list_compliance_items(ResourceIds=[resource_id],
-        Filters=[{"Key":"ComplianceType","Values":[compliance_type]}],MaxResults=1)
-        if 'ResponseMetadata' in response:
-            del response['ResponseMetadata']
-        return response.get('ComplianceItems',[])
-
-        
-    
     def update_volume_details(self, instance_details):
         """
         Update instance details with additional volumes data.
@@ -557,6 +531,7 @@ class Storage(AWS):
 
     def get_bucket_notification_configuration(self):
         resp = self.conn.get_bucket_notification_configuration(Bucket=self.bucket.get('name'))
+        print(self.bucket.get('name'), "=====bucket name")
         del resp['ResponseMetadata']
         return resp
 
@@ -1192,24 +1167,13 @@ class KMS(AWS):
         instance_id (str): Ec2 instance id.
         return: dictionary object.
         """
-        key_detail={}
-        try:
-            key_detail = self.conn.describe_key(KeyId=self.kms.get('KeyId')).get('KeyMetadata')
-        except Exception as e:
-            print(f"Error {e}")
-        key_policies = []
-        try:
-            key_policy_names = self.conn.list_key_policies(KeyId=self.kms.get('KeyId')).get('PolicyNames')
-            key_policies = [
-                json.loads(self.conn.get_key_policy(KeyId=self.kms.get('KeyId'), PolicyName=p_name).get('Policy')) for
-                p_name in key_policy_names]
-        except Exception as e:
-            print(f"Error {e}")
-        rotation_status = {}
-        try:
-            rotation_status = self.conn.get_key_rotation_status(KeyId=self.kms.get('KeyId')).get('KeyRotationEnabled')
-        except Exception as e:
-            print(f"Error {e}")
+        key_detail = self.conn.describe_key(KeyId=self.kms.get('KeyId')).get('KeyMetadata')
+        key_policy_names = self.conn.list_key_policies(KeyId=self.kms.get('KeyId')).get('PolicyNames')
+        key_policies = [
+            json.loads(self.conn.get_key_policy(KeyId=self.kms.get('KeyId'), PolicyName=p_name).get('Policy')) for
+            p_name in key_policy_names]
+        rotation_status = self.conn.get_key_rotation_status(KeyId=self.kms.get('KeyId')).get('KeyRotationEnabled')
+
         self.kms = {
             **key_detail,
             "KeyPolicies": key_policies,
@@ -1230,9 +1194,6 @@ class CloudTrail(AWS):
             self.conn = self.client("cloudtrail")
             self.logs = self.client('logs')
             self.watch = self.client('cloudwatch')
-            self.s3 = self.client('s3')
-            self.s3_control = self.client('s3control')
-            self.sts = self.client('sts')
             self.trail = resource
 
         except Exception as ex:
@@ -1241,9 +1202,10 @@ class CloudTrail(AWS):
 
     def get_resource_inventory(self):
         """
-        Fetches CloudTrail details.
+        Fetches instance details.
 
         Args:
+        instance_id (str): Ec2 instance id.
         return: dictionary object.
         """
         trail_arn = self.trail['arn']
@@ -1255,23 +1217,6 @@ class CloudTrail(AWS):
         log_group_arn = trail_data.get('CloudWatchLogsLogGroupArn')
         home_region = trail_data.get('HomeRegion')
         trail_data['event_selectors'] = self.get_trail_event_selector(trail_arn)
-        if trail_data.get("S3BucketName"):
-            trail_data['S3BucketLogging'] = self.\
-                get_s3_bucket_logging(trail_data.get("S3BucketName"))
-            trail_data['S3PublicAccessBlock'] = self.\
-                get_s3_public_access_block(trail_data.get("S3BucketName"))
-            trail_data['S3BucketPolicy'] = self.\
-                get_s3_bucket_policy(trail_data.get("S3BucketName"))
-            trail_data['S3BucketACL'] = self.\
-                get_s3_bucket_acl(trail_data.get("S3BucketName"))
-            account_id = self.sts.get_caller_identity()['Account']
-            trail_data['S3BucketAccessPoints'] = self.\
-                get_s3_bucket_access_points(account_id,trail_data.get("S3BucketName"))
-            for access_point in trail_data['S3BucketAccessPoints']:
-                access_point_details = self.get_s3_access_point(account_id,access_point['Name'])
-                access_point['PublicAccessBlockConfiguration'] = access_point_details.get('PublicAccessBlockConfiguration')
-                access_point['Policy']=self.get_s3_access_point_policy(account_id,access_point['Name'])
-
         if log_group_arn:
             log_group = self.get_log_group(log_group_arn,home_region)
             log_group_name = log_group.get('logGroupName')
@@ -1338,74 +1283,13 @@ class CloudTrail(AWS):
 
         return metric_filters
 
-    def get_alarms_for_metric(self, metricName, filterNamespace):
-        response = self.watch.describe_alarms_for_metric(MetricName=metricName, Namespace=filterNamespace)
+    def get_alarms_for_metric(self, filterName, filterNamespace):
+        response = self.watch.describe_alarms_for_metric(MetricName=filterName, Namespace=filterNamespace)
         return response.get('MetricAlarms')
     
     def get_trail_event_selector(self, trail_arn):
         response = self.conn.get_event_selectors(TrailName=trail_arn)
         return response.get("EventSelectors",[])
-    
-    def get_s3_bucket_logging(self, bucket_name):
-        response = self.s3.get_bucket_logging(Bucket=bucket_name)
-        return response.get("LoggingEnabled",{})
-    
-    def get_s3_public_access_block(self, bucket_name):
-        try:
-            response = self.s3.get_public_access_block(Bucket=bucket_name)
-        except botocore.exceptions.ClientError as e:
-            if e.response['Error']['Code'] == 'NoSuchPublicAccessBlockConfiguration':
-                return {
-            "BlockPublicAcls": False,
-            "BlockPublicPolicy": False,
-            "IgnorePublicAcls": False,
-            "RestrictPublicBuckets": False
-          }
-        return response.get("PublicAccessBlockConfiguration",{})
-    
-    def get_s3_bucket_policy(self, bucket_name):
-        try:
-            response = self.s3.get_bucket_policy(Bucket=bucket_name)
-        except botocore.exceptions.ClientError as e:
-            if e.response['Error']['Code'] == 'NoSuchBucketPolicy':
-                return {}
-        policy =  response.get("Policy",json.dumps({}))
-        return json.loads(policy)
-    
-    def get_s3_bucket_acl(self, bucket_name):
-        response = self.s3.get_bucket_acl(Bucket=bucket_name)
-        if 'ResponseMetadata' in response:
-            del response['ResponseMetadata']
-        return response
-    
-    def get_s3_bucket_access_points(self, account_id,bucket_name):
-        try:
-            response = self.s3_control.list_access_points(AccountId=account_id,Bucket=bucket_name)
-            if 'ResponseMetadata' in response:
-                del response['ResponseMetadata']
-            return response.get('AccessPointList')
-        except botocore.exceptions.ClientError as e:
-            return []
-        
-    
-    def get_s3_access_point_policy(self, account_id, access_point_name):
-        try:
-            response = self.s3_control.get_access_point_policy(AccountId=account_id,Name=access_point_name)
-            if 'ResponseMetadata' in response:
-                del response['ResponseMetadata']
-            return response.get('Policy')
-        except botocore.exceptions.ClientError as e:
-            return json.dumps({})
-    
-    def get_s3_access_point(self, account_id, access_point_name):
-        try:
-            response = self.s3_control.get_access_point(AccountId=account_id,Name=access_point_name)
-            if 'ResponseMetadata' in response:
-                del response['ResponseMetadata']
-            return response
-        except botocore.exceptions.ClientError as e:
-            return {}
-        
 
 
 class Policy(AWS):
@@ -1473,6 +1357,8 @@ class Snapshot(AWS):
         snapshot = {
             **self.snapshot,
         }
+        print(snapshot, "==== snapshot")
+
         return snapshot
 
 
@@ -1502,6 +1388,8 @@ class EIP(AWS):
         eip = {
             **self.eip,
         }
+        print(eip, "==== eip")
+
         return eip
 
 
@@ -1545,7 +1433,6 @@ class DynamoDB(AWS):
         try:
             super(DynamoDB, self).__init__()
             self.conn = self.client("dynamodb")
-            self.application_autoscaling = self.client("application-autoscaling")
             self.ddb = resource
 
         except Exception as ex:
@@ -1563,7 +1450,6 @@ class DynamoDB(AWS):
             **self.conn.describe_table(TableName=self.ddb.get('name')).get('Table', {}),
             "TableAutoScalingDescription": self.get_table_replica_auto_scaling(),
             "ContinuousBackupsDescription": self.get_continuous_backups(),
-            "ScalableTargets": self.get_autoscaling_scalable_targets(),
             "type": 'no_sql'
         }
 
@@ -1584,22 +1470,6 @@ class DynamoDB(AWS):
             print(ex, "===== no sql continuous backups")
             resp = {}
         return resp.get('ContinuousBackupsDescription')
-    
-    def get_autoscaling_scalable_targets(self):
-        try:
-            resp = self.application_autoscaling.describe_scalable_targets(
-                ServiceNamespace='dynamodb',
-                ResourceIds=self.get_autoscaling_resources())
-        except Exception as ex:
-            print(ex, "===== no sql continuous backups")
-            resp = {}
-        return resp.get('ScalableTargets',[])
-    
-    def get_autoscaling_resources(self):
-        resources = [f"table/{self.ddb.get('name')}"]
-        for index in self.ddb.get("GlobalSecondaryIndexes"):
-            resources.append(f"table/{self.ddb.get('name')}/{index['IndexName']}")
-        return resources
 
 
 class ElasticBeanstalk(AWS):
@@ -1895,43 +1765,6 @@ class UserGroups(AWS):
             "AttachedPolicies": finalttachedPolicies
         }
 
-
-
-
-class Functions(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(Functions, self).__init__()
-            self.conn = self.client("lambda")
-            self.functions = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches lambda funtions
-
-        Args:
-        return: dictionary object.
-        """
-        functions = {**self.functions}
-        function_details = self.conn.get_function(FunctionName=functions.get('FunctionArn'))
-        try:
-            AttachedPolicies = self.conn.get_policy(FunctionName=functions.get('FunctionArn'))
-        except:
-            AttachedPolicies = []
-        return {
-            **functions,
-            "FunctionDetails": function_details,
-            "AttachedPolicies": AttachedPolicies
-        }
-
 class SageMaker(AWS):
     def __init__(self,
                  resource: dict,
@@ -1965,8 +1798,8 @@ class SageMaker(AWS):
 
     def describe_notebook_instance(self, instance_name):
         resp = self.client.describe_notebook_instance(NotebookInstanceName=instance_name)
-        if 'ResponseMetadata' in resp:
-            del resp["ResponseMetadata"]
+        print(f"notebook instance {resp}")
+        del resp["ResponseMetadata"]
         return resp
 
 class ConfigService(AWS):
@@ -1994,417 +1827,3 @@ class ConfigService(AWS):
         }
 
         return config_service
-
-class ElasticSearch(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(ElasticSearch, self).__init__()
-            self.client = self.client("es")
-            self.es_domain = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches instance details.
-
-        Args:
-        instance_id (str): Ec2 instance id.
-        return: dictionary object.
-        """
-        
-        resource = {
-            **self.es_domain,
-            **self.describe_elasticsearch_domain(self.es_domain.get("DomainName"))
-        }
-
-        return resource
-
-    def describe_elasticsearch_domain(self, domain_name):
-        resp = self.client.describe_elasticsearch_domain(DomainName=domain_name)
-        del resp["ResponseMetadata"]
-        return resp.get('DomainStatus')
-
-class GuardDuty(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(GuardDuty, self).__init__()
-            self.client = self.client("guardduty")
-            self.guardduty = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches guard duty details.
-        """
-        high_severity_criteria = {"Criterion":{"severity":{"Gte":7}}}
-        sort_criteria = {"AttributeName":"severity","OrderBy":"DESC"}
-        guardduty = {
-            **self.guardduty,
-            'high_severity_findings':self.get_findings(self.guardduty['detector_id'],
-            high_severity_criteria,sort_criteria)
-        }
-
-        return guardduty
-    
-    def get_findings(self,detector_id,finding_criteria,sort_criteria):
-        response = self.client.list_findings(DetectorId=detector_id,FindingCriteria=finding_criteria,
-        SortCriteria=sort_criteria)
-        if 'ResponseMetadata' in response:
-            del response["ResponseMetadata"]
-        return response.get("FindingIds",[])
-
-class RedShift(AWS):
-
-    def __init__(self,resource):
-        try:
-            super(RedShift, self).__init__()
-            self.conn = self.client("redshift")
-            self.redshift = resource
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches redshift clusters
-        Args:
-        return: dictionary object.
-        """
-        redshift = {**self.redshift}
-        redshift['ParameterGroups'] = self.describe_cluster_parameters(parameter_group_name=redshift.get('ClusterParameterGroups')[0].get('ParameterGroupName')).get('Parameters')
-        redshift['LoggingEnabled'] = self.get_logging_status(self.redshift.get('ClusterIdentifier'))
-        return redshift
-    
-    def describe_cluster_parameters(self,parameter_group_name):
-        return self.conn.describe_cluster_parameters(ParameterGroupName=parameter_group_name)
-    
-    def get_logging_status(self,cluster_identifier):
-        return self.conn.describe_logging_status(ClusterIdentifier=cluster_identifier).get('LoggingEnabled')
-
-class S3Control(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        super(S3Control, self).__init__()
-        self.s3control = resource
-        self.sts = self.client('sts')
-    
-    def get_resource_inventory(self):
-        """
-        Fetches s3control details.
-        """
-
-        s3control = {
-            **self.s3control,
-            "AccountId":self.get_account_id()
-        }
-
-        return s3control
-
-    def get_account_id(self):
-       return self.sts.get_caller_identity()['Account']
-
-class OpenSearch(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(OpenSearch, self).__init__()
-            self.conn = self.client("opensearch")
-            self.opensearch = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches opensearch details
-
-        Args:
-        return: dictionary object.
-        """
-        opensearch = {**self.opensearch}
-        DomainStatus = self.conn.describe_domain(DomainName=opensearch.get('DomainName')).get('DomainStatus')
-        return {
-            **opensearch,
-            "DomainStatus": DomainStatus
-        }
-    
-
-class Dax(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(Dax, self).__init__()
-            self.dax = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches dax details.
-        """
-
-        dax = {
-            **self.dax
-        }
-
-        return dax
-
-class CloudFront(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(CloudFront, self).__init__()
-            self.cloudfront = self.client('cloudfront')
-            self.resource = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches cloudfront details.
-        """
-
-        resource = {
-            **self.resource,
-            **self.get_distribution(self.resource['Id'])
-        }
-
-        return resource
-    
-    def get_distribution(self,distribution_id):
-        response = self.cloudfront.get_distribution(Id=distribution_id)
-        if 'ResponseMetadata' in response:
-            del response["ResponseMetadata"]
-        return response.get("Distribution",{})
-
-
-class APIGateway(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(APIGateway, self).__init__()
-            self.apigateway = self.client('apigatewayv2')
-            self.resource = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches api gateways details.
-        """
-        stages = self.apigateway.get_stages(ApiId=self.resource.get('ApiId')).get('Items')
-        
-        resource = {
-            **self.resource,
-            "stages": stages
-        }
-
-        return resource
-
-
-class RestAPI(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(RestAPI, self).__init__()
-            self.apigateway = self.client('apigateway')
-            self.resource = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches rest api gateways details.
-        """
-        finalStages = []
-
-        stages = self.apigateway.get_stages(
-            restApiId=self.resource.get('id')).get('item')
-        resources = self.apigateway.get_resources(
-            restApiId=self.resource.get('id'), embed=['methods']).get('items')
-        try:
-            for stage in stages:
-                if stage.get('clientCertificateId'):
-                    certificate_details = self.apigateway.get_client_certificate(
-                        clientCertificateId=stage.get('clientCertificateId'))
-                    finalStages.append({
-                        **stage,
-                        "CertificateExpirationDate": certificate_details.get('expirationDate')
-                    })
-                else:
-                    finalStages.append({
-                        **stage,
-                    })
-        except:
-            finalStages = []
-
-        resource = {
-            **self.resource,
-            "stages": finalStages,
-            "resources": resources,
-            "region": self.region
-        }
-
-        return resource
-
-
-class SQS(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(SQS, self).__init__()
-            self.sqs = self.client('sqs')
-            self.resource = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches SQS details.
-        """
-        attributes = self.sqs.get_queue_attributes(
-            QueueUrl=self.resource.get('url'), AttributeNames=['All']).get('Attributes')
-        resource = {
-            **attributes,
-            "url": self.resource.get('url')
-        }
-        return resource
-
-
-class SSM(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(SSM, self).__init__()
-            self.conn = self.client('ssm')
-            self.resource = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-    def get_resource_inventory(self):
-        """
-        Fetches ssm details.
-        """
-
-        resource = {
-            **self.resource
-        }
-        resource['shared_permissions'] = self.describe_document_permission(self.resource['Name'])
-        return resource
-    
-    def describe_document_permission(self,document_name,permission_type='Share'):
-        response = self.conn.describe_document_permission(
-            Name=document_name,
-            PermissionType=permission_type,
-        )
-        if 'ResponseMetadata' in response:
-            del response["ResponseMetadata"]
-        return response
-
-class SNS(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(SNS, self).__init__()
-            self.conn = self.client('sns')
-            self.resource = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches sns details.
-        """
-
-        resource = {
-            **self.resource
-        }
-        resource['TopicAttributes'] = self.get_topic_attributes(self.resource['TopicArn'])
-        return resource
-    
-    def get_topic_attributes(self,topic_arn):
-        response = self.conn.get_topic_attributes(
-            TopicArn=topic_arn
-        )
-        if 'ResponseMetadata' in response:
-            del response["ResponseMetadata"]
-        return response
-
-
-class DocDB(AWS):
-    def __init__(self,
-                 resource: dict,
-                 **kwargs,
-                 ) -> None:
-        """
-        """
-        try:
-            super(DocDB, self).__init__()
-            self.conn = self.client('docdb')
-            self.resource = resource
-
-        except Exception as ex:
-            raise Exception(ex)
-
-    def get_resource_inventory(self):
-        """
-        Fetches doc db details.
-        """
-        resource = {
-            **self.resource
-        }
-        return resource
-

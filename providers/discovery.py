@@ -22,5 +22,4 @@ class Discovery:
     def find_resources(self, **kwargs):
         """
         """
-
         return self.manager.find_resources(**kwargs)

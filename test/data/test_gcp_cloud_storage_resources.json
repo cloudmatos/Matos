@@ -3,8 +3,8 @@
       {
         "self": {
           "ancestors": [
-            "projects/234821169729", 
-            "organizations/592371966970"
+            "projects/00000000000", 
+            "organizations/00000000000"
           ], 
           "asset_type": "bucket", 
           "display_name": "sched_job_states", 
@@ -12,27 +12,27 @@
             "bindings": [
               {
                 "members": [
-                  "projectEditor:cloudmatos-demoblog", 
-                  "projectOwner:cloudmatos-demoblog"
+                  "projectEditor:google-project-01", 
+                  "projectOwner:google-project-01"
                 ], 
                 "role": "roles/storage.legacyBucketOwner"
               }, 
               {
                 "members": [
-                  "projectViewer:cloudmatos-demoblog"
+                  "projectViewer:google-project-01"
                 ], 
                 "role": "roles/storage.legacyBucketReader"
               }, 
               {
                 "members": [
-                  "projectEditor:cloudmatos-demoblog", 
-                  "projectOwner:cloudmatos-demoblog"
+                  "projectEditor:google-project-01", 
+                  "projectOwner:google-project-01"
                 ], 
                 "role": "roles/storage.legacyObjectOwner"
               }, 
               {
                 "members": [
-                  "projectViewer:cloudmatos-demoblog"
+                  "projectViewer:google-project-01"
                 ], 
                 "role": "roles/storage.legacyObjectReader"
               }
@@ -71,7 +71,7 @@
             "metageneration": 1.0, 
             "name": "sched_job_states", 
             "owner": {}, 
-            "projectNumber": 234821169729.0, 
+            "projectNumber": 00000000000.0, 
             "retentionPolicy": {}, 
             "satisfiesPZS": false, 
             "selfLink": "https://www.googleapis.com/storage/v1/b/sched_job_states", 
@@ -88,36 +88,36 @@
       {
         "self": {
           "ancestors": [
-            "projects/234821169729", 
-            "organizations/592371966970"
+            "projects/00000000000", 
+            "organizations/00000000000"
           ], 
           "asset_type": "bucket", 
-          "display_name": "test_bucket_cloudmatos-demoblog", 
+          "display_name": "test_bucket_google-project-01", 
           "iam_policy": {
             "bindings": [
               {
                 "members": [
-                  "projectEditor:cloudmatos-demoblog", 
-                  "projectOwner:cloudmatos-demoblog"
+                  "projectEditor:google-project-01", 
+                  "projectOwner:google-project-01"
                 ], 
                 "role": "roles/storage.legacyBucketOwner"
               }, 
               {
                 "members": [
-                  "projectViewer:cloudmatos-demoblog"
+                  "projectViewer:google-project-01"
                 ], 
                 "role": "roles/storage.legacyBucketReader"
               }, 
               {
                 "members": [
-                  "projectEditor:cloudmatos-demoblog", 
-                  "projectOwner:cloudmatos-demoblog"
+                  "projectEditor:google-project-01", 
+                  "projectOwner:google-project-01"
                 ], 
                 "role": "roles/storage.legacyObjectOwner"
               }, 
               {
                 "members": [
-                  "projectViewer:cloudmatos-demoblog"
+                  "projectViewer:google-project-01"
                 ], 
                 "role": "roles/storage.legacyObjectReader"
               },
@@ -130,7 +130,7 @@
             ], 
             "etag": "BwXV6MwENz4="
           }, 
-          "name": "test_bucket_cloudmatos-demoblog", 
+          "name": "test_bucket_google-project-01", 
           "resource": {
             "acl": [], 
             "autoclass": {}, 
@@ -150,7 +150,7 @@
                 "lockedTime": "2022-04-19T05:38:35.564Z"
               }
             }, 
-            "id": "test_bucket_cloudmatos-demoblog", 
+            "id": "test_bucket_google-project-01", 
             "kind": "storage#bucket", 
             "labels": {}, 
             "lifecycle": {
@@ -171,15 +171,15 @@
             "locationType": "region", 
             "logging": {}, 
             "metageneration": 4.0, 
-            "name": "test_bucket_cloudmatos-demoblog", 
+            "name": "test_bucket_google-project-01", 
             "owner": {}, 
-            "projectNumber": 234821169729.0, 
+            "projectNumber": 00000000000.0, 
             "retentionPolicy": {
               "effectiveTime": "2022-01-19T05:44:02.395Z", 
               "retentionPeriod": 2592000.0
             }, 
             "satisfiesPZS": false, 
-            "selfLink": "https://www.googleapis.com/storage/v1/b/test_bucket_cloudmatos-demoblog", 
+            "selfLink": "https://www.googleapis.com/storage/v1/b/test_bucket_google-project-01", 
             "storageClass": "STANDARD", 
             "timeCreated": "2022-01-19T05:38:35.564Z", 
             "updated": "2022-01-19T05:44:28.808Z", 
