@@ -8,9 +8,9 @@ import requests
 
 class TestPostgreSQL(TestCase):
     def __init__(self):
-        # fp = open(os.getcwd() + "/test/data/test_azure_postgresql.json", "r")
-        fp = open(
-            "C:/Users/LENOVO/Downloads/docs/matos/matosphere/matosphere/test/data/test_azure_postgresql.json", "r")
+        fp = open(os.getcwd() + "/test/data/test_azure_postgresql.json", "r")
+        # fp = open(
+        #     "C:/Users/LENOVO/Downloads/docs/matos/matosphere/matosphere/test/data/test_azure_postgresql.json", "r")
         content = fp.read()
         fp.close()
         self.resources = loads(content)
