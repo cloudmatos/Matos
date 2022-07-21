@@ -33,7 +33,7 @@ ansible-playbook playbook.yml --extra-vars '{
   "aws_secret_key": "XXXXX",
   "aws_access_key": "XXXXX",
   "region": "us-east-2",
-  "aws_account_id": "144908232300",
+  "aws_account_id": "000000000000",
   "iam_usernames": ["john","ram"]
 }'
 ```

@@ -1,0 +1,16 @@
+{
+    "securityhub": [
+        {
+            "self": {
+                "name": "hub/default",
+                "region": "us-east-1",
+                "source_data": {
+                    "AutoEnableControls": false,
+                    "HubArn": "arn:aws:securityhub:us-east-1:000000000000:hub/default",
+                    "SubscribedAt": "2022-07-19T04:25:16.886Z",
+                    "type": "securityhub"
+                }
+            }
+        }
+    ]
+}

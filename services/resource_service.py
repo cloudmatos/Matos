@@ -9,15 +9,17 @@ class ResourceService:
     def __init__(self, provider):
         self.provider = provider
 
+    # def thread_task(self, resource_list):
+    #
     def get_resource(self, remove_instance=True):
         pretty_resources = {}
-        try:
-            resource_list = Discovery(self.provider).find_resources() if self.provider != 'gcp' else []
-            resource_obj = Resource(self.provider)
-            resources = resource_obj.get_resource_inventory(resource_list=resource_list)
-        except Exception as ex:
-            raise Exception(ex)
-
+        # try:
+        resource_list = Discovery(self.provider).find_resources() if self.provider != 'gcp' else []
+        resource_obj = Resource(self.provider)
+        resources = resource_obj.get_resource_inventory(resource_list=resource_list)
+        # except Exception as ex:
+        #     print(ex, "===== discovery issue")
+        #     raise Exception(ex)
         for type in resources.keys():
             resource = resources.get(type, {})
             if self.provider == 'gcp':

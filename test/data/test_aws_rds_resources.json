@@ -10,7 +10,7 @@
             "CACertificateIdentifier": "rds-ca-2019",
             "CopyTagsToSnapshot": true,
             "CustomerOwnedIpEnabled": false,
-            "DBInstanceArn": "arn:aws:rds:us-east-2:144908232300:db:cmdb-1",
+            "DBInstanceArn": "arn:aws:rds:us-east-2:000000000000:db:cmdb-1",
             "DBInstanceClass": "db.t2.micro",
             "DBInstanceIdentifier": "cmdb-1",
             "DBInstanceStatus": "available",

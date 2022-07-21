@@ -64,7 +64,7 @@ class TestCloudSql(TestCase):
         filter_pattern = ["$.eventSource=kms*","$.eventSource=kms.amazonaws.com","$.eventName=DisableKey","$.eventName=ScheduleKeyDeletion"]
         alarms = []  
         for m in metric_filters:
-            if m['filterName']!='abhay-test-filter':
+            if m['filterName']!='user01-test-filter':
                 continue
             if self.checkFilter(m['filterPattern'], filter_pattern, condition='and') and \
                 len(m.get('metricTransformations',[]))>0:

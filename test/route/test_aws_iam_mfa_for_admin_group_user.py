@@ -10,7 +10,7 @@ class TestAWSIAMAvoidRootAccountUse(TestCase):
         content = fp.read()
         fp.close()
         self.resources = loads(content)
-        self.account_id = "144908232300"
+        self.account_id = "000000000000"
         self.mfa_policy_name = f"mfa_enable_access_group_{self.account_id}"
 
     def test_mfa_enabled_for_admin_group_user(self):

@@ -330,7 +330,7 @@
             "MaxTTL": 31536000,
             "MinTTL": 0,
             "SmoothStreaming": false,
-            "TargetOriginId": "clopudfrontorigintestakshay.s3.us-east-1.amazonaws.com",
+            "TargetOriginId": "clopudfrontorigintestuser03.s3.us-east-1.amazonaws.com",
             "TrustedKeyGroups": {
               "Enabled": false,
               "Quantity": 0
@@ -392,7 +392,7 @@
               "MaxTTL": 31536000,
               "MinTTL": 0,
               "SmoothStreaming": false,
-              "TargetOriginId": "clopudfrontorigintestakshay.s3.us-east-1.amazonaws.com",
+              "TargetOriginId": "clopudfrontorigintestuser03.s3.us-east-1.amazonaws.com",
               "TrustedKeyGroups": {
                 "Enabled": false,
                 "Quantity": 0
@@ -428,10 +428,10 @@
                   "Members": {
                     "Items": [
                       {
-                        "OriginId": "clopudfrontorigintestakshay.s3.us-east-1.amazonaws.com"
+                        "OriginId": "clopudfrontorigintestuser03.s3.us-east-1.amazonaws.com"
                       },
                       {
-                        "OriginId": "akshay-test-bucket-logging.s3.us-east-1.amazonaws.com"
+                        "OriginId": "user03-test-bucket-logging.s3.us-east-1.amazonaws.com"
                       }
                     ],
                     "Quantity": 2
@@ -448,8 +448,8 @@
                   "CustomHeaders": {
                     "Quantity": 0
                   },
-                  "DomainName": "clopudfrontorigintestakshay.s3.us-east-1.amazonaws.com",
-                  "Id": "clopudfrontorigintestakshay.s3.us-east-1.amazonaws.com",
+                  "DomainName": "clopudfrontorigintestuser03.s3.us-east-1.amazonaws.com",
+                  "Id": "clopudfrontorigintestuser03.s3.us-east-1.amazonaws.com",
                   "OriginPath": "",
                   "OriginShield": {
                     "Enabled": false
@@ -464,8 +464,8 @@
                   "CustomHeaders": {
                     "Quantity": 0
                   },
-                  "DomainName": "akshay-test-bucket-logging.s3.us-east-1.amazonaws.com",
-                  "Id": "akshay-test-bucket-logging.s3.us-east-1.amazonaws.com",
+                  "DomainName": "user03-test-bucket-logging.s3.us-east-1.amazonaws.com",
+                  "Id": "user03-test-bucket-logging.s3.us-east-1.amazonaws.com",
                   "OriginPath": "",
                   "OriginShield": {
                     "Enabled": false
@@ -514,10 +514,10 @@
                 "Members": {
                   "Items": [
                     {
-                      "OriginId": "clopudfrontorigintestakshay.s3.us-east-1.amazonaws.com"
+                      "OriginId": "clopudfrontorigintestuser03.s3.us-east-1.amazonaws.com"
                     },
                     {
-                      "OriginId": "akshay-test-bucket-logging.s3.us-east-1.amazonaws.com"
+                      "OriginId": "user03-test-bucket-logging.s3.us-east-1.amazonaws.com"
                     }
                   ],
                   "Quantity": 2
@@ -534,8 +534,8 @@
                 "CustomHeaders": {
                   "Quantity": 0
                 },
-                "DomainName": "clopudfrontorigintestakshay.s3.us-east-1.amazonaws.com",
-                "Id": "clopudfrontorigintestakshay.s3.us-east-1.amazonaws.com",
+                "DomainName": "clopudfrontorigintestuser03.s3.us-east-1.amazonaws.com",
+                "Id": "clopudfrontorigintestuser03.s3.us-east-1.amazonaws.com",
                 "OriginPath": "",
                 "OriginShield": {
                   "Enabled": false
@@ -550,8 +550,8 @@
                 "CustomHeaders": {
                   "Quantity": 0
                 },
-                "DomainName": "akshay-test-bucket-logging.s3.us-east-1.amazonaws.com",
-                "Id": "akshay-test-bucket-logging.s3.us-east-1.amazonaws.com",
+                "DomainName": "user03-test-bucket-logging.s3.us-east-1.amazonaws.com",
+                "Id": "user03-test-bucket-logging.s3.us-east-1.amazonaws.com",
                 "OriginPath": "",
                 "OriginShield": {
                   "Enabled": false

@@ -65,6 +65,61 @@ def aws_cluster_service(resource):
     })
 
 
+def aws_glue(resource,provider):
+    glue = {}
+    map_child(aws_glue_job, "Jobs", "Jobs", resource, glue, provider)
+    map_child(aws_glue_endpoint, "DevEndpoints", "DevEndpoints", resource, glue, provider)
+    map_child(aws_glue_data_catalogue_encryption_settings, "DataCatalogueEncryptionSettings", "DataCatalogueEncryptionSettings", resource, glue, provider)
+    map_child(aws_glue_crawlers, "Crawlers", "Crawlers", resource, glue, provider)
+    map_child(aws_glue_data_catalogue_resource_policy, "DataCatalogueResourcePolicy", "DataCatalogueResourcePolicy", resource, glue, provider)
+    map_child(aws_glue_connections, "Connections", "Connections", resource, glue, provider)
+    
+    return glue
+
+def aws_glue_job(resource):
+    """
+    """
+    return selfish({
+        'name': resource['Name'],
+        "source_data": resource
+    })
+
+def aws_glue_endpoint(resource):
+    """
+    """
+    return selfish({
+        'name': resource['EndpointName'],
+        "source_data": resource
+    })
+
+def aws_glue_data_catalogue_encryption_settings(resource):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+def aws_glue_crawlers(resource):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+def aws_glue_data_catalogue_resource_policy(resource):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
+def aws_glue_connections(resource):
+    """
+    """
+    return selfish({
+        "source_data": resource
+    })
+
 def aws_instance(resource, provider):
     """
     """
@@ -328,8 +383,8 @@ def aws_sqs(resource, provider):
     """
     """
     return selfish({
-        "name": from_dict(resource, "QueueArn").split('.')[5],
-        "region": from_dict(resource, "QueueArn").split('.')[3],
+        "name": from_dict(resource, "QueueArn").split(':')[-1],
+        "region": from_dict(resource, "QueueArn").split(':')[3],
         "source_data": resource
     })
 
@@ -360,6 +415,7 @@ def aws_ssm(resource, provider):
 def aws_sns(resource, provider):
     """
     """
+    resource['Name'] = from_dict(resource, "TopicArn").split(':')[-1]
     return selfish({
         "name": from_dict(resource, "TopicArn").split(':')[-1],
         "region":from_dict(resource, "TopicArn").split(':')[3],
@@ -375,10 +431,47 @@ def aws_docdb(resource, provider):
         "source_data": resource
     })
 
+def aws_logs_metrics(resource, provider):
+    """
+    """
+    return selfish({
+        "name": from_dict(resource, "logGroupName"),
+        "region":from_dict(resource, "arn").split(':')[3],
+        "source_data": resource
+    })
+
+def aws_codebuild(resource, provider):
+    """
+    """
+    return selfish({
+        "name": from_dict(resource, "name"),
+        "region":from_dict(resource, "arn").split(':')[3],
+        "source_data": resource
+    })
+
 def aws_filesystem(resource, provider):
     """
     """
     return selfish({
+        "source_data": resource
+    })
+
+def aws_acm(resource, provider):
+    """
+    """
+    resource['Name'] = from_dict(resource, "CertificateArn").split(':')[-1]
+    return selfish({
+        "name": from_dict(resource, "CertificateArn").split(':')[-1],
+        "region":from_dict(resource, "CertificateArn").split(':')[3],
+        "source_data": resource
+    })
+
+def aws_securityhub(resource, provider):
+    """
+    """
+    return selfish({
+        "name": from_dict(resource, "HubArn").split(':')[-1],
+        "region":from_dict(resource, "HubArn").split(':')[3],
         "source_data": resource
     })
 
@@ -813,7 +906,12 @@ cloud_resource_mappers = {
         'sqs': aws_sqs,
         'ssm': aws_ssm,
         'sns': aws_sns,
-        'docdb': aws_docdb
+        'docdb': aws_docdb,
+        'logs_metrics': aws_logs_metrics,
+        'codebuild': aws_codebuild,
+        'glue': aws_glue,
+        'acm': aws_acm,
+        'securityhub': aws_securityhub
         
     },
     'azure': {
@@ -926,6 +1024,36 @@ def add_child(child_mapper,
         else:
             mapped = child_mapper(data) if from_dict(data, "cluster_name") == target_data['self'][
                 'name'] and provider == 'gcp' or provider != 'gcp' else None
+
+        target_data.update({target_key: mapped})
+    except Exception as ex:
+        print("add child error ==== ", ex)
+        return
+
+def map_child(child_mapper,
+              source_key,
+              target_key,
+              source_data,
+              target_data,
+              provider='gcp'
+              ):
+    """
+    """
+
+    if source_key not in source_data:
+        target_data.update({target_key: []})
+        return
+    try:
+        data = source_data[source_key]
+
+        if not data:
+            return
+
+        if isinstance(data, (list, tuple, set)):
+            mapped = [child_mapper(s) for s in data if
+                       provider == 'gcp' or provider != 'gcp']
+        else:
+            mapped = child_mapper(data) if provider == 'gcp' or provider != 'gcp' else None
 
         target_data.update({target_key: mapped})
     except Exception as ex:

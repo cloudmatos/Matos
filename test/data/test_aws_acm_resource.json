@@ -1,0 +1,376 @@
+{
+  "acm": [
+    {
+      "self": {
+        "name": "certificate/45528e0e-1658-418e-9a79-f6058f43edb4",
+        "region": "us-west-1",
+        "source_data": {
+          "CertificateArn": "arn:aws:acm:us-west-1:000000000000:certificate/45528e0e-1658-418e-9a79-f6058f43edb4",
+          "CreatedAt": "Tue, 21 Jun 2022 12:39:02 GMT",
+          "DomainName": "user01-test-clb-01-453243591.us-west-1.elb.amazonaws.com",
+          "DomainValidationOptions": [
+            {
+              "DomainName": "user01-test-clb-01-453243591.us-west-1.elb.amazonaws.com"
+            }
+          ],
+          "ExtendedKeyUsages": [
+            {
+              "Name": "NONE",
+              "OID": ""
+            }
+          ],
+          "ImportedAt": "Tue, 21 Jun 2022 12:39:02 GMT",
+          "InUseBy": [],
+          "Issuer": "user01-test-clb-01-453243591.us-west-1.elb.amazonaws.com",
+          "KeyAlgorithm": "RSA-2048",
+          "KeyUsages": [
+            {
+              "Name": "ANY"
+            }
+          ],
+          "Name": "certificate/45528e0e-1658-418e-9a79-f6058f43edb4",
+          "NotAfter": "Tue, 13 Jun 2023 11:33:30 GMT",
+          "NotBefore": "Mon, 13 Jun 2022 11:33:30 GMT",
+          "Options": {
+            "CertificateTransparencyLoggingPreference": "DISABLED"
+          },
+          "RenewalEligibility": "INELIGIBLE",
+          "Serial": "a2:80:25:a4:f3:8e:b0:54",
+          "SignatureAlgorithm": "SHA256WITHRSA",
+          "Status": "ISSUED",
+          "Subject": "CN=user01-test-clb-01-453243591.us-west-1.elb.amazonaws.com",
+          "SubjectAlternativeNames": [
+            "user01-test-clb-01-453243591.us-west-1.elb.amazonaws.com"
+          ],
+          "Type": "IMPORTED",
+          "type": "acm"
+        }
+      }
+    },
+    {
+      "self": {
+        "name": "certificate/51ded13a-bd66-417c-8885-a6c46f0fc567",
+        "region": "us-west-1",
+        "source_data": {
+          "CertificateArn": "arn:aws:acm:us-west-1:000000000000:certificate/51ded13a-bd66-417c-8885-a6c46f0fc567",
+          "CertificateAuthority": {
+            "Arn": "arn:aws:acm-pca:us-west-1:000000000000:certificate-authority/adf6813a-f8aa-4bf3-866b-a475832cb7a6",
+            "CertificateAuthorityConfiguration": {
+              "KeyAlgorithm": "RSA_2048",
+              "SigningAlgorithm": "SHA256WITHRSA",
+              "Subject": {
+                "Organization": "cloudmatos"
+              }
+            },
+            "CreatedAt": "Fri, 15 Jul 2022 11:45:07 GMT",
+            "KeyStorageSecurityStandard": "FIPS_140_2_LEVEL_3_OR_HIGHER",
+            "LastStateChangeAt": "Fri, 15 Jul 2022 11:45:24 GMT",
+            "NotAfter": "Wed, 20 Jul 2022 11:45:22 GMT",
+            "NotBefore": "Fri, 15 Jul 2022 10:45:22 GMT",
+            "OwnerAccount": "000000000000",
+            "RevocationConfiguration": {
+              "CrlConfiguration": {
+                "Enabled": true
+              },
+              "OcspConfiguration": {
+                "Enabled": false
+              }
+            },
+            "Serial": "171163403384507048353469983109782496608",
+            "Status": "ACTIVE",
+            "Type": "ROOT"
+          },
+          "CertificateAuthorityArn": "arn:aws:acm-pca:us-west-1:000000000000:certificate-authority/adf6813a-f8aa-4bf3-866b-a475832cb7a6",
+          "CreatedAt": "Fri, 15 Jul 2022 11:47:52 GMT",
+          "DomainName": "q.cloudmatos.com",
+          "DomainValidationOptions": [
+            {
+              "DomainName": "ab.cloudmatos.com",
+              "ValidationDomain": "ab.cloudmatos.com",
+              "ValidationEmails": [],
+              "ValidationMethod": "EMAIL",
+              "ValidationStatus": "SUCCESS"
+            }
+          ],
+          "ExtendedKeyUsages": [
+            {
+              "Name": "TLS_WEB_SERVER_AUTHENTICATION",
+              "OID": "1.3.6.1.5.5.7.3.1"
+            },
+            {
+              "Name": "TLS_WEB_CLIENT_AUTHENTICATION",
+              "OID": "1.3.6.1.5.5.7.3.2"
+            }
+          ],
+          "InUseBy": [],
+          "IssuedAt": "Fri, 15 Jul 2022 11:48:06 GMT",
+          "Issuer": "cloudmatos",
+          "KeyAlgorithm": "RSA-2048",
+          "KeyUsages": [
+            {
+              "Name": "DIGITAL_SIGNATURE"
+            },
+            {
+              "Name": "KEY_ENCIPHERMENT"
+            }
+          ],
+          "Name": "certificate/51ded13a-bd66-417c-8885-a6c46f0fc567",
+          "NotAfter": "Tue, 20 Aug 2023 11:47:56 GMT",
+          "NotBefore": "Fri, 15 Jul 2022 10:47:56 GMT",
+          "Options": {
+            "CertificateTransparencyLoggingPreference": "DISABLED"
+          },
+          "RenewalEligibility": "INELIGIBLE",
+          "Serial": "20:c9:75:56:9d:83:58:d9:c2:91:8f:79:27:a0:ac:c3",
+          "SignatureAlgorithm": "SHA256WITHRSA",
+          "Status": "ISSUED",
+          "Subject": "CN=ab.cloudmatos.com",
+          "SubjectAlternativeNames": [
+            "ab.cloudmatos.com"
+          ],
+          "Type": "PRIVATE",
+          "type": "acm"
+        }
+      }
+    }
+  ],
+  "lb": [
+    {
+      "self": {
+        "source_data": {
+          "Attributes": {
+            "AccessLog": {
+              "Enabled": false
+            },
+            "AdditionalAttributes": [
+              {
+                "Key": "elb.http.desyncmitigationmode",
+                "Value": "defensive"
+              }
+            ],
+            "ConnectionDraining": {
+              "Enabled": true,
+              "Timeout": 300
+            },
+            "ConnectionSettings": {
+              "IdleTimeout": 60
+            },
+            "CrossZoneLoadBalancing": {
+              "Enabled": true
+            }
+          },
+          "AvailabilityZones": [
+            "us-west-1c",
+            "us-west-1a"
+          ],
+          "BackendServerDescriptions": [],
+          "CanonicalHostedZoneName": "user01-test-02-1621332678.us-west-1.elb.amazonaws.com",
+          "CanonicalHostedZoneNameID": "Z368ELLRRE2KJ0",
+          "CreatedTime": "Fri, 15 Jul 2022 13:31:31 GMT",
+          "DNSName": "user01-test-02-1621332678.us-west-1.elb.amazonaws.com",
+          "HealthCheck": {
+            "HealthyThreshold": 10,
+            "Interval": 30,
+            "Target": "HTTP:80/index.html",
+            "Timeout": 5,
+            "UnhealthyThreshold": 2
+          },
+          "Instances": [],
+          "ListenerDescriptions": [
+            {
+              "Listener": {
+                "InstancePort": 80,
+                "InstanceProtocol": "HTTP",
+                "LoadBalancerPort": 80,
+                "SSLCertificateId":":1acm:",
+                "Protocol": "HTTP"
+              },
+              "PolicyNames": []
+            }
+          ],
+          "LoadBalancerName": "user01-test-02",
+          "Policies": {
+            "AppCookieStickinessPolicies": [],
+            "LBCookieStickinessPolicies": [],
+            "OtherPolicies": [
+              "AWSConsole-SSLNegotiationPolicy-user01-test-02-1657891894346",
+              "ELBSecurityPolicy-2016-08"
+            ]
+          },
+          "Scheme": "internet-facing",
+          "SecurityGroups": [
+            "sg-02f0223bb56c185b3"
+          ],
+          "SourceSecurityGroup": {
+            "GroupName": "default",
+            "OwnerAlias": "000000000000"
+          },
+          "Subnets": [
+            "subnet-055442f604485d9a0",
+            "subnet-06f1368b6a9ddcdc0"
+          ],
+          "Type": "classic",
+          "VPCId": "vpc-0af146c7a1fb2149a",
+          "type": "lb"
+        }
+      }
+    },
+    {
+      "self": {
+        "source_data": {
+          "Attributes": {
+            "access_logs.s3.bucket": "",
+            "access_logs.s3.enabled": "false",
+            "access_logs.s3.prefix": "",
+            "deletion_protection.enabled": "true",
+            "idle_timeout.timeout_seconds": "60",
+            "routing.http.desync_mitigation_mode": "defensive",
+            "routing.http.drop_invalid_header_fields.enabled": "true",
+            "routing.http.x_amzn_tls_version_and_cipher_suite.enabled": "false",
+            "routing.http.xff_client_port.enabled": "false",
+            "routing.http2.enabled": "true",
+            "waf.fail_open.enabled": "false"
+          },
+          "AvailabilityZones": [
+            {
+              "LoadBalancerAddresses": [],
+              "SubnetId": "subnet-09464f442866b17e1",
+              "ZoneName": "us-east-2b"
+            },
+            {
+              "LoadBalancerAddresses": [],
+              "SubnetId": "subnet-0fcac3e01a7a49e8c",
+              "ZoneName": "us-east-2a"
+            }
+          ],
+          "CanonicalHostedZoneId": "Z3AADJGX6KTTL2",
+          "CreatedTime": "Mon, 23 May 2022 19:20:37 GMT",
+          "DNSName": "awseb-AWSEB-BO57MY2816KV-1999122883.us-east-2.elb.amazonaws.com",
+          "IpAddressType": "ipv4",
+          "Listeners": [
+            {"Certificates": [
+                    {
+                        "CertificateArn": ":acm:ab_cert_01"
+                    },
+                    {
+                      "CertificateArn": ":acm:ab_cert_011"
+                    }
+                ],
+            
+              "DefaultActions": [
+                {
+                  "ForwardConfig": {
+                    "TargetGroupStickinessConfig": {
+                      "Enabled": false
+                    },
+                    "TargetGroups": [
+                      {
+                        "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                        "Weight": 1
+                      }
+                    ]
+                  },
+                  "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                  "Type": "forward"
+                }
+              ],
+              
+              "ListenerArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:listener/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d/44228d101b9e84d9",
+              "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d",
+              "Port": 80,
+              "Protocol": "HTTP",
+              "Rules": [
+                {
+                  "Actions": [
+                    {
+                      "ForwardConfig": {
+                        "TargetGroupStickinessConfig": {
+                          "Enabled": false
+                        },
+                        "TargetGroups": [
+                          {
+                            "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                            "Weight": 1
+                          }
+                        ]
+                      },
+                      "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+                      "Type": "forward"
+                    }
+                  ],
+                  "Conditions": [],
+                  "IsDefault": true,
+                  "Priority": "default",
+                  "RuleArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:listener-rule/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d/44228d101b9e84d9/0dbe7e1e4d7d7ac7"
+                }
+              ],
+              "SslPolicy": {
+                "Name": null
+              }
+            }
+          ],
+          "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d",
+          "LoadBalancerName": "awseb-AWSEB-BO57MY2816KV",
+          "Scheme": "internet-facing",
+          "SecurityGroups": [
+            "sg-0ed0a56dc4e47b4da"
+          ],
+          "State": {
+            "Code": "active"
+          },
+          "TargetGroups": [
+            {
+              "Attributes": {
+                "deregistration_delay.timeout_seconds": "20",
+                "load_balancing.algorithm.type": "round_robin",
+                "slow_start.duration_seconds": "0",
+                "stickiness.app_cookie.cookie_name": "",
+                "stickiness.app_cookie.duration_seconds": "86400",
+                "stickiness.enabled": "false",
+                "stickiness.lb_cookie.duration_seconds": "86400",
+                "stickiness.type": "lb_cookie"
+              },
+              "HealthCheckEnabled": true,
+              "HealthCheckIntervalSeconds": 15,
+              "HealthCheckPath": "/",
+              "HealthCheckPort": "traffic-port",
+              "HealthCheckProtocol": "HTTP",
+              "HealthCheckTimeoutSeconds": 5,
+              "HealthyThresholdCount": 3,
+              "IpAddressType": "ipv4",
+              "LoadBalancerArns": [
+                "arn:aws:elasticloadbalancing:us-east-2:000000000000:loadbalancer/app/awseb-AWSEB-BO57MY2816KV/11a26fc1d240718d"
+              ],
+              "Matcher": {
+                "HttpCode": "200"
+              },
+              "Port": 80,
+              "Protocol": "HTTP",
+              "ProtocolVersion": "HTTP1",
+              "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:000000000000:targetgroup/awseb-AWSEB-73M0SYFL0IST/9c3bdd8188cd9e0c",
+              "TargetGroupName": "awseb-AWSEB-73M0SYFL0IST",
+              "TargetHealthDescriptions": [
+                {
+                  "HealthCheckPort": "80",
+                  "Target": {
+                    "Id": "i-0f2fb1ba386eac636",
+                    "Port": 80
+                  },
+                  "TargetHealth": {
+                    "State": "healthy"
+                  }
+                }
+              ],
+              "TargetType": "instance",
+              "UnhealthyThresholdCount": 5,
+              "VpcId": "vpc-0681ccc2e950aa2dc"
+            }
+          ],
+          "Type": "application",
+          "VpcId": "vpc-0681ccc2e950aa2dc",
+          "type": "lb"
+        }
+      }
+    }
+  ]
+}

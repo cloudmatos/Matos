@@ -211,7 +211,7 @@
               },
               "stageName": "state1",
               "tracingEnabled": true,
-              "webAclArn": "arn:aws:wafv2:us-east-1:XXXXXXXXXXXXXXXXXXXXX:regional/webacl/testing_akshay/1ffeb3b1-4eee-4d9e-877b-2b40109ba035"
+              "webAclArn": "arn:aws:wafv2:us-east-1:XXXXXXXXXXXXXXXXXXXXX:regional/webacl/testing_user03/1ffeb3b1-4eee-4d9e-877b-2b40109ba035"
             }
           ],
           "type": "rest_api"

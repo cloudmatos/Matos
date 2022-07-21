@@ -1,0 +1,494 @@
+{
+    "codebuild": [
+        {
+            "self": {
+                "name": "test-user02",
+                "region": "us-east-1",
+                "source_data": {
+                    "arn": "arn:aws:codebuild:us-east-1:000000000000:project/test-user02",
+                    "artifacts": {
+                        "encryptionDisabled": false,
+                        "location": "user01-test-01",
+                        "name": "testartifact",
+                        "namespaceType": "NONE",
+                        "overrideArtifactName": false,
+                        "packaging": "ZIP",
+                        "path": "",
+                        "type": "S3"
+                    },
+                    "badge": {
+                        "badgeEnabled": false
+                    },
+                    "cache": {
+                        "type": "NO_CACHE"
+                    },
+                    "created": "Thu, 14 Jul 2022 04:33:31 GMT",
+                    "encryptionKey": "arn:aws:kms:us-east-1:000000000000:alias/aws/s3",
+                    "environment": {
+                        "computeType": "BUILD_GENERAL1_SMALL",
+                        "environmentVariables": [],
+                        "image": "aws/codebuild/standard:4.0",
+                        "imagePullCredentialsType": "CODEBUILD",
+                        "privilegedMode": false,
+                        "type": "LINUX_CONTAINER"
+                    },
+                    "lastBuildDetails": {
+                        "arn": "arn:aws:codebuild:us-east-1:000000000000:build/test-user02:3262761d-6e1c-4e32-971b-d018d817ff72",
+                        "artifacts": {
+                            "encryptionDisabled": false,
+                            "location": "arn:aws:s3:::user01-test-01/testartifact",
+                            "overrideArtifactName": false
+                        },
+                        "buildComplete": true,
+                        "buildNumber": 2,
+                        "buildStatus": "FAILED",
+                        "cache": {
+                            "type": "NO_CACHE"
+                        },
+                        "currentPhase": "COMPLETED",
+                        "encryptionKey": "arn:aws:kms:us-east-1:000000000000:alias/aws/s3",
+                        "endTime": "Fri, 15 Jul 2022 04:22:10 GMT",
+                        "environment": {
+                            "computeType": "BUILD_GENERAL1_SMALL",
+                            "environmentVariables": [],
+                            "image": "aws/codebuild/standard:4.0",
+                            "imagePullCredentialsType": "CODEBUILD",
+                            "privilegedMode": false,
+                            "type": "LINUX_CONTAINER"
+                        },
+                        "id": "test-user02:3262761d-6e1c-4e32-971b-d018d817ff72",
+                        "initiator": "user02s@cloudmatos.com",
+                        "logs": {
+                            "cloudWatchLogs": {
+                                "groupName": "cloudbuild",
+                                "status": "ENABLED"
+                            },
+                            "cloudWatchLogsArn": "arn:aws:logs:us-east-1:000000000000:log-group:cloudbuild:log-stream:3262761d-6e1c-4e32-971b-d018d817ff72",
+                            "deepLink": "https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logEvent:group=cloudbuild;stream=3262761d-6e1c-4e32-971b-d018d817ff72",
+                            "groupName": "cloudbuild",
+                            "s3Logs": {
+                                "encryptionDisabled": false,
+                                "status": "DISABLED"
+                            },
+                            "streamName": "3262761d-6e1c-4e32-971b-d018d817ff72"
+                        },
+                        "phases": [
+                            {
+                                "durationInSeconds": 0,
+                                "endTime": "Fri, 15 Jul 2022 04:20:26 GMT",
+                                "phaseStatus": "SUCCEEDED",
+                                "phaseType": "SUBMITTED",
+                                "startTime": "Fri, 15 Jul 2022 04:20:26 GMT"
+                            },
+                            {
+                                "durationInSeconds": 63,
+                                "endTime": "Fri, 15 Jul 2022 04:21:30 GMT",
+                                "phaseStatus": "SUCCEEDED",
+                                "phaseType": "QUEUED",
+                                "startTime": "Fri, 15 Jul 2022 04:20:26 GMT"
+                            },
+                            {
+                                "contexts": [
+                                    {
+                                        "message": "",
+                                        "statusCode": ""
+                                    }
+                                ],
+                                "durationInSeconds": 28,
+                                "endTime": "Fri, 15 Jul 2022 04:21:58 GMT",
+                                "phaseStatus": "SUCCEEDED",
+                                "phaseType": "PROVISIONING",
+                                "startTime": "Fri, 15 Jul 2022 04:21:30 GMT"
+                            },
+                            {
+                                "contexts": [
+                                    {
+                                        "message": "YAML file does not exist",
+                                        "statusCode": "YAML_FILE_ERROR"
+                                    }
+                                ],
+                                "durationInSeconds": 7,
+                                "endTime": "Fri, 15 Jul 2022 04:22:06 GMT",
+                                "phaseStatus": "FAILED",
+                                "phaseType": "DOWNLOAD_SOURCE",
+                                "startTime": "Fri, 15 Jul 2022 04:21:58 GMT"
+                            },
+                            {
+                                "contexts": [
+                                    {
+                                        "message": "",
+                                        "statusCode": ""
+                                    }
+                                ],
+                                "durationInSeconds": 4,
+                                "endTime": "Fri, 15 Jul 2022 04:22:10 GMT",
+                                "phaseStatus": "SUCCEEDED",
+                                "phaseType": "FINALIZING",
+                                "startTime": "Fri, 15 Jul 2022 04:22:06 GMT"
+                            },
+                            {
+                                "phaseType": "COMPLETED",
+                                "startTime": "Fri, 15 Jul 2022 04:22:10 GMT"
+                            }
+                        ],
+                        "projectName": "test-user02",
+                        "queuedTimeoutInMinutes": 480,
+                        "secondaryArtifacts": [],
+                        "secondarySourceVersions": [],
+                        "secondarySources": [],
+                        "serviceRole": "arn:aws:iam::000000000000:role/service-role/codebuild-test-user02-service-role",
+                        "source": {
+                            "gitCloneDepth": 1,
+                            "gitSubmodulesConfig": {
+                                "fetchSubmodules": false
+                            },
+                            "insecureSsl": false,
+                            "location": "https://user02sharma1991@bitbucket.org/viclesoft/khadihealthcare.git",
+                            "reportBuildStatus": false,
+                            "type": "BITBUCKET"
+                        },
+                        "startTime": "Fri, 15 Jul 2022 04:20:26 GMT",
+                        "timeoutInMinutes": 60
+                    },
+                    "lastModified": "Thu, 14 Jul 2022 05:32:14 GMT",
+                    "logsConfig": {
+                        "cloudWatchLogs": {
+                            "groupName": "cloudbuild",
+                            "status": "ENABLED"
+                        },
+                        "s3Logs": {
+                            "encryptionDisabled": false,
+                            "status": "DISABLED"
+                        }
+                    },
+                    "name": "test-user02",
+                    "projectVisibility": "PRIVATE",
+                    "queuedTimeoutInMinutes": 480,
+                    "secondaryArtifacts": [],
+                    "secondarySourceVersions": [],
+                    "secondarySources": [],
+                    "serviceRole": "arn:aws:iam::000000000000:role/service-role/codebuild-test-user02-service-role",
+                    "source": {
+                        "gitCloneDepth": 1,
+                        "gitSubmodulesConfig": {
+                            "fetchSubmodules": false
+                        },
+                        "insecureSsl": false,
+                        "location": "https://user02sharma1991@bitbucket.org/viclesoft/khadihealthcare.git",
+                        "reportBuildStatus": false,
+                        "type": "BITBUCKET"
+                    },
+                    "sourceCredentialsInfos": [
+                        {
+                            "arn": "arn:aws:codebuild:us-east-1:000000000000:token/bitbucket",
+                            "authType": "OAUTH",
+                            "serverType": "BITBUCKET"
+                        },
+                        {
+                            "arn": "arn:aws:codebuild:us-east-1:000000000000:token/github",
+                            "authType": "OAUTH",
+                            "serverType": "GITHUB"
+                        }
+                    ],
+                    "tags": [],
+                    "timeoutInMinutes": 60,
+                    "type": "codebuild"
+                }
+            }
+        },
+        {
+            "self": {
+                "name": "test-02",
+                "region": "us-east-1",
+                "source_data": {
+                    "arn": "arn:aws:codebuild:us-east-1:000000000000:project/test-02",
+                    "artifacts": {
+                        "type": "NO_ARTIFACTS"
+                    },
+                    "badge": {
+                        "badgeEnabled": false
+                    },
+                    "cache": {
+                        "type": "NO_CACHE"
+                    },
+                    "created": "Sun, 10 Jul 2022 03:22:53 GMT",
+                    "encryptionKey": "arn:aws:kms:us-east-1:000000000000:alias/aws/s3",
+                    "environment": {
+                        "computeType": "BUILD_GENERAL1_SMALL",
+                        "environmentVariables": [],
+                        "image": "aws/codebuild/amazonlinux2-aarch64-standard:1.0",
+                        "imagePullCredentialsType": "CODEBUILD",
+                        "privilegedMode": false,
+                        "type": "ARM_CONTAINER"
+                    },
+                    "lastBuildDetails": {},
+                    "lastModified": "Sun, 10 Jul 2022 03:22:53 GMT",
+                    "logsConfig": {
+                        "cloudWatchLogs": {
+                            "status": "ENABLED"
+                        },
+                        "s3Logs": {
+                            "encryptionDisabled": false,
+                            "status": "DISABLED"
+                        }
+                    },
+                    "name": "test-02",
+                    "projectVisibility": "PRIVATE",
+                    "queuedTimeoutInMinutes": 480,
+                    "secondaryArtifacts": [],
+                    "secondarySourceVersions": [],
+                    "secondarySources": [],
+                    "serviceRole": "arn:aws:iam::000000000000:role/service-role/codebuild-test-01-service-role",
+                    "source": {
+                        "buildspec": "test.yml",
+                        "gitCloneDepth": 1,
+                        "insecureSsl": false,
+                        "type": "NO_SOURCE"
+                    },
+                    "sourceCredentialsInfos": [
+                        {
+                            "arn": "arn:aws:codebuild:us-east-1:000000000000:token/bitbucket",
+                            "authType": "OAUTH",
+                            "serverType": "BITBUCKET"
+                        },
+                        {
+                            "arn": "arn:aws:codebuild:us-east-1:000000000000:token/github",
+                            "authType": "OAUTH",
+                            "serverType": "GITHUB"
+                        }
+                    ],
+                    "tags": [],
+                    "timeoutInMinutes": 60,
+                    "type": "codebuild"
+                }
+            }
+        },
+        {
+            "self": {
+                "name": "test-01",
+                "region": "us-east-1",
+                "source_data": {
+                    "arn": "arn:aws:codebuild:us-east-1:000000000000:project/test-01",
+                    "artifacts": {
+                        "type": "NO_ARTIFACTS"
+                    },
+                    "badge": {
+                        "badgeEnabled": false
+                    },
+                    "cache": {
+                        "type": "NO_CACHE"
+                    },
+                    "created": "Thu, 30 Jun 2022 13:24:03 GMT",
+                    "encryptionKey": "arn:aws:kms:us-east-1:000000000000:alias/aws/s3",
+                    "environment": {
+                        "computeType": "BUILD_GENERAL1_SMALL",
+                        "environmentVariables": [
+                            {
+                                "name": "test_secure_value",
+                                "type": "PARAMETER_STORE",
+                                "value": "123"
+                            },
+                            {
+                                "name": "test_ssm",
+                                "type": "PARAMETER_STORE",
+                                "value": "/CodeBuild/test-01/EnvVar/test_ssm"
+                            },
+                            {
+                                "name": "ssm_test-1",
+                                "type": "PARAMETER_STORE",
+                                "value": "/CodeBuild/test-01/EnvVar/test-1"
+                            },
+                            {
+                                "name": "ssm_new_valu",
+                                "type": "PARAMETER_STORE",
+                                "value": "/CodeBuild/test-01/EnvVar/new_valu"
+                            }
+                        ],
+                        "image": "aws/codebuild/amazonlinux2-aarch64-standard:1.0",
+                        "imagePullCredentialsType": "CODEBUILD",
+                        "privilegedMode": false,
+                        "type": "ARM_CONTAINER"
+                    },
+                    "fileSystemLocations": [],
+                    "lastBuildDetails": {
+                        "arn": "arn:aws:codebuild:us-east-1:000000000000:build/test-01:aaf2e6ca-104c-4986-b193-dc013e707c29",
+                        "artifacts": {
+                            "location": ""
+                        },
+                        "buildComplete": true,
+                        "buildNumber": 1,
+                        "buildStatus": "FAILED",
+                        "cache": {
+                            "type": "NO_CACHE"
+                        },
+                        "currentPhase": "COMPLETED",
+                        "encryptionKey": "arn:aws:kms:us-east-1:000000000000:alias/aws/s3",
+                        "endTime": "Sun, 10 Jul 2022 03:03:02 GMT",
+                        "environment": {
+                            "computeType": "BUILD_GENERAL1_SMALL",
+                            "environmentVariables": [
+                                {
+                                    "name": "test_ssm",
+                                    "type": "PARAMETER_STORE",
+                                    "value": "123"
+                                },
+                                {
+                                    "name": "test_secret",
+                                    "type": "SECRETS_MANAGER",
+                                    "value": "123"
+                                },
+                                {
+                                    "name": "test_plain1",
+                                    "type": "PLAINTEXT",
+                                    "value": "123"
+                                },
+                                {
+                                    "name": "test_plain2",
+                                    "type": "PLAINTEXT",
+                                    "value": "123"
+                                }
+                            ],
+                            "image": "aws/codebuild/amazonlinux2-aarch64-standard:1.0",
+                            "imagePullCredentialsType": "CODEBUILD",
+                            "privilegedMode": false,
+                            "type": "ARM_CONTAINER"
+                        },
+                        "fileSystemLocations": [],
+                        "id": "test-01:aaf2e6ca-104c-4986-b193-dc013e707c29",
+                        "initiator": "user06k@cloudmatos.com",
+                        "logs": {
+                            "cloudWatchLogs": {
+                                "status": "DISABLED"
+                            },
+                            "s3Logs": {
+                                "encryptionDisabled": false,
+                                "status": "DISABLED"
+                            }
+                        },
+                        "phases": [
+                            {
+                                "durationInSeconds": 0,
+                                "endTime": "Sun, 10 Jul 2022 03:02:33 GMT",
+                                "phaseStatus": "SUCCEEDED",
+                                "phaseType": "SUBMITTED",
+                                "startTime": "Sun, 10 Jul 2022 03:02:33 GMT"
+                            },
+                            {
+                                "durationInSeconds": 2,
+                                "endTime": "Sun, 10 Jul 2022 03:02:36 GMT",
+                                "phaseStatus": "SUCCEEDED",
+                                "phaseType": "QUEUED",
+                                "startTime": "Sun, 10 Jul 2022 03:02:33 GMT"
+                            },
+                            {
+                                "contexts": [
+                                    {
+                                        "message": "",
+                                        "statusCode": ""
+                                    }
+                                ],
+                                "durationInSeconds": 22,
+                                "endTime": "Sun, 10 Jul 2022 03:02:58 GMT",
+                                "phaseStatus": "SUCCEEDED",
+                                "phaseType": "PROVISIONING",
+                                "startTime": "Sun, 10 Jul 2022 03:02:36 GMT"
+                            },
+                            {
+                                "contexts": [
+                                    {
+                                        "message": "stat /codebuild/output/src187521193/src/github.com/user06-sdk/dreamhouse-lwc/buildspec.yml: no such file or directory",
+                                        "statusCode": "YAML_FILE_ERROR"
+                                    }
+                                ],
+                                "durationInSeconds": 3,
+                                "endTime": "Sun, 10 Jul 2022 03:03:02 GMT",
+                                "phaseStatus": "FAILED",
+                                "phaseType": "DOWNLOAD_SOURCE",
+                                "startTime": "Sun, 10 Jul 2022 03:02:58 GMT"
+                            },
+                            {
+                                "contexts": [
+                                    {
+                                        "message": "",
+                                        "statusCode": ""
+                                    }
+                                ],
+                                "durationInSeconds": 0,
+                                "endTime": "Sun, 10 Jul 2022 03:03:02 GMT",
+                                "phaseStatus": "SUCCEEDED",
+                                "phaseType": "FINALIZING",
+                                "startTime": "Sun, 10 Jul 2022 03:03:02 GMT"
+                            },
+                            {
+                                "phaseType": "COMPLETED",
+                                "startTime": "Sun, 10 Jul 2022 03:03:02 GMT"
+                            }
+                        ],
+                        "projectName": "test-01",
+                        "queuedTimeoutInMinutes": 480,
+                        "secondaryArtifacts": [],
+                        "secondarySourceVersions": [],
+                        "secondarySources": [],
+                        "serviceRole": "arn:aws:iam::000000000000:role/service-role/test-01-codebuild",
+                        "source": {
+                            "buildspec": "buildspec.yml",
+                            "gitCloneDepth": 1,
+                            "gitSubmodulesConfig": {
+                                "fetchSubmodules": false
+                            },
+                            "insecureSsl": false,
+                            "location": "https://github.com/user06-sdk/dreamhouse-lwc.git",
+                            "reportBuildStatus": false,
+                            "type": "GITHUB"
+                        },
+                        "startTime": "Sun, 10 Jul 2022 03:02:33 GMT",
+                        "timeoutInMinutes": 60
+                    },
+                    "lastModified": "Mon, 11 Jul 2022 11:09:34 GMT",
+                    "logsConfig": {
+                        "cloudWatchLogs": {
+                            "status": "DISABLED"
+                        },
+                        "s3Logs": {
+                            "encryptionDisabled": false,
+                            "status": "DISABLED"
+                        }
+                    },
+                    "name": "test-01",
+                    "projectVisibility": "PRIVATE",
+                    "queuedTimeoutInMinutes": 480,
+                    "secondaryArtifacts": [],
+                    "secondarySourceVersions": [],
+                    "secondarySources": [],
+                    "serviceRole": "arn:aws:iam::000000000000:role/service-role/test-01-codebuild",
+                    "source": {
+                        "buildspec": "buildspec.yml",
+                        "gitCloneDepth": 1,
+                        "gitSubmodulesConfig": {
+                            "fetchSubmodules": false
+                        },
+                        "insecureSsl": false,
+                        "location": "https://github.com/user06-sdk/dreamhouse-lwc.git",
+                        "reportBuildStatus": false,
+                        "type": "GITHUB"
+                    },
+                    "sourceCredentialsInfos": [
+                        {
+                            "arn": "arn:aws:codebuild:us-east-1:000000000000:token/bitbucket",
+                            "authType": "OAUTH",
+                            "serverType": "BITBUCKET"
+                        },
+                        {
+                            "arn": "arn:aws:codebuild:us-east-1:000000000000:token/github",
+                            "authType": "OAUTH",
+                            "serverType": "GITHUB"
+                        }
+                    ],
+                    "tags": [],
+                    "timeoutInMinutes": 60,
+                    "type": "codebuild"
+                }
+            }
+        }
+    ]
+}

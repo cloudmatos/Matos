@@ -201,7 +201,12 @@ class ResourceSchema(Schema):
             'sqs',
             'ssm',
             'sns',
-            'docdb'
+            'docdb',
+            'logs_metrics',
+            'codebuild',
+            'glue',
+            'acm',
+            'securityhub'
         ]
 
     cluster = List(Nested(ResourceClusterSchema), required=True)
@@ -239,4 +244,9 @@ class ResourceSchema(Schema):
     ssm = List(Dict())
     sns = List(Dict())
     docdb = List(Dict())
+    logs_metrics = List(Dict())
+    codebuild = List(Dict())    
+    glue = List(Dict())
+    acm = List(Dict())
+    securityhub = List(Dict())
     

@@ -252,10 +252,10 @@
       {
         "self": {
           "source_data": {
-            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/abhay-test-wildcard-01", 
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:group/user01-test-wildcard-01", 
             "AttachedPolicies": [
               {
-                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/abhay-test-wildcard-policy", 
+                "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/user01-test-wildcard-policy", 
                 "AttachmentCount": 1, 
                 "CreateDate": "Tue, 14 Jun 2022 05:03:02 GMT", 
                 "DefaultVersionId": "v2", 
@@ -263,9 +263,9 @@
                 "IsAttachable": true, 
                 "Path": "/", 
                 "PermissionsBoundaryUsageCount": 0, 
-                "PolicyArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/abhay-test-wildcard-policy", 
+                "PolicyArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/user01-test-wildcard-policy", 
                 "PolicyId": "ANPAUMYIJVCUZ4YTELRJL", 
-                "PolicyName": "abhay-test-wildcard-policy", 
+                "PolicyName": "user01-test-wildcard-policy", 
                 "PolicyVersion": {
                   "CreateDate": "Tue, 14 Jun 2022 05:17:10 GMT", 
                   "Document": {
@@ -293,7 +293,7 @@
             ], 
             "CreateDate": "Thu, 16 Jun 2022 07:21:32 GMT", 
             "GroupId": "AGPAUMYIJVCUQK5LRFF2F", 
-            "GroupName": "abhay-test-wildcard-01", 
+            "GroupName": "user01-test-wildcard-01", 
             "Path": "/", 
             "type": "user_groups"
           }

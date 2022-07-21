@@ -11,12 +11,12 @@
                     ],
                     "BackupRetentionPeriod": 1,
                     "ClusterCreateTime": "Thu, 07 Jul 2022 09:25:16 GMT",
-                    "DBClusterArn": "arn:aws:rds:us-east-1:XXXXXXXXXXXXXXXXXXXXX:cluster:docdb-akshay-1",
-                    "DBClusterIdentifier": "docdb-akshay-1",
+                    "DBClusterArn": "arn:aws:rds:us-east-1:XXXXXXXXXXXXXXXXXXXXX:cluster:docdb-user03-1",
+                    "DBClusterIdentifier": "docdb-user03-1",
                     "DBClusterMembers": [
                         {
                             "DBClusterParameterGroupStatus": "in-sync",
-                            "DBInstanceIdentifier": "docdb-akshay-1",
+                            "DBInstanceIdentifier": "docdb-user03-1",
                             "IsClusterWriter": true,
                             "PromotionTier": 1
                         }
@@ -26,18 +26,18 @@
                     "DbClusterResourceId": "cluster-LLW5QPDDRA5UVZ2LPLVHGVZJZA",
                     "DeletionProtection": true,
                     "EarliestRestorableTime": "Thu, 07 Jul 2022 09:26:17 GMT",
-                    "Endpoint": "docdb-akshay-1.cluster-cq3hhv98ffhq.us-east-1.docdb.amazonaws.com",
+                    "Endpoint": "docdb-user03-1.cluster-cq3hhv98ffhq.us-east-1.docdb.amazonaws.com",
                     "Engine": "docdb",
                     "EngineVersion": "4.0.0",
                     "HostedZoneId": "ZNKXH85TT8WVW",
                     "LatestRestorableTime": "Fri, 08 Jul 2022 05:39:37 GMT",
-                    "MasterUsername": "akshay",
+                    "MasterUsername": "user03",
                     "MultiAZ": false,
                     "Port": 27017,
                     "PreferredBackupWindow": "00:00-00:30",
                     "PreferredMaintenanceWindow": "sun:07:42-sun:08:12",
                     "ReadReplicaIdentifiers": [],
-                    "ReaderEndpoint": "docdb-akshay-1.cluster-ro-cq3hhv98ffhq.us-east-1.docdb.amazonaws.com",
+                    "ReaderEndpoint": "docdb-user03-1.cluster-ro-cq3hhv98ffhq.us-east-1.docdb.amazonaws.com",
                     "Status": "available",
                     "StorageEncrypted": false,
                     "VpcSecurityGroups": [

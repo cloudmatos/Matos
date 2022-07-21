@@ -12,7 +12,7 @@ class TestAWSIAMAvoidRootAccountUse(TestCase):
         fp.close()
         self.resources = loads(content)
         self.iam_key_active = "Active"
-        self.account_id = "144908232300"
+        self.account_id = "000000000000"
         self.mfa_policy_name = f"mfa_enable_access_group_{self.account_id}"
 
     def test_mfa_enabled_for_console_password_user(self):

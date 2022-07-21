@@ -3,7 +3,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/i-0e4e8e654d45a2a2d_policy",
+                    "Arn": "arn:aws:iam::000000000000:policy/i-0e4e8e654d45a2a2d_policy",
                     "AttachmentCount": 1,
                     "CreateDate": "Wed, 11 May 2022 08:40:00 GMT",
                     "DefaultVersionId": "v1",
@@ -37,7 +37,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/IAMFullAccess",
+                    "Arn": "arn:aws:iam::000000000000:policy/IAMFullAccess",
                     "AttachmentCount": 1,
                     "CreateDate": "Thu, 31 Mar 2022 17:49:24 GMT",
                     "DefaultVersionId": "v1",
@@ -83,7 +83,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/vpc_vpc-0ed354ba386e0b43f_flow_log_policy_144908232300",
+                    "Arn": "arn:aws:iam::000000000000:policy/vpc_vpc-0ed354ba386e0b43f_flow_log_policy_000000000000",
                     "AttachmentCount": 1,
                     "CreateDate": "Tue, 17 May 2022 06:57:56 GMT",
                     "DefaultVersionId": "v1",
@@ -91,7 +91,7 @@
                     "Path": "/",
                     "PermissionsBoundaryUsageCount": 0,
                     "PolicyId": "ANPASDPJUEZWBXZY3W7LA",
-                    "PolicyName": "vpc_vpc-0ed354ba386e0b43f_flow_log_policy_144908232300",
+                    "PolicyName": "vpc_vpc-0ed354ba386e0b43f_flow_log_policy_000000000000",
                     "PolicyVersionList": [
                         {
                             "CreateDate": "Tue, 17 May 2022 06:57:56 GMT",
@@ -123,7 +123,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/IAMAdmin",
+                    "Arn": "arn:aws:iam::000000000000:policy/IAMAdmin",
                     "AttachmentCount": 1,
                     "CreateDate": "Thu, 03 Feb 2022 18:10:37 GMT",
                     "DefaultVersionId": "v1",
@@ -158,7 +158,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/abhay-test-flow-log-role-01",
+                    "Arn": "arn:aws:iam::000000000000:policy/user01-test-flow-log-role-01",
                     "AttachmentCount": 1,
                     "CreateDate": "Mon, 16 May 2022 11:32:53 GMT",
                     "DefaultVersionId": "v1",
@@ -166,7 +166,7 @@
                     "Path": "/",
                     "PermissionsBoundaryUsageCount": 0,
                     "PolicyId": "ANPASDPJUEZWCGXBVYFSI",
-                    "PolicyName": "abhay-test-flow-log-role-01",
+                    "PolicyName": "user01-test-flow-log-role-01",
                     "PolicyVersionList": [
                         {
                             "CreateDate": "Mon, 16 May 2022 11:32:53 GMT",
@@ -198,7 +198,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/service-role/CloudTrailPolicyForCloudWatchLogs_56d220bf-7ddb-4f4e-a13a-d0a93bc79c56",
+                    "Arn": "arn:aws:iam::000000000000:policy/service-role/CloudTrailPolicyForCloudWatchLogs_56d220bf-7ddb-4f4e-a13a-d0a93bc79c56",
                     "AttachmentCount": 1,
                     "CreateDate": "Fri, 06 May 2022 13:51:28 GMT",
                     "DefaultVersionId": "v1",
@@ -218,7 +218,7 @@
                                         ],
                                         "Effect": "Allow",
                                         "Resource": [
-                                            "arn:aws:logs:us-east-2:144908232300:log-group:aws-cloudtrail-logs-144908232300-ce31a0b7:log-stream:144908232300_CloudTrail_us-east-2*"
+                                            "arn:aws:logs:us-east-2:000000000000:log-group:aws-cloudtrail-logs-000000000000-ce31a0b7:log-stream:000000000000_CloudTrail_us-east-2*"
                                         ],
                                         "Sid": "AWSCloudTrailCreateLogStream2014110"
                                     },
@@ -228,7 +228,7 @@
                                         ],
                                         "Effect": "Allow",
                                         "Resource": [
-                                            "arn:aws:logs:us-east-2:144908232300:log-group:aws-cloudtrail-logs-144908232300-ce31a0b7:log-stream:144908232300_CloudTrail_us-east-2*"
+                                            "arn:aws:logs:us-east-2:000000000000:log-group:aws-cloudtrail-logs-000000000000-ce31a0b7:log-stream:000000000000_CloudTrail_us-east-2*"
                                         ],
                                         "Sid": "AWSCloudTrailPutLogEvents20141101"
                                     }
@@ -247,7 +247,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/wpcon-deny-log-group20220103084558928900000002",
+                    "Arn": "arn:aws:iam::000000000000:policy/wpcon-deny-log-group20220103084558928900000002",
                     "AttachmentCount": 1,
                     "CreateDate": "Mon, 03 Jan 2022 08:45:57 GMT",
                     "DefaultVersionId": "v1",
@@ -282,7 +282,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/service-role/CloudTrailPolicyForCloudWatchLogs_c97bcd6e-fc64-4e52-a73a-52d09d671ea2",
+                    "Arn": "arn:aws:iam::000000000000:policy/service-role/CloudTrailPolicyForCloudWatchLogs_c97bcd6e-fc64-4e52-a73a-52d09d671ea2",
                     "AttachmentCount": 1,
                     "CreateDate": "Fri, 06 May 2022 13:52:24 GMT",
                     "DefaultVersionId": "v1",
@@ -302,7 +302,7 @@
                                         ],
                                         "Effect": "Allow",
                                         "Resource": [
-                                            "arn:aws:logs:us-east-2:144908232300:log-group:aws-cloudtrail-logs-144908232300-ce31a0b7:log-stream:144908232300_CloudTrail_us-east-2*"
+                                            "arn:aws:logs:us-east-2:000000000000:log-group:aws-cloudtrail-logs-000000000000-ce31a0b7:log-stream:000000000000_CloudTrail_us-east-2*"
                                         ],
                                         "Sid": "AWSCloudTrailCreateLogStream2014110"
                                     },
@@ -312,7 +312,7 @@
                                         ],
                                         "Effect": "Allow",
                                         "Resource": [
-                                            "arn:aws:logs:us-east-2:144908232300:log-group:aws-cloudtrail-logs-144908232300-ce31a0b7:log-stream:144908232300_CloudTrail_us-east-2*"
+                                            "arn:aws:logs:us-east-2:000000000000:log-group:aws-cloudtrail-logs-000000000000-ce31a0b7:log-stream:000000000000_CloudTrail_us-east-2*"
                                         ],
                                         "Sid": "AWSCloudTrailPutLogEvents20141101"
                                     }
@@ -331,7 +331,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/vpc_vpc-08a183e2a9e8053f9_flow_log_policy_",
+                    "Arn": "arn:aws:iam::000000000000:policy/vpc_vpc-08a183e2a9e8053f9_flow_log_policy_",
                     "AttachmentCount": 1,
                     "CreateDate": "Tue, 17 May 2022 10:31:38 GMT",
                     "DefaultVersionId": "v1",
@@ -371,7 +371,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/i-00e598fe6cb98365d_policy",
+                    "Arn": "arn:aws:iam::000000000000:policy/i-00e598fe6cb98365d_policy",
                     "AttachmentCount": 1,
                     "CreateDate": "Wed, 11 May 2022 06:34:46 GMT",
                     "DefaultVersionId": "v1",
@@ -405,7 +405,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/vpc_vpc-0085e45c576a1504b_flow_log_policy_",
+                    "Arn": "arn:aws:iam::000000000000:policy/vpc_vpc-0085e45c576a1504b_flow_log_policy_",
                     "AttachmentCount": 1,
                     "CreateDate": "Tue, 17 May 2022 10:32:05 GMT",
                     "DefaultVersionId": "v1",
@@ -445,7 +445,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/test-policy-kms-decrypt",
+                    "Arn": "arn:aws:iam::000000000000:policy/test-policy-kms-decrypt",
                     "AttachmentCount": 2,
                     "CreateDate": "Sun, 15 May 2022 14:59:57 GMT",
                     "DefaultVersionId": "v1",
@@ -462,7 +462,7 @@
                                     {
                                         "Action": "kms:Decrypt",
                                         "Effect": "Allow",
-                                        "Resource": "arn:aws:kms:*:144908232300:key/*",
+                                        "Resource": "arn:aws:kms:*:000000000000:key/*",
                                         "Sid": "VisualEditor0"
                                     }
                                 ],
@@ -480,7 +480,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/vpc_vpc-0abf607f6e4d9d6e1_flow_log_policy_",
+                    "Arn": "arn:aws:iam::000000000000:policy/vpc_vpc-0abf607f6e4d9d6e1_flow_log_policy_",
                     "AttachmentCount": 1,
                     "CreateDate": "Tue, 17 May 2022 10:32:18 GMT",
                     "DefaultVersionId": "v1",
@@ -520,7 +520,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/vpc_vpc-0ed354ba386e0b43f_flow_log_policy_",
+                    "Arn": "arn:aws:iam::000000000000:policy/vpc_vpc-0ed354ba386e0b43f_flow_log_policy_",
                     "AttachmentCount": 1,
                     "CreateDate": "Tue, 17 May 2022 10:31:52 GMT",
                     "DefaultVersionId": "v1",
@@ -560,7 +560,7 @@
         {
             "self": {
                 "source_data": {
-                    "Arn": "arn:aws:iam::144908232300:policy/wpcon-elb-sl-role-creation20220103084558928400000001",
+                    "Arn": "arn:aws:iam::000000000000:policy/wpcon-elb-sl-role-creation20220103084558928400000001",
                     "AttachmentCount": 1,
                     "CreateDate": "Mon, 03 Jan 2022 08:45:57 GMT",
                     "DefaultVersionId": "v1",

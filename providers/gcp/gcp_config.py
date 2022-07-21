@@ -246,7 +246,10 @@ RESOURCE_TYPE_REQUESTS = {
     "apigateway": [],
     "rest_api": [],
     "sqs": [],
-    "docdb": []
+    "docdb": [],
+    "logs_metrics": [],
+    "codebuild": [],
+    "securityhub": []
 }
 
 POD_STATUS = ['Running']

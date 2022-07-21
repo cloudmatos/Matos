@@ -547,3 +547,26 @@ class TestSecurityGroupPublicIngress(TestCase):
         self.assertEqual(True, is_secure, msg="Ingress rule allows access to \
             the port 5601")
     
+
+    def test_security_group_ingress_filtering(self):
+        """
+        MS- I509 7.4 [extra74] Ensure there are no Security Groups without ingress filtering being used - ec2 [High]
+        """
+        criteria = 'network[*].self.source_data.security_group[*].IpPermissions[*]'
+        ip_permissions = [match.value for match in parse(criteria).find(self.resources)]
+        is_secure = True
+        for permission in ip_permissions:
+            from_port = permission.get('FromPort')
+            ip_ranges = permission.get('IpRanges',[])
+            ip_v6_ranges = permission.get('Ipv6Ranges',[])
+            if from_port is None or ip_ranges is None:
+                continue
+            for ip_range in ip_ranges:
+                cidr_ip = ip_range.get('CidrIp')
+                if cidr_ip in [self.public_ipv4_cidr,self.public_ipv6_cidr]:
+                    is_secure = False
+            for ip_range in ip_v6_ranges:
+                cidr_ip = ip_range.get('CidrIpv6')
+                if cidr_ip in [self.public_ipv4_cidr,self.public_ipv6_cidr]:
+                    is_secure = False
+        self.assertEqual(True, is_secure, msg="In some of the security groups ingress rule does not have filtering")

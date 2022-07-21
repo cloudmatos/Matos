@@ -45,6 +45,10 @@ class AWSDiscovery(AWS):
             self.ssm = self.client('ssm')
             self.sns = self.client('sns')
             self.docdb = self.client('docdb')
+            self.logs_metrics = self.client('logs')
+            self.codebuild = self.client('codebuild')
+            self.acm = self.client('acm')
+            self.securityhub = self.client('securityhub')
             
             self.func = {
                 'cluster': self.get_clusters,
@@ -80,7 +84,12 @@ class AWSDiscovery(AWS):
                 'sqs': self.get_sqs,
                 'ssm': self.get_ssm,
                 'sns': self.get_sns,
-                'docdb': self.get_docdb
+                'docdb': self.get_docdb,
+                'logs_metrics': self.get_logs_metrics,
+                'codebuild': self.get_code_builds,
+                'glue': self.get_glue,
+                'acm': self.get_acm,
+                'securityhub': self.get_securityhub,
             }
         except Exception as ex:
             raise Exception(ex)
@@ -114,7 +123,7 @@ class AWSDiscovery(AWS):
     
     def get_sqs(self):
         response = self.sqs.list_queues()
-        sqs = [{"url":item, "type": "sqs"} for item in response.get('QueueUrls')]
+        sqs = [{"url":item, "type": "sqs"} for item in response.get('QueueUrls', [])]
         self.resources.extend(sqs)
         
     def get_ssm(self):
@@ -145,6 +154,23 @@ class AWSDiscovery(AWS):
         response = self.docdb.describe_db_clusters()
         docdb = [{**item,  "type": "docdb"} for item in response.get('DBClusters', [])]
         self.resources.extend(docdb)
+    
+    def get_glue(self):
+        glue = [{"type": "glue"}]
+        self.resources.extend(glue)
+
+    def get_logs_metrics(self):
+        response = self.logs_metrics.describe_log_groups()
+        logs = [{**item,  "type": "logs_metrics"} for item in response.get('logGroups', [])]
+        self.resources.extend(logs)
+
+    def get_code_builds(self):
+        response = self.codebuild.list_projects()
+        builddetails = self.codebuild.batch_get_projects(names=response.get('projects', [])) if len(response.get('projects', [])) > 0 else []
+        credentails = self.codebuild.list_source_credentials().get('sourceCredentialsInfos')
+        projects = builddetails.get('projects', []) if len(response.get('projects', [])) > 0 else []
+        codebuilds = [{**item, "sourceCredentialsInfos": credentails, "type": "codebuild"} for item in projects]
+        self.resources.extend(codebuilds)
 
     def get_instances(self):
         """
@@ -463,7 +489,35 @@ class AWSDiscovery(AWS):
         resources = [{**resource, "type": 'dax'} for resource in resources]
         self.resources.extend(resources)
     
-   
+    def get_acm(self):
+        certificates = []
+        def list_certificates(certificates,next_token=None):
+            if next_token:
+                response = self.acm.list_certificates(NextToken=next_token)
+            else:
+                response = self.acm.list_certificates()
+            certificates += [{**item,  "type": "acm"} for item in response.get('CertificateSummaryList', [])]
+            if 'NextToken' in response:
+                list_certificates(certificates,response['NextToken'])
+        list_certificates(certificates)
+        self.resources.extend(certificates)
+    
+    def get_securityhub(self):
+        hub = []
+        def getSecurityHub(hub,next_token=None):
+            try:
+                if next_token:
+                    response = self.securityhub.describe_hub(NextToken=next_token)
+                else:
+                    response = self.securityhub.describe_hub()
+                hub += [{**response,  "type": "securityhub"}]
+                if 'NextToken' in response:
+                    getSecurityHub(hub,response['NextToken'])
+            except Exception as ex:
+                hub = [] #security hub not enabled.
+        getSecurityHub(hub)
+        self.resources.extend(hub)
+    
 
     def find_resources(self, **kwargs):
         """

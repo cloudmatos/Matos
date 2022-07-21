@@ -1,0 +1,222 @@
+{
+  "glue": [
+    {
+      "Connections": [
+        {
+          "self": {
+            "source_data": {
+              "ConnectionProperties": {
+                "JDBC_ENFORCE_SSL": "true"
+              },
+              "ConnectionType": "NETWORK",
+              "CreationTime": "Thu, 14 Jul 2022 10:15:31 GMT",
+              "Description": "",
+              "LastUpdatedTime": "Thu, 14 Jul 2022 10:15:31 GMT",
+              "Name": "user01-test-connection-01",
+              "PhysicalConnectionRequirements": {
+                "AvailabilityZone": "us-west-1c",
+                "SecurityGroupIdList": [
+                  "sg-02f0223bb56c185b3"
+                ],
+                "SubnetId": "subnet-055442f604485d9a0"
+              }
+            }
+          }
+        }
+      ],
+      "Crawlers": [
+        {
+          "self": {
+            "source_data": {
+              "Classifiers": [],
+              "CrawlElapsedTime": 0,
+              "CreationTime": "Thu, 14 Jul 2022 10:16:19 GMT",
+              "DatabaseName": "user01-test-db",
+              "LastUpdated": "Thu, 14 Jul 2022 11:53:48 GMT",
+              "LineageConfiguration": {
+                "CrawlerLineageSettings": "DISABLE"
+              },
+              "Name": "user01-test-01",
+              "RecrawlPolicy": {
+                "RecrawlBehavior": "CRAWL_EVERYTHING"
+              },
+              "Role": "user01-test-glue-01",
+              "SchemaChangePolicy": {
+                "DeleteBehavior": "DEPRECATE_IN_DATABASE",
+                "UpdateBehavior": "UPDATE_IN_DATABASE"
+              },
+              "State": "READY",
+              "Targets": {
+                "CatalogTargets": [],
+                "DynamoDBTargets": [],
+                "JdbcTargets": [],
+                "MongoDBTargets": [],
+                "S3Targets": [
+                  {
+                    "ConnectionName": "user01-test-connection-01",
+                    "Exclusions": [],
+                    "Path": "s3://user01-test-01"
+                  }
+                ]
+              },
+              "Version": 2
+            }
+          }
+        }
+      ],
+      "DataCatalogueEncryptionSettings": {
+        "self": {
+          "source_data": {
+            "ConnectionPasswordEncryption": {
+              "ReturnConnectionPasswordEncrypted": false
+            },
+            "EncryptionAtRest": {
+              "CatalogEncryptionMode": "SSE-KMS",
+              "SseAwsKmsKeyId": "arn:aws:kms:us-west-1:000000000000:key/c75b71ce-ee47-42eb-8025-f0541b233dbc"
+            },
+            "KeyDetails": {
+              "AWSAccountId": "000000000000",
+              "Arn": "arn:aws:kms:us-west-1:000000000000:key/c75b71ce-ee47-42eb-8025-f0541b233dbc",
+              "CreationDate": "Tue, 21 Jun 2022 13:36:10 GMT",
+              "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+              "Description": "",
+              "Enabled": true,
+              "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+              ],
+              "KeyId": "c75b71ce-ee47-42eb-8025-f0541b233dbc",
+              "KeyManager": "CUSTOMER",
+              "KeySpec": "SYMMETRIC_DEFAULT",
+              "KeyState": "Enabled",
+              "KeyUsage": "ENCRYPT_DECRYPT",
+              "MultiRegion": false,
+              "Origin": "AWS_KMS"
+            }
+          }
+        }
+      },
+      "DataCatalogueResourcePolicy": {
+        "self": {
+          "source_data": {
+            "CreateTime": "Thu, 14 Jul 2022 11:51:31 GMT",
+            "PolicyHash": "99SFPOEyJT8NfX8VZfxdwA==",
+            "PolicyInJson": "{\n  \"Version\" : \"2012-10-17\",\n  \"Statement\" : [ {\n    \"Effect\" : \"Allow\",\n    \"Principal\" : {\n      \"AWS\" : \"arn:aws:iam::000000000000:user/user04t@cloudmatos.com\"\n    },\n    \"Action\" : \"glue:GetDatabase\",\n    \"Resource\" : \"arn:aws:glue:us-west-1:000000000000:catalog\"\n  } ]\n}",
+            "ResponseMetadata": {
+              "HTTPHeaders": {
+                "connection": "keep-alive",
+                "content-length": "428",
+                "content-type": "application/x-amz-json-1.1",
+                "date": "Fri, 15 Jul 2022 06:28:20 GMT",
+                "x-amzn-requestid": "951c555a-27a6-4aca-b9b6-684547ef2408"
+              },
+              "HTTPStatusCode": 200,
+              "RequestId": "951c555a-27a6-4aca-b9b6-684547ef2408",
+              "RetryAttempts": 0
+            },
+            "UpdateTime": "Thu, 14 Jul 2022 11:51:31 GMT"
+          }
+        }
+      },
+      "DevEndpoints": [
+        {
+          "self": {
+            "name": "user01-test-endpoint",
+            "source_data": {
+              "Arguments": {
+                "--enable-glue-datacatalog": " ",
+                "GLUE_PYTHON_VERSION": "3"
+              },
+              "AvailabilityZone": "us-west-1a",
+              "CreatedTimestamp": "Mon, 11 Jul 2022 11:14:53 GMT",
+              "EndpointName": "user01-test-endpoint",
+              "GlueVersion": "1.0",
+              "LastModifiedTimestamp": "Fri, 15 Jul 2022 06:27:49 GMT",
+              "NumberOfNodes": 5,
+              "PublicAddress": "ec2-13-57-233-144.us-west-1.compute.amazonaws.com",
+              "RoleArn": "arn:aws:iam::000000000000:role/user01-test-glue-01",
+              "SecurityGroupIds": [],
+              "Status": "READY",
+              "ZeppelinRemoteSparkInterpreterPort": 9007,
+              "SecurityConfigurationDetails": {
+                "CreatedTimeStamp": "Mon, 11 Jul 2022 11:23:54 GMT",
+                "EncryptionConfiguration": {
+                  "CloudWatchEncryption": {
+                    "CloudWatchEncryptionMode": "DISABLED1"
+                  },
+                  "JobBookmarksEncryption": {
+                    "JobBookmarksEncryptionMode": "DISABLED1"
+                  },
+                  "S3Encryption": [
+                    {
+                      "KmsKeyArn": "arn:aws:kms:us-west-1:000000000000:key/27b59ff8-87a3-42e8-970a-edeb8486bb0e",
+                      "S3EncryptionMode": "SSE-KMS"
+                    }
+                  ]
+                },
+                "Name": "user01-test-sc"
+              }
+            }
+          }
+        }
+      ],
+      "Jobs": [
+        {
+          "self": {
+            "name": "user01-test",
+            "source_data": {
+              "AllocatedCapacity": 10,
+              "Command": {
+                "Name": "glueetl",
+                "PythonVersion": "3",
+                "ScriptLocation": "s3://aws-glue-assets-000000000000-us-west-1/scripts/user01-test.py"
+              },
+              "CreatedOn": "Mon, 11 Jul 2022 10:54:34 GMT",
+              "DefaultArguments": {
+                "--TempDir": "s3://aws-glue-assets-000000000000-us-west-1/temporary/",
+                "--enable-continuous-cloudwatch-log": "true",
+                "--enable-glue-datacatalog": "true",
+                "--enable-job-insights": "true",
+                "--enable-metrics": "",
+                "--enable-spark-ui": "true",
+                "--job-bookmark-option": "job-bookmark-enable",
+                "--job-language": "python",
+                "--spark-event-logs-path": "s3://aws-glue-assets-000000000000-us-west-1/sparkHistoryLogs/"
+              },
+              "ExecutionProperty": {
+                "MaxConcurrentRuns": 1
+              },
+              "GlueVersion": "3.0",
+              "LastModifiedOn": "Thu, 14 Jul 2022 11:54:45 GMT",
+              "MaxCapacity": 10,
+              "MaxRetries": 3,
+              "Name": "user01-test",
+              "NumberOfWorkers": 10,
+              "Role": "arn:aws:iam::000000000000:role/user01-test-glue-01",
+              "SecurityConfiguration": "user01-test-sc",
+              "SecurityConfigurationDetails": {
+                "CreatedTimeStamp": "Mon, 11 Jul 2022 11:23:54 GMT",
+                "EncryptionConfiguration": {
+                  "CloudWatchEncryption": {
+                    "CloudWatchEncryptionMode": "DISABLED1"
+                  },
+                  "JobBookmarksEncryption": {
+                    "JobBookmarksEncryptionMode": "DISABLED1"
+                  },
+                  "S3Encryption": [
+                    {
+                      "KmsKeyArn": "arn:aws:kms:us-west-1:000000000000:key/27b59ff8-87a3-42e8-970a-edeb8486bb0e",
+                      "S3EncryptionMode": "SSE-KMS"
+                    }
+                  ]
+                },
+                "Name": "user01-test-sc"
+              },
+              "Timeout": 2880,
+              "WorkerType": "G.1X"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

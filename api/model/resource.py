@@ -35,3 +35,9 @@ class ResourceModel:
         self.ssm = resource.get('ssm')
         self.sns = resource.get('sns')
         self.docdb = resource.get('docdb')
+        self.logs_metrics = resource.get('logs_metrics')
+        self.codebuild = resource.get('codebuild')
+        self.glue = resource.get('glue')
+        self.acm = resource.get('acm')
+        self.securityhub = resource.get('securityhub')
+        

@@ -134,13 +134,13 @@
         "self": {
           "source_data": {
             "ActiveNodes": 0,
-            "ClusterArn": "arn:aws:dax:us-west-1:XXXXXXXXXXXXXXXXXXXXX:cache/abhay-test-01",
+            "ClusterArn": "arn:aws:dax:us-west-1:XXXXXXXXXXXXXXXXXXXXX:cache/user01-test-01",
             "ClusterDiscoveryEndpoint": {
               "Port": 9111
             },
             "ClusterEndpointEncryptionType": "TLS",
-            "ClusterName": "abhay-test-01",
-            "IamRoleArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/service-role/abhay-test-dex",
+            "ClusterName": "user01-test-01",
+            "IamRoleArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/service-role/user01-test-dex",
             "NodeType": "dax.r5.large",
             "ParameterGroup": {
               "NodeIdsToReboot": [
@@ -160,7 +160,7 @@
               }
             ],
             "Status": "creating",
-            "SubnetGroup": "abhay-test-dax",
+            "SubnetGroup": "user01-test-dax",
             "TotalNodes": 2,
             "type": "dax"
           }
@@ -1498,7 +1498,7 @@
                 "Tags": [
                   {
                     "Key": "Name",
-                    "Value": "narayan-nacl3"
+                    "Value": "user02-nacl3"
                   }
                 ],
                 "VpcId": "vpc-0bf028396a14eddc2"
@@ -1935,7 +1935,7 @@
                 "Tags": [
                   {
                     "Key": "Name",
-                    "Value": "abhay-test-sb"
+                    "Value": "user01-test-sb"
                   }
                 ],
                 "VpcId": "vpc-0bf028396a14eddc2"
@@ -2661,10 +2661,10 @@
             "ScalableTargets": [
               
             ],
-            "TableArn": "arn:aws:dynamodb:us-west-1:XXXXXXXXXXXXXXXXXXXXX:table/abhay-test-01",
+            "TableArn": "arn:aws:dynamodb:us-west-1:XXXXXXXXXXXXXXXXXXXXX:table/user01-test-01",
             "TableAutoScalingDescription": null,
             "TableId": "67e29b93-733d-422d-a95c-0a8915f611db",
-            "TableName": "abhay-test-01",
+            "TableName": "user01-test-01",
             "TableSizeBytes": 0,
             "TableStatus": "ACTIVE",
             "type": "no_sql"
@@ -2676,7 +2676,7 @@
       {
         "self": {
           "source_data": {
-            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/service-role/DAXFullAccess-abhay-test-dex",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/service-role/DAXFullAccess-user01-test-dex",
             "AttachmentCount": 1,
             "CreateDate": "Thu, 23 Jun 2022 14:02:54 GMT",
             "DefaultVersionId": "v1",
@@ -2713,11 +2713,11 @@
               
             ],
             "PolicyId": "ANPAUMYIJVCUQUWD4URJE",
-            "PolicyName": "DAXFullAccess-abhay-test-dex",
+            "PolicyName": "DAXFullAccess-user01-test-dex",
             "PolicyRoles": [
               {
                 "RoleId": "AROAUMYIJVCU3QDFLR4CE",
-                "RoleName": "abhay-test-dex"
+                "RoleName": "user01-test-dex"
               }
             ],
             "PolicyUsers": [
@@ -2788,7 +2788,7 @@
       {
         "self": {
           "source_data": {
-            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/abhay-test-wildcard-policy",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:policy/user01-test-wildcard-policy",
             "AttachmentCount": 0,
             "CreateDate": "Tue, 14 Jun 2022 05:03:02 GMT",
             "DefaultVersionId": "v2",
@@ -2811,7 +2811,7 @@
               
             ],
             "PolicyId": "ANPAUMYIJVCUZ4YTELRJL",
-            "PolicyName": "abhay-test-wildcard-policy",
+            "PolicyName": "user01-test-wildcard-policy",
             "PolicyRoles": [
               
             ],
@@ -3416,7 +3416,7 @@
                   ],
                   "Effect": "Allow",
                   "Resource": [
-                    "arn:aws:s3:::abhay-test-01"
+                    "arn:aws:s3:::user01-test-01"
                   ]
                 },
                 {
@@ -3427,7 +3427,7 @@
                   ],
                   "Effect": "Allow",
                   "Resource": [
-                    "arn:aws:s3:::abhay-test-01/*"
+                    "arn:aws:s3:::user01-test-01/*"
                   ]
                 }
               ],
@@ -4479,20 +4479,20 @@
     "sagemaker": [
       {
         "self": {
-          "notebook_instance_arn": "arn:aws:sagemaker:us-west-1:XXXXXXXXXXXXXXXXXXXXX:notebook-instance/abhay-test-01",
-          "notebook_instance_name": "abhay-test-01",
+          "notebook_instance_arn": "arn:aws:sagemaker:us-west-1:XXXXXXXXXXXXXXXXXXXXX:notebook-instance/user01-test-01",
+          "notebook_instance_name": "user01-test-01",
           "source_data": {
             "CreationTime": "Tue, 14 Jun 2022 05:58:54 GMT",
             "DirectInternetAccess": "Enabled",
             "InstanceType": "ml.t2.medium",
             "LastModifiedTime": "Wed, 15 Jun 2022 09:19:25 GMT",
-            "NotebookInstanceArn": "arn:aws:sagemaker:us-west-1:XXXXXXXXXXXXXXXXXXXXX:notebook-instance/abhay-test-01",
-            "NotebookInstanceName": "abhay-test-01",
+            "NotebookInstanceArn": "arn:aws:sagemaker:us-west-1:XXXXXXXXXXXXXXXXXXXXX:notebook-instance/user01-test-01",
+            "NotebookInstanceName": "user01-test-01",
             "NotebookInstanceStatus": "Stopped",
             "PlatformIdentifier": "notebook-al1-v1",
             "RoleArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXX:role/service-role/AmazonSageMaker-ExecutionRole-20220614T112886",
             "RootAccess": "Enabled",
-            "Url": "abhay-test-01.notebook.us-west-1.sagemaker.aws",
+            "Url": "user01-test-01.notebook.us-west-1.sagemaker.aws",
             "VolumeSizeInGB": 5,
             "type": "sagemaker"
           }
@@ -6156,7 +6156,7 @@
       },
       {
         "self": {
-          "name": "abhay-test-01",
+          "name": "user01-test-01",
           "source_data": {
             "acl": {
               "Grants": [
@@ -6201,7 +6201,7 @@
             "metric_configuration": [
               
             ],
-            "name": "abhay-test-01",
+            "name": "user01-test-01",
             "notification": {
               
             },
@@ -6214,7 +6214,7 @@
                 "ObjectOwnership": "BucketOwnerEnforced"
               }
             ],
-            "policy": "{\"Version\":\"2012-10-17\",\"Id\":\"S3-Console-Auto-Gen-Policy-1654083442949\",\"Statement\":[{\"Sid\":\"S3PolicyStmt-DO-NOT-MODIFY-1654083442496\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"logging.s3.amazonaws.com\"},\"Action\":\"s3:PutObject\",\"Resource\":\"arn:aws:s3:::abhay-test-01/*\"}]}",
+            "policy": "{\"Version\":\"2012-10-17\",\"Id\":\"S3-Console-Auto-Gen-Policy-1654083442949\",\"Statement\":[{\"Sid\":\"S3PolicyStmt-DO-NOT-MODIFY-1654083442496\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"logging.s3.amazonaws.com\"},\"Action\":\"s3:PutObject\",\"Resource\":\"arn:aws:s3:::user01-test-01/*\"}]}",
             "policy_status": {
               "PolicyStatus": {
                 "IsPublic": false
@@ -6313,7 +6313,7 @@
       },
       {
         "self": {
-          "name": "abhay-test-02",
+          "name": "user01-test-02",
           "source_data": {
             "acl": {
               "Grants": [
@@ -6349,7 +6349,7 @@
             "metric_configuration": [
               
             ],
-            "name": "abhay-test-02",
+            "name": "user01-test-02",
             "notification": {
               
             },
@@ -6362,7 +6362,7 @@
                 "ObjectOwnership": "BucketOwnerEnforced"
               }
             ],
-            "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"*\",\"Resource\":[\"arn:aws:s3:::abhay-test-02\",\"arn:aws:s3:::abhay-test-02/*\"],\"Condition\":{\"StringEquals\":{\"s3:DataAccessPointAccount\":\"XXXXXXXXXXXXXXXXXXXXX\"}}}]}",
+            "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"*\",\"Resource\":[\"arn:aws:s3:::user01-test-02\",\"arn:aws:s3:::user01-test-02/*\"],\"Condition\":{\"StringEquals\":{\"s3:DataAccessPointAccount\":\"XXXXXXXXXXXXXXXXXXXXX\"}}}]}",
             "policy_status": {
               "PolicyStatus": {
                 "IsPublic": false
@@ -6513,7 +6513,7 @@
             "ownership": [
               
             ],
-            "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"AWSCloudTrailAclCheck20150319\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Action\":\"s3:GetBucketAcl\",\"Resource\":\"arn:aws:s3:::aws-cloudtrail-logs-XXXXXXXXXXXXXXXXXXXXX-102f088b\",\"Condition\":{\"StringEquals\":{\"AWS:SourceArn\":\"arn:aws:cloudtrail:us-east-1:XXXXXXXXXXXXXXXXXXXXX:trail/cloudtrail_akshay\"}}},{\"Sid\":\"AWSCloudTrailWrite20150319\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Action\":\"s3:PutObject\",\"Resource\":\"arn:aws:s3:::aws-cloudtrail-logs-XXXXXXXXXXXXXXXXXXXXX-102f088b/AWSLogs/XXXXXXXXXXXXXXXXXXXXX/*\",\"Condition\":{\"StringEquals\":{\"AWS:SourceArn\":\"arn:aws:cloudtrail:us-east-1:XXXXXXXXXXXXXXXXXXXXX:trail/cloudtrail_akshay\",\"s3:x-amz-acl\":\"bucket-owner-full-control\"}}}]}",
+            "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"AWSCloudTrailAclCheck20150319\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Action\":\"s3:GetBucketAcl\",\"Resource\":\"arn:aws:s3:::aws-cloudtrail-logs-XXXXXXXXXXXXXXXXXXXXX-102f088b\",\"Condition\":{\"StringEquals\":{\"AWS:SourceArn\":\"arn:aws:cloudtrail:us-east-1:XXXXXXXXXXXXXXXXXXXXX:trail/cloudtrail_user03\"}}},{\"Sid\":\"AWSCloudTrailWrite20150319\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Action\":\"s3:PutObject\",\"Resource\":\"arn:aws:s3:::aws-cloudtrail-logs-XXXXXXXXXXXXXXXXXXXXX-102f088b/AWSLogs/XXXXXXXXXXXXXXXXXXXXX/*\",\"Condition\":{\"StringEquals\":{\"AWS:SourceArn\":\"arn:aws:cloudtrail:us-east-1:XXXXXXXXXXXXXXXXXXXXX:trail/cloudtrail_user03\",\"s3:x-amz-acl\":\"bucket-owner-full-control\"}}}]}",
             "policy_status": {
               "PolicyStatus": {
                 "IsPublic": false
@@ -6538,7 +6538,7 @@
       },
       {
         "self": {
-          "name": "abhay-test-config-01",
+          "name": "user01-test-config-01",
           "source_data": {
             "acl": {
               "Grants": [
@@ -6574,7 +6574,7 @@
             "metric_configuration": [
               
             ],
-            "name": "abhay-test-config-01",
+            "name": "user01-test-config-01",
             "notification": {
               
             },
@@ -6587,7 +6587,7 @@
                 "ObjectOwnership": "BucketOwnerPreferred"
               }
             ],
-            "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"AWSConfigBucketPermissionsCheck\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"config.amazonaws.com\"},\"Action\":\"s3:GetBucketAcl\",\"Resource\":\"arn:aws:s3:::abhay-test-config-01\",\"Condition\":{\"StringEquals\":{\"AWS:SourceAccount\":\"XXXXXXXXXXXXXXXXXXXXX\"}}},{\"Sid\":\"AWSConfigBucketExistenceCheck\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"config.amazonaws.com\"},\"Action\":\"s3:ListBucket\",\"Resource\":\"arn:aws:s3:::abhay-test-config-01\",\"Condition\":{\"StringEquals\":{\"AWS:SourceAccount\":\"XXXXXXXXXXXXXXXXXXXXX\"}}},{\"Sid\":\"AWSConfigBucketDelivery\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"config.amazonaws.com\"},\"Action\":\"s3:PutObject\",\"Resource\":\"arn:aws:s3:::abhay-test-config-01/AWSLogs/XXXXXXXXXXXXXXXXXXXXX/Config/*\",\"Condition\":{\"StringEquals\":{\"AWS:SourceAccount\":\"XXXXXXXXXXXXXXXXXXXXX\",\"s3:x-amz-acl\":\"bucket-owner-full-control\"}}}]}",
+            "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"AWSConfigBucketPermissionsCheck\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"config.amazonaws.com\"},\"Action\":\"s3:GetBucketAcl\",\"Resource\":\"arn:aws:s3:::user01-test-config-01\",\"Condition\":{\"StringEquals\":{\"AWS:SourceAccount\":\"XXXXXXXXXXXXXXXXXXXXX\"}}},{\"Sid\":\"AWSConfigBucketExistenceCheck\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"config.amazonaws.com\"},\"Action\":\"s3:ListBucket\",\"Resource\":\"arn:aws:s3:::user01-test-config-01\",\"Condition\":{\"StringEquals\":{\"AWS:SourceAccount\":\"XXXXXXXXXXXXXXXXXXXXX\"}}},{\"Sid\":\"AWSConfigBucketDelivery\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"config.amazonaws.com\"},\"Action\":\"s3:PutObject\",\"Resource\":\"arn:aws:s3:::user01-test-config-01/AWSLogs/XXXXXXXXXXXXXXXXXXXXX/Config/*\",\"Condition\":{\"StringEquals\":{\"AWS:SourceAccount\":\"XXXXXXXXXXXXXXXXXXXXX\",\"s3:x-amz-acl\":\"bucket-owner-full-control\"}}}]}",
             "policy_status": {
               "PolicyStatus": {
                 "IsPublic": false
@@ -6612,7 +6612,7 @@
       },
       {
         "self": {
-          "name": "akshay-test-bucket-logging",
+          "name": "user03-test-bucket-logging",
           "source_data": {
             "acl": {
               "Grants": [
@@ -6656,7 +6656,7 @@
             "metric_configuration": [
               
             ],
-            "name": "akshay-test-bucket-logging",
+            "name": "user03-test-bucket-logging",
             "notification": {
               
             },
@@ -6694,7 +6694,7 @@
       },
       {
         "self": {
-          "name": "clopudfrontorigintestakshay",
+          "name": "clopudfrontorigintestuser03",
           "source_data": {
             "acl": {
               "Grants": [
@@ -6730,7 +6730,7 @@
             "metric_configuration": [
               
             ],
-            "name": "clopudfrontorigintestakshay",
+            "name": "clopudfrontorigintestuser03",
             "notification": {
               
             },
@@ -6921,7 +6921,7 @@
       },
       {
         "self": {
-          "name": "abhay-test-bucket-logging-source",
+          "name": "user01-test-bucket-logging-source",
           "source_data": {
             "acl": {
               "Grants": [
@@ -6957,7 +6957,7 @@
             "metric_configuration": [
               
             ],
-            "name": "abhay-test-bucket-logging-source",
+            "name": "user01-test-bucket-logging-source",
             "notification": {
               
             },

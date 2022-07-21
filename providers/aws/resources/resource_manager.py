@@ -61,7 +61,12 @@ class AWSResourceManager:
             'sqs': SQS,
             'ssm':SSM,
             'sns':SNS,
-            'docdb': DocDB
+            'docdb': DocDB,
+            'logs_metrics':LogMetrics,
+            'codebuild': CodeBuild,
+            'glue': Glue,
+            'acm': ACM,
+            'securityhub': SecurityHub
         }
 
         log = logger.new()
@@ -556,9 +561,12 @@ class Storage(AWS):
         return replication
 
     def get_bucket_notification_configuration(self):
-        resp = self.conn.get_bucket_notification_configuration(Bucket=self.bucket.get('name'))
-        del resp['ResponseMetadata']
-        return resp
+        try:
+            resp = self.conn.get_bucket_notification_configuration(Bucket=self.bucket.get('name'))
+            del resp['ResponseMetadata']
+            return resp
+        except botocore.exceptions.ClientError as e:
+            return {}
 
     def get_bucket_policy_list(self):
         bucket_name = self.bucket['name']
@@ -1079,7 +1087,6 @@ class ServiceAccount(AWS):
         instance_id (str): Ec2 instance id.
         return: dictionary object.
         """
-        resp = self.conn.generate_credential_report()
         pwd_enable_content = self.get_credential_report(self.user['UserName'])
         pwd_enable = pwd_enable_content[0] if pwd_enable_content else None
 
@@ -1345,14 +1352,21 @@ class CloudTrail(AWS):
     def get_trail_event_selector(self, trail_arn):
         response = self.conn.get_event_selectors(TrailName=trail_arn)
         return response.get("EventSelectors",[])
+        
     
     def get_s3_bucket_logging(self, bucket_name):
-        response = self.s3.get_bucket_logging(Bucket=bucket_name)
-        return response.get("LoggingEnabled",{})
+        try:
+            response = self.s3.get_bucket_logging(Bucket=bucket_name)
+            return response.get("LoggingEnabled",{})
+        except Exception as e:
+            print(f"Error in getting cloudtrail trail logging bucket {e} ")
+        return {}    
+        
     
     def get_s3_public_access_block(self, bucket_name):
         try:
             response = self.s3.get_public_access_block(Bucket=bucket_name)
+            return response.get("PublicAccessBlockConfiguration",{})
         except botocore.exceptions.ClientError as e:
             if e.response['Error']['Code'] == 'NoSuchPublicAccessBlockConfiguration':
                 return {
@@ -1361,22 +1375,28 @@ class CloudTrail(AWS):
             "IgnorePublicAcls": False,
             "RestrictPublicBuckets": False
           }
-        return response.get("PublicAccessBlockConfiguration",{})
+        return {}
+        
     
     def get_s3_bucket_policy(self, bucket_name):
         try:
             response = self.s3.get_bucket_policy(Bucket=bucket_name)
+            policy =  response.get("Policy",json.dumps({}))
+            return json.loads(policy)
         except botocore.exceptions.ClientError as e:
-            if e.response['Error']['Code'] == 'NoSuchBucketPolicy':
-                return {}
-        policy =  response.get("Policy",json.dumps({}))
-        return json.loads(policy)
+            print(f"Error in getting bucket policy {e}")
+        return {}
+        
     
     def get_s3_bucket_acl(self, bucket_name):
-        response = self.s3.get_bucket_acl(Bucket=bucket_name)
-        if 'ResponseMetadata' in response:
-            del response['ResponseMetadata']
-        return response
+        try:
+            response = self.s3.get_bucket_acl(Bucket=bucket_name)
+            if 'ResponseMetadata' in response:
+                del response['ResponseMetadata']
+            return response
+        except botocore.exceptions.ClientError as e:
+            print(f"Error in getting bucket ACL {e}")
+        return {}
     
     def get_s3_bucket_access_points(self, account_id,bucket_name):
         try:
@@ -2310,7 +2330,9 @@ class SQS(AWS):
             QueueUrl=self.resource.get('url'), AttributeNames=['All']).get('Attributes')
         resource = {
             **attributes,
-            "url": self.resource.get('url')
+            "url": self.resource.get('url'),
+            "QueueName": attributes.get('QueueArn').split(':')[-1],
+            "AccountId": attributes.get('QueueArn').split(':')[-2]
         }
         return resource
 
@@ -2373,6 +2395,10 @@ class SNS(AWS):
             **self.resource
         }
         resource['TopicAttributes'] = self.get_topic_attributes(self.resource['TopicArn'])
+        resource['TopicSubscriptions'] = self.list_subscriptions_by_topic(self.resource['TopicArn'])
+        for subscription in resource.get('TopicSubscriptions',[]):
+            subscription['SubscriptionAttributes'] = self.get_subscription_attributes(subscription['SubscriptionArn'])
+
         return resource
     
     def get_topic_attributes(self,topic_arn):
@@ -2381,7 +2407,23 @@ class SNS(AWS):
         )
         if 'ResponseMetadata' in response:
             del response["ResponseMetadata"]
-        return response
+        return  response.get('Attributes')
+    
+    def list_subscriptions_by_topic(self,topic_arn):
+        response = self.conn.list_subscriptions_by_topic(
+            TopicArn=topic_arn
+        )
+        if 'ResponseMetadata' in response:
+            del response["ResponseMetadata"]
+        return  response.get('Subscriptions',[])
+    
+    def get_subscription_attributes(self,subscription_arn):
+        response = self.conn.get_subscription_attributes(
+            SubscriptionArn=subscription_arn
+        )
+        if 'ResponseMetadata' in response:
+            del response["ResponseMetadata"]
+        return  response.get('Attributes',[])
 
 
 class DocDB(AWS):
@@ -2403,8 +2445,301 @@ class DocDB(AWS):
         """
         Fetches doc db details.
         """
+        Parameters  = self.conn.describe_db_cluster_parameters(DBClusterParameterGroupName=self.resource.get('DBClusterParameterGroup')).get('Parameters')
+        DBClusterSnapshots = self.conn.describe_db_cluster_snapshots(DBClusterIdentifier=self.resource.get('DBClusterIdentifier')).get('DBClusterSnapshots')
+        finalSnapshots = []
+        try:
+            for snapshot in DBClusterSnapshots:
+                snapshotAttribute = self.conn.describe_db_cluster_snapshot_attributes(
+                    DBClusterSnapshotIdentifier=snapshot.get('DBClusterSnapshotIdentifier')).get('DBClusterSnapshotAttributesResult')
+                finalSnapshots.append({
+                    **snapshot,
+                    "DBClusterSnapshotAttributes": snapshotAttribute.get('DBClusterSnapshotAttributes')
+                })
+        except:
+            finalSnapshots = []
+
         resource = {
-            **self.resource
+            **self.resource,
+            "Parameters": Parameters,
+            "DBClusterSnapshots": finalSnapshots
         }
         return resource
 
+
+class LogMetrics(AWS):
+
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+
+            super(LogMetrics, self).__init__()
+            self.conn = self.client('logs')
+            self.resource = resource
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        Fetches log metrics details.
+        """
+        metric_filters  = self.get_metric_filters(self.resource.get('logGroupName'))
+        try:
+            metrics = []
+            for metric in metric_filters:
+                metricAlarms = []
+                for data in metric.get('metricTransformations', []):
+                    metricAlarms.append({
+                             **data,
+                            "metricAlarms": self.get_alarms_for_metric(data.get('metricName'), data.get('metricNamespace')),
+
+                    })
+                metrics.append({
+                    **metric,
+                    "metricTransformations": metricAlarms
+                })
+        except:
+            metrics = []
+
+        
+        return {
+            **self.resource,
+            "metricFilters": metrics
+        }
+    
+    def get_metric_filters(self, logGroupName):
+        def fetch_metric_filters(metric_filter_list=None, continueToken=None, name=None):
+            request = {}
+            if continueToken:
+                request['nextToken'] = continueToken
+                request['logGroupName'] = name
+            response = self.conn.describe_metric_filters(**request)
+            continueToken = response.get('NextToken', None)
+            current_metric_filters = [] if not metric_filter_list else metric_filter_list
+            current_metric_filters.extend(response.get('metricFilters', []))
+
+            return current_metric_filters, continueToken
+
+        try:
+            metric_filters, nextToken = fetch_metric_filters(name=logGroupName)
+
+            while nextToken:
+                metric_filters = fetch_metric_filters(metric_filters, nextToken, logGroupName)
+        except Exception as ex:
+            print("cloudwatchlogs log group metric filter: ", ex)
+            return {}
+
+        return metric_filters
+    
+    def get_alarms_for_metric(self, metricName, filterNamespace):
+        response = self.cloudwatch.describe_alarms_for_metric(MetricName=metricName, Namespace=filterNamespace)
+        return response.get('MetricAlarms')
+
+class CodeBuild(AWS):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(CodeBuild, self).__init__()
+            self.conn = self.client('codebuild')
+            self.resource = resource
+
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        Fetches code build details.
+        """
+        builds = self.conn.list_builds_for_project(projectName=self.resource.get('name')).get('ids')#fetch all builds id in descending order
+        lastBuildDetails = [builds[0]] if len(builds) > 0 else [] #fetch first build details
+        buildDetails = self.conn.batch_get_builds(ids=lastBuildDetails).get('builds') if lastBuildDetails else []
+        return {
+            **self.resource,
+            "lastBuildDetails": buildDetails[0] if buildDetails else {}
+        }
+
+
+class SecurityHub(AWS):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(SecurityHub, self).__init__()
+            self.conn = self.client('securityhub')
+            self.resource = resource
+
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        Fetches securityhub details.
+        """
+        
+        return {
+            "AutoEnableControls": self.resource.get('AutoEnableControls'),
+            "HubArn": self.resource.get('HubArn'),
+            "SubscribedAt": self.resource.get('SubscribedAt'),
+            "type": self.resource.get('type'),
+        }
+
+
+class Glue(AWS):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            
+            super(Glue, self).__init__()
+            self.conn = self.client('glue')
+            self.resource = resource
+        except Exception as ex:
+            raise Exception(ex)
+        
+    def get_resource_inventory(self):
+        """
+        """
+        resource = {
+            **self.resource
+        }
+        resource['Jobs'] = self.list_jobs()
+        for job in resource['Jobs']:
+            if 'SecurityConfiguration' in job:
+                job['SecurityConfigurationDetails'] = self.get_security_configuration(job['SecurityConfiguration'])
+        resource['DevEndpoints'] = self.list_dev_endpoints()
+        for endpoint in resource['DevEndpoints']:
+            if 'SecurityConfiguration' in endpoint:
+                endpoint['SecurityConfigurationDetails'] = self.get_security_configuration(endpoint['SecurityConfiguration'])
+        resource['DataCatalogueEncryptionSettings'] = self.get_data_catalog_encryption_settings()
+        if resource['DataCatalogueEncryptionSettings'].get('EncryptionAtRest',{}).get('CatalogEncryptionMode')!='DISABLED':
+            resource['DataCatalogueEncryptionSettings']['KeyDetails']=self.get_key_details(resource['DataCatalogueEncryptionSettings'].get('EncryptionAtRest',{}).get('SseAwsKmsKeyId'))
+        resource['Crawlers'] = self.list_crawlers()
+        for crawler in resource['Jobs']:
+            if 'CrawlerSecurityConfiguration' in crawler:
+                crawler['SecurityConfigurationDetails'] = self.get_security_configuration(crawler['CrawlerSecurityConfiguration'])
+        resource['DataCatalogueResourcePolicy'] = self.get_resource_policy()
+        resource['Connections'] = self.get_connections()
+        return resource
+    
+    def list_jobs(self):
+        jobs = []
+        def get_jobs(next_token,jobs):
+            resp = self.conn.get_jobs(
+                NextToken=next_token
+            )
+            jobs += resp.get('Jobs',[])
+            if resp.get('NextToken'):
+                get_jobs(resp.get('NextToken'),jobs)
+        resp = self.conn.get_jobs(
+            )
+        jobs += resp.get('Jobs',[])
+        if resp.get('NextToken'):
+            get_jobs(resp.get('NextToken'),jobs)
+        return jobs
+    
+    def list_dev_endpoints(self):
+        endpoints = []
+        def get_dev_endpoints(next_token,endpoints):
+            resp = self.conn.get_dev_endpoints(
+                NextToken=next_token
+            )
+            endpoints += resp.get('DevEndpoints',[])
+            if resp.get('NextToken'):
+                get_dev_endpoints(resp.get('NextToken'),endpoints)
+        resp = self.conn.get_dev_endpoints(
+            )
+        endpoints += resp.get('DevEndpoints',[])
+        if resp.get('NextToken'):
+            get_dev_endpoints(resp.get('NextToken'),endpoints)
+        return endpoints
+    
+    def get_security_configuration(self,configuration_name):
+        resp = self.conn.get_security_configuration(Name=configuration_name)
+        return resp.get('SecurityConfiguration',{})
+
+    def get_data_catalog_encryption_settings(self):
+        resp = self.conn.get_data_catalog_encryption_settings()
+        return resp.get('DataCatalogEncryptionSettings',{})
+    
+    def get_key_details(self,key_id):
+        resp = self.kms.describe_key(KeyId=key_id)
+        return resp.get('KeyMetadata',{})
+    
+    def list_crawlers(self):
+        endpoints = []
+        def get_crawlers(next_token,endpoints):
+            resp = self.conn.get_crawlers(
+                NextToken=next_token
+            )
+            endpoints += resp.get('Crawlers',[])
+            if resp.get('NextToken'):
+                get_crawlers(resp.get('NextToken'),endpoints)
+        resp = self.conn.get_crawlers(
+            )
+        endpoints += resp.get('Crawlers',[])
+        if resp.get('NextToken'):
+            get_crawlers(resp.get('NextToken'),endpoints)
+        return endpoints
+    
+    def get_resource_policy(self,arn=None):
+        # No ARN need to pass to get resource policy of data catalogue
+        if arn:
+            resp = self.conn.get_resource_policy(ResourceArn=arn)
+        else:
+            resp = self.conn.get_resource_policy()
+        return resp
+    
+    def get_connections(self,catalog_id=None):
+        # No ARN need to pass to get resource policy of data catalogue
+        if catalog_id:
+            resp = self.conn.get_connections(CatalogId=catalog_id)
+        else:
+            resp = self.conn.get_connections()
+        return resp.get('ConnectionList')
+
+
+
+class ACM(AWS):
+    def __init__(self,
+                 resource: dict,
+                 **kwargs,
+                 ) -> None:
+        """
+        """
+        try:
+            super(ACM, self).__init__()
+            self.conn = self.client('acm')
+            self.pcm_client = self.client('acm-pca')
+            self.resource = resource
+
+        except Exception as ex:
+            raise Exception(ex)
+
+    def get_resource_inventory(self):
+        """
+        Fetches certificate details.
+        """
+        resource = {
+            **self.resource,  **self.conn.describe_certificate(CertificateArn=self.resource['CertificateArn']).get('Certificate',{})
+        }
+        if resource.get('CertificateAuthorityArn'):
+            resource['CertificateAuthority'] = self.get_certificate_authority(resource.get('CertificateAuthorityArn'))
+        return resource
+
+    def get_certificate_authority(self, authority_arn):
+        resp = self.pcm_client.describe_certificate_authority(CertificateAuthorityArn=authority_arn)
+        return resp.get('CertificateAuthority',{})
